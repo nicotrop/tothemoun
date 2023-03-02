@@ -1,13 +1,22 @@
-import Head from 'next/head'
-import Image from 'next/image'
-import { Inter } from 'next/font/google'
-import styles from '@/styles/Home.module.css'
+import { createClient } from "@prismicio/client";
+import sm from "../../sm.json";
+import { Layout } from "@/components/layout";
 
-
-export default function Home() {
+export default function Home({ navigation }: { navigation: any }) {
   return (
-    <section>
-      Hello
-    </section>
-  )
+    <Layout navigation={navigation}>
+      <section>Hello</section>
+    </Layout>
+  );
 }
+
+export const getStaticProps = async () => {
+  const client = createClient(sm.apiEndpoint);
+  const navigation = await client.getSingle("navigation");
+
+  return {
+    props: {
+      navigation,
+    },
+  };
+};

@@ -1,0 +1,42 @@
+{
+  "id": "navigation",
+  "label": "Navigation",
+  "repeatable": false,
+  "status": true,
+  "json": {
+    "Main": {
+      "navigation_item": {
+        "type": "Group",
+        "config": {
+          "label": "Navigation Item",
+          "fields": {
+            "item_name": {
+              "type": "Text",
+              "config": {
+                "label": "Item Name",
+                "placeholder": ""
+              }
+            },
+            "item_link": {
+              "type": "Link",
+              "config": {
+                "label": "Item Link",
+                "placeholder": "",
+                "allowTargetBlank": false,
+                "select": null
+              }
+            },
+            "item_icon": {
+              "type": "Image",
+              "config": {
+                "label": "Item Icon",
+                "constraint": {},
+                "thumbnails": []
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

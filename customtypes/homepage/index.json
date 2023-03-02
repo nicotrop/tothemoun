@@ -1,0 +1,56 @@
+{
+  "id": "homepage",
+  "label": "Homepage",
+  "repeatable": false,
+  "status": true,
+  "json": {
+    "Main": {
+      "uid": {
+        "type": "UID",
+        "config": {
+          "label": "Homepage ID",
+          "placeholder": ""
+        }
+      },
+      "hero_image": {
+        "type": "Image",
+        "config": {
+          "label": "Hero Image",
+          "constraint": {},
+          "thumbnails": []
+        }
+      },
+      "home_collections": {
+        "type": "Link",
+        "config": {
+          "label": "Home Collections",
+          "select": "document"
+        }
+      },
+      "home_seo_description": {
+        "type": "Text",
+        "config": {
+          "label": "Home SEO Description",
+          "placeholder": ""
+        }
+      },
+      "home_promo_banner": {
+        "type": "Image",
+        "config": {
+          "label": "Home Promo Banner",
+          "constraint": {},
+          "thumbnails": []
+        }
+      },
+      "home_seo_text_block": {
+        "type": "StructuredText",
+        "config": {
+          "label": "Home SEO Text Block",
+          "placeholder": "",
+          "allowTargetBlank": true,
+          "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+        }
+      }
+    }
+  }
+}

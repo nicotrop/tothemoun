@@ -1,0 +1,71 @@
+{
+  "uid": {
+    "__TYPE__": "UIDContent",
+    "value": "mysterious"
+  },
+  "hero_image": {
+    "__TYPE__": "ImageContent",
+    "origin": {
+      "id": "main",
+      "url": "https://images.unsplash.com/photo-1547394765-185e1e68f34e",
+      "width": 6000,
+      "height": 4000
+    },
+    "url": "https://images.unsplash.com/photo-1547394765-185e1e68f34e",
+    "width": 6000,
+    "height": 4000,
+    "edit": {
+      "zoom": 1,
+      "crop": {
+        "x": 0,
+        "y": 0
+      },
+      "background": "transparent"
+    },
+    "thumbnails": {}
+  },
+  "home_collections": {
+    "__TYPE__": "LinkContent",
+    "value": {
+      "__TYPE__": "DocumentLink",
+      "id": "mock_document_id"
+    }
+  },
+  "home_seo_description": {
+    "__TYPE__": "FieldContent",
+    "value": "table",
+    "type": "Text"
+  },
+  "home_promo_banner": {
+    "__TYPE__": "ImageContent",
+    "origin": {
+      "id": "main",
+      "url": "https://images.unsplash.com/photo-1571126770897-2d612d1f7b89",
+      "width": 3456,
+      "height": 3456
+    },
+    "url": "https://images.unsplash.com/photo-1571126770897-2d612d1f7b89",
+    "width": 3456,
+    "height": 3456,
+    "edit": {
+      "zoom": 1,
+      "crop": {
+        "x": 0,
+        "y": 0
+      },
+      "background": "transparent"
+    },
+    "thumbnails": {}
+  },
+  "home_seo_text_block": {
+    "__TYPE__": "StructuredTextContent",
+    "value": [
+      {
+        "type": "paragraph",
+        "content": {
+          "text": "Cillum aliqua duis officia pariatur eu eiusmod enim. Laborum eiusmod et in id proident. Quis nostrud duis do officia."
+        }
+      }
+    ]
+  }
+}
