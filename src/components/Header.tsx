@@ -11,18 +11,52 @@ import {
   faBars,
   faMagnifyingGlass,
 } from "@fortawesome/free-solid-svg-icons";
+import { useRouter } from "next/router";
+import { useMemo } from "react";
+
+export type itemType = {
+  item_name: "Que faire en Guadeloupe?" | "Food & Drinks" | "Où loger?";
+  item_url?: string;
+  item_icon?: string;
+};
 
 export const Header = ({ navigation }: any) => {
+  const { pathname } = useRouter();
+  const isHome = useMemo(() => pathname === "/", [pathname]);
   return (
     <header>
-      <div className="h-[350px] sm:h-3/5 md:h-4/6 lg:h-5/6 xl:h-screen relative border-solid border-red-500 border-2">
-        <video autoPlay muted loop className="h-full w-full object-cover">
+      <div
+        className={`${
+          isHome
+            ? "h-[350px] sm:h-3/5 md:h-4/6 lg:h-5/6 xl:h-screen relative"
+            : "bg-white px-4 py-2"
+        }`}
+      >
+        <video
+          autoPlay
+          muted
+          loop
+          className={`${!isHome ? "hidden" : "h-full w-full object-cover"}`}
+        >
           <source src={heroVideo} type="video/mp4" />
         </video>
-        <div className="absolute inset-0 bg-black opacity-40 lg:opacity-20 z-10"></div>
+        <div
+          className={`${
+            isHome
+              ? "absolute inset-0 bg-black opacity-40 lg:opacity-20 z-10"
+              : "hidden"
+          }`}
+        ></div>
         {/* Mobile navigation */}
-        <nav className="flex lg:hidden absolute w-full overflow-hidden z-20 text-base top-0 items-center justify-between py-4 px-4">
-          <FontAwesomeIcon icon={faBars} color="#FFFF" />
+        <nav
+          className={`flex lg:hidden ${
+            isHome && "absolute top-0 z-20"
+          } w-full overflow-hidden text-base items-center justify-between py-4`}
+        >
+          <FontAwesomeIcon
+            icon={faBars}
+            color={`${isHome ? "#FFFF" : "#000000"}`}
+          />
           <div className="flex items-center gap-2">
             <Image
               src={logo}
@@ -31,15 +65,26 @@ export const Header = ({ navigation }: any) => {
               alt="To the Moun logo"
               className="w-9"
             />
-            <h1 className="text-3xl font-black tracking-tighter uppercase text-white">
+            <h1
+              className={`text-3xl font-black tracking-tighter uppercase ${
+                isHome ? "text-white" : "text-black"
+              }`}
+            >
               to the moun
             </h1>
           </div>
-          <FontAwesomeIcon icon={faMagnifyingGlass} size="1x" color="#FFFF" />
+          <FontAwesomeIcon
+            icon={faMagnifyingGlass}
+            color={`${isHome ? "#FFFF" : "#000000"}`}
+          />
           {/* </div> */}
         </nav>
         {/* Desktop navigation */}
-        <nav className="hidden lg:flex absolute top-10 left-14 z-20 gap-6 text-base">
+        <nav
+          className={`hidden lg:flex ${
+            isHome && "absolute top-0 left-0 z-20"
+          } w-full py-2 gap-6 text-base`}
+        >
           <Image
             src={logo}
             width={60}
@@ -59,8 +104,7 @@ export const Header = ({ navigation }: any) => {
             </div>
             <ul className="flex gap-1 mt-1">
               {navigation?.data?.navigation_item?.map(
-                (item: any, i: number) => {
-                  console.log(item);
+                (item: itemType, i: number) => {
                   return (
                     <li
                       key={i}
@@ -76,19 +120,12 @@ export const Header = ({ navigation }: any) => {
           </div>
         </nav>
       </div>
+      {!isHome && <hr className="border-t-2 border-solid border-black mx-4" />}
     </header>
   );
 };
 
-export const NavIcon = ({
-  item,
-}: {
-  item: {
-    item_name: "Que faire en Guadeloupe?" | "Food & Drinks" | "Où loger?";
-    item_url?: string;
-    item_icon?: string;
-  };
-}) => {
+export const NavIcon = ({ item }: { item: itemType }) => {
   switch (item.item_name) {
     case "Que faire en Guadeloupe?":
       return <FontAwesomeIcon icon={faPersonBiking} />;
