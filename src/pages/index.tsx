@@ -70,7 +70,6 @@ export const CollectionGrid = ({ data }: { data: CollectionGridType }) => {
     <section className="flex flex-col gap-3 my-6 box-content">
       <h2 className="text-2xl font-bold">{data.title}</h2>
       <h4>{data.subtitle}</h4>
-      {/* <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 mt-1"> */}
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 mt-1">
         {data?.collections?.map((collection, i) => {
           return <CollectionCard collection={collection} key={i} />;
