@@ -28,7 +28,7 @@ export const Header = ({ navigation }: any) => {
       <div
         className={`${
           isHome
-            ? "h-[350px] sm:h-3/5 md:h-4/6 lg:h-5/6 xl:h-screen relative"
+            ? "w-screen h-[350px] sm:h-3/5 md:h-4/6 lg:h-5/6 xl:h-screen relative"
             : "bg-white px-4 py-2"
         }`}
       >
@@ -50,14 +50,14 @@ export const Header = ({ navigation }: any) => {
         {/* Mobile navigation */}
         <nav
           className={`flex lg:hidden ${
-            isHome && "absolute top-0 z-20"
+            isHome && "absolute top-0 z-20 py-3 px-4"
           } w-full overflow-hidden text-base items-center justify-between py-4`}
         >
           <FontAwesomeIcon
             icon={faBars}
             color={`${isHome ? "#FFFF" : "#000000"}`}
           />
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-1">
             <Image
               src={logo}
               width={60}
@@ -82,8 +82,8 @@ export const Header = ({ navigation }: any) => {
         {/* Desktop navigation */}
         <nav
           className={`hidden lg:flex ${
-            isHome && "absolute top-0 left-0 z-20"
-          } w-full py-2 gap-6 text-base`}
+            isHome && "absolute top-8 z-20 left-14"
+          }  py-2 gap-6 text-base`}
         >
           <Image
             src={logo}
@@ -93,10 +93,10 @@ export const Header = ({ navigation }: any) => {
             className="h-fit p-0"
           />
           <div className="flex flex-col justify-center">
-            <div className="flex items-center p-2 h-11 border-solid border-black border-2 bg-white">
+            <div className="flex items-center px-4 py-2 h-11 border-solid border-black border-2 bg-white">
               <FontAwesomeIcon icon={faSearch} />
               <input
-                className="w-full pl-1 active:outline-none outline-none"
+                className="w-full px-2 active:outline-none outline-none"
                 type="text"
                 name="search"
                 id="searchBar"

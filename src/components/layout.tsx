@@ -10,9 +10,11 @@ export const Layout = ({
 }) => {
   return (
     <div>
-      <section>
+      <section className="w-screen">
         <Header navigation={navigation} />
-        <main>{children}</main>
+        <main className="px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12">
+          {children}
+        </main>
       </section>
       <Footer />
     </div>
@@ -20,5 +22,5 @@ export const Layout = ({
 };
 
 const Footer = () => {
-  return <footer>Footer</footer>;
+  return <footer className="px-4">Footer</footer>;
 };
