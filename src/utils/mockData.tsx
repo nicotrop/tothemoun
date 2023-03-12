@@ -1,3 +1,6 @@
+import { Collection } from "@/components/CollectionSection";
+import { PromoSectionType } from "@/components/PromoSection.Client";
+
 export const arrayArticles = [
   {
     title: "Lorem ipsum dolor sit amet",
@@ -37,9 +40,45 @@ export const arrayArticles = [
   },
 ];
 
-export const mockSectionData = {
+export const mockBestOfSectionData = {
+  title: "Best of",
+  subtitle: "Lorem ipsum dolor sit, amet consectetur adipisicing elit.",
+  link: "#",
+  articles: arrayArticles,
+};
+
+export const mockArticleSectionData = {
   title: "Derniers articles",
   subtitle: "Lorem ipsum dolor sit, amet consectetur adipisicing elit.",
   link: "#",
   articles: arrayArticles,
+};
+
+export const mockCollectionData: Collection[] = [
+  {
+    name: "Collection 1",
+    imageURL:
+      "https://images.unsplash.com/photo-1545579133-99bb5ab189bd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80",
+    link: "#",
+  },
+  {
+    name: "Collection 2",
+    imageURL:
+      "https://images.unsplash.com/photo-1574724713425-fee7e2eacf84?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1652&q=80",
+    link: "#",
+  },
+  {
+    name: "Collection 3",
+    imageURL:
+      "https://images.unsplash.com/photo-1593351415075-3bac9f45c877?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1742&q=80",
+    link: "#",
+  },
+];
+
+export const mockPromoSectionData: PromoSectionType = {
+  mobileImageURL:
+    "https://images.unsplash.com/photo-1570170615381-62c299188814?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=987&q=80",
+  desktopImageURL:
+    "https://images.unsplash.com/photo-1556741533-6e6a62bd8b49?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2340&q=80",
+  promoLink: "#",
 };

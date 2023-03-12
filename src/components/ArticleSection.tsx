@@ -9,14 +9,14 @@ export type Article = {
   link: string;
 };
 
-export type ArticleCarouselType = {
+export type ArticleSectionType = {
   title: string;
   subtitle: string;
   link: string;
   articles: Article[];
 };
 
-export const ArticleCarousel = ({ data }: { data: ArticleCarouselType }) => {
+export const ArticleSection = ({ data }: { data: ArticleSectionType }) => {
   return (
     <section className="flex flex-col gap-3 my-6 box-content">
       <h2 className="text-2xl font-bold">{data.title}</h2>
@@ -40,7 +40,7 @@ export const ArticleCarousel = ({ data }: { data: ArticleCarouselType }) => {
 
 export const ArticleCard = ({ article }: { article: Article }) => {
   return (
-    <figure className="border-solid border-black border-2 flex flex-col items-start gap-2 min-w-[300px] md:min-w-[335px] xl:min-w-0">
+    <figure className="border-solid border-black border-2 flex flex-col items-start gap-2 min-w-full sm:min-w-[300px] md:min-w-[335px] xl:min-w-0">
       <Image
         src={article.imageURL}
         alt="card-image"
