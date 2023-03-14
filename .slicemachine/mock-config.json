@@ -9,5 +9,8 @@
     },
     "page": {},
     "homepage": {}
+  },
+  "slices": {
+    "HomeHero": {}
   }
 }

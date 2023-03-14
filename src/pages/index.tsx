@@ -9,7 +9,7 @@ import {
   mockCollectionSectionData,
 } from "@/components/CollectionSection";
 import ClientPromoSection from "@/components/PromoSection.Client";
-import { Layout } from "@/components/layout";
+import { Layout } from "@/components/Layout";
 import { ArticleSection } from "@/components/ArticleSection";
 import { ArticleSection2 } from "@/components/ArticleSection2";
 
