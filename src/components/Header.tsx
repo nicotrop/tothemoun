@@ -13,14 +13,28 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { useRouter } from "next/router";
 import { useMemo } from "react";
+import Link from "next/link";
+
+export type itemLinkType = {
+  first_publication_date: string;
+  id: string;
+  isBroken: boolean;
+  lang: string;
+  last_publication_date: string;
+  link_type: string;
+  slug: string;
+  tags: string[];
+  type: string;
+  uid: string;
+};
 
 export type itemType = {
   item_name: "Que faire en Guadeloupe?" | "Food & Drinks" | "Où loger?";
-  item_url?: string;
+  item_link?: itemLinkType;
   item_icon?: string;
 };
 
-export const Header = ({ navigation }: any) => {
+export const Header = ({ navigation }: { navigation: itemType[] }) => {
   const { pathname } = useRouter();
   const isHome = useMemo(() => pathname === "/", [pathname]);
   return (
@@ -77,7 +91,6 @@ export const Header = ({ navigation }: any) => {
             icon={faMagnifyingGlass}
             color={`${isHome ? "#FFFF" : "#000000"}`}
           />
-          {/* </div> */}
         </nav>
         {/* Desktop navigation */}
         <nav
@@ -85,13 +98,15 @@ export const Header = ({ navigation }: any) => {
             isHome && "absolute top-8 z-20 left-14"
           }  py-2 gap-6 text-base`}
         >
-          <Image
-            src={logo}
-            width={60}
-            height={60}
-            alt="To the Moun logo"
-            className="h-fit p-0"
-          />
+          <Link href={"/"}>
+            <Image
+              src={logo}
+              width={60}
+              height={60}
+              alt="To the Moun logo"
+              className="h-fit p-0"
+            />
+          </Link>
           <div className="flex flex-col justify-center">
             <div className="flex items-center px-4 py-2 h-11 border-solid border-black border-2 bg-white">
               <FontAwesomeIcon icon={faSearch} />
@@ -103,19 +118,16 @@ export const Header = ({ navigation }: any) => {
               />
             </div>
             <ul className="flex gap-1 mt-1">
-              {navigation?.data?.navigation_item?.map(
-                (item: itemType, i: number) => {
-                  return (
-                    <li
-                      key={i}
-                      className="flex items-center justify-start gap-2 border-solid border-2 border-black bg-white py-1 px-3 h-11"
-                    >
+              {navigation?.map((item: itemType, i: number) => {
+                return (
+                  <Link key={i} href={`${item.item_link?.slug}`}>
+                    <li className="flex items-center justify-start gap-2 border-solid border-2 border-black bg-white py-1 px-3 h-11">
                       <NavIcon item={item} />
                       <span>{item.item_name}</span>
                     </li>
-                  );
-                }
-              )}
+                  </Link>
+                );
+              })}
             </ul>
           </div>
         </nav>

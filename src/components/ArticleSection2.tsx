@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { Wrapper } from "./Layout";
 // import { ArticleCard } from "./ArticleSection";
 
 export type Article = {
@@ -19,7 +20,7 @@ export type ArticleSectionType = {
 
 export const ArticleSection2 = ({ data }: { data: ArticleSectionType }) => {
   return (
-    <section className="flex flex-col gap-3 my-6 box-content">
+    <Wrapper className="flex flex-col gap-3 box-content">
       <h2 className="text-2xl font-bold">{data.title}</h2>
       <div className="flex justify-between">
         <h4>{data.subtitle}</h4>
@@ -40,7 +41,7 @@ export const ArticleSection2 = ({ data }: { data: ArticleSectionType }) => {
           //   return <ArticleCard article={article} key={i} />;
         })}
       </div>
-    </section>
+    </Wrapper>
   );
 };
 
