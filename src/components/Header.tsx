@@ -1,4 +1,4 @@
-import heroVideo from "../../public/herovideo.mp4";
+// import heroVideo from "../../public/herovideo.mp4";
 import logo from "../../public/to-the-moun-logo.png";
 import Image from "next/image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -46,14 +46,14 @@ export const Header = ({ navigation }: { navigation: itemType[] }) => {
             : "bg-white px-4 py-2"
         }`}
       >
-        <video
+        {/* <video
           autoPlay
           muted
           loop
           className={`${!isHome ? "hidden" : "h-full w-full object-cover"}`}
         >
           <source src={heroVideo} type="video/mp4" />
-        </video>
+        </video> */}
         <div
           className={`${
             isHome

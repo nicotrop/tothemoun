@@ -1,8 +1,7 @@
 {
   "apiEndpoint": "https://tothemoun.prismic.io/api/v2",
   "localSliceSimulatorURL": "http://localhost:3000/slice-simulator",
-  "libraries": [
-    "@/slices"
-  ],
-  "_latest": "0.7.0"
+  "libraries": ["@/slices"],
+  "_latest": "0.7.0",
+  "framework": "next"
 }

@@ -4,9 +4,10 @@ import { Layout } from "@/components/Layout";
 
 export default function About({ navigation }: { navigation: any }) {
   return (
-    <Layout navigation={navigation}>
-      <section>Hello</section>
-    </Layout>
+    <div>hi</div>
+    // <Layout navigation={navigation}>
+    //   <section>Hello</section>
+    // </Layout>
   );
 }
 

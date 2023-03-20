@@ -1,19 +1,19 @@
 {
   "uid": {
     "__TYPE__": "UIDContent",
-    "value": "mysterious"
+    "value": "factor"
   },
   "hero_image": {
     "__TYPE__": "ImageContent",
     "origin": {
       "id": "main",
-      "url": "https://images.unsplash.com/photo-1547394765-185e1e68f34e",
-      "width": 6000,
-      "height": 4000
+      "url": "https://images.unsplash.com/photo-1537498425277-c283d32ef9db",
+      "width": 4380,
+      "height": 2895
     },
-    "url": "https://images.unsplash.com/photo-1547394765-185e1e68f34e",
-    "width": 6000,
-    "height": 4000,
+    "url": "https://images.unsplash.com/photo-1537498425277-c283d32ef9db",
+    "width": 4380,
+    "height": 2895,
     "edit": {
       "zoom": 1,
       "crop": {
@@ -33,20 +33,20 @@
   },
   "home_seo_description": {
     "__TYPE__": "FieldContent",
-    "value": "table",
+    "value": "able",
     "type": "Text"
   },
   "home_promo_banner": {
     "__TYPE__": "ImageContent",
     "origin": {
       "id": "main",
-      "url": "https://images.unsplash.com/photo-1571126770897-2d612d1f7b89",
-      "width": 3456,
-      "height": 3456
+      "url": "https://images.unsplash.com/photo-1537498425277-c283d32ef9db",
+      "width": 4380,
+      "height": 2895
     },
-    "url": "https://images.unsplash.com/photo-1571126770897-2d612d1f7b89",
-    "width": 3456,
-    "height": 3456,
+    "url": "https://images.unsplash.com/photo-1537498425277-c283d32ef9db",
+    "width": 4380,
+    "height": 2895,
     "edit": {
       "zoom": 1,
       "crop": {
@@ -63,7 +63,139 @@
       {
         "type": "paragraph",
         "content": {
-          "text": "Cillum aliqua duis officia pariatur eu eiusmod enim. Laborum eiusmod et in id proident. Quis nostrud duis do officia."
+          "text": "Proident consectetur proident ex minim ullamco aliqua minim elit eiusmod consectetur proident. Voluptate magna veniam sint consequat irure nisi Lorem culpa ipsum mollit quis voluptate."
+        }
+      }
+    ]
+  },
+  "slices": {
+    "__TYPE__": "SliceContentType",
+    "value": [
+      {
+        "key": "article_carousel$33269849-fcf9-4214-9894-6918236c0adc",
+        "name": "article_carousel",
+        "widget": {
+          "__TYPE__": "SharedSliceContent",
+          "variation": "default",
+          "primary": {
+            "title": {
+              "__TYPE__": "StructuredTextContent",
+              "value": [
+                {
+                  "type": "heading1",
+                  "content": {
+                    "text": "Respect"
+                  }
+                }
+              ]
+            },
+            "description": {
+              "__TYPE__": "StructuredTextContent",
+              "value": [
+                {
+                  "type": "paragraph",
+                  "content": {
+                    "text": "Ad consequat ipsum ut commodo pariatur tempor velit dolor et dolore occaecat fugiat."
+                  }
+                }
+              ]
+            },
+            "articles": {
+              "__TYPE__": "LinkContent",
+              "value": {
+                "__TYPE__": "DocumentLink",
+                "id": "mock_document_id"
+              }
+            }
+          },
+          "items": [
+            {
+              "__TYPE__": "GroupItemContent",
+              "value": []
+            }
+          ]
+        }
+      },
+      {
+        "key": "home_hero$847fd4cc-21fc-419d-bf80-cc5bfd6e8b89",
+        "name": "home_hero",
+        "widget": {
+          "__TYPE__": "SharedSliceContent",
+          "variation": "default",
+          "primary": {
+            "title": {
+              "__TYPE__": "StructuredTextContent",
+              "value": [
+                {
+                  "type": "heading1",
+                  "content": {
+                    "text": "Fierce"
+                  }
+                }
+              ]
+            },
+            "description": {
+              "__TYPE__": "StructuredTextContent",
+              "value": [
+                {
+                  "type": "paragraph",
+                  "content": {
+                    "text": "Eiusmod enim minim tempor."
+                  }
+                }
+              ]
+            },
+            "hero_video": {
+              "__TYPE__": "LinkContent",
+              "value": {
+                "id": "mock_Media_link",
+                "kind": "image/jpeg",
+                "name": "mock_name",
+                "url": "https://source.unsplash.com/daily",
+                "size": "0",
+                "__TYPE__": "FileLink"
+              }
+            },
+            "hero_headline": {
+              "__TYPE__": "FieldContent",
+              "value": "basis",
+              "type": "Text"
+            },
+            "menu": {
+              "__TYPE__": "LinkContent",
+              "value": {
+                "__TYPE__": "DocumentLink",
+                "id": "mock_document_id"
+              }
+            },
+            "logo": {
+              "__TYPE__": "ImageContent",
+              "origin": {
+                "id": "main",
+                "url": "https://images.unsplash.com/photo-1545239351-1141bd82e8a6",
+                "width": 3212,
+                "height": 3880
+              },
+              "url": "https://images.unsplash.com/photo-1545239351-1141bd82e8a6",
+              "width": 3212,
+              "height": 3880,
+              "edit": {
+                "zoom": 1,
+                "crop": {
+                  "x": 0,
+                  "y": 0
+                },
+                "background": "transparent"
+              },
+              "thumbnails": {}
+            }
+          },
+          "items": [
+            {
+              "__TYPE__": "GroupItemContent",
+              "value": []
+            }
+          ]
         }
       }
     ]

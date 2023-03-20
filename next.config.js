@@ -1,7 +1,11 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-    domains: ["images.unsplash.com"],
+    domains: [
+      "images.unsplash.com",
+      "images.prismic.io",
+      "tothemoun.cdn.prismic.io",
+    ],
   },
   reactStrictMode: true,
   webpack(config) {

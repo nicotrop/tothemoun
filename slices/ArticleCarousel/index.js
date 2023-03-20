@@ -2,11 +2,11 @@ import React from 'react'
 import { PrismicRichText } from '@prismicio/react'
 
 /**
- * @typedef {import("@prismicio/client").Content.HomeHeroSlice} HomeHeroSlice
- * @typedef {import("@prismicio/react").SliceComponentProps<HomeHeroSlice>} HomeHeroProps
- * @param { HomeHeroProps }
+ * @typedef {import("@prismicio/client").Content.ArticleCarouselSlice} ArticleCarouselSlice
+ * @typedef {import("@prismicio/react").SliceComponentProps<ArticleCarouselSlice>} ArticleCarouselProps
+ * @param { ArticleCarouselProps }
  */
-const HomeHero = ({ slice }) => (
+const ArticleCarousel = ({ slice }) => (
   <section>
     <span className="title">
       {
@@ -33,4 +33,4 @@ const HomeHero = ({ slice }) => (
   </section>
 )
 
-export default HomeHero
+export default ArticleCarousel

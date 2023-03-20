@@ -1,21 +1,23 @@
 import { ReactNode } from "react";
-import { Header, itemType } from "./Header";
+// import { Header, itemType } from "./Header";
 
 export const Layout = ({
   children,
-  navigation,
+  // navigation,
 }: {
   children: ReactNode;
-  navigation: itemType[];
+  // navigation: itemType[];
 }) => {
   return (
+    // <div>
+    //   <section className="w-screen">
+    //     <Header navigation={navigation} />
+    //     <main>{children}</main>
+    //   </section>
+    //   <Footer />
+    // </div>
     <div>
-      <section className="w-screen">
-        <Header navigation={navigation} />
-        {/* <main className="px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12"> */}
         <main>{children}</main>
-      </section>
-      <Footer />
     </div>
   );
 };

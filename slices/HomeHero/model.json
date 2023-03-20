@@ -11,42 +11,40 @@
       "version": "sktwi1xtmkfgx8626",
       "description": "HomeHero",
       "primary": {
-        "title": {
+        "header": {
           "type": "StructuredText",
           "config": {
-            "single": "heading1",
-            "label": "Title",
-            "placeholder": "This is where it all begins..."
+            "label": "Header",
+            "placeholder": "A nice header for your hero",
+            "allowTargetBlank": true,
+            "single": "heading1,heading2,heading3"
           }
         },
-        "description": {
+        "subheader": {
           "type": "StructuredText",
           "config": {
-            "single": "paragraph",
-            "label": "Description",
-            "placeholder": "A nice description of your feature"
+            "label": "Subtitle",
+            "placeholder": "A nice subtitle for the homepage",
+            "allowTargetBlank": true,
+            "single": "paragraph,heading5,heading6,strong,em,hyperlink"
           }
         },
         "hero_video": {
           "type": "Link",
           "config": {
-            "label": "Hero Video",
-            "placeholder": "",
+            "label": "Video",
+            "placeholder": "Paste link to video here...",
             "select": "media"
           }
         },
-        "hero_headline": {
-          "type": "Text",
-          "config": {
-            "label": "Hero Headline",
-            "placeholder": ""
-          }
-        },
-        "menu": {
+        "navigation": {
           "type": "Link",
           "config": {
-            "label": "Menu",
-            "select": "document"
+            "label": "navigation",
+            "select": "document",
+            "customtypes": [
+              "navigation"
+            ]
           }
         },
         "logo": {
@@ -55,6 +53,20 @@
             "label": "Logo",
             "constraint": {},
             "thumbnails": []
+          }
+        },
+        "opacity_color": {
+          "type": "Color",
+          "config": {
+            "label": "Opacity Color",
+            "placeholder": ""
+          }
+        },
+        "opacity_percentage": {
+          "type": "Number",
+          "config": {
+            "label": "Opacity Percentage",
+            "placeholder": ""
           }
         }
       },
