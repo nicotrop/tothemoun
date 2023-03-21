@@ -8,8 +8,8 @@ import {
 import Link from "next/link";
 import Image from "next/image";
 import { PrismicText, SliceComponentProps } from "@prismicio/react";
-import { HomeHeroSlice } from "../../.slicemachine/prismicio";
 import { Content } from "@prismicio/client";
+import { PrismicNextImage } from "@prismicio/next";
 
 /**
  * @typedef {import("@prismicio/client").Content.HomeHeroSlice} HomeHeroSlice
@@ -27,10 +27,9 @@ export const HomeHero = ({ slice }: SliceComponentProps) => {
   return (
     <header>
       <div
-        className={`w-screen h-[350px] sm:h-3/5 md:h-4/6 lg:h-5/6 xl:h-screen relative`}
+        className={`w-screen h-[350px] sm:h-3/5 md:h-4/6 lg:h-5/6 xl:h-screen relative border-solid border-black border-2`}
       >
-        <video autoPlay muted loop className={`h-full w-full object-cover`}>
-          {/* <source src={slice?.primary?.hero_video?.url} type="video/mp4" /> */}
+        <video autoPlay muted loop className={`h-full w-full object-cover z-0`}>
           <source src={slice?.primary?.hero_video?.url} type="video/mp4" />
         </video>
         <div
@@ -46,12 +45,11 @@ export const HomeHero = ({ slice }: SliceComponentProps) => {
         >
           <FontAwesomeIcon icon={faBars} color={`#FFFF`} />
           <div className="flex items-center gap-1">
-            <Image
-              src={slice?.primary?.logo?.url}
-              width={60}
-              height={60}
-              alt={"To the Moun logo"}
-              className="w-9"
+            <PrismicNextImage
+              field={slice?.primary?.logo}
+              width={40}
+              height={40}
+              className="object-contain aspect-square w-auto"
             />
             <h1
               className={`text-3xl font-black tracking-tighter uppercase text-white"
@@ -67,12 +65,11 @@ export const HomeHero = ({ slice }: SliceComponentProps) => {
           className={`hidden lg:flex absolute top-8 z-20 left-14 py-2 gap-6 text-base`}
         >
           <Link href={"/"}>
-            <Image
-              src={slice?.primary?.logo?.url}
+            <PrismicNextImage
+              field={slice?.primary?.logo}
               width={60}
               height={60}
-              alt={"To the Moun logo"}
-              className="h-fit p-0"
+              className="object-contain aspect-square w-auto"
             />
           </Link>
           <div className="flex flex-col justify-center">
@@ -87,18 +84,14 @@ export const HomeHero = ({ slice }: SliceComponentProps) => {
             </div>
             <ul className="flex gap-1 mt-1">
               {/* {navigation?.map((item: itemType, i: number) => { */}
-              {navigation?.map((elem, i) => {
+              {navigation?.map((elem: any, i: number) => {
                 return (
                   <Link key={i} href={`${elem.item_link?.slug}`}>
                     <li className="flex items-center justify-start gap-2 border-solid border-2 border-black bg-white py-1 px-3 h-11">
-                      <Image
-                        src={elem?.item_icon?.url}
+                      <PrismicNextImage
+                        field={elem?.item_icon}
                         width={20}
                         height={20}
-                        alt={
-                          elem?.item_icon?.alt ?? "to the moun navigation item"
-                        }
-                        className="w-4 h-4 overflow-hidden object-contain"
                       />
                       <span>{elem.item_name}</span>
                     </li>
@@ -108,9 +101,9 @@ export const HomeHero = ({ slice }: SliceComponentProps) => {
             </ul>
           </div>
         </nav>
-        <div className={`hidden lg:block absolute top-14 z-20 left-14 py-2`}>
-          <PrismicText>{slice?.primary?.header[0]?.text}</PrismicText>
-          <PrismicText>{slice?.primary?.subheader[0]?.text}</PrismicText>
+        <div className="custom-text-class text-white md:max-w-[800px] border-solid border-2 border-black px-4 py-2">
+          <h1>{slice?.primary?.header[0]?.text}</h1>
+          <p>{slice?.primary?.subheader[0]?.text}</p>
         </div>
       </div>
     </header>

@@ -19,3 +19,30 @@
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
 }
+
+.custom-text-class {
+  position: absolute;
+  bottom: 25%;
+  left: 3.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+@layer base {
+  h1 {
+    @apply text-xl md:text-2xl lg:text-3xl font-bold;
+  }
+  h2 {
+    @apply text-lg md:text-xl lg:text-2xl font-semibold;
+  }
+  h3 {
+    @apply text-base md:text-lg lg:text-xl font-medium;
+  }
+  h4 {
+    @apply text-base md:text-base lg:text-lg font-medium;
+  }
+  p {
+    @apply text-base font-normal;
+  }
+}

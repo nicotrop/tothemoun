@@ -2,9 +2,7 @@ import { SliceZone } from "@prismicio/react";
 import { GetStaticPropsContext, InferGetStaticPropsType } from "next";
 import { components } from "../../slices/index";
 import { Layout } from "@/components/Layout";
-import sm from "../../sm.json";
 import { createClient } from "../../prismicio";
-import { Content } from "@prismicio/client";
 
 export type StaticPageProps = InferGetStaticPropsType<typeof getStaticProps>;
 
@@ -40,17 +38,4 @@ export const getStaticProps = async ({
       page,
     },
   };
-  // <
-  //   Content.HomepageDocument & {
-  //     data: {
-  //       slices: {
-  //         primary: {
-  //           navigation: {
-  //             data: Content.NavigationDocumentData;
-  //           };
-  //         };
-  //       };
-  //     };
-  //   }
-  // >
 };
