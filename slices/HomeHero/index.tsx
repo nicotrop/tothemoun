@@ -18,8 +18,6 @@ import { PrismicNextImage } from "@prismicio/next";
  */
 
 export const HomeHero = ({ slice }: SliceComponentProps) => {
-  console.log(slice);
-
   const navigation = useMemo(() => {
     return slice?.primary?.navigation?.data?.navigation_item;
   }, [slice]);

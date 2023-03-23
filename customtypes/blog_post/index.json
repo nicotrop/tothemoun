@@ -27,13 +27,6 @@
           "placeholder": ""
         }
       },
-      "article_date": {
-        "type": "Timestamp",
-        "config": {
-          "label": "Article date",
-          "placeholder": ""
-        }
-      },
       "article_content": {
         "type": "StructuredText",
         "config": {
@@ -47,7 +40,17 @@
         "type": "Link",
         "config": {
           "label": "Article author",
-          "select": "document"
+          "select": "document",
+          "customtypes": [
+            "author"
+          ]
+        }
+      },
+      "preview": {
+        "type": "Text",
+        "config": {
+          "label": "Preview",
+          "placeholder": "Article prieview..."
         }
       }
     }

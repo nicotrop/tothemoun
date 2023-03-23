@@ -9,7 +9,7 @@
           {
             "type": "heading1",
             "content": {
-              "text": "Almost"
+              "text": "Rocket"
             }
           }
         ]
@@ -20,22 +20,10 @@
           {
             "type": "paragraph",
             "content": {
-              "text": "Ad consectetur sint cupidatat sint eiusmod enim ex eu."
+              "text": "Ut proident ipsum nisi."
             }
           }
         ]
-      },
-      "articles": {
-        "__TYPE__": "LinkContent",
-        "value": {
-          "__TYPE__": "DocumentLink",
-          "id": "mock_document_id"
-        }
-      },
-      "type": {
-        "__TYPE__": "FieldContent",
-        "value": "derniers_articles_auto",
-        "type": "Select"
       }
     },
     "items": [
@@ -43,7 +31,7 @@
         "__TYPE__": "GroupItemContent",
         "value": [
           [
-            "blogpost",
+            "collections",
             {
               "__TYPE__": "LinkContent",
               "value": {
