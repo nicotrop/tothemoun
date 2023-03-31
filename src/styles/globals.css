@@ -92,3 +92,11 @@
 .carousel-link-title {
   @apply flex gap-2 items-center text-2xl font-bold text-hover w-[fit-content] text-right min-w-[100px];
 }
+
+.custom-text-center {
+  @apply text-left lg:text-center;
+}
+
+.customer-flex-center {
+  @apply justify-start lg:justify-center;
+}

@@ -404,6 +404,17 @@ interface NavigationMenuDocumentData {
      *
      */
     menu: prismicT.GroupField<Simplify<NavigationMenuDocumentDataMenuItem>>;
+    /**
+     * Title field in *Menu Navigation*
+     *
+     * - **Field Type**: Rich Text
+     * - **Placeholder**: Entrer le titre du menu
+     * - **API ID Path**: navigation_menu.title
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    title: prismicT.RichTextField;
 }
 /**
  * Item in Menu Navigation → Menu
@@ -900,6 +911,36 @@ interface FooterSliceDefaultPrimary {
      *
      */
     socials: prismicT.RelationField<"socials">;
+    /**
+     * Input border field in *Footer → Primary*
+     *
+     * - **Field Type**: Color
+     * - **Placeholder**: Select input border color
+     * - **API ID Path**: footer.primary.input_border_color
+     * - **Documentation**: https://prismic.io/docs/core-concepts/color
+     *
+     */
+    input_border_color: prismicT.ColorField;
+    /**
+     * Input btn bg field in *Footer → Primary*
+     *
+     * - **Field Type**: Color
+     * - **Placeholder**: Select the button background color
+     * - **API ID Path**: footer.primary.input_btn_bg_color
+     * - **Documentation**: https://prismic.io/docs/core-concepts/color
+     *
+     */
+    input_btn_bg_color: prismicT.ColorField;
+    /**
+     * Input text field in *Footer → Primary*
+     *
+     * - **Field Type**: Color
+     * - **Placeholder**: Select input text color
+     * - **API ID Path**: footer.primary.input_text_input_color
+     * - **Documentation**: https://prismic.io/docs/core-concepts/color
+     *
+     */
+    input_text_input_color: prismicT.ColorField;
 }
 /**
  * Default variation for Footer Slice

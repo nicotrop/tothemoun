@@ -12,7 +12,8 @@ import { faInstagram, faTwitter } from "@fortawesome/free-brands-svg-icons";
 export type StaticPageProps = InferGetStaticPropsType<typeof getStaticProps>;
 
 export default function Home({ data }: StaticPageProps) {
-  const year = new Date().getFullYear();
+  // const year = new Date().getFullYear();
+
   return (
     <Layout>
       <SliceZone
@@ -20,7 +21,7 @@ export default function Home({ data }: StaticPageProps) {
         components={{ ...components }}
         context={data.articles}
       />
-      <Wrapper className="bg-secondary text-primary border-t-2 border-solid border-black">
+      {/* <Wrapper className="bg-secondary text-primary border-t-2 border-solid border-black">
         <footer className="flex flex-col justify-center gap-8 min-h-[400px]">
           <div className="hidden lg:flex justify-between items-start gap-3 h-60">
             <div className="w-[fit-content] min-w-[215px] h-full">
@@ -180,7 +181,7 @@ export default function Home({ data }: StaticPageProps) {
             </div>
           </div>
         </footer>
-      </Wrapper>
+      </Wrapper> */}
     </Layout>
   );
 }
@@ -321,6 +322,9 @@ export const getStaticProps = async ({
                 primary {
                   background_color
                   text_color
+                  input_border_color
+                  input_btn_bg_color
+                  input_text_input_color
                   menu_about {
                     ...on navigation_menu {
                       ...navigation_menuFields

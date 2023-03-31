@@ -28,6 +28,15 @@
             }
           }
         }
+      },
+      "title": {
+        "type": "StructuredText",
+        "config": {
+          "label": "Title",
+          "placeholder": "Entrer le titre du menu",
+          "allowTargetBlank": true,
+          "single": "heading4,heading5,heading3,strong,em"
+        }
       }
     }
   }

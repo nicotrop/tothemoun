@@ -32,16 +32,19 @@ export const Wrapper = ({
   children,
   padding = true,
   className,
+  style,
 }: {
   children: ReactNode;
   padding?: boolean;
   className?: string;
+  style?: React.CSSProperties;
 }) => {
   return (
     <section
       className={`${
         padding ? `px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12` : null
       } ${className} py-12`}
+      style={style}
     >
       {children}
     </section>

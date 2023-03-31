@@ -72,6 +72,27 @@
               "socials"
             ]
           }
+        },
+        "input_border_color": {
+          "type": "Color",
+          "config": {
+            "label": "Input border",
+            "placeholder": "Select input border color"
+          }
+        },
+        "input_btn_bg_color": {
+          "type": "Color",
+          "config": {
+            "label": "Input btn bg",
+            "placeholder": "Select the button background color"
+          }
+        },
+        "input_text_input_color": {
+          "type": "Color",
+          "config": {
+            "label": "Input text",
+            "placeholder": "Select input text color"
+          }
         }
       },
       "items": {},

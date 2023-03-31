@@ -5,12 +5,12 @@
     "primary": {
       "background_color": {
         "__TYPE__": "FieldContent",
-        "value": "#afec05",
+        "value": "#946bd3",
         "type": "Color"
       },
       "text_color": {
         "__TYPE__": "FieldContent",
-        "value": "#35eaa6",
+        "value": "#a0c247",
         "type": "Color"
       },
       "menu_about": {
@@ -33,7 +33,7 @@
           {
             "type": "paragraph",
             "content": {
-              "text": "Laborum aute aute amet adipisicing nulla et irure non laboris nostrud ut proident laborum. Est veniam anim cupidatat nisi occaecat non qui sit elit sint."
+              "text": "Culpa culpa reprehenderit nostrud non veniam in adipisicing ut ut anim nisi. Dolore cupidatat magna dolore qui sit."
             }
           }
         ]
@@ -44,7 +44,7 @@
           {
             "type": "paragraph",
             "content": {
-              "text": "Ad labore duis Lorem quis amet ut mollit ut dolor irure adipisicing magna magna amet ullamco."
+              "text": "Exercitation non eu nostrud magna labore consequat occaecat in consequat duis. Ut tempor ex anim proident ex exercitation consequat aliquip sint irure cillum. Pariatur esse anim non sunt non nostrud occaecat nisi tempor enim."
             }
           }
         ]
@@ -55,6 +55,21 @@
           "__TYPE__": "DocumentLink",
           "id": "mock_document_id"
         }
+      },
+      "input_border_color": {
+        "__TYPE__": "FieldContent",
+        "value": "#a896bb",
+        "type": "Color"
+      },
+      "input_btn_bg_color": {
+        "__TYPE__": "FieldContent",
+        "value": "#b8be19",
+        "type": "Color"
+      },
+      "input_text_input_color": {
+        "__TYPE__": "FieldContent",
+        "value": "#e46e3f",
+        "type": "Color"
       }
     },
     "items": [
