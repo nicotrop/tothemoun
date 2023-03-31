@@ -55,7 +55,7 @@ const ArticleCarouselV2 = ({
               }}
             >
               {i < 1 ? (
-                <ArticleCard article={article} compType="blog" />
+                <ArticleCard article={article} />
               ) : (
                 <ArticleCard article={article} key={i} />
               )}

@@ -10,6 +10,7 @@ import Image from "next/image";
 import { PrismicText, SliceComponentProps } from "@prismicio/react";
 import { Content } from "@prismicio/client";
 import { PrismicNextImage } from "@prismicio/next";
+import { Wrapper } from "@/components/Layout";
 
 /**
  * @typedef {import("@prismicio/client").Content.HomeHeroSlice} HomeHeroSlice
@@ -42,28 +43,28 @@ export const HomeHero = ({ slice }: SliceComponentProps) => {
         ></div>
         {/* Mobile navigation */}
         <nav
-          className={`flex lg:hidden absolute top-0 z-20 py-3 px-4 w-full h-auto overflow-hidden text-base items-center justify-between text-white`}
+          className={`flex lg:hidden absolute top-0 z-20 py-6 px-4 w-full h-auto overflow-hidden text-base items-center justify-between text-primary sm:px-6 md:px-8 lg:px-10 xl:px-12`}
         >
-          <FontAwesomeIcon icon={faBars} color={`#FFFF`} />
-          <div className="flex items-center gap-1">
+          <FontAwesomeIcon icon={faBars} />
+          <div className="flex items-center h-6 gap-1">
             <PrismicNextImage
               field={slice?.primary?.logo}
-              width={40}
-              height={40}
-              className="object-contain aspect-square w-auto h-auto"
+              width={30}
+              height={30}
+              className="object-contain aspect-square h-full w-auto"
             />
             <h1
-              className={`text-3xl font-black tracking-tighter uppercase text-white"
+              className={`text-2xl font-extrabold uppercase text-white"
               }`}
             >
               to the moun
             </h1>
           </div>
-          <FontAwesomeIcon icon={faMagnifyingGlass} color={`#FFFF`} />
+          <FontAwesomeIcon icon={faMagnifyingGlass} />
         </nav>
         {/* Desktop navigation */}
         <nav
-          className={`hidden lg:flex absolute top-8 z-20 left-14 py-2 gap-6 text-base`}
+          className={`hidden lg:flex absolute top-8 z-20 left-14 py-2 gap-6 text-base lg:px-8 xl:px-10`}
         >
           <Link href={"/"}>
             <PrismicNextImage
@@ -102,10 +103,10 @@ export const HomeHero = ({ slice }: SliceComponentProps) => {
             </ul>
           </div>
         </nav>
-        <div className="custom-text-class text-white md:max-w-[800px] border-solid border-2 border-black px-4 py-2">
+        {/* <div className="custom-text-class text-white md:max-w-[800px] py-2">
           <h1>{slice?.primary?.header[0]?.text}</h1>
           <p>{slice?.primary?.subheader[0]?.text}</p>
-        </div>
+        </div> */}
       </div>
     </header>
   );
