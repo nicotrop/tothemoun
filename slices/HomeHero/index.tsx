@@ -6,11 +6,8 @@ import {
   faMagnifyingGlass,
 } from "@fortawesome/free-solid-svg-icons";
 import Link from "next/link";
-import Image from "next/image";
-import { PrismicText, SliceComponentProps } from "@prismicio/react";
-import { Content } from "@prismicio/client";
+import { SliceComponentProps } from "@prismicio/react";
 import { PrismicNextImage } from "@prismicio/next";
-import { Wrapper } from "@/components/Layout";
 
 /**
  * @typedef {import("@prismicio/client").Content.HomeHeroSlice} HomeHeroSlice
