@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { PrismicRichText, SliceComponentProps } from "@prismicio/react";
 import Link from "next/link";
-import { Wrapper } from "@/components/Layout";
+import { Wrapper } from "../../src/components/Layout";
 import { ArticleCarouselSlice } from "../../types.generated";
 import { PrismicNextImage } from "@prismicio/next";
 import { format, parseISO } from "date-fns";
@@ -14,6 +14,7 @@ import { SwiperSlide } from "swiper/react";
  * @typedef {import("@prismicio/react").SliceComponentProps<ArticleCarouselSlice>} ArticleCarouselProps
  * @param { ArticleCarouselProps }
  */
+
 const ArticleCarousel = ({
   slice,
   context,
