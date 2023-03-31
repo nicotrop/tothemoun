@@ -38,7 +38,6 @@ export const ArticleSection2 = ({ data }: { data: ArticleSectionType }) => {
           ) : (
             <ArticleCard article={article} key={i} />
           );
-          //   return <ArticleCard article={article} key={i} />;
         })}
       </div>
     </Wrapper>
@@ -47,7 +46,6 @@ export const ArticleSection2 = ({ data }: { data: ArticleSectionType }) => {
 
 export const ArticleCard = ({ article }: { article: Article }) => {
   return (
-    // <figure className="border-solid border-black border-2 flex flex-col items-start gap-2 min-w-full sm:min-w-[300px] md:min-w-[335px] xl:min-w-0">
     <figure className="border-solid border-black border-2 flex flex-col items-start gap-2 min-w-full sm:min-w-[300px] md:min-w-[335px] xl:min-w-0">
       <Image
         src={article.imageURL}

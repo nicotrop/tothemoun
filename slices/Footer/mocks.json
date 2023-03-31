@@ -1,0 +1,67 @@
+[
+  {
+    "__TYPE__": "SharedSliceContent",
+    "variation": "default",
+    "primary": {
+      "background_color": {
+        "__TYPE__": "FieldContent",
+        "value": "#afec05",
+        "type": "Color"
+      },
+      "text_color": {
+        "__TYPE__": "FieldContent",
+        "value": "#35eaa6",
+        "type": "Color"
+      },
+      "menu_about": {
+        "__TYPE__": "LinkContent",
+        "value": {
+          "__TYPE__": "DocumentLink",
+          "id": "mock_document_id"
+        }
+      },
+      "menu_seo": {
+        "__TYPE__": "LinkContent",
+        "value": {
+          "__TYPE__": "DocumentLink",
+          "id": "mock_document_id"
+        }
+      },
+      "newsletter_header": {
+        "__TYPE__": "StructuredTextContent",
+        "value": [
+          {
+            "type": "paragraph",
+            "content": {
+              "text": "Laborum aute aute amet adipisicing nulla et irure non laboris nostrud ut proident laborum. Est veniam anim cupidatat nisi occaecat non qui sit elit sint."
+            }
+          }
+        ]
+      },
+      "newsletter_description": {
+        "__TYPE__": "StructuredTextContent",
+        "value": [
+          {
+            "type": "paragraph",
+            "content": {
+              "text": "Ad labore duis Lorem quis amet ut mollit ut dolor irure adipisicing magna magna amet ullamco."
+            }
+          }
+        ]
+      },
+      "socials": {
+        "__TYPE__": "LinkContent",
+        "value": {
+          "__TYPE__": "DocumentLink",
+          "id": "mock_document_id"
+        }
+      }
+    },
+    "items": [
+      {
+        "__TYPE__": "GroupItemContent",
+        "value": []
+      }
+    ]
+  }
+]

@@ -9,7 +9,7 @@
           {
             "type": "heading1",
             "content": {
-              "text": "Almost"
+              "text": "Chart"
             }
           }
         ]
@@ -20,15 +20,10 @@
           {
             "type": "paragraph",
             "content": {
-              "text": "Ad consectetur sint cupidatat sint eiusmod enim ex eu."
+              "text": "Nisi ipsum labore aliquip do magna nisi proident Lorem proident mollit enim dolor commodo Lorem commodo."
             }
           }
         ]
-      },
-      "type": {
-        "__TYPE__": "FieldContent",
-        "value": "derniers_articles_auto",
-        "type": "Select"
       }
     },
     "items": [

@@ -25,7 +25,10 @@ export const HomeHero = ({ slice }: SliceComponentProps) => {
   return (
     <header>
       <div
-        className={`w-screen h-[350px] sm:h-3/5 md:h-4/6 lg:h-5/6 xl:h-screen relative border-solid border-black border-2`}
+        className={`w-screen h-[350px] sm:h-3/5 md:h-4/6 lg:h-5/6 xl:h-screen relative`}
+        style={{
+          borderBottom: `2px solid black`,
+        }}
       >
         <video autoPlay muted loop className={`h-full w-full object-cover z-0`}>
           <source src={slice?.primary?.hero_video?.url} type="video/mp4" />
@@ -39,7 +42,7 @@ export const HomeHero = ({ slice }: SliceComponentProps) => {
         ></div>
         {/* Mobile navigation */}
         <nav
-          className={`flex lg:hidden absolute top-0 z-20 py-3 px-4 w-full overflow-hidden text-base items-center justify-between text-white`}
+          className={`flex lg:hidden absolute top-0 z-20 py-3 px-4 w-full h-auto overflow-hidden text-base items-center justify-between text-white`}
         >
           <FontAwesomeIcon icon={faBars} color={`#FFFF`} />
           <div className="flex items-center gap-1">
@@ -47,7 +50,7 @@ export const HomeHero = ({ slice }: SliceComponentProps) => {
               field={slice?.primary?.logo}
               width={40}
               height={40}
-              className="object-contain aspect-square w-auto"
+              className="object-contain aspect-square w-auto h-auto"
             />
             <h1
               className={`text-3xl font-black tracking-tighter uppercase text-white"
@@ -67,7 +70,7 @@ export const HomeHero = ({ slice }: SliceComponentProps) => {
               field={slice?.primary?.logo}
               width={60}
               height={60}
-              className="object-contain aspect-square w-auto"
+              className="object-contain aspect-square w-auto h-auto border-solid"
             />
           </Link>
           <div className="flex flex-col justify-center">
@@ -81,15 +84,15 @@ export const HomeHero = ({ slice }: SliceComponentProps) => {
               />
             </div>
             <ul className="flex gap-1 mt-1">
-              {/* {navigation?.map((item: itemType, i: number) => { */}
               {navigation?.map((elem: any, i: number) => {
                 return (
                   <Link key={i} href={`${elem.item_link?.slug}`}>
-                    <li className="flex items-center justify-start gap-2 border-solid border-2 border-black bg-white py-1 px-3 h-11">
+                    <li className="flex items-center justify-start gap-2 border-solid border-2 border-black bg-white py-1 px-3 h-11 w-auto">
                       <PrismicNextImage
                         field={elem?.item_icon}
                         width={20}
                         height={20}
+                        className="object-contain w-auto h-auto"
                       />
                       <span>{elem.item_name}</span>
                     </li>

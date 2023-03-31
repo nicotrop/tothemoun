@@ -1,15 +1,15 @@
 {
-  "id": "home_collection",
+  "id": "article_carousel_v2",
   "type": "SharedSlice",
-  "name": "HomeCollection",
-  "description": "HomeCollection",
+  "name": "ArticleCarouselV2",
+  "description": "ArticleCarouselV2",
   "variations": [
     {
       "id": "default",
       "name": "Default",
       "docURL": "...",
       "version": "sktwi1xtmkfgx8626",
-      "description": "HomeCollection",
+      "description": "ArticleCarouselV2",
       "primary": {
         "title": {
           "type": "StructuredText",
@@ -29,13 +29,13 @@
         }
       },
       "items": {
-        "collections": {
+        "blogpost": {
           "type": "Link",
           "config": {
-            "label": "Collections",
+            "label": "BlogPost",
             "select": "document",
             "customtypes": [
-              "blog_collection"
+              "blog_post"
             ]
           }
         }

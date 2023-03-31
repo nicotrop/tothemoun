@@ -380,7 +380,7 @@ interface HomepageDocumentData {
  * Slice for *Homepage → Slice Zone*
  *
  */
-type HomepageDocumentDataSlicesSlice = ArticleCarouselSlice | HomeHeroSlice | HomeCollectionSlice;
+type HomepageDocumentDataSlicesSlice = ArticleCarouselSlice | HomeHeroSlice | HomeCollectionSlice | PromotionBannerSlice | ArticleCarouselV2Slice | SeoSectionSlice | FooterSlice;
 /**
  * Homepage document from Prismic
  *
@@ -391,6 +391,56 @@ type HomepageDocumentDataSlicesSlice = ArticleCarouselSlice | HomeHeroSlice | Ho
  * @typeParam Lang - Language API ID of the document.
  */
 export type HomepageDocument<Lang extends string = string> = prismicT.PrismicDocumentWithUID<Simplify<HomepageDocumentData>, "homepage", Lang>;
+/** Content for Menu Navigation documents */
+interface NavigationMenuDocumentData {
+    /**
+     * Menu field in *Menu Navigation*
+     *
+     * - **Field Type**: Group
+     * - **Placeholder**: *None*
+     * - **API ID Path**: navigation_menu.menu[]
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/group
+     *
+     */
+    menu: prismicT.GroupField<Simplify<NavigationMenuDocumentDataMenuItem>>;
+}
+/**
+ * Item in Menu Navigation → Menu
+ *
+ */
+export interface NavigationMenuDocumentDataMenuItem {
+    /**
+     * Link field in *Menu Navigation → Menu*
+     *
+     * - **Field Type**: Link
+     * - **Placeholder**: *None*
+     * - **API ID Path**: navigation_menu.menu[].link
+     * - **Documentation**: https://prismic.io/docs/core-concepts/link-content-relationship
+     *
+     */
+    link: prismicT.LinkField;
+    /**
+     * Text field in *Menu Navigation → Menu*
+     *
+     * - **Field Type**: Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: navigation_menu.menu[].text
+     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+     *
+     */
+    text: prismicT.KeyTextField;
+}
+/**
+ * Menu Navigation document from Prismic
+ *
+ * - **API ID**: `navigation_menu`
+ * - **Repeatable**: `true`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type NavigationMenuDocument<Lang extends string = string> = prismicT.PrismicDocumentWithoutUID<Simplify<NavigationMenuDocumentData>, "navigation_menu", Lang>;
 /** Content for Navigation documents */
 interface NavigationDocumentData {
     /**
@@ -519,7 +569,57 @@ interface PageDocumentData {
  * @typeParam Lang - Language API ID of the document.
  */
 export type PageDocument<Lang extends string = string> = prismicT.PrismicDocumentWithUID<Simplify<PageDocumentData>, "page", Lang>;
-export type AllDocumentTypes = ArticleGroupDocument | AuthorDocument | BlogCollectionDocument | BlogPostDocument | CategoryDocument | HomepageDocument | NavigationDocument | PageDocument;
+/** Content for Socials documents */
+interface SocialsDocumentData {
+    /**
+     * Media Info field in *Socials*
+     *
+     * - **Field Type**: Group
+     * - **Placeholder**: *None*
+     * - **API ID Path**: socials.media_info[]
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/group
+     *
+     */
+    media_info: prismicT.GroupField<Simplify<SocialsDocumentDataMediaInfoItem>>;
+}
+/**
+ * Item in Socials → Media Info
+ *
+ */
+export interface SocialsDocumentDataMediaInfoItem {
+    /**
+     * Social Media field in *Socials → Media Info*
+     *
+     * - **Field Type**: Select
+     * - **Placeholder**: Select the social media
+     * - **API ID Path**: socials.media_info[].social_media
+     * - **Documentation**: https://prismic.io/docs/core-concepts/select
+     *
+     */
+    social_media: prismicT.SelectField<"Instagram" | "Pinterest" | "Email" | "TikTok">;
+    /**
+     * Social link field in *Socials → Media Info*
+     *
+     * - **Field Type**: Link
+     * - **Placeholder**: *None*
+     * - **API ID Path**: socials.media_info[].social_link
+     * - **Documentation**: https://prismic.io/docs/core-concepts/link-content-relationship
+     *
+     */
+    social_link: prismicT.LinkField;
+}
+/**
+ * Socials document from Prismic
+ *
+ * - **API ID**: `socials`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type SocialsDocument<Lang extends string = string> = prismicT.PrismicDocumentWithoutUID<Simplify<SocialsDocumentData>, "socials", Lang>;
+export type AllDocumentTypes = ArticleGroupDocument | AuthorDocument | BlogCollectionDocument | BlogPostDocument | CategoryDocument | HomepageDocument | NavigationMenuDocument | NavigationDocument | PageDocument | SocialsDocument;
 /**
  * Primary content in ArticleCarousel → Primary
  *
@@ -545,16 +645,6 @@ interface ArticleCarouselSliceDefaultPrimary {
      *
      */
     description: prismicT.RichTextField;
-    /**
-     * Articles field in *ArticleCarousel → Primary*
-     *
-     * - **Field Type**: Content Relationship
-     * - **Placeholder**: *None*
-     * - **API ID Path**: article_carousel.primary.articles
-     * - **Documentation**: https://prismic.io/docs/core-concepts/link-content-relationship
-     *
-     */
-    articles: prismicT.RelationField<"article_group">;
     /**
      * Type field in *ArticleCarousel → Primary*
      *
@@ -606,12 +696,77 @@ type ArticleCarouselSliceVariation = ArticleCarouselSliceDefault;
  */
 export type ArticleCarouselSlice = prismicT.SharedSlice<"article_carousel", ArticleCarouselSliceVariation>;
 /**
- * Primary content in HomeCollection → Primary
+ * Primary content in ArticleCarouselV2 → Primary
+ *
+ */
+interface ArticleCarouselV2SliceDefaultPrimary {
+    /**
+     * Title field in *ArticleCarouselV2 → Primary*
+     *
+     * - **Field Type**: Title
+     * - **Placeholder**: This is where it all begins...
+     * - **API ID Path**: article_carousel_v2.primary.title
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    title: prismicT.TitleField;
+    /**
+     * Description field in *ArticleCarouselV2 → Primary*
+     *
+     * - **Field Type**: Rich Text
+     * - **Placeholder**: A nice description of your feature
+     * - **API ID Path**: article_carousel_v2.primary.description
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    description: prismicT.RichTextField;
+}
+/**
+ * Item in ArticleCarouselV2 → Items
+ *
+ */
+export interface ArticleCarouselV2SliceDefaultItem {
+    /**
+     * BlogPost field in *ArticleCarouselV2 → Items*
+     *
+     * - **Field Type**: Content Relationship
+     * - **Placeholder**: *None*
+     * - **API ID Path**: article_carousel_v2.items[].blogpost
+     * - **Documentation**: https://prismic.io/docs/core-concepts/link-content-relationship
+     *
+     */
+    blogpost: prismicT.RelationField<"blog_post">;
+}
+/**
+ * Default variation for ArticleCarouselV2 Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: `ArticleCarouselV2`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type ArticleCarouselV2SliceDefault = prismicT.SharedSliceVariation<"default", Simplify<ArticleCarouselV2SliceDefaultPrimary>, Simplify<ArticleCarouselV2SliceDefaultItem>>;
+/**
+ * Slice variation for *ArticleCarouselV2*
+ *
+ */
+type ArticleCarouselV2SliceVariation = ArticleCarouselV2SliceDefault;
+/**
+ * ArticleCarouselV2 Shared Slice
+ *
+ * - **API ID**: `article_carousel_v2`
+ * - **Description**: `ArticleCarouselV2`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type ArticleCarouselV2Slice = prismicT.SharedSlice<"article_carousel_v2", ArticleCarouselV2SliceVariation>;
+/**
+ * Primary content in CollectionCarousel → Primary
  *
  */
 interface HomeCollectionSliceDefaultPrimary {
     /**
-     * Title field in *HomeCollection → Primary*
+     * Title field in *CollectionCarousel → Primary*
      *
      * - **Field Type**: Title
      * - **Placeholder**: This is where it all begins...
@@ -621,7 +776,7 @@ interface HomeCollectionSliceDefaultPrimary {
      */
     title: prismicT.TitleField;
     /**
-     * Description field in *HomeCollection → Primary*
+     * Description field in *CollectionCarousel → Primary*
      *
      * - **Field Type**: Rich Text
      * - **Placeholder**: A nice description of your feature
@@ -632,12 +787,12 @@ interface HomeCollectionSliceDefaultPrimary {
     description: prismicT.RichTextField;
 }
 /**
- * Item in HomeCollection → Items
+ * Item in CollectionCarousel → Items
  *
  */
 export interface HomeCollectionSliceDefaultItem {
     /**
-     * Collections field in *HomeCollection → Items*
+     * Collections field in *CollectionCarousel → Items*
      *
      * - **Field Type**: Content Relationship
      * - **Placeholder**: *None*
@@ -648,7 +803,7 @@ export interface HomeCollectionSliceDefaultItem {
     collections: prismicT.RelationField<"blog_collection">;
 }
 /**
- * Default variation for HomeCollection Slice
+ * Default variation for CollectionCarousel Slice
  *
  * - **API ID**: `default`
  * - **Description**: `HomeCollection`
@@ -657,12 +812,12 @@ export interface HomeCollectionSliceDefaultItem {
  */
 export type HomeCollectionSliceDefault = prismicT.SharedSliceVariation<"default", Simplify<HomeCollectionSliceDefaultPrimary>, Simplify<HomeCollectionSliceDefaultItem>>;
 /**
- * Slice variation for *HomeCollection*
+ * Slice variation for *CollectionCarousel*
  *
  */
 type HomeCollectionSliceVariation = HomeCollectionSliceDefault;
 /**
- * HomeCollection Shared Slice
+ * CollectionCarousel Shared Slice
  *
  * - **API ID**: `home_collection`
  * - **Description**: `HomeCollection`
@@ -670,6 +825,105 @@ type HomeCollectionSliceVariation = HomeCollectionSliceDefault;
  *
  */
 export type HomeCollectionSlice = prismicT.SharedSlice<"home_collection", HomeCollectionSliceVariation>;
+/**
+ * Primary content in Footer → Primary
+ *
+ */
+interface FooterSliceDefaultPrimary {
+    /**
+     * Background Color field in *Footer → Primary*
+     *
+     * - **Field Type**: Color
+     * - **Placeholder**: *None*
+     * - **API ID Path**: footer.primary.background_color
+     * - **Documentation**: https://prismic.io/docs/core-concepts/color
+     *
+     */
+    background_color: prismicT.ColorField;
+    /**
+     * Text Color field in *Footer → Primary*
+     *
+     * - **Field Type**: Color
+     * - **Placeholder**: *None*
+     * - **API ID Path**: footer.primary.text_color
+     * - **Documentation**: https://prismic.io/docs/core-concepts/color
+     *
+     */
+    text_color: prismicT.ColorField;
+    /**
+     * Menu about field in *Footer → Primary*
+     *
+     * - **Field Type**: Content Relationship
+     * - **Placeholder**: *None*
+     * - **API ID Path**: footer.primary.menu_about
+     * - **Documentation**: https://prismic.io/docs/core-concepts/link-content-relationship
+     *
+     */
+    menu_about: prismicT.RelationField<"navigation_menu">;
+    /**
+     * Menu_seo field in *Footer → Primary*
+     *
+     * - **Field Type**: Content Relationship
+     * - **Placeholder**: *None*
+     * - **API ID Path**: footer.primary.menu_seo
+     * - **Documentation**: https://prismic.io/docs/core-concepts/link-content-relationship
+     *
+     */
+    menu_seo: prismicT.RelationField<"navigation_menu">;
+    /**
+     * Newsletter Header field in *Footer → Primary*
+     *
+     * - **Field Type**: Rich Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: footer.primary.newsletter_header
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    newsletter_header: prismicT.RichTextField;
+    /**
+     * Newsletter description field in *Footer → Primary*
+     *
+     * - **Field Type**: Rich Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: footer.primary.newsletter_description
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    newsletter_description: prismicT.RichTextField;
+    /**
+     * Socials field in *Footer → Primary*
+     *
+     * - **Field Type**: Content Relationship
+     * - **Placeholder**: *None*
+     * - **API ID Path**: footer.primary.socials
+     * - **Documentation**: https://prismic.io/docs/core-concepts/link-content-relationship
+     *
+     */
+    socials: prismicT.RelationField<"socials">;
+}
+/**
+ * Default variation for Footer Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: `Footer`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type FooterSliceDefault = prismicT.SharedSliceVariation<"default", Simplify<FooterSliceDefaultPrimary>, never>;
+/**
+ * Slice variation for *Footer*
+ *
+ */
+type FooterSliceVariation = FooterSliceDefault;
+/**
+ * Footer Shared Slice
+ *
+ * - **API ID**: `footer`
+ * - **Description**: `Footer`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type FooterSlice = prismicT.SharedSlice<"footer", FooterSliceVariation>;
 /**
  * Primary content in HomeHero → Primary
  *
@@ -769,11 +1023,119 @@ type HomeHeroSliceVariation = HomeHeroSliceDefault;
  *
  */
 export type HomeHeroSlice = prismicT.SharedSlice<"home_hero", HomeHeroSliceVariation>;
+/**
+ * Primary content in PromotionBanner → Primary
+ *
+ */
+interface PromotionBannerSliceDefaultPrimary {
+    /**
+     * Banner field in *PromotionBanner → Primary*
+     *
+     * - **Field Type**: Image
+     * - **Placeholder**: *None*
+     * - **API ID Path**: promotion_banner.primary.banner
+     * - **Documentation**: https://prismic.io/docs/core-concepts/image
+     *
+     */
+    banner: prismicT.ImageField<never>;
+    /**
+     * Button text field in *PromotionBanner → Primary*
+     *
+     * - **Field Type**: Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: promotion_banner.primary.button_text
+     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+     *
+     */
+    button_text: prismicT.KeyTextField;
+    /**
+     * Button link field in *PromotionBanner → Primary*
+     *
+     * - **Field Type**: Link
+     * - **Placeholder**: *None*
+     * - **API ID Path**: promotion_banner.primary.button_link
+     * - **Documentation**: https://prismic.io/docs/core-concepts/link-content-relationship
+     *
+     */
+    button_link: prismicT.LinkField;
+}
+/**
+ * Default variation for PromotionBanner Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: `PromotionBanner`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type PromotionBannerSliceDefault = prismicT.SharedSliceVariation<"default", Simplify<PromotionBannerSliceDefaultPrimary>, never>;
+/**
+ * Slice variation for *PromotionBanner*
+ *
+ */
+type PromotionBannerSliceVariation = PromotionBannerSliceDefault;
+/**
+ * PromotionBanner Shared Slice
+ *
+ * - **API ID**: `promotion_banner`
+ * - **Description**: `PromotionBanner`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type PromotionBannerSlice = prismicT.SharedSlice<"promotion_banner", PromotionBannerSliceVariation>;
+/**
+ * Primary content in SeoSection → Primary
+ *
+ */
+interface SeoSectionSliceDefaultPrimary {
+    /**
+     * Title field in *SeoSection → Primary*
+     *
+     * - **Field Type**: Rich Text
+     * - **Placeholder**: This is where it all begins...
+     * - **API ID Path**: seo_section.primary.title
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    title: prismicT.RichTextField;
+    /**
+     * Description field in *SeoSection → Primary*
+     *
+     * - **Field Type**: Rich Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: seo_section.primary.description
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    description: prismicT.RichTextField;
+}
+/**
+ * Default variation for SeoSection Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: `SeoSection`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type SeoSectionSliceDefault = prismicT.SharedSliceVariation<"default", Simplify<SeoSectionSliceDefaultPrimary>, never>;
+/**
+ * Slice variation for *SeoSection*
+ *
+ */
+type SeoSectionSliceVariation = SeoSectionSliceDefault;
+/**
+ * SeoSection Shared Slice
+ *
+ * - **API ID**: `seo_section`
+ * - **Description**: `SeoSection`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type SeoSectionSlice = prismicT.SharedSlice<"seo_section", SeoSectionSliceVariation>;
 declare module "@prismicio/client" {
     interface CreateClient {
         (repositoryNameOrEndpoint: string, options?: prismic.ClientConfig): prismic.Client<AllDocumentTypes>;
     }
     namespace Content {
-        export type { ArticleGroupDocumentData, ArticleGroupDocumentDataArticlesItem, ArticleGroupDocument, AuthorDocumentData, AuthorDocument, BlogCollectionDocumentData, BlogCollectionDocument, BlogPostDocumentData, BlogPostDocument, CategoryDocumentData, CategoryDocument, HomepageDocumentData, HomepageDocumentDataSlicesSlice, HomepageDocument, NavigationDocumentData, NavigationDocumentDataNavigationItemItem, NavigationDocument, PageDocumentData, PageDocument, AllDocumentTypes, ArticleCarouselSliceDefaultPrimary, ArticleCarouselSliceDefaultItem, ArticleCarouselSliceDefault, ArticleCarouselSliceVariation, ArticleCarouselSlice, HomeCollectionSliceDefaultPrimary, HomeCollectionSliceDefaultItem, HomeCollectionSliceDefault, HomeCollectionSliceVariation, HomeCollectionSlice, HomeHeroSliceDefaultPrimary, HomeHeroSliceDefault, HomeHeroSliceVariation, HomeHeroSlice };
+        export type { ArticleGroupDocumentData, ArticleGroupDocumentDataArticlesItem, ArticleGroupDocument, AuthorDocumentData, AuthorDocument, BlogCollectionDocumentData, BlogCollectionDocument, BlogPostDocumentData, BlogPostDocument, CategoryDocumentData, CategoryDocument, HomepageDocumentData, HomepageDocumentDataSlicesSlice, HomepageDocument, NavigationMenuDocumentData, NavigationMenuDocumentDataMenuItem, NavigationMenuDocument, NavigationDocumentData, NavigationDocumentDataNavigationItemItem, NavigationDocument, PageDocumentData, PageDocument, SocialsDocumentData, SocialsDocumentDataMediaInfoItem, SocialsDocument, AllDocumentTypes, ArticleCarouselSliceDefaultPrimary, ArticleCarouselSliceDefaultItem, ArticleCarouselSliceDefault, ArticleCarouselSliceVariation, ArticleCarouselSlice, ArticleCarouselV2SliceDefaultPrimary, ArticleCarouselV2SliceDefaultItem, ArticleCarouselV2SliceDefault, ArticleCarouselV2SliceVariation, ArticleCarouselV2Slice, HomeCollectionSliceDefaultPrimary, HomeCollectionSliceDefaultItem, HomeCollectionSliceDefault, HomeCollectionSliceVariation, HomeCollectionSlice, FooterSliceDefaultPrimary, FooterSliceDefault, FooterSliceVariation, FooterSlice, HomeHeroSliceDefaultPrimary, HomeHeroSliceDefault, HomeHeroSliceVariation, HomeHeroSlice, PromotionBannerSliceDefaultPrimary, PromotionBannerSliceDefault, PromotionBannerSliceVariation, PromotionBannerSlice, SeoSectionSliceDefaultPrimary, SeoSectionSliceDefault, SeoSectionSliceVariation, SeoSectionSlice };
     }
 }

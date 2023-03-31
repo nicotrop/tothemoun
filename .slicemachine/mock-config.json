@@ -9,7 +9,13 @@
     },
     "page": {},
     "homepage": {},
-    "article_group": {}
+    "article_group": {},
+    "navigation_menu": {
+      "menu": {}
+    },
+    "socials": {
+      "media_info": {}
+    }
   },
   "slices": {
     "HomeHero": {
@@ -26,6 +32,26 @@
     "HomeCollection": {
       "default": {
         "items": {}
+      }
+    },
+    "PromotionBanner": {
+      "default": {
+        "primary": {}
+      }
+    },
+    "ArticleCarouselV2": {
+      "default": {
+        "items": {}
+      }
+    },
+    "SeoSection": {
+      "default": {
+        "primary": {}
+      }
+    },
+    "Footer": {
+      "default": {
+        "primary": {}
       }
     }
   }

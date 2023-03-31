@@ -1,0 +1,39 @@
+{
+  "id": "socials",
+  "label": "Socials",
+  "repeatable": false,
+  "status": true,
+  "json": {
+    "Main": {
+      "media_info": {
+        "type": "Group",
+        "config": {
+          "label": "Media Info",
+          "fields": {
+            "social_media": {
+              "type": "Select",
+              "config": {
+                "label": "Social Media",
+                "placeholder": "Select the social media",
+                "options": [
+                  "Instagram",
+                  "Pinterest",
+                  "Email",
+                  "TikTok"
+                ]
+              }
+            },
+            "social_link": {
+              "type": "Link",
+              "config": {
+                "label": "Social link",
+                "placeholder": "",
+                "select": null
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

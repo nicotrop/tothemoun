@@ -1,0 +1,30 @@
+{
+  "menu": {
+    "__TYPE__": "GroupContentType",
+    "value": [
+      {
+        "__TYPE__": "GroupItemContent",
+        "value": [
+          [
+            "link",
+            {
+              "__TYPE__": "LinkContent",
+              "value": {
+                "__TYPE__": "ExternalLink",
+                "url": "https://prismic.io"
+              }
+            }
+          ],
+          [
+            "text",
+            {
+              "__TYPE__": "FieldContent",
+              "value": "colony",
+              "type": "Text"
+            }
+          ]
+        ]
+      }
+    ]
+  }
+}

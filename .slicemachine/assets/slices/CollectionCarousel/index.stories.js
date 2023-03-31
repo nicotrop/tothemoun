@@ -1,7 +1,7 @@
-import MyComponent from '../../../../slices/HomeCollection';
+import MyComponent from '../../../../slices/CollectionCarousel';
 
 export default {
-  title: 'slices/HomeCollection'
+  title: 'slices/CollectionCarousel'
 }
 
 
