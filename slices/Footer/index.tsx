@@ -1,7 +1,7 @@
 import React from "react";
 import { PrismicRichText, SliceComponentProps } from "@prismicio/react";
 import { FooterSlice } from "../../.slicemachine/prismicio";
-import { Wrapper } from "../../src/components/Layout";
+import { Wrapper } from "@/components/Layout";
 import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -9,6 +9,7 @@ import {
   faPinterest,
   faTiktok,
 } from "@fortawesome/free-brands-svg-icons";
+import { LinkField, RichTextField } from "@prismicio/types";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import { IconProp } from "@fortawesome/fontawesome-svg-core";
 
