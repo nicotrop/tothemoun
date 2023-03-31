@@ -23,6 +23,7 @@
     "**/*.ts",
     "**/*.tsx",
     "./src/**/*.tsx",
+    "./slices/**/*.tsx",
     "./.slicemachine/prismicio.d.ts"
   ],
   "exclude": ["node_modules", ".slicemachine"]
