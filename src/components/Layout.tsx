@@ -1,6 +1,6 @@
 import { ReactNode } from "react";
 
-export const Layout = ({ children }: { children: ReactNode }) => {
+export const layout = ({ children }: { children: ReactNode }) => {
   return (
     <div>
       <main>{children}</main>
