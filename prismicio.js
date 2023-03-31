@@ -5,7 +5,7 @@ import sm from "./sm.json";
 /**
  * The project's Prismic repository name.
  */
-const repositoryName = prismic.getRepositoryName(sm.apiEndpoint);
+export const repositoryName = prismic.getRepositoryName(sm.apiEndpoint);
 
 // Update the routes array to match your project's route structure
 /** @type {prismic.ClientConfig['routes']} **/

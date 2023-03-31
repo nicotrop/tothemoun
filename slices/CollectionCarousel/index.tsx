@@ -29,7 +29,7 @@ const HomeCollection = ({ slice }: SliceComponentProps) => {
           <p>start by editing this slice from inside Slice Machine!</p>
         )}
       </span>
-      <hr className="py-1 border-solid border-b-2 border-black" />
+      <hr className="py-1 border-solid border-t-2 border-black" />
       <SwiperColCarousel>
         {slice?.items?.map((collection: any, i: number) => {
           return (

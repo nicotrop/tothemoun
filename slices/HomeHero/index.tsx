@@ -9,11 +9,11 @@ import Link from "next/link";
 import { SliceComponentProps } from "@prismicio/react";
 import { PrismicNextImage } from "@prismicio/next";
 
-/**
- * @typedef {import("@prismicio/client").Content.HomeHeroSlice} HomeHeroSlice
- * @typedef {import("@prismicio/react").SliceComponentProps<HomeHeroSlice>} HomeHeroProps
- * @param { HomeHeroProps }
- */
+// /**
+//  * @typedef {import("@prismicio/client").Content.HomeHeroSlice} HomeHeroSlice
+//  * @typedef {import("@prismicio/react").SliceComponentProps<HomeHeroSlice>} HomeHeroProps
+//  * @param { HomeHeroProps }
+//  */
 
 export const HomeHero = ({ slice }: SliceComponentProps) => {
   const navigation = useMemo(() => {
@@ -90,7 +90,7 @@ export const HomeHero = ({ slice }: SliceComponentProps) => {
                         field={elem?.item_icon}
                         width={20}
                         height={20}
-                        className="object-contain w-auto h-auto"
+                        className="object-contain w-auto h-5"
                       />
                       <span>{elem.item_name}</span>
                     </li>

@@ -5,11 +5,11 @@ import { Wrapper } from "@/components/Layout";
 import { PromotionBannerSlice } from "../../.slicemachine/prismicio";
 import { PrismicNextImage } from "@prismicio/next";
 
-/**
- * @typedef {import("@prismicio/client").Content.PromotionBannerSlice} PromotionBannerSlice
- * @typedef {import("@prismicio/react").SliceComponentProps<PromotionBannerSlice>} PromotionBannerProps
- * @param { PromotionBannerProps }
- */
+// /**
+//  * @typedef {import("@prismicio/client").Content.PromotionBannerSlice} PromotionBannerSlice
+//  * @typedef {import("@prismicio/react").SliceComponentProps<PromotionBannerSlice>} PromotionBannerProps
+//  * @param { PromotionBannerProps }
+//  */
 
 const PromotionBanner = ({
   slice,
