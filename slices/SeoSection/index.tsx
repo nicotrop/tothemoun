@@ -1,6 +1,6 @@
 import React from "react";
 import { PrismicRichText, SliceComponentProps } from "@prismicio/react";
-import { Wrapper } from "@/components/Layout";
+import { Wrapper } from "../../src/components/Layout";
 import { SeoSectionSlice } from "../../.slicemachine/prismicio";
 
 // /**

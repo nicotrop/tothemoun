@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { PrismicRichText, SliceComponentProps } from "@prismicio/react";
 import Link from "next/link";
-import { Wrapper } from "@/components/Layout";
+import { Wrapper } from "../../src/components/Layout";
 import { ArticleCarouselSlice } from "../../types.generated";
 import { PrismicNextImage } from "@prismicio/next";
 import { format, parseISO } from "date-fns";
 import fr from "date-fns/locale/fr";
-import { SwiperCarousel } from "@/components/SwiperCarousel";
+import { SwiperCarousel } from "../../src/components/SwiperCarousel";
 import { SwiperSlide } from "swiper/react";
 
 /**
