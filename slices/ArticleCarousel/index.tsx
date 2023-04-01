@@ -6,8 +6,8 @@ import { PrismicNextImage } from "@prismicio/next";
 import { format, parseISO } from "date-fns";
 import fr from "date-fns/locale/fr";
 import { SwiperSlide } from "swiper/react";
-import { Wrapper } from "@/components/layout";
-import { SwiperCarousel } from "@/components/swiperCarousel";
+import { Wrapper } from "@/components/global";
+import { SwiperCarousel } from "@/components/sliders";
 
 /**
  * @typedef {import("@prismicio/client").Content.ArticleCarouselSlice} ArticleCarouselSlice

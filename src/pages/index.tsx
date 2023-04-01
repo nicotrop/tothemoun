@@ -1,7 +1,7 @@
 import { SliceZone } from "@prismicio/react";
 import { GetStaticPropsContext, InferGetStaticPropsType } from "next";
 import { components } from "../../slices/index";
-import { Layout } from "@/components/layout";
+import { Layout } from "@/components/global";
 import { createClient } from "../../prismicio";
 import "swiper/swiper.min.css";
 import "swiper/css/bundle";

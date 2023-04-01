@@ -2,8 +2,8 @@ import React from "react";
 import { PrismicRichText, SliceComponentProps } from "@prismicio/react";
 import Link from "next/link";
 import { PrismicNextImage } from "@prismicio/next";
-import { Wrapper } from "@/components/layout";
-import { SwiperColCarousel } from "@/components/swiperCarousel";
+import { Wrapper } from "@/components/global";
+import { SwiperColCarousel } from "@/components/sliders";
 import { SwiperSlide } from "swiper/react";
 
 /**
