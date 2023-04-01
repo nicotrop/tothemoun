@@ -1,10 +1,13 @@
 import { SliceZone } from "@prismicio/react";
 import { GetStaticPropsContext, InferGetStaticPropsType } from "next";
 import { components } from "../../slices/index";
-import { Layout } from "@/components/global";
+import { Layout, Wrapper } from "@/components/global";
 import { createClient } from "../../prismicio";
 import "swiper/swiper.min.css";
 import "swiper/css/bundle";
+import { arrayArticles } from "@/utils/mockData";
+import Image from "next/image";
+import { InterceptMixedGrid } from "@/components/mixedGrid";
 
 export type StaticPageProps = InferGetStaticPropsType<typeof getStaticProps>;
 
@@ -16,6 +19,7 @@ export default function Home({ data }: StaticPageProps) {
         components={{ ...components }}
         context={data.articles}
       />
+      <InterceptMixedGrid></InterceptMixedGrid>
     </Layout>
   );
 }

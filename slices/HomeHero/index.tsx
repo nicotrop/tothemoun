@@ -9,12 +9,6 @@ import Link from "next/link";
 import { SliceComponentProps } from "@prismicio/react";
 import { PrismicNextImage } from "@prismicio/next";
 
-// /**
-//  * @typedef {import("@prismicio/client").Content.HomeHeroSlice} HomeHeroSlice
-//  * @typedef {import("@prismicio/react").SliceComponentProps<HomeHeroSlice>} HomeHeroProps
-//  * @param { HomeHeroProps }
-//  */
-
 export const HomeHero = ({ slice }: SliceComponentProps) => {
   const navigation = useMemo(() => {
     return slice?.primary?.navigation?.data?.navigation_item;

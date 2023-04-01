@@ -51,7 +51,7 @@ const ArticleCarousel = ({
     <Wrapper className="flex flex-col gap-3 box-content">
       <Link
         href={"/"}
-        className="flex gap-2 items-center text-2xl font-bold text-hover w-[fit-content] text-right min-w-[100px] break-keep-all"
+        className="flex gap-2 items-center text-2xl font-bold text-hover w-[fit-content] text-right min-w-[100px] break-keep-all font-title tracking-tighter uppercase"
       >
         {slice.primary.title ? (
           <PrismicRichText field={slice?.primary?.title} />
@@ -135,13 +135,13 @@ export const ArticleCard = ({
       <div className="flex flex-col items-start px-6 pb-4 min-h-[40%]">
         <Link href={"/"} className="text-hover">
           <h5
-            className="font-bold md:text-lg text-base"
+            className="md:text-lg text-base font-title font-bold uppercase tracking-tight"
             style={{ lineHeight: "1.5rem" }}
           >
             {article.article_title}
           </h5>
         </Link>
-        <span className="italic text-gray-900 tracking-tighter text-xs sm:text-sm md:text:base">
+        <span className="text-gray-900 tracking-tighter text-xs sm:text-sm md:text:base capitalize font-semibold py-1">
           {format(parseISO(article.date), "dd MMMM yyyy", { locale: fr })}
         </span>
         <Link
@@ -150,7 +150,7 @@ export const ArticleCard = ({
           style={{ height: "45px" }}
         >
           <p
-            className="text-sm md:text:base w-full"
+            className="text-sm md:text:base w-full font-serif"
             style={{ lineHeight: "1.25" }}
           >
             {article.preview ??
