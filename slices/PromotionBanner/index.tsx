@@ -1,7 +1,7 @@
 import React from "react";
 import { SliceComponentProps } from "@prismicio/react";
 import { Wrapper } from "@/components/global";
-import { PromotionBannerSlice } from "../../.slicemachine/prismicio";
+import { PromotionBannerSlice } from "types.generated";
 import { PrismicNextImage } from "@prismicio/next";
 
 // /**

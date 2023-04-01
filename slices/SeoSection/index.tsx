@@ -1,7 +1,7 @@
 import React from "react";
 import { PrismicRichText, SliceComponentProps } from "@prismicio/react";
 import { Wrapper } from "../../src/components/global";
-import { SeoSectionSlice } from "../../.slicemachine/prismicio";
+import { SeoSectionSlice } from "types.generated";
 
 // /**
 //  * @typedef {import("@prismicio/client").Content.SeoSectionSlice} SeoSectionSlice
