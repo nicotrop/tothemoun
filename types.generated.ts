@@ -707,71 +707,6 @@ type ArticleCarouselSliceVariation = ArticleCarouselSliceDefault;
  */
 export type ArticleCarouselSlice = prismicT.SharedSlice<"article_carousel", ArticleCarouselSliceVariation>;
 /**
- * Primary content in ArticleCarouselV2 → Primary
- *
- */
-interface ArticleCarouselV2SliceDefaultPrimary {
-    /**
-     * Title field in *ArticleCarouselV2 → Primary*
-     *
-     * - **Field Type**: Title
-     * - **Placeholder**: This is where it all begins...
-     * - **API ID Path**: article_carousel_v2.primary.title
-     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
-     *
-     */
-    title: prismicT.TitleField;
-    /**
-     * Description field in *ArticleCarouselV2 → Primary*
-     *
-     * - **Field Type**: Rich Text
-     * - **Placeholder**: A nice description of your feature
-     * - **API ID Path**: article_carousel_v2.primary.description
-     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
-     *
-     */
-    description: prismicT.RichTextField;
-}
-/**
- * Item in ArticleCarouselV2 → Items
- *
- */
-export interface ArticleCarouselV2SliceDefaultItem {
-    /**
-     * BlogPost field in *ArticleCarouselV2 → Items*
-     *
-     * - **Field Type**: Content Relationship
-     * - **Placeholder**: *None*
-     * - **API ID Path**: article_carousel_v2.items[].blogpost
-     * - **Documentation**: https://prismic.io/docs/core-concepts/link-content-relationship
-     *
-     */
-    blogpost: prismicT.RelationField<"blog_post">;
-}
-/**
- * Default variation for ArticleCarouselV2 Slice
- *
- * - **API ID**: `default`
- * - **Description**: `ArticleCarouselV2`
- * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
- *
- */
-export type ArticleCarouselV2SliceDefault = prismicT.SharedSliceVariation<"default", Simplify<ArticleCarouselV2SliceDefaultPrimary>, Simplify<ArticleCarouselV2SliceDefaultItem>>;
-/**
- * Slice variation for *ArticleCarouselV2*
- *
- */
-type ArticleCarouselV2SliceVariation = ArticleCarouselV2SliceDefault;
-/**
- * ArticleCarouselV2 Shared Slice
- *
- * - **API ID**: `article_carousel_v2`
- * - **Description**: `ArticleCarouselV2`
- * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
- *
- */
-export type ArticleCarouselV2Slice = prismicT.SharedSlice<"article_carousel_v2", ArticleCarouselV2SliceVariation>;
-/**
  * Primary content in Footer → Primary
  *
  */
@@ -1177,6 +1112,6 @@ declare module "@prismicio/client" {
         (repositoryNameOrEndpoint: string, options?: prismic.ClientConfig): prismic.Client<AllDocumentTypes>;
     }
     namespace Content {
-        export type { ArticleGroupDocumentData, ArticleGroupDocumentDataArticlesItem, ArticleGroupDocument, AuthorDocumentData, AuthorDocument, BlogCollectionDocumentData, BlogCollectionDocument, BlogPostDocumentData, BlogPostDocument, CategoryDocumentData, CategoryDocument, HomepageDocumentData, HomepageDocumentDataSlicesSlice, HomepageDocument, NavigationDocumentData, NavigationDocumentDataNavigationItemItem, NavigationDocument, NavigationMenuDocumentData, NavigationMenuDocumentDataMenuItem, NavigationMenuDocument, PageDocumentData, PageDocument, SocialsDocumentData, SocialsDocumentDataMediaInfoItem, SocialsDocument, AllDocumentTypes, ArticleCarouselSliceDefaultPrimary, ArticleCarouselSliceDefaultItem, ArticleCarouselSliceDefault, ArticleCarouselSliceVariation, ArticleCarouselSlice, ArticleCarouselV2SliceDefaultPrimary, ArticleCarouselV2SliceDefaultItem, ArticleCarouselV2SliceDefault, ArticleCarouselV2SliceVariation, ArticleCarouselV2Slice, FooterSliceDefaultPrimary, FooterSliceDefault, FooterSliceVariation, FooterSlice, HomeCollectionSliceDefaultPrimary, HomeCollectionSliceDefaultItem, HomeCollectionSliceDefault, HomeCollectionSliceVariation, HomeCollectionSlice, HomeHeroSliceDefaultPrimary, HomeHeroSliceDefault, HomeHeroSliceVariation, HomeHeroSlice, PromotionBannerSliceDefaultPrimary, PromotionBannerSliceDefault, PromotionBannerSliceVariation, PromotionBannerSlice, SeoSectionSliceDefaultPrimary, SeoSectionSliceDefault, SeoSectionSliceVariation, SeoSectionSlice };
+        export type { ArticleGroupDocumentData, ArticleGroupDocumentDataArticlesItem, ArticleGroupDocument, AuthorDocumentData, AuthorDocument, BlogCollectionDocumentData, BlogCollectionDocument, BlogPostDocumentData, BlogPostDocument, CategoryDocumentData, CategoryDocument, HomepageDocumentData, HomepageDocumentDataSlicesSlice, HomepageDocument, NavigationDocumentData, NavigationDocumentDataNavigationItemItem, NavigationDocument, NavigationMenuDocumentData, NavigationMenuDocumentDataMenuItem, NavigationMenuDocument, PageDocumentData, PageDocument, SocialsDocumentData, SocialsDocumentDataMediaInfoItem, SocialsDocument, AllDocumentTypes, ArticleCarouselSliceDefaultPrimary, ArticleCarouselSliceDefaultItem, ArticleCarouselSliceDefault, ArticleCarouselSliceVariation, ArticleCarouselSlice, FooterSliceDefaultPrimary, FooterSliceDefault, FooterSliceVariation, FooterSlice, HomeCollectionSliceDefaultPrimary, HomeCollectionSliceDefaultItem, HomeCollectionSliceDefault, HomeCollectionSliceVariation, HomeCollectionSlice, HomeHeroSliceDefaultPrimary, HomeHeroSliceDefault, HomeHeroSliceVariation, HomeHeroSlice, PromotionBannerSliceDefaultPrimary, PromotionBannerSliceDefault, PromotionBannerSliceVariation, PromotionBannerSlice, SeoSectionSliceDefaultPrimary, SeoSectionSliceDefault, SeoSectionSliceVariation, SeoSectionSlice };
     }
 }
