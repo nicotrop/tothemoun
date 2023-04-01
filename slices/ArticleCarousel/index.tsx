@@ -7,7 +7,7 @@ import { format, parseISO } from "date-fns";
 import fr from "date-fns/locale/fr";
 import { SwiperSlide } from "swiper/react";
 import { Wrapper } from "@/components/layout";
-import { SwiperCarousel } from "@/components/SwiperCarousel";
+import { SwiperCarousel } from "@/components/swiperCarousel";
 
 /**
  * @typedef {import("@prismicio/client").Content.ArticleCarouselSlice} ArticleCarouselSlice

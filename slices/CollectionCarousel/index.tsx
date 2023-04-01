@@ -3,7 +3,7 @@ import { PrismicRichText, SliceComponentProps } from "@prismicio/react";
 import Link from "next/link";
 import { PrismicNextImage } from "@prismicio/next";
 import { Wrapper } from "@/components/layout";
-import { SwiperColCarousel } from "@/components/SwiperCarousel";
+import { SwiperColCarousel } from "@/components/swiperCarousel";
 import { SwiperSlide } from "swiper/react";
 
 /**
