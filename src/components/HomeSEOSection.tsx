@@ -1,4 +1,4 @@
-import { Wrapper } from "./Layout";
+import { Wrapper } from "./layout";
 
 export const HomeSEOSection = () => {
   return (
