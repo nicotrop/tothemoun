@@ -1,7 +1,7 @@
 import React from "react";
 import { PrismicRichText, SliceComponentProps } from "@prismicio/react";
 import { FooterSlice } from "../../.slicemachine/prismicio";
-import { Wrapper } from "@/components/layout";
+import { Wrapper } from "@/components/Layout";
 import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {

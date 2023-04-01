@@ -1,6 +1,6 @@
 import React from "react";
 import { SliceComponentProps } from "@prismicio/react";
-import { Wrapper } from "@/components/layout";
+import { Wrapper } from "@/components/Layout";
 import { PromotionBannerSlice } from "../../.slicemachine/prismicio";
 import { PrismicNextImage } from "@prismicio/next";
 
