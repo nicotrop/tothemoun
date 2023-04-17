@@ -68,13 +68,13 @@
             "promotion_banner": {
               "type": "SharedSlice"
             },
-            "article_carousel_v2": {
-              "type": "SharedSlice"
-            },
             "seo_section": {
               "type": "SharedSlice"
             },
             "footer": {
+              "type": "SharedSlice"
+            },
+            "mixed_grid": {
               "type": "SharedSlice"
             }
           }

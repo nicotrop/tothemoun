@@ -1,12 +1,10 @@
 import { SliceZone } from "@prismicio/react";
 import { GetStaticPropsContext, InferGetStaticPropsType } from "next";
 import { components } from "../../slices/index";
-import { Layout, Wrapper } from "@/components/global";
+import { Layout } from "@/components/global";
 import { createClient } from "../../prismicio";
 import "swiper/swiper.min.css";
 import "swiper/css/bundle";
-import { arrayArticles } from "@/utils/mockData";
-import Image from "next/image";
 import { InterceptMixedGrid } from "@/components/mixedGrid";
 
 export type StaticPageProps = InferGetStaticPropsType<typeof getStaticProps>;
@@ -19,7 +17,7 @@ export default function Home({ data }: StaticPageProps) {
         components={{ ...components }}
         context={data.articles}
       />
-      <InterceptMixedGrid></InterceptMixedGrid>
+      <InterceptMixedGrid />
     </Layout>
   );
 }
@@ -68,23 +66,6 @@ export const getStaticProps = async ({
               }
             }
           }
-          ... on home_collection {
-            variation {
-              ... on default {
-                primary {
-                  title
-                  description
-                }
-                items {
-                  collections {
-                    ...on blog_collection {
-                      ...blog_collectionFields
-                    }
-                  }
-                }
-              }
-            }
-          }
           ... on article_carousel {
             variation {
               ... on default {
@@ -121,35 +102,6 @@ export const getStaticProps = async ({
                 primary {
                   title
                   description
-                }
-              }
-            }
-          }
-          ... on article_carousel_v2 {
-            variation {
-              ... on default {
-                primary {
-                  title
-                  description
-                }
-                items {
-                  blogpost {
-                    ...on blog_post {
-                      article_cover
-                      preview
-                      uid
-                      article_title
-                      article_content
-                      article_author {
-                        ... on author {
-                          uid
-                          author_first_name
-                          author_last_name
-                          author_avatar
-                        }
-                      }
-                    }
-                  }
                 }
               }
             }

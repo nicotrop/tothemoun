@@ -1,8 +1,15 @@
+import React from "react";
 import Image from "next/image";
-import { Wrapper } from "./global";
 import { arrayArticles } from "@/utils/mockData";
+import { Wrapper } from "@/components/global";
 
-export const InterceptMixedGrid = () => {
+/**
+ * @typedef {import("@prismicio/client").Content.MixedGridSlice} MixedGridSlice
+ * @typedef {import("@prismicio/react").SliceComponentProps<MixedGridSlice>} MixedGridProps
+ * @param { MixedGridProps }
+ */
+
+export const MixedGrid = () => {
   const gridArticles = arrayArticles.filter((_: any, i: number) => i !== 0);
 
   return (
@@ -68,3 +75,5 @@ export const InterceptMixedGrid = () => {
     </Wrapper>
   );
 };
+
+export default MixedGrid;
