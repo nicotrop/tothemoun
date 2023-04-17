@@ -24,6 +24,11 @@ module.exports = {
         secondary: "#102f10",
         tertiary: "#95a595",
       },
+      fontFamily: {
+        header: ["Roboto Condensed", "sans-serif"],
+        title: ["Roboto", "sans-serif"],
+        body: ["PT Serif", "serif"],
+      },
     },
   },
   plugins: [],

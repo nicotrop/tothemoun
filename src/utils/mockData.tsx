@@ -1,6 +1,7 @@
 export const arrayArticles = [
   {
-    title: "Lorem ipsum dolor sit amet",
+    title:
+      "THE ATLANTIC CELEBRATES 20TH ANNIVERSARY OF IRAQ WAR WITH LAVISH FALSEHOODS ABOUT IRAQ WAR",
     date: "4 Décembre 2022",
     imageURL:
       "https://images.unsplash.com/photo-1529686342540-1b43aec0df75?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2940&q=80",
