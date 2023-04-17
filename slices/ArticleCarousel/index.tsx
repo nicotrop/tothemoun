@@ -69,11 +69,7 @@ const ArticleCarousel = ({
           )}
         </span>
       </div>
-<<<<<<< HEAD
       <hr className="border-black" />
-=======
-      <hr className="py-1 border-solid border-t-2 border-black" />
->>>>>>> refs/remotes/origin/main
       <SwiperCarousel>
         {data?.map((article: any, i: number) => {
           return (

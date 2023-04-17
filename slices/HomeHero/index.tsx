@@ -88,13 +88,7 @@ export const HomeHero = ({ slice }: SliceComponentProps) => {
                     <li className="flex items-center justify-start gap-2 border-solid border-2 border-black bg-white py-1 px-3 h-11 w-auto">
                       <PrismicNextImage
                         field={elem?.item_icon}
-<<<<<<< HEAD
                         className="object-contain w-4 h-auto"
-=======
-                        width={20}
-                        height={20}
-                        className="object-contain w-auto h-5"
->>>>>>> refs/remotes/origin/main
                       />
                       <span>{elem.item_name}</span>
                     </li>
