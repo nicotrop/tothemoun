@@ -1,15 +1,14 @@
 import React from "react";
 import { SliceComponentProps } from "@prismicio/react";
-import useMediaQuery from "@/utils/hooks";
-import { Wrapper } from "@/components/Layout";
-import { PromotionBannerSlice } from "../../.slicemachine/prismicio";
+import { Wrapper } from "@/components/global";
+import { PromotionBannerSlice } from "types.generated";
 import { PrismicNextImage } from "@prismicio/next";
 
-/**
- * @typedef {import("@prismicio/client").Content.PromotionBannerSlice} PromotionBannerSlice
- * @typedef {import("@prismicio/react").SliceComponentProps<PromotionBannerSlice>} PromotionBannerProps
- * @param { PromotionBannerProps }
- */
+// /**
+//  * @typedef {import("@prismicio/client").Content.PromotionBannerSlice} PromotionBannerSlice
+//  * @typedef {import("@prismicio/react").SliceComponentProps<PromotionBannerSlice>} PromotionBannerProps
+//  * @param { PromotionBannerProps }
+//  */
 
 const PromotionBanner = ({
   slice,

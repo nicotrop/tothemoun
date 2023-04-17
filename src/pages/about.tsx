@@ -1,14 +1,8 @@
 import { createClient } from "@prismicio/client";
 import sm from "../../sm.json";
-import { Layout } from "@/components/Layout";
 
 export default function About({ navigation }: { navigation: any }) {
-  return (
-    <div>hi</div>
-    // <Layout navigation={navigation}>
-    //   <section>Hello</section>
-    // </Layout>
-  );
+  return <div>hi</div>;
 }
 
 export const getStaticProps = async () => {

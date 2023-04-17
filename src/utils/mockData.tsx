@@ -1,6 +1,3 @@
-import { Collection, CollectionGridType } from "@/components/CollectionSection";
-import { PromoSectionType } from "@/components/PromoSection.Client";
-
 export const arrayArticles = [
   {
     title: "Lorem ipsum dolor sit amet",
@@ -54,7 +51,11 @@ export const mockArticleSectionData = {
   articles: arrayArticles,
 };
 
-export const mockCollectionData: Collection[] = [
+export const mockCollectionData: {
+  name: string;
+  imageURL: string;
+  link: string;
+}[] = [
   {
     name: "Collection 1",
     imageURL:
@@ -75,7 +76,11 @@ export const mockCollectionData: Collection[] = [
   },
 ];
 
-export const mockPromoSectionData: PromoSectionType = {
+export const mockPromoSectionData: {
+  mobileImageURL: string;
+  desktopImageURL: string;
+  promoLink: string;
+} = {
   mobileImageURL:
     "https://images.unsplash.com/photo-1570170615381-62c299188814?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=987&q=80",
   desktopImageURL:
@@ -83,7 +88,15 @@ export const mockPromoSectionData: PromoSectionType = {
   promoLink: "#",
 };
 
-export const mockCollectionSectionData: CollectionGridType = {
+export const mockCollectionSectionData: {
+  title: string;
+  subtitle: string;
+  collections: {
+    name: string;
+    imageURL: string;
+    link: string;
+  }[];
+} = {
   title: "Collections",
   subtitle: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
   collections: mockCollectionData,

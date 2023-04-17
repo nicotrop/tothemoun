@@ -1,7 +1,7 @@
 import React from "react";
 import { PrismicRichText, SliceComponentProps } from "@prismicio/react";
-import { FooterSlice } from "../../.slicemachine/prismicio";
-import { Wrapper } from "@/components/Layout";
+import { FooterSlice } from "types.generated";
+import { Wrapper } from "@/components/global";
 import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -9,14 +9,17 @@ import {
   faPinterest,
   faTiktok,
 } from "@fortawesome/free-brands-svg-icons";
-import { LinkField, RichTextField } from "@prismicio/types";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
+import { IconProp } from "@fortawesome/fontawesome-svg-core";
 
-/**
- * @typedef {import("@prismicio/client").Content.FooterSlice} FooterSlice
- * @typedef {import("@prismicio/react").SliceComponentProps<FooterSlice>} FooterProps
- * @param { FooterProps }
- */
+const faIn = faInstagram as IconProp;
+const faTik = faTiktok as IconProp;
+const faPint = faPinterest as IconProp;
+// /**
+//  * @typedef {import("@prismicio/client").Content.FooterSlice} FooterSlice
+//  * @typedef {import("@prismicio/react").SliceComponentProps<FooterSlice>} FooterProps
+//  * @param { FooterProps }
+//  */
 const Footer = ({ slice }: SliceComponentProps<FooterSlice> | any) => {
   const year = new Date().getFullYear();
 
@@ -101,17 +104,19 @@ const Footer = ({ slice }: SliceComponentProps<FooterSlice> | any) => {
   );
 };
 
-type NavMenuProps = {
-  link: LinkField | null | undefined | any;
-  text: string;
-};
+// type NavMenuProps = {
+//   // link: LinkField | null | undefined | any;
+//   link: any;
+//   text: string;
+// };
 
 const MenuSection = ({
   menu,
 }: {
   menu: {
-    title: RichTextField | null | undefined;
-    menu: NavMenuProps[];
+    // title: RichTextField | null | undefined;
+    title: any;
+    menu: any[];
   };
 }) => {
   return (
@@ -120,7 +125,7 @@ const MenuSection = ({
         <PrismicRichText field={menu.title} />
       </div>
       <ul className="flex flex-col gap-2">
-        {menu.menu.map((elem: NavMenuProps, index: number) => {
+        {menu.menu.map((elem: any, index: number) => {
           return (
             <li key={index}>
               <Link href={`/${elem.link.slug}`}>
@@ -139,8 +144,10 @@ const NewsleterSection = ({
   cssProps,
 }: {
   data: {
-    newsletter_header: RichTextField | null | undefined;
-    newsletter_description: RichTextField | null | undefined;
+    // newsletter_header: RichTextField | null | undefined;
+    newsletter_header: any;
+    // newsletter_description: RichTextField | null | undefined;
+    newsletter_description: any;
   };
   cssProps: {
     input_border_color: string;
@@ -191,11 +198,11 @@ type SocialName = "Instagram" | "TikTok" | "Pinterest" | "Email";
 const SocialIcon = ({ socialName }: { socialName: SocialName }) => {
   switch (socialName) {
     case "Instagram":
-      return <FontAwesomeIcon icon={faInstagram} className="h-[80%]" />;
+      return <FontAwesomeIcon icon={faIn} className="h-[80%]" />;
     case "TikTok":
-      return <FontAwesomeIcon icon={faTiktok} className="h-[80%]" />;
+      return <FontAwesomeIcon icon={faTik} className="h-[80%]" />;
     case "Pinterest":
-      return <FontAwesomeIcon icon={faPinterest} className="h-[80%]" />;
+      return <FontAwesomeIcon icon={faPint} className="h-[80%]" />;
     case "Email":
       return <FontAwesomeIcon icon={faEnvelope} className="h-[80%]" />;
   }

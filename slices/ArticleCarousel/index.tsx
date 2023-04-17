@@ -1,19 +1,20 @@
 import React, { useEffect, useState } from "react";
 import { PrismicRichText, SliceComponentProps } from "@prismicio/react";
 import Link from "next/link";
-import { Wrapper } from "@/components/Layout";
 import { ArticleCarouselSlice } from "../../types.generated";
 import { PrismicNextImage } from "@prismicio/next";
 import { format, parseISO } from "date-fns";
 import fr from "date-fns/locale/fr";
-import { SwiperCarousel } from "@/components/SwiperCarousel";
 import { SwiperSlide } from "swiper/react";
+import { Wrapper } from "@/components/global";
+import { SwiperCarousel } from "@/components/sliders";
 
 /**
  * @typedef {import("@prismicio/client").Content.ArticleCarouselSlice} ArticleCarouselSlice
  * @typedef {import("@prismicio/react").SliceComponentProps<ArticleCarouselSlice>} ArticleCarouselProps
  * @param { ArticleCarouselProps }
  */
+
 const ArticleCarousel = ({
   slice,
   context,
@@ -68,7 +69,11 @@ const ArticleCarousel = ({
           )}
         </span>
       </div>
+<<<<<<< HEAD
       <hr className="border-black" />
+=======
+      <hr className="py-1 border-solid border-t-2 border-black" />
+>>>>>>> refs/remotes/origin/main
       <SwiperCarousel>
         {data?.map((article: any, i: number) => {
           return (

@@ -2,8 +2,8 @@ import React from "react";
 import { PrismicRichText, SliceComponentProps } from "@prismicio/react";
 import Link from "next/link";
 import { PrismicNextImage } from "@prismicio/next";
-import { Wrapper } from "@/components/Layout";
-import { SwiperCarousel, SwiperColCarousel } from "@/components/SwiperCarousel";
+import { Wrapper } from "@/components/global";
+import { SwiperColCarousel } from "@/components/sliders";
 import { SwiperSlide } from "swiper/react";
 
 /**
@@ -29,7 +29,7 @@ const HomeCollection = ({ slice }: SliceComponentProps) => {
           <p>start by editing this slice from inside Slice Machine!</p>
         )}
       </span>
-      <hr className="py-1 border-solid border-b-2 border-black" />
+      <hr className="py-1 border-solid border-t-2 border-black" />
       <SwiperColCarousel>
         {slice?.items?.map((collection: any, i: number) => {
           return (

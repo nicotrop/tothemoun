@@ -1,13 +1,14 @@
 import React from "react";
 import { PrismicRichText, SliceComponentProps } from "@prismicio/react";
-import { Wrapper } from "@/components/Layout";
-import { SeoSectionSlice } from "../../.slicemachine/prismicio";
+import { Wrapper } from "../../src/components/global";
+import { SeoSectionSlice } from "types.generated";
 
-/**
- * @typedef {import("@prismicio/client").Content.SeoSectionSlice} SeoSectionSlice
- * @typedef {import("@prismicio/react").SliceComponentProps<SeoSectionSlice>} SeoSectionProps
- * @param { SeoSectionProps }
- */
+// /**
+//  * @typedef {import("@prismicio/client").Content.SeoSectionSlice} SeoSectionSlice
+//  * @typedef {import("@prismicio/react").SliceComponentProps<SeoSectionSlice>} SeoSectionProps
+//  * @param { SeoSectionProps }
+//  */
+
 const SeoSection = ({ slice }: SliceComponentProps<SeoSectionSlice>) => {
   return (
     <Wrapper
