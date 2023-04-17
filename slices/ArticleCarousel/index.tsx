@@ -68,7 +68,7 @@ const ArticleCarousel = ({
           )}
         </span>
       </div>
-      <hr className="py-1 border-solid border-b-2 border-black" />
+      <hr className="border-black" />
       <SwiperCarousel>
         {data?.map((article: any, i: number) => {
           return (
@@ -127,7 +127,7 @@ export const ArticleCard = ({
             field={article.article_cover}
             height={350}
             width={350}
-            className="object-cover w-full m-o h-0"
+            className="object-cover w-full m-0"
           />
         </Link>
       </div>

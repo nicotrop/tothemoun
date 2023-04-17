@@ -18,7 +18,6 @@ import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
  * @param { FooterProps }
  */
 const Footer = ({ slice }: SliceComponentProps<FooterSlice> | any) => {
-  console.log(slice);
   const year = new Date().getFullYear();
 
   const {
@@ -190,8 +189,6 @@ const NewsleterSection = ({
 type SocialName = "Instagram" | "TikTok" | "Pinterest" | "Email";
 
 const SocialIcon = ({ socialName }: { socialName: SocialName }) => {
-  console.log(socialName);
-
   switch (socialName) {
     case "Instagram":
       return <FontAwesomeIcon icon={faInstagram} className="h-[80%]" />;
