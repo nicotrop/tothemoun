@@ -24,8 +24,6 @@ export const SwiperCarousel = ({
   return (
     <Swiper
       className={`relative w-full ${className}`}
-      modules={[Mousewheel]}
-      mousewheel={true}
       onBeforeInit={(swiper) => {
         swiperRef.current = swiper;
       }}
@@ -70,9 +68,11 @@ export const SwiperCarousel = ({
     >
       {children}
       <button
-        className={`custom_prev ${
-          swiperState.isBeginning && "custom_disabled"
-        }`}
+        className={`custom_prev`}
+        // className={`custom_prev ${
+        //   swiperState.isBeginning && "custom_disabled"
+        // }`}
+        disabled={swiperState.isBeginning}
         onClick={() => {
           swiperRef.current?.slidePrev();
         }}
@@ -80,10 +80,12 @@ export const SwiperCarousel = ({
         {"←"}
       </button>
       <button
-        className={`custom_next ${swiperState.isEnd && "custom_disabled"}`}
+        className={`custom_next`}
+        // className={`custom_next ${swiperState.isEnd && "custom_disabled"}`}
         onClick={() => {
           swiperRef.current?.slideNext();
         }}
+        disabled={swiperState.isEnd}
       >
         {"→"}
       </button>
@@ -111,8 +113,8 @@ export const SwiperCarouselFixedHeight = ({
   return (
     <Swiper
       className={`relative w-full ${className && className}`}
-      modules={[Mousewheel]}
-      mousewheel={true}
+      // modules={[Mousewheel]}
+      // mousewheel={true}
       onBeforeInit={(swiper) => {
         swiperRef.current = swiper;
       }}
@@ -164,9 +166,11 @@ export const SwiperCarouselFixedHeight = ({
     >
       {children}
       <button
-        className={`custom_prev ${
-          swiperState.isBeginning && "custom_disabled"
-        }`}
+        // className={`custom_prev ${
+        //   swiperState.isBeginning && "custom_disabled"
+        // }`}
+        className={`custom_prev`}
+        disabled={swiperState.isBeginning}
         onClick={() => {
           swiperRef.current?.slidePrev();
         }}

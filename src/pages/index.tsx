@@ -17,7 +17,6 @@ export default function Home({ data }: StaticPageProps) {
         components={{ ...components }}
         context={data.articles}
       />
-      <InterceptMixedGrid />
     </Layout>
   );
 }
@@ -102,6 +101,50 @@ export const getStaticProps = async ({
                 primary {
                   title
                   description
+                }
+              }
+            }
+          }
+          ... on mixed_grid {
+            variation {
+              ... on default {
+                primary {
+                  title
+                  description
+                  main_article {
+                    ...on blog_post {
+                      article_cover
+                      article_title
+                      article_content
+                      preview
+                      article_author {
+                        ... on author {
+                          uid
+                          author_first_name
+                          author_last_name
+                          author_avatar
+                        }
+                      }
+                    }
+                  }
+                }
+                items {
+                  article {
+                    ...on blog_post {
+                      article_cover
+                      article_title
+                      article_content
+                      preview
+                      article_author {
+                        ...on author {
+                          uid
+                          author_first_name
+                          author_last_name
+                          author_avatar
+                        }
+                      }
+                    }
+                  }
                 }
               }
             }

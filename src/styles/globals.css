@@ -102,3 +102,8 @@
 .customer-flex-center {
   @apply justify-start lg:justify-center;
 }
+
+.swiper button.custom_prev:disabled, .swiper button.custom_next:disabled {
+    cursor: not-allowed;
+    background-color: lightgray;
+}

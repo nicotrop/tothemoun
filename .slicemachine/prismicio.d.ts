@@ -1034,16 +1034,22 @@ interface MixedGridSliceDefaultPrimary {
      *
      */
     main_article: prismicT.RelationField<"blog_post">;
+}
+/**
+ * Item in MixedGrid → Items
+ *
+ */
+export interface MixedGridSliceDefaultItem {
     /**
-     * Other Articles field in *MixedGrid → Primary*
+     * Other Articles field in *MixedGrid → Items*
      *
      * - **Field Type**: Content Relationship
      * - **Placeholder**: *None*
-     * - **API ID Path**: mixed_grid.primary.other_articles
+     * - **API ID Path**: mixed_grid.items[].article
      * - **Documentation**: https://prismic.io/docs/core-concepts/link-content-relationship
      *
      */
-    other_articles: prismicT.RelationField<"blog_post" | "article_group" | "category">;
+    article: prismicT.RelationField<"blog_post">;
 }
 /**
  * Default variation for MixedGrid Slice
@@ -1053,7 +1059,7 @@ interface MixedGridSliceDefaultPrimary {
  * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
  *
  */
-export type MixedGridSliceDefault = prismicT.SharedSliceVariation<"default", Simplify<MixedGridSliceDefaultPrimary>, never>;
+export type MixedGridSliceDefault = prismicT.SharedSliceVariation<"default", Simplify<MixedGridSliceDefaultPrimary>, Simplify<MixedGridSliceDefaultItem>>;
 /**
  * Slice variation for *MixedGrid*
  *
@@ -1181,6 +1187,6 @@ declare module "@prismicio/client" {
         (repositoryNameOrEndpoint: string, options?: prismic.ClientConfig): prismic.Client<AllDocumentTypes>;
     }
     namespace Content {
-        export type { ArticleGroupDocumentData, ArticleGroupDocumentDataArticlesItem, ArticleGroupDocument, AuthorDocumentData, AuthorDocument, BlogCollectionDocumentData, BlogCollectionDocument, BlogPostDocumentData, BlogPostDocument, CategoryDocumentData, CategoryDocument, HomepageDocumentData, HomepageDocumentDataSlicesSlice, HomepageDocument, NavigationMenuDocumentData, NavigationMenuDocumentDataMenuItem, NavigationMenuDocument, NavigationDocumentData, NavigationDocumentDataNavigationItemItem, NavigationDocument, PageDocumentData, PageDocument, SocialsDocumentData, SocialsDocumentDataMediaInfoItem, SocialsDocument, AllDocumentTypes, ArticleCarouselSliceDefaultPrimary, ArticleCarouselSliceDefaultItem, ArticleCarouselSliceDefault, ArticleCarouselSliceVariation, ArticleCarouselSlice, HomeCollectionSliceDefaultPrimary, HomeCollectionSliceDefaultItem, HomeCollectionSliceDefault, HomeCollectionSliceVariation, HomeCollectionSlice, FooterSliceDefaultPrimary, FooterSliceDefault, FooterSliceVariation, FooterSlice, HomeHeroSliceDefaultPrimary, HomeHeroSliceDefault, HomeHeroSliceVariation, HomeHeroSlice, MixedGridSliceDefaultPrimary, MixedGridSliceDefault, MixedGridSliceVariation, MixedGridSlice, PromotionBannerSliceDefaultPrimary, PromotionBannerSliceDefault, PromotionBannerSliceVariation, PromotionBannerSlice, SeoSectionSliceDefaultPrimary, SeoSectionSliceDefault, SeoSectionSliceVariation, SeoSectionSlice };
+        export type { ArticleGroupDocumentData, ArticleGroupDocumentDataArticlesItem, ArticleGroupDocument, AuthorDocumentData, AuthorDocument, BlogCollectionDocumentData, BlogCollectionDocument, BlogPostDocumentData, BlogPostDocument, CategoryDocumentData, CategoryDocument, HomepageDocumentData, HomepageDocumentDataSlicesSlice, HomepageDocument, NavigationMenuDocumentData, NavigationMenuDocumentDataMenuItem, NavigationMenuDocument, NavigationDocumentData, NavigationDocumentDataNavigationItemItem, NavigationDocument, PageDocumentData, PageDocument, SocialsDocumentData, SocialsDocumentDataMediaInfoItem, SocialsDocument, AllDocumentTypes, ArticleCarouselSliceDefaultPrimary, ArticleCarouselSliceDefaultItem, ArticleCarouselSliceDefault, ArticleCarouselSliceVariation, ArticleCarouselSlice, HomeCollectionSliceDefaultPrimary, HomeCollectionSliceDefaultItem, HomeCollectionSliceDefault, HomeCollectionSliceVariation, HomeCollectionSlice, FooterSliceDefaultPrimary, FooterSliceDefault, FooterSliceVariation, FooterSlice, HomeHeroSliceDefaultPrimary, HomeHeroSliceDefault, HomeHeroSliceVariation, HomeHeroSlice, MixedGridSliceDefaultPrimary, MixedGridSliceDefaultItem, MixedGridSliceDefault, MixedGridSliceVariation, MixedGridSlice, PromotionBannerSliceDefaultPrimary, PromotionBannerSliceDefault, PromotionBannerSliceVariation, PromotionBannerSlice, SeoSectionSliceDefaultPrimary, SeoSectionSliceDefault, SeoSectionSliceVariation, SeoSectionSlice };
     }
 }

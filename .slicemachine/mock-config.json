@@ -51,7 +51,8 @@
     },
     "MixedGrid": {
       "default": {
-        "primary": {}
+        "primary": {},
+        "items": {}
       }
     }
   }

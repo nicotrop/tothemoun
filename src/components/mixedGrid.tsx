@@ -13,7 +13,7 @@ export const InterceptMixedGrid = () => {
       </h2>
       <div className="flex flex-col lg:flex-row gap-5 lg:h-[658px]">
         {/* Main Article */}
-        <div className="w-full lg:w-2/3 border-solid border-gray-200 border-t-2 h-full flex flex-col gap-5 py-5 mr-5">
+        <div className="w-full lg:w-2/3 border-solid border-gray-200 border-t-2 h-full flex flex-col gap-5 mr-5">
           <Image
             src={arrayArticles[0].imageURL}
             alt="image"
@@ -47,7 +47,7 @@ export const InterceptMixedGrid = () => {
                     height={150}
                     width={200}
                     alt="article img"
-                    className="aspect-[2/3] xs:aspect-[2/1] md:aspect-auto md:w-1/2 object-cover lg:h-auto lg:w-1/3 lg:aspect-square"
+                    className="aspect-[2/1] md:aspect-auto md:w-1/2 object-cover lg:h-auto lg:w-1/3 lg:aspect-square"
                   />
                   <div>
                     <h3 className="text-xl w-full font-extrabold font-title leading-tight tracking-tighter">
