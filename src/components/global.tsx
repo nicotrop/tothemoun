@@ -1,9 +1,11 @@
+import { Url } from "next/dist/shared/lib/router/router";
+import Link from "next/link";
 import { ReactNode } from "react";
 
 export const Layout = ({ children }: { children: ReactNode }) => {
   return (
     <div>
-      <main>{children}</main>
+      <main className="max-w-7xl m-auto px-0">{children}</main>
     </div>
   );
 };
@@ -22,8 +24,8 @@ export const Wrapper = ({
   return (
     <section
       className={`${
-        padding ? `px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12` : null
-      } ${className} py-12`}
+        padding ? `px-4 xl:px-0` : null
+      } ${className} pt-8 pb-2 xl:px-0`}
       style={style}
     >
       {children}
@@ -53,6 +55,41 @@ export const Container = ({
       } ${className}`}
     >
       {children}
+    </div>
+  );
+};
+
+export const SectionTitle = ({
+  title,
+  className,
+}: {
+  title?: string;
+  className?: string;
+}) => {
+  let defaultTitle = "Edit me";
+  return (
+    <h2
+      className={`text-[32px] lg:text-[52px] font-extrabold tracking-tighter font-header ${className}`}
+    >{`${title ? title : defaultTitle} >`}</h2>
+  );
+};
+
+export const SectionTitleContainer = ({
+  children,
+  link,
+  containerClassName = "",
+  linkClassName = "",
+}: {
+  containerClassName?: string;
+  linkClassName?: string;
+  children: React.ReactNode;
+  link?: Url;
+}) => {
+  return (
+    <div className={`pb-7 ${containerClassName}`}>
+      <Link href={link ? link : "#"} className={`${linkClassName}`}>
+        {children}
+      </Link>
     </div>
   );
 };

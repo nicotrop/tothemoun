@@ -49,6 +49,32 @@
   }
 }
 
+.mid-pos {
+  top: 50%;
+}
+
+.top-pos {
+  top: 35%;
+}
+
+.custom-slider-btn {
+  position: absolute;
+  z-index: 100;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: white;
+  border: solid 2px black;
+}
+
+.custom-slider-btn.customarrow-left {
+  left: 0px;
+}
+
+.custom-slider-btn.customarrow-right {
+  right: 0px;
+}
+
 .custom_next,
 .custom_prev {
   position: absolute;
@@ -103,7 +129,9 @@
   @apply justify-start lg:justify-center;
 }
 
-.swiper button.custom_prev:disabled, .swiper button.custom_next:disabled {
-    cursor: not-allowed;
-    background-color: lightgray;
+.swiper button.custom_prev:disabled,
+.swiper button.custom_next:disabled,
+.swiper button.custom-slider-btn:disabled {
+  cursor: not-allowed;
+  background-color: lightgray;
 }
