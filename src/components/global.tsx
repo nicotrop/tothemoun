@@ -5,7 +5,7 @@ import { ReactNode } from "react";
 export const Layout = ({ children }: { children: ReactNode }) => {
   return (
     <div>
-      <main className="max-w-7xl m-auto px-0">{children}</main>
+      <main className="">{children}</main>
     </div>
   );
 };
@@ -25,7 +25,7 @@ export const Wrapper = ({
     <section
       className={`${
         padding ? `px-4 xl:px-0` : null
-      } ${className} pt-8 pb-2 xl:px-0`}
+      } ${className} pt-8 pb-2 xl:px-0 max-w-7xl m-auto px-0`}
       style={style}
     >
       {children}
@@ -91,5 +91,16 @@ export const SectionTitleContainer = ({
         {children}
       </Link>
     </div>
+  );
+};
+
+export const FontLogo = () => {
+  return (
+    <h1
+      className={`text-2xl font-extrabold uppercase text-white"
+    }`}
+    >
+      to the moun
+    </h1>
   );
 };

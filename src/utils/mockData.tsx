@@ -197,3 +197,109 @@ export const mockCollectionSectionData: {
   subtitle: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
   collections: mockCollectionData,
 };
+
+export type navigationItemType = {
+  item_icon: {
+    alt: string;
+    dimensions: {
+      height: number;
+      width: number;
+    };
+    url: string;
+  };
+  item_link: {
+    first_publication_date: string;
+    id: string;
+    isBroken: boolean;
+    lang: string;
+    last_publication_date: string;
+    link_type: string;
+    slug: string;
+    tags: string[];
+    type: string;
+    uid: string;
+  };
+  item_name: string;
+};
+
+export type navigationType = {
+  data: {
+    navigation_item: navigationItemType[];
+  };
+};
+
+export const mockNavigation: navigationType = {
+  data: {
+    navigation_item: [
+      {
+        item_icon: {
+          alt: "bicycle icon",
+          dimensions: {
+            height: 150,
+            width: 188,
+          },
+          url: "https://tothemoun.cdn.prismic.io/tothemoun/04b190f8-6b58-4c7f-9901-5e63c8bef624_person-biking-solid+%281%29.svg",
+        },
+        item_link: {
+          first_publication_date: "2023-03-14T13:23:48+0000",
+          id: "ZBB1VRAAABWUZR24",
+          isBroken: false,
+          lang: "en-us",
+          last_publication_date: "2023-03-14T13:23:48+0000",
+          link_type: "Web",
+          slug: "que-faire-en-guadeloupe",
+          tags: [],
+          type: "que-faire-en-guadeloupe",
+          uid: "blog",
+        },
+        item_name: "Que faire en Guadeloupe?",
+      },
+      {
+        item_icon: {
+          alt: "utensils icon",
+          dimensions: {
+            height: 150,
+            width: 131,
+          },
+          url: "https://tothemoun.cdn.prismic.io/tothemoun/8eed07a4-68b1-49eb-8fc2-eb39da413729_utensils-solid.svg",
+        },
+        item_link: {
+          first_publication_date: "2023-03-14T13:23:48+0000",
+          id: "ZBB1VRAAABWUZR24",
+          isBroken: false,
+          lang: "en-us",
+          last_publication_date: "2023-03-14T13:23:48+0000",
+          link_type: "Web",
+          slug: "food-drinks",
+          tags: [],
+          type: "food-drinks",
+          uid: "blog",
+        },
+        item_name: "Food & Drinks",
+      },
+      {
+        item_icon: {
+          alt: "house icon",
+          dimensions: {
+            height: 150,
+            width: 169,
+          },
+          url: "https://tothemoun.cdn.prismic.io/tothemoun/51dca54c-0783-46e0-8e52-1ac41ad113ef_house-solid.svg",
+        },
+        item_link: {
+          first_publication_date: "2023-03-14T13:23:48+0000",
+          id: "ZBB1VRAAABWUZR24",
+          isBroken: false,
+          lang: "en-us",
+          last_publication_date: "2023-03-14T13:23:48+0000",
+          link_type: "Web",
+          slug: "ou-loger",
+          tags: [],
+          type: "ou-loger",
+          uid: "blog",
+        },
+        item_name: "Où loger?",
+      },
+    ],
+  },
+};

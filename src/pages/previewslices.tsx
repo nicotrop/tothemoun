@@ -4,10 +4,15 @@ import MockCarousel2 from "@/components/mockCarousel2";
 import MockCarousel from "@/components/mockCarousel";
 import MockCarousel3 from "@/components/mockCarousel3";
 import { WashingtonPostGrid } from "@/components/mixedGrid2";
+import HeroVideo from "@/components/heroVideo";
 
 export default function PreviewSlices() {
   return (
     <Layout>
+      <Wrapper>
+        <div className="mt-8">Hero Video Component</div>
+      </Wrapper>
+      <HeroVideo />
       <Wrapper>
         <div className="mt-1">
           Mixed Grid Component from{" "}

@@ -5,7 +5,6 @@ import { Layout } from "@/components/global";
 import { createClient } from "../../prismicio";
 import "swiper/swiper.min.css";
 import "swiper/css/bundle";
-import { InterceptMixedGrid } from "@/components/mixedGrid";
 
 export type StaticPageProps = InferGetStaticPropsType<typeof getStaticProps>;
 

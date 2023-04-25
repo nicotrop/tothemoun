@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { ReactNode, useRef, useState } from "react";
-import { Mousewheel, Navigation } from "swiper";
+import { Autoplay, Navigation, Pagination } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Swiper as SwiperCore } from "swiper/types";
 
@@ -175,6 +175,77 @@ export const SwiperImprovedCarousel = ({
       >
         {"→"}
       </button>
+    </Swiper>
+  );
+};
+
+export const SwiperHeroCarousel = ({
+  children,
+  className,
+  btnPosition = "top-pos",
+}: {
+  children: ReactNode;
+  className?: string;
+  btnPosition?: "mid-pos" | "top-pos";
+}) => {
+  const [swiperState, setSwiperState] = useState<{
+    isBeginning?: boolean;
+    isEnd?: boolean;
+  }>({
+    isBeginning: true,
+    isEnd: false,
+  });
+
+  const swiperRef = useRef<SwiperCore>();
+
+  return (
+    <Swiper
+      className={`relative w-full ${className}`}
+      modules={[Autoplay, Navigation, Pagination]}
+      onBeforeInit={(swiper) => {
+        swiperRef.current = swiper;
+      }}
+      onSlideChange={(swiper) => {
+        const { isBeginning, isEnd } = swiper;
+        setSwiperState({
+          isBeginning,
+          isEnd,
+        });
+      }}
+      autoplay={{
+        delay: 3200,
+        disableOnInteraction: false,
+        pauseOnMouseEnter: true,
+      }}
+      speed={700}
+      breakpoints={{
+        250: {
+          slidesPerView: 1.25,
+          spaceBetween: 15,
+        },
+        450: {
+          slidesPerView: 2,
+          spaceBetween: 20,
+        },
+        650: {
+          slidesPerView: 2.0,
+          spaceBetween: 15,
+        },
+        850: {
+          slidesPerView: 2.25,
+          spaceBetween: 20,
+        },
+        1050: {
+          slidesPerView: 3.0,
+          spaceBetween: 15,
+        },
+        1250: {
+          slidesPerView: 3.25,
+          spaceBetween: 20,
+        },
+      }}
+    >
+      {children}
     </Swiper>
   );
 };

@@ -5,6 +5,7 @@ const nextConfig = {
       "images.unsplash.com",
       "images.prismic.io",
       "tothemoun.cdn.prismic.io",
+      "res.cloudinary.com",
     ],
   },
   reactStrictMode: true,
