@@ -1,9 +1,5 @@
-import { faSearch } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import Image from "next/image";
 import logo from "../../public/assets/logo.svg";
-import Link from "next/link";
-import { mockNavigation, navigationItemType } from "@/utils/mockData";
+import { mockNavigation } from "@/utils/mockData";
 import NavMenu from "./mobileNav";
 import { YelpNav } from "./yelpNav";
 import MockCarouselHero from "./heroArticles";
@@ -12,7 +8,7 @@ export const HeroVideo = () => {
   return (
     <header className="w-screen overflow-hidden relative">
       <div
-        className={`w-screen max-h-[85vh] aspect-[9/16] md:aspect-auto xl:max-h-none relative`}
+        className={`w-screen max-h-[85vh] min-h-[65vh] aspect-[9/16] md:aspect-auto xl:max-h-none relative`}
         style={{
           borderBottom: `2px solid black`,
         }}

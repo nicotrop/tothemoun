@@ -96,10 +96,7 @@ export const SectionTitleContainer = ({
 
 export const FontLogo = () => {
   return (
-    <h2
-      className={`text-2xl font-extrabold uppercase text-white"
-    }`}
-    >
+    <h2 className={`text-2xl font-extrabold uppercase text-white`}>
       to the moun
     </h2>
   );
