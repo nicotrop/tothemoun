@@ -96,11 +96,19 @@ export const SectionTitleContainer = ({
 
 export const FontLogo = () => {
   return (
-    <h1
+    <h2
       className={`text-2xl font-extrabold uppercase text-white"
     }`}
     >
       to the moun
-    </h1>
+    </h2>
+  );
+};
+
+export const ThemeButton = ({ children }: { children: React.ReactNode }) => {
+  return (
+    <button className="bg-primary text-secondary text-base font-medium py-2 px-4 rounded-md w-fit hover:bg-secondary hover:text-primary hover:ease-linear hover:duration-200">
+      {children}
+    </button>
   );
 };

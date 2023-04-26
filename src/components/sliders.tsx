@@ -1,10 +1,13 @@
 import Image from "next/image";
 import { ReactNode, useRef, useState } from "react";
-import { Autoplay, Navigation, Pagination } from "swiper";
+import { Autoplay, EffectFade, Navigation, Pagination } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Swiper as SwiperCore } from "swiper/types";
 
 import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import "swiper/css/effect-fade";
 
 export const SwiperCarousel = ({
   children,
@@ -250,6 +253,56 @@ export const SwiperHeroCarousel = ({
   );
 };
 
+export const SwiperHeroArticles = ({
+  children,
+  className,
+}: {
+  children: ReactNode;
+  className?: string;
+}) => {
+  const [swiperState, setSwiperState] = useState<{
+    isBeginning?: boolean;
+    isEnd?: boolean;
+  }>({
+    isBeginning: true,
+    isEnd: false,
+  });
+
+  const swiperRef = useRef<SwiperCore>();
+
+  return (
+    <Swiper
+      className={`relative h-full ${className}`}
+      slidesPerView={1}
+      onBeforeInit={(swiper) => {
+        swiperRef.current = swiper;
+      }}
+      onSlideChange={(swiper) => {
+        const { isBeginning, isEnd } = swiper;
+        setSwiperState({
+          isBeginning,
+          isEnd,
+        });
+      }}
+      autoplay={{
+        delay: 4000,
+        pauseOnMouseEnter: true,
+        stopOnLastSlide: false,
+      }}
+      speed={950}
+      pagination={{
+        bulletClass: "custom-pagination-bullet",
+        bulletActiveClass: "custom-pagination-bullet-active",
+        clickable: true,
+      }}
+      effect={"fade"}
+      modules={[Autoplay, Pagination, Navigation, EffectFade]}
+    >
+      {children}
+    </Swiper>
+  );
+};
+
 export const SwiperCarouselFixedHeight = ({
   children,
   className = "",
@@ -323,9 +376,6 @@ export const SwiperCarouselFixedHeight = ({
     >
       {children}
       <button
-        // className={`custom_prev ${
-        //   swiperState.isBeginning && "custom_disabled"
-        // }`}
         className={`custom_prev`}
         disabled={swiperState.isBeginning}
         onClick={() => {

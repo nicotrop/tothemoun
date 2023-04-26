@@ -62,9 +62,6 @@ export const ArticleCard = ({
           </Link>
         </div>
       </div>
-      {/* <div className="flex flex-col items-start p-2 min-h-[40%]">
-        <div className="w-full flex items-center"></div>
-      </div> */}
     </div>
   );
 };

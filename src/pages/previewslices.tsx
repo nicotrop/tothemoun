@@ -5,6 +5,7 @@ import MockCarousel from "@/components/mockCarousel";
 import MockCarousel3 from "@/components/mockCarousel3";
 import { WashingtonPostGrid } from "@/components/mixedGrid2";
 import HeroVideo from "@/components/heroVideo";
+import HeroSliders from "@/components/heroSliders";
 
 export default function PreviewSlices() {
   return (
@@ -14,14 +15,18 @@ export default function PreviewSlices() {
       </Wrapper>
       <HeroVideo />
       <Wrapper>
-        <div className="mt-1">
+        <div className="mt-8">Hero Picture Component</div>
+      </Wrapper>
+      <HeroSliders />
+      <Wrapper>
+        <div className="mt-8">
           Mixed Grid Component from{" "}
           <a href="https://theintercept.com/">The Intercept</a>
         </div>
       </Wrapper>
       <InterceptMixedGrid />
       <Wrapper>
-        <div className="mt-1">
+        <div className="mt-8">
           Mixed Grid Component from{" "}
           <a href="https://www.washingtonpost.com/">The Washington Post</a>
         </div>

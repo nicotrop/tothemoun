@@ -18,9 +18,7 @@ export default function NavMenu({
   const [open, setOpen] = useState(false);
 
   return (
-    <nav
-      className={`flex lg:hidden absolute top-0 z-10 py-8 px-4 w-full h-auto overflow-hidden text-base items-center justify-between text-white sm:px-6 md:px-8 lg:px-10 xl:px-12`}
-    >
+    <nav className="flex absolute top-0 lg:hidden z-10 py-8 px-4 w-full h-auto overflow-hidden text-base items-center justify-between text-white sm:px-6 md:px-8 lg:px-10 xl:px-12">
       <button
         className="active:outline-none outline-none border-none"
         onClick={() => setOpen(true)}
@@ -37,7 +35,10 @@ export default function NavMenu({
         />
         <FontLogo />
       </div>
-      <FontAwesomeIcon icon={faMagnifyingGlass} className="w-5 h-auto" />
+      <FontAwesomeIcon
+        icon={faMagnifyingGlass}
+        className="w-5 h-auto cursor-pointer"
+      />
       <Transition.Root show={open} as={Fragment}>
         <Dialog as="div" className="relative z-10" onClose={setOpen}>
           <Transition.Child

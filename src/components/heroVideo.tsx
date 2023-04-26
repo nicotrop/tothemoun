@@ -10,10 +10,9 @@ import MockCarouselHero from "./heroArticles";
 
 export const HeroVideo = () => {
   return (
-    <header className="w-screen overflow-hidden">
+    <header className="w-screen overflow-hidden relative">
       <div
-        // className={`w-screen h-[350px] sm:h-3/5 md:h-4/6 lg:h-5/6 xl:h-screen relative`}
-        className={`w-screen aspect-[9/16] md:aspect-auto relative`}
+        className={`w-screen max-h-[85vh] aspect-[9/16] md:aspect-auto xl:max-h-none relative`}
         style={{
           borderBottom: `2px solid black`,
         }}
@@ -37,17 +36,13 @@ export const HeroVideo = () => {
             />
           </video>
         </div>
-        {/* Mobile navigation */}
-        <NavMenu
-          navigation={mockNavigation?.data?.navigation_item}
-          logo={logo}
-        />
-        {/* Desktop navigation */}
-        <YelpNav
-          navigation={mockNavigation?.data?.navigation_item}
-          logo={logo}
-        />
       </div>
+
+      {/* Mobile navigation */}
+      <NavMenu navigation={mockNavigation?.data?.navigation_item} logo={logo} />
+
+      {/* Desktop navigation */}
+      <YelpNav navigation={mockNavigation?.data?.navigation_item} logo={logo} />
     </header>
   );
 };

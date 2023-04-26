@@ -11,14 +11,14 @@ const MockCarousel = () => {
   const data = mockArticleSectionData.articles;
   return (
     <Wrapper className="box-content border-t-2 border-solid border-black">
-      <SectionTitleContainer>
+      {/* <SectionTitleContainer>
         <SectionTitle
           title={mockArticleSectionData.title}
           className="text-hover"
         />
         <p className="pt-4 text-hover">{mockArticleSectionData.description}</p>
       </SectionTitleContainer>
-      <hr className="border-solid border-gray-200 border-t-2 pt-5" />
+      <hr className="border-solid border-gray-200 border-t-2 pt-5" /> */}
       <SwiperCarousel>
         {data?.map((article: Article, i: number) => {
           return (

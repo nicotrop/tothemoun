@@ -110,7 +110,11 @@
 }
 
 .text-hover:hover {
-  @apply transition text-slate-600 duration-75 cursor-pointer;
+  @apply transition text-secondary duration-75 cursor-pointer;
+}
+
+.text-hover-light:hover {
+  @apply transition text-white duration-100 cursor-pointer;
 }
 
 .img-hover:hover {
@@ -134,4 +138,21 @@
 .swiper button.custom-slider-btn:disabled {
   cursor: not-allowed;
   background-color: lightgray;
+}
+
+.custom-pagination-bullet {
+  width: 10px;
+  height: 10px;
+  display: inline-block;
+  border-radius: 50%;
+  background: #000;
+  opacity: 0.4;
+  transition: opacity 0.3s ease;
+  margin: 0 4px;
+  cursor: pointer;
+}
+
+.custom-pagination-bullet-active {
+  opacity: 1;
+  background: whitesmoke;
 }
