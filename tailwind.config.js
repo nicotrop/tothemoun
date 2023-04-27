@@ -16,6 +16,15 @@ module.exports = {
   ],
   theme: {
     extend: {
+      keyframes: {
+        "auto-scroll": {
+          "0%": { transform: "translate(0)" },
+          "100%": { transform: "translate(-20%)" },
+        },
+      },
+      animation: {
+        marquee: "auto-scroll 30s linear infinite",
+      },
       screens: {
         xs: "420px",
       },
@@ -26,8 +35,17 @@ module.exports = {
       },
       fontFamily: {
         header: ["Roboto Condensed", "sans-serif"],
+        display: ["DM Serif Display", "serif"],
         title: ["Roboto", "sans-serif"],
         body: ["PT Serif", "serif"],
+      },
+      height: {
+        "header-height": "65px",
+        "announcement-bar": "35px",
+        "scrolling-bar": "56px",
+      },
+      spacing: {
+        "announcement-bar": "35px",
       },
     },
   },

@@ -3,12 +3,28 @@
 @tailwind utilities;
 
 @import url("https://fonts.googleapis.com/css2?family=PT+Serif:wght@400;700&family=Roboto+Condensed:wght@400;700&family=Roboto:wght@400;500;700;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap");
 
 * {
   box-sizing: border-box;
   smoothing: antialiased;
   -webkit-font-smoothing: antialiased;
   scroll-behavior: smooth;
+}
+
+:root {
+  --header-height: 65px;
+  --announcement-bar-height: 34px;
+  --marquee-height: 56px;
+  --fooding-height: 85px;
+  --scrolling-articles: 222px;
+}
+
+@media screen and (min-width: 640px) {
+  :root {
+    --fooding-height: 130px;
+    --scrolling-articles: 275px;
+  }
 }
 
 /* For Webkit-based browsers (Chrome, Safari and Opera) */

@@ -223,28 +223,28 @@ export const SwiperHeroCarousel = ({
       speed={700}
       breakpoints={{
         250: {
-          slidesPerView: 1.25,
-          spaceBetween: 15,
+          slidesPerView: 2.5,
+          spaceBetween: 10,
         },
         450: {
-          slidesPerView: 2,
-          spaceBetween: 20,
+          slidesPerView: 3.0,
+          spaceBetween: 10,
         },
         650: {
-          slidesPerView: 2.0,
-          spaceBetween: 15,
+          slidesPerView: 3.5,
+          spaceBetween: 10,
         },
         850: {
-          slidesPerView: 2.25,
-          spaceBetween: 20,
+          slidesPerView: 4.5,
+          spaceBetween: 10,
         },
         1050: {
-          slidesPerView: 3.0,
-          spaceBetween: 15,
+          slidesPerView: 5.0,
+          spaceBetween: 10,
         },
-        1250: {
-          slidesPerView: 3.25,
-          spaceBetween: 20,
+        150: {
+          slidesPerView: 6,
+          spaceBetween: 10,
         },
       }}
     >

@@ -5,19 +5,29 @@ import MockCarousel from "@/components/mockCarousel";
 import MockCarousel3 from "@/components/mockCarousel3";
 import { WashingtonPostGrid } from "@/components/mixedGrid2";
 import HeroVideo from "@/components/heroVideo";
-import HeroSliders from "@/components/heroSliders";
+import { EcomVideo, HeroSliders } from "@/components/heroSliders";
 
 export default function PreviewSlices() {
   return (
     <Layout>
       <Wrapper>
-        <div className="mt-8">Hero Video Component</div>
-      </Wrapper>
-      <HeroVideo />
-      <Wrapper>
-        <div className="mt-8">Hero Picture Component</div>
+        <div>
+          Hero Auto Sliders + Ecom Sticky NavBar + Marquee Scrolling Banner
+        </div>
       </Wrapper>
       <HeroSliders />
+      <Wrapper>
+        <div>
+          Hero Auto Sliders + Ecom Sticky NavBar + Marquee Scrolling Banner
+        </div>
+      </Wrapper>
+      <EcomVideo />
+      <Wrapper>
+        <div className="mt-8">
+          Hero Video Component + FoodingNav + Scrolling Articles
+        </div>
+      </Wrapper>
+      <HeroVideo />
       <Wrapper>
         <div className="mt-8">
           Mixed Grid Component from{" "}

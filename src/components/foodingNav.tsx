@@ -2,11 +2,13 @@ import { faBars, faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Image from "next/image";
 import Link from "next/link";
-import logo from "../../public/assets/logo.svg";
-import tothemoun from "../../public/assets/tothemoun.svg";
+import tothemounblack from "../../public/assets/tothemounblack.svg";
 import { navigationItemType } from "@/utils/mockData";
 import { useState } from "react";
 import { MenuDrawer } from "./menuDrawer";
+import NavMenu from "./mobileNav";
+import { NavMenuComp } from "./ecomNav";
+import logo from "../../public/assets/logo.svg";
 
 export const FoodingNav = ({
   navigation,
@@ -15,49 +17,40 @@ export const FoodingNav = ({
 }) => {
   const [open, setOpen] = useState(false);
   return (
-    <nav className="w-full border-solid border-black border-b-2">
-      <div className="flex justify-between gap-4 mx-4 sm:h-28">
+    <nav className="w-full h-[var(--fooding-height)] border-solid border-b-black border-b-2 px-5 sm:px-10 sm:flex flex-col justify-between gap-2 sm:pb-2">
+      <div className="flex justify-between items-center gap-4 h-full">
         <button
-          className="active:outline-none outline-none border-none"
+          className="active:outline-none outline-none border-none h-fit"
           onClick={() => setOpen(true)}
         >
           <span className="sr-only">Open panel</span>
-          <FontAwesomeIcon icon={faBars} className="w-5 h-auto" />
+          <FontAwesomeIcon icon={faBars} className="w-5 h-5" />
         </button>
-        <Link
-          href={"/"}
-          className="flex justify-center max-w-[192px] xs:max-w-[275px] sm:max-w-none"
-        >
+        <Link href={"/"} className="flex gap-1 items-center sm:max-w-none">
           <Image
-            src={tothemoun}
-            width={275}
-            height={70}
+            src={logo}
+            width={320}
+            height={60}
             alt="Name of the website"
-            className="object-cover w-auto m-0 text-black h-fit"
+            className="object-cover w-11 hidden xs:block"
+          />
+          <Image
+            src={tothemounblack}
+            width={320}
+            height={60}
+            alt="Name of the website"
+            className="object-cover w-44"
           />
         </Link>
-        <button className="active:outline-none outline-none border-none">
+        <button className="active:outline-none outline-none border-none h-fit">
           <FontAwesomeIcon
             icon={faMagnifyingGlass}
-            className="w-5 h-auto cursor-pointer"
+            className="w-5 h-5 cursor-pointer"
           />
         </button>
       </div>
-      <div className="h-14 w-full hidden sm:flex flex-col items-start justify-center border-b-2 border-black border-solid">
-        <ul className="w-full flex justify-center gap-2">
-          {navigation?.map((elem: navigationItemType, i: number) => {
-            return (
-              <li key={i} className="inline-block mx-2">
-                <Link
-                  href={"/"}
-                  className="font-semibold text-sm hover:bg-primary hover:font-bold hover:text-secondary hover:rounded-sm hover:transition hover:ease-in-out hover:duration-15000 px-2 py-2"
-                >
-                  <span>{elem.item_name}</span>
-                </Link>
-              </li>
-            );
-          })}
-        </ul>
+      <div className="w-full hidden sm:flex items-start justify-center">
+        <NavMenuComp navigation={navigation} flexAlign="justify-center" />
       </div>
       <MenuDrawer navigation={navigation} open={open} setOpen={setOpen} />
     </nav>

@@ -7,9 +7,9 @@ import { SwiperHeroCarousel } from "@/components/sliders";
 import "swiper/css";
 
 const MockCarouselHero = () => {
-  const data = mockArticleSectionData.articles;
+  const data = mockArticleSectionData.articles.filter((elem, i) => i < 5);
   return (
-    <div className=" w-full absolute bottom-4">
+    <div className="w-full block bottom-4 h-fit">
       <SwiperHeroCarousel>
         {data?.map((article: Article, i: number) => {
           return (
@@ -29,7 +29,7 @@ export const ArticleCard = ({
   article: Article;
   type?: string;
 }) => {
-  let charLimit = 40;
+  let charLimit = 50;
   let title;
   let titleArr = article.article_title.split("");
   title =
@@ -37,28 +37,27 @@ export const ArticleCard = ({
     titleArr.filter((char, i) => charLimit > i).join("") + "...";
 
   return (
-    <div className={`flex flex-col items-start gap-2 bg-white z-1000 p-3`}>
-      <div className="w-full z-50 flex justify-between gap-2 text-ellipsis">
+    <div
+      className={`flex flex-col items-start h-full gap-2 bg-white z-1000 p-3 rounded-sm`}
+    >
+      <div className="w-full z-50 flex flex-col justify-between gap-2 text-ellipsis">
         <Link href={"/"} className="img-hover w-full flex-1">
           <Image
             src={article.article_cover}
             height={350}
             width={350}
             alt={article.article_title}
-            className="object-cover min-w-[122px] h-auto"
+            className="object-cover w-full h-auto"
           />
         </Link>
-        <div className="flex-1">
-          <Link href={"/"} className="text-hover max-h-[100px] text-ellipsis">
+        <div className="flex-2">
+          <Link href={"/"} className="text-hover">
             <h5
-              className="text-base lg:text-lg xl:text-xl font-title font-bold lg:uppercase tracking-tighter"
+              className="text-base lg:text-lg font-title font-bold tracking-tight"
               style={{ lineHeight: "1.5rem" }}
             >
               {title}
             </h5>
-          </Link>
-          <Link href={`/`} className="text-hover">
-            <span className="text-xs tracking-tight">{`by ${article.article_author.author_first_name} ${article.article_author.author_last_name} `}</span>
           </Link>
         </div>
       </div>
