@@ -115,7 +115,7 @@ export const SwiperImprovedCarousel = ({
 
   return (
     <Swiper
-      className={`relative ${className}`}
+      className={`w-full relative ${className}`}
       onBeforeInit={(swiper) => {
         swiperRef.current = swiper;
       }}

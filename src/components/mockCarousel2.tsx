@@ -12,20 +12,12 @@ const MockCarousel2 = () => {
   return (
     <Wrapper
       padding={false}
-      className="box-content overflow-hidden border-t-2 border-solid border-black"
+      className="overflow-hidden border-t-2 border-solid border-black pl-5 pr-0"
     >
-      {/* <SectionTitleContainer>
-        <SectionTitle
-          title={mockArticleSectionData.title}
-          className="text-hover"
-        />
-        <p className="pt-4 text-hover">{mockArticleSectionData.description}</p>
-      </SectionTitleContainer>
-      <hr className="border-solid border-gray-200 border-t-2 pt-5" /> */}
       <SwiperImprovedCarousel>
         {data?.map((article: Article, i: number) => {
           return (
-            <SwiperSlide key={i}>
+            <SwiperSlide key={i} className="last-of-type:pr-5">
               <ArticleCard article={article} />
             </SwiperSlide>
           );
