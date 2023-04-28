@@ -23,7 +23,7 @@ export const EcomNav = ({
 
   return (
     <header
-      className="absolute top-0 h-header-height px-5 md:px-10 z-50 w-full font-semibold text-sm uppercase text-white bg-transparent transition-all ease-in-out duration-200"
+      className="absolute top-0 h-header-height px-5 md:px-10 z-50 w-screen font-semibold text-sm uppercase text-white bg-transparent transition-all ease-in-out duration-200"
       id="ecomNav"
     >
       <div className="h-full flex justify-between items-center ease-in-out duration-75">

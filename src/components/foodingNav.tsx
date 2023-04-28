@@ -6,7 +6,6 @@ import tothemounblack from "../../public/assets/tothemounblack.svg";
 import { navigationItemType } from "@/utils/mockData";
 import { useState } from "react";
 import { MenuDrawer } from "./menuDrawer";
-import NavMenu from "./mobileNav";
 import { NavMenuComp } from "./ecomNav";
 import logo from "../../public/assets/logo.svg";
 

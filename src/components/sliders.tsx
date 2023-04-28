@@ -11,7 +11,7 @@ import "swiper/css/effect-fade";
 
 export const SwiperCarousel = ({
   children,
-  className,
+  className = "",
 }: {
   children: ReactNode;
   className?: string;
@@ -28,7 +28,7 @@ export const SwiperCarousel = ({
 
   return (
     <Swiper
-      className={`relative w-full ${className}`}
+      className={`w-full relative ${className}`}
       onBeforeInit={(swiper) => {
         swiperRef.current = swiper;
       }}
@@ -74,9 +74,6 @@ export const SwiperCarousel = ({
       {children}
       <button
         className={`custom_prev`}
-        // className={`custom_prev ${
-        //   swiperState.isBeginning && "custom_disabled"
-        // }`}
         disabled={swiperState.isBeginning}
         onClick={() => {
           swiperRef.current?.slidePrev();
@@ -86,7 +83,6 @@ export const SwiperCarousel = ({
       </button>
       <button
         className={`custom_next`}
-        // className={`custom_next ${swiperState.isEnd && "custom_disabled"}`}
         onClick={() => {
           swiperRef.current?.slideNext();
         }}
@@ -119,7 +115,7 @@ export const SwiperImprovedCarousel = ({
 
   return (
     <Swiper
-      className={`relative w-full ${className}`}
+      className={`relative ${className}`}
       onBeforeInit={(swiper) => {
         swiperRef.current = swiper;
       }}
@@ -178,77 +174,6 @@ export const SwiperImprovedCarousel = ({
       >
         {"→"}
       </button>
-    </Swiper>
-  );
-};
-
-export const SwiperHeroCarousel = ({
-  children,
-  className,
-  btnPosition = "top-pos",
-}: {
-  children: ReactNode;
-  className?: string;
-  btnPosition?: "mid-pos" | "top-pos";
-}) => {
-  const [swiperState, setSwiperState] = useState<{
-    isBeginning?: boolean;
-    isEnd?: boolean;
-  }>({
-    isBeginning: true,
-    isEnd: false,
-  });
-
-  const swiperRef = useRef<SwiperCore>();
-
-  return (
-    <Swiper
-      className={`relative w-full ${className}`}
-      modules={[Autoplay, Navigation, Pagination]}
-      onBeforeInit={(swiper) => {
-        swiperRef.current = swiper;
-      }}
-      onSlideChange={(swiper) => {
-        const { isBeginning, isEnd } = swiper;
-        setSwiperState({
-          isBeginning,
-          isEnd,
-        });
-      }}
-      autoplay={{
-        delay: 3200,
-        disableOnInteraction: false,
-        pauseOnMouseEnter: true,
-      }}
-      speed={700}
-      breakpoints={{
-        250: {
-          slidesPerView: 2.5,
-          spaceBetween: 10,
-        },
-        450: {
-          slidesPerView: 3.0,
-          spaceBetween: 10,
-        },
-        650: {
-          slidesPerView: 3.5,
-          spaceBetween: 10,
-        },
-        850: {
-          slidesPerView: 4.5,
-          spaceBetween: 10,
-        },
-        1050: {
-          slidesPerView: 5.0,
-          spaceBetween: 10,
-        },
-        150: {
-          slidesPerView: 6,
-          spaceBetween: 10,
-        },
-      }}
-    >
-      {children}
     </Swiper>
   );
 };

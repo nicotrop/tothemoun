@@ -4,8 +4,7 @@ import MockCarousel2 from "@/components/mockCarousel2";
 import MockCarousel from "@/components/mockCarousel";
 import MockCarousel3 from "@/components/mockCarousel3";
 import { WashingtonPostGrid } from "@/components/mixedGrid2";
-import HeroVideo from "@/components/heroVideo";
-import { EcomVideo, HeroSliders } from "@/components/heroSliders";
+import { HeroSliders, HeroVideo } from "@/components/heroComponents";
 
 export default function PreviewSlices() {
   return (
@@ -17,18 +16,10 @@ export default function PreviewSlices() {
       </Wrapper>
       <HeroSliders />
       <Wrapper>
-        <div>
-          Hero Auto Sliders + Ecom Sticky NavBar + Marquee Scrolling Banner
-        </div>
-      </Wrapper>
-      <EcomVideo />
-      <Wrapper>
-        <div className="mt-8">
-          Hero Video Component + FoodingNav + Scrolling Articles
-        </div>
+        <div>Hero Video + Ecom Sticky NavBar + Overlay title + Down button</div>
       </Wrapper>
       <HeroVideo />
-      <Wrapper>
+      <Wrapper padding={true}>
         <div className="mt-8">
           Mixed Grid Component from{" "}
           <a href="https://theintercept.com/">The Intercept</a>
@@ -42,10 +33,6 @@ export default function PreviewSlices() {
         </div>
       </Wrapper>
       <WashingtonPostGrid />
-      <Wrapper>
-        <div className="mt-8">Carousel Component // No inspiration</div>
-      </Wrapper>
-      <MockCarousel />
       <Wrapper>
         <div className="mt-8">Carousel Component2 // No inspiration</div>
       </Wrapper>

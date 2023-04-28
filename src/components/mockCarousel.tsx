@@ -10,7 +10,10 @@ import "swiper/css";
 const MockCarousel = () => {
   const data = mockArticleSectionData.articles;
   return (
-    <Wrapper className="box-content border-t-2 border-solid border-black">
+    <Wrapper
+      padding={false}
+      className="box-content overflow-hidden border-t-2 border-solid border-black"
+    >
       {/* <SectionTitleContainer>
         <SectionTitle
           title={mockArticleSectionData.title}

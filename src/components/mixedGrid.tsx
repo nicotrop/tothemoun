@@ -15,17 +15,17 @@ export const InterceptMixedGrid = () => {
         <SectionTitle title="Environment" />
       </SectionTitleContainer>
 
-      <div className="flex flex-col lg:flex-row gap-5 lg:h-[658px]">
+      <div className="flex flex-col lg:flex-row gap-5 lg:h-[658px] xl:h-[700px]">
         {/* Main Article */}
-        <div className="w-full lg:w-2/3 border-solid border-gray-200 border-t-2 h-full xl:h-auto flex flex-col gap-5 mr-5 pt-5 lg:max-w-3xl">
+        <div className="w-full lg:w-2/3 border-solid border-gray-200 border-t-2 h-full flex flex-col justify-between gap-5 mr-5 pt-5">
           <Image
             src={arrayArticles[0].article_cover}
             alt="image"
             height={658}
             width={658}
-            className="object-cover w-full h-3/4"
+            className="object-cover w-full h-4/5"
           />
-          <div className="h-fit flex flex-col gap-2">
+          <div className="h-full flex flex-col gap-2">
             <h3 className="text-3xl lg:text-[32px] font-extrabold font-title leading-tight tracking-tighter">
               {arrayArticles[0].article_title}
             </h3>
@@ -56,7 +56,7 @@ export const InterceptMixedGrid = () => {
                     height={150}
                     width={200}
                     alt="article img"
-                    className="aspect-square max-w-[250px] h-auto max-h-36 sm:max-h-none lg:aspect-auto md:w-1/2 object-cover lg:max-h-36 lg:h-auto lg:w-1/3 min-[1565px]:block"
+                    className="aspect-square w-full xs:w-auto xs:max-w-[250px] h-auto max-h-36 sm:max-h-none lg:aspect-auto md:w-1/2 object-cover lg:max-h-36 lg:h-auto lg:w-1/3 min-[1565px]:block"
                   />
                   <div>
                     <h3 className="text-xl w-full font-extrabold font-title leading-tight tracking-tighter">

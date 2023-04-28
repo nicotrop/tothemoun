@@ -23,9 +23,7 @@ export const Wrapper = ({
 }) => {
   return (
     <section
-      className={`${
-        padding ? `px-4 xl:px-0` : null
-      } ${className} pt-8 pb-2 xl:px-0 max-w-7xl m-auto px-0`}
+      className={`${padding ? `px-5` : "px-0"} ${className} pt-8 pb-2 w-full`}
       style={style}
     >
       {children}
