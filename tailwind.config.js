@@ -34,7 +34,7 @@ module.exports = {
         tertiary: "#95a595",
       },
       fontFamily: {
-        header: ["Roboto Condensed", "sans-serif"],
+        header: ["Raleway", "sans-serif"],
         display: ["DM Serif Display", "serif"],
         title: ["Roboto", "sans-serif"],
         body: ["PT Serif", "serif"],

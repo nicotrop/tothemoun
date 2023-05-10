@@ -12,10 +12,16 @@ export const InterceptMixedGrid = () => {
     <Wrapper className="border-t-2 border-solid border-black">
       {/* Title */}
       <SectionTitleContainer>
-        <SectionTitle title="Environment" />
+        <div className="flex flex-col gap-2">
+          <SectionTitle title="Environment" className="font-display italic" />
+          <span className="font-title">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit rerum
+            explicabo nulla magni beatae tenetur!
+          </span>
+        </div>
       </SectionTitleContainer>
 
-      <div className="flex flex-col lg:flex-row gap-5 lg:h-[658px] xl:h-[700px]">
+      <div className="flex flex-col lg:flex-row gap-5 lg:gap-5 lg:h-[658px] xl:h-[700px]">
         {/* Main Article */}
         <div className="w-full lg:w-2/3 border-solid border-gray-200 border-t-2 h-full flex flex-col justify-between gap-5 mr-5 pt-5">
           <Image

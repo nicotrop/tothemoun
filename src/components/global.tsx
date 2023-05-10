@@ -59,7 +59,7 @@ export const Container = ({
 
 export const SectionTitle = ({
   title,
-  className,
+  className = "font-header",
 }: {
   title?: string;
   className?: string;
@@ -67,7 +67,7 @@ export const SectionTitle = ({
   let defaultTitle = "Edit me";
   return (
     <h2
-      className={`text-[32px] lg:text-[52px] font-extrabold tracking-tighter font-header ${className}`}
+      className={`text-4xl lg:text-5xl font-black tracking-tighter ${className}`}
     >{`${title ? title : defaultTitle} >`}</h2>
   );
 };
@@ -105,5 +105,38 @@ export const ThemeButton = ({ children }: { children: React.ReactNode }) => {
     <button className="bg-primary text-secondary text-base font-medium py-2 px-4 rounded-md w-fit hover:bg-secondary hover:text-primary hover:ease-linear hover:duration-200">
       {children}
     </button>
+  );
+};
+
+export const ArticleTag = ({
+  tags,
+  className = "",
+  secondaryOnMobile = false,
+}: {
+  tags: string[];
+  className?: string;
+  secondaryOnMobile?: boolean;
+}) => {
+  return (
+    <div className={`gap-2 ${className}`}>
+      {tags.map((tag, i) => {
+        if (i < 2) {
+          return (
+            <span
+              key={i}
+              className={`text-xs w-fit border-solid border-2 py-2 px-4 rounded-sm font-semibold 
+              ${
+                secondaryOnMobile
+                  ? "border-white tracking-wider uppercase font-title text-secondary bg-white hover:text-white hover:cursor-default hover:bg-transparent ease-in-out duration-300 sm:bg-transparent sm:border-secondary sm:text-secondary sm:hover:bg-transparent sm:hover:text-secondary"
+                  : "border-secondary"
+              }
+              `}
+            >
+              {tag}
+            </span>
+          );
+        }
+      })}
+    </div>
   );
 };

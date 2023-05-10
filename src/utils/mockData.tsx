@@ -23,6 +23,7 @@ export type Article = {
   uid: string;
   date: string;
   article_author: Author;
+  tags?: string[];
 };
 
 export const mockAuthor: Author = {
@@ -51,6 +52,7 @@ export const arrayArticles: Article[] = [
       "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Expedita quas sint, voluptatum sunt dolor commodi dolorum odit? Accusamus autem quae voluptates dolores esse, quam minima distinctio odit nam! Quisquam, illum.",
     preview:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam, tempore!",
+    tags: ["Port-Louis", "Sainte-Anne", "Saint-François", "Le Moule"],
     uid: "00001",
     article_author: mockAuthor,
   },
@@ -64,6 +66,7 @@ export const arrayArticles: Article[] = [
       "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Expedita quas sint, voluptatum sunt dolor commodi dolorum odit? Accusamus autem quae voluptates dolores esse, quam minima distinctio odit nam! Quisquam, illum.",
     preview:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam, tempore!",
+    tags: ["Port-Louis", "Sainte-Anne", "Saint-François", "Le Moule"],
     uid: "00001",
     article_author: mockAuthor,
   },
@@ -77,6 +80,7 @@ export const arrayArticles: Article[] = [
       "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Expedita quas sint, voluptatum sunt dolor commodi dolorum odit? Accusamus autem quae voluptates dolores esse, quam minima distinctio odit nam! Quisquam, illum.",
     preview:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam, tempore!",
+    tags: ["Port-Louis", "Sainte-Anne", "Saint-François", "Le Moule"],
     uid: "00001",
     article_author: mockAuthor,
   },
@@ -90,6 +94,7 @@ export const arrayArticles: Article[] = [
       "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Expedita quas sint, voluptatum sunt dolor commodi dolorum odit? Accusamus autem quae voluptates dolores esse, quam minima distinctio odit nam! Quisquam, illum.",
     preview:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam, tempore!",
+    tags: ["Port-Louis", "Sainte-Anne", "Saint-François", "Le Moule"],
     uid: "00001",
     article_author: mockAuthor,
   },
@@ -103,6 +108,7 @@ export const arrayArticles: Article[] = [
       "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Expedita quas sint, voluptatum sunt dolor commodi dolorum odit? Accusamus autem quae voluptates dolores esse, quam minima distinctio odit nam! Quisquam, illum.",
     preview:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam, tempore!",
+    tags: ["Port-Louis", "Sainte-Anne", "Saint-François", "Le Moule"],
     uid: "00001",
     article_author: mockAuthor,
   },
@@ -116,6 +122,7 @@ export const arrayArticles: Article[] = [
       "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Expedita quas sint, voluptatum sunt dolor commodi dolorum odit? Accusamus autem quae voluptates dolores esse, quam minima distinctio odit nam! Quisquam, illum.",
     preview:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam, tempore!",
+    tags: ["Port-Louis", "Sainte-Anne", "Saint-François", "Le Moule"],
     uid: "00001",
     article_author: mockAuthor,
   },
@@ -128,6 +135,7 @@ export const arrayArticles: Article[] = [
       "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Expedita quas sint, voluptatum sunt dolor commodi dolorum odit? Accusamus autem quae voluptates dolores esse, quam minima distinctio odit nam! Quisquam, illum.",
     preview:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam, tempore!",
+    tags: ["Port-Louis", "Sainte-Anne", "Saint-François", "Le Moule"],
     uid: "00001",
     article_author: mockAuthor,
   },

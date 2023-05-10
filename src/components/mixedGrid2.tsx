@@ -14,7 +14,13 @@ export const WashingtonPostGrid = () => {
     <Wrapper className="border-t-2 border-solid border-black">
       {/* Title */}
       <SectionTitleContainer>
-        <SectionTitle title="Environment" />
+        <div className="flex flex-col gap-2">
+          <SectionTitle title="Environment" />
+          <span className="font-title">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit rerum
+            explicabo nulla magni beatae tenetur!
+          </span>
+        </div>
       </SectionTitleContainer>
 
       <div className="flex flex-col lg:flex-row w-full gap-5 lg:h-[658px]">
