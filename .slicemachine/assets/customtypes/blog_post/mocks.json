@@ -3,13 +3,13 @@
     "__TYPE__": "ImageContent",
     "origin": {
       "id": "main",
-      "url": "https://images.unsplash.com/photo-1579931794097-0ad001e51edb",
-      "width": 3958,
-      "height": 3958
+      "url": "https://images.unsplash.com/photo-1600804931749-2da4ce26c869",
+      "width": 3199,
+      "height": 3199
     },
-    "url": "https://images.unsplash.com/photo-1579931794097-0ad001e51edb",
-    "width": 3958,
-    "height": 3958,
+    "url": "https://images.unsplash.com/photo-1600804931749-2da4ce26c869",
+    "width": 3199,
+    "height": 3199,
     "edit": {
       "zoom": 1,
       "crop": {
@@ -22,11 +22,11 @@
   },
   "uid": {
     "__TYPE__": "UIDContent",
-    "value": "folks"
+    "value": "tank"
   },
   "article_title": {
     "__TYPE__": "FieldContent",
-    "value": "motor",
+    "value": "visitor",
     "type": "Text"
   },
   "article_content": {
@@ -35,7 +35,7 @@
       {
         "type": "paragraph",
         "content": {
-          "text": "Mollit qui magna nisi ullamco excepteur et est nostrud irure aliqua enim ex aute eu cupidatat. Deserunt voluptate incididunt culpa."
+          "text": "Cillum adipisicing pariatur culpa eu ipsum et consequat id quis. Adipisicing ut culpa sint minim ea ex eu et ea magna aute Lorem irure."
         }
       }
     ]
@@ -49,7 +49,14 @@
   },
   "preview": {
     "__TYPE__": "FieldContent",
-    "value": "life",
+    "value": "forward",
     "type": "Text"
+  },
+  "category": {
+    "__TYPE__": "LinkContent",
+    "value": {
+      "__TYPE__": "DocumentLink",
+      "id": "mock_document_id"
+    }
   }
 }

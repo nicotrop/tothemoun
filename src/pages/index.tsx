@@ -211,6 +211,9 @@ export const getStaticProps = async ({
 
   const data = { ...page, articles };
 
+  const blogs = await client.getAllByType("blog_post");
+  console.log(blogs);
+
   return {
     props: {
       data,

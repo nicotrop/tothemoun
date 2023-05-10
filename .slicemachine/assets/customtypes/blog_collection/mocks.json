@@ -1,24 +1,24 @@
 {
   "uid": {
     "__TYPE__": "UIDContent",
-    "value": "war"
+    "value": "door"
   },
   "collection_name": {
     "__TYPE__": "FieldContent",
-    "value": "sold",
+    "value": "jump",
     "type": "Text"
   },
   "collection_image": {
     "__TYPE__": "ImageContent",
     "origin": {
       "id": "main",
-      "url": "https://images.unsplash.com/photo-1607582278043-57198ac8da43",
-      "width": 4024,
-      "height": 4024
+      "url": "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d",
+      "width": 4076,
+      "height": 2712
     },
-    "url": "https://images.unsplash.com/photo-1607582278043-57198ac8da43",
-    "width": 4024,
-    "height": 4024,
+    "url": "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d",
+    "width": 4076,
+    "height": 2712,
     "edit": {
       "zoom": 1,
       "crop": {
@@ -38,7 +38,14 @@
   },
   "collection_seo_description": {
     "__TYPE__": "FieldContent",
-    "value": "face",
+    "value": "home",
     "type": "Text"
+  },
+  "collection": {
+    "__TYPE__": "LinkContent",
+    "value": {
+      "__TYPE__": "DocumentLink",
+      "id": "mock_document_id"
+    }
   }
 }

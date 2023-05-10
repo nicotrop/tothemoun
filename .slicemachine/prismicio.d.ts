@@ -160,6 +160,17 @@ interface BlogCollectionDocumentData {
      *
      */
     collection_seo_description: prismicT.KeyTextField;
+    /**
+     * Parent collection field in *Blog Collection*
+     *
+     * - **Field Type**: Content Relationship
+     * - **Placeholder**: *None*
+     * - **API ID Path**: blog_collection.collection
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/link-content-relationship
+     *
+     */
+    collection: prismicT.RelationField<"collection">;
 }
 /**
  * Blog Collection document from Prismic
@@ -228,6 +239,17 @@ interface BlogPostDocumentData {
      *
      */
     preview: prismicT.KeyTextField;
+    /**
+     * Parent category field in *Blog Post*
+     *
+     * - **Field Type**: Content Relationship
+     * - **Placeholder**: *None*
+     * - **API ID Path**: blog_post.category
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/link-content-relationship
+     *
+     */
+    category: prismicT.RelationField<"blog_collection">;
 }
 /**
  * Blog Post document from Prismic
@@ -307,6 +329,73 @@ interface CategoryDocumentData {
  * @typeParam Lang - Language API ID of the document.
  */
 export type CategoryDocument<Lang extends string = string> = prismicT.PrismicDocumentWithUID<Simplify<CategoryDocumentData>, "category", Lang>;
+/** Content for Collection documents */
+interface CollectionDocumentData {
+    /**
+     * Categories field in *Collection*
+     *
+     * - **Field Type**: Group
+     * - **Placeholder**: *None*
+     * - **API ID Path**: collection.categories[]
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/group
+     *
+     */
+    categories: prismicT.GroupField<Simplify<CollectionDocumentDataCategoriesItem>>;
+    /**
+     * Other Articles field in *Collection*
+     *
+     * - **Field Type**: Group
+     * - **Placeholder**: *None*
+     * - **API ID Path**: collection.other_articles[]
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/group
+     *
+     */
+    other_articles: prismicT.GroupField<Simplify<CollectionDocumentDataOtherArticlesItem>>;
+}
+/**
+ * Item in Collection → Categories
+ *
+ */
+export interface CollectionDocumentDataCategoriesItem {
+    /**
+     * Category field in *Collection → Categories*
+     *
+     * - **Field Type**: Content Relationship
+     * - **Placeholder**: *None*
+     * - **API ID Path**: collection.categories[].category
+     * - **Documentation**: https://prismic.io/docs/core-concepts/link-content-relationship
+     *
+     */
+    category: prismicT.RelationField;
+}
+/**
+ * Item in Collection → Other Articles
+ *
+ */
+export interface CollectionDocumentDataOtherArticlesItem {
+    /**
+     * Blog article field in *Collection → Other Articles*
+     *
+     * - **Field Type**: Content Relationship
+     * - **Placeholder**: *None*
+     * - **API ID Path**: collection.other_articles[].blog_article
+     * - **Documentation**: https://prismic.io/docs/core-concepts/link-content-relationship
+     *
+     */
+    blog_article: prismicT.RelationField;
+}
+/**
+ * Collection document from Prismic
+ *
+ * - **API ID**: `collection`
+ * - **Repeatable**: `true`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type CollectionDocument<Lang extends string = string> = prismicT.PrismicDocumentWithUID<Simplify<CollectionDocumentData>, "collection", Lang>;
 /** Content for Homepage documents */
 interface HomepageDocumentData {
     /**
@@ -515,6 +604,17 @@ export type NavigationDocument<Lang extends string = string> = prismicT.PrismicD
 /** Content for Page documents */
 interface PageDocumentData {
     /**
+     * category field in *Page*
+     *
+     * - **Field Type**: Content Relationship
+     * - **Placeholder**: *None*
+     * - **API ID Path**: page.category
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/link-content-relationship
+     *
+     */
+    category: prismicT.RelationField<"blog_collection">;
+    /**
      * Page SEO Description field in *Page*
      *
      * - **Field Type**: Text
@@ -630,7 +730,7 @@ export interface SocialsDocumentDataMediaInfoItem {
  * @typeParam Lang - Language API ID of the document.
  */
 export type SocialsDocument<Lang extends string = string> = prismicT.PrismicDocumentWithoutUID<Simplify<SocialsDocumentData>, "socials", Lang>;
-export type AllDocumentTypes = ArticleGroupDocument | AuthorDocument | BlogCollectionDocument | BlogPostDocument | CategoryDocument | HomepageDocument | NavigationMenuDocument | NavigationDocument | PageDocument | SocialsDocument;
+export type AllDocumentTypes = ArticleGroupDocument | AuthorDocument | BlogCollectionDocument | BlogPostDocument | CategoryDocument | CollectionDocument | HomepageDocument | NavigationMenuDocument | NavigationDocument | PageDocument | SocialsDocument;
 /**
  * Primary content in ArticleCarousel → Primary
  *
@@ -1187,6 +1287,6 @@ declare module "@prismicio/client" {
         (repositoryNameOrEndpoint: string, options?: prismic.ClientConfig): prismic.Client<AllDocumentTypes>;
     }
     namespace Content {
-        export type { ArticleGroupDocumentData, ArticleGroupDocumentDataArticlesItem, ArticleGroupDocument, AuthorDocumentData, AuthorDocument, BlogCollectionDocumentData, BlogCollectionDocument, BlogPostDocumentData, BlogPostDocument, CategoryDocumentData, CategoryDocument, HomepageDocumentData, HomepageDocumentDataSlicesSlice, HomepageDocument, NavigationMenuDocumentData, NavigationMenuDocumentDataMenuItem, NavigationMenuDocument, NavigationDocumentData, NavigationDocumentDataNavigationItemItem, NavigationDocument, PageDocumentData, PageDocument, SocialsDocumentData, SocialsDocumentDataMediaInfoItem, SocialsDocument, AllDocumentTypes, ArticleCarouselSliceDefaultPrimary, ArticleCarouselSliceDefaultItem, ArticleCarouselSliceDefault, ArticleCarouselSliceVariation, ArticleCarouselSlice, HomeCollectionSliceDefaultPrimary, HomeCollectionSliceDefaultItem, HomeCollectionSliceDefault, HomeCollectionSliceVariation, HomeCollectionSlice, FooterSliceDefaultPrimary, FooterSliceDefault, FooterSliceVariation, FooterSlice, HomeHeroSliceDefaultPrimary, HomeHeroSliceDefault, HomeHeroSliceVariation, HomeHeroSlice, MixedGridSliceDefaultPrimary, MixedGridSliceDefaultItem, MixedGridSliceDefault, MixedGridSliceVariation, MixedGridSlice, PromotionBannerSliceDefaultPrimary, PromotionBannerSliceDefault, PromotionBannerSliceVariation, PromotionBannerSlice, SeoSectionSliceDefaultPrimary, SeoSectionSliceDefault, SeoSectionSliceVariation, SeoSectionSlice };
+        export type { ArticleGroupDocumentData, ArticleGroupDocumentDataArticlesItem, ArticleGroupDocument, AuthorDocumentData, AuthorDocument, BlogCollectionDocumentData, BlogCollectionDocument, BlogPostDocumentData, BlogPostDocument, CategoryDocumentData, CategoryDocument, CollectionDocumentData, CollectionDocumentDataCategoriesItem, CollectionDocumentDataOtherArticlesItem, CollectionDocument, HomepageDocumentData, HomepageDocumentDataSlicesSlice, HomepageDocument, NavigationMenuDocumentData, NavigationMenuDocumentDataMenuItem, NavigationMenuDocument, NavigationDocumentData, NavigationDocumentDataNavigationItemItem, NavigationDocument, PageDocumentData, PageDocument, SocialsDocumentData, SocialsDocumentDataMediaInfoItem, SocialsDocument, AllDocumentTypes, ArticleCarouselSliceDefaultPrimary, ArticleCarouselSliceDefaultItem, ArticleCarouselSliceDefault, ArticleCarouselSliceVariation, ArticleCarouselSlice, HomeCollectionSliceDefaultPrimary, HomeCollectionSliceDefaultItem, HomeCollectionSliceDefault, HomeCollectionSliceVariation, HomeCollectionSlice, FooterSliceDefaultPrimary, FooterSliceDefault, FooterSliceVariation, FooterSlice, HomeHeroSliceDefaultPrimary, HomeHeroSliceDefault, HomeHeroSliceVariation, HomeHeroSlice, MixedGridSliceDefaultPrimary, MixedGridSliceDefaultItem, MixedGridSliceDefault, MixedGridSliceVariation, MixedGridSlice, PromotionBannerSliceDefaultPrimary, PromotionBannerSliceDefault, PromotionBannerSliceVariation, PromotionBannerSlice, SeoSectionSliceDefaultPrimary, SeoSectionSliceDefault, SeoSectionSliceVariation, SeoSectionSlice };
     }
 }

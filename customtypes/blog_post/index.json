@@ -52,6 +52,16 @@
           "label": "Preview",
           "placeholder": "Article prieview..."
         }
+      },
+      "category": {
+        "type": "Link",
+        "config": {
+          "label": "Parent category",
+          "select": "document",
+          "customtypes": [
+            "blog_collection"
+          ]
+        }
       }
     }
   }

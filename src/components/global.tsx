@@ -127,7 +127,7 @@ export const ArticleTag = ({
               className={`text-xs w-fit border-solid border-2 py-2 px-4 rounded-sm font-semibold 
               ${
                 secondaryOnMobile
-                  ? "border-white tracking-wider uppercase font-title text-secondary bg-white hover:text-white hover:cursor-default hover:bg-transparent ease-in-out duration-300 sm:bg-transparent sm:border-secondary sm:text-secondary sm:hover:bg-transparent sm:hover:text-secondary"
+                  ? "border-white tracking-wider uppercase font-title text-secondary bg-white hover:text-white hover:cursor-default hover:bg-transparent ease-in-out duration-300 sm:bg-transparent sm:border-secondary sm:text-secondary sm:hover:text-secondary sm:hover:bg-primary sm:hover:border-primary"
                   : "border-secondary"
               }
               `}

@@ -5,6 +5,16 @@
   "status": true,
   "json": {
     "Main": {
+      "category": {
+        "type": "Link",
+        "config": {
+          "label": "category",
+          "select": "document",
+          "customtypes": [
+            "blog_collection"
+          ]
+        }
+      },
       "uid": {
         "type": "UID",
         "config": {

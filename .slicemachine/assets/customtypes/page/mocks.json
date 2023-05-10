@@ -1,11 +1,18 @@
 {
+  "category": {
+    "__TYPE__": "LinkContent",
+    "value": {
+      "__TYPE__": "DocumentLink",
+      "id": "mock_document_id"
+    }
+  },
   "uid": {
     "__TYPE__": "UIDContent",
-    "value": "military"
+    "value": "city"
   },
   "page_seo_description": {
     "__TYPE__": "FieldContent",
-    "value": "higher",
+    "value": "fine",
     "type": "Text"
   },
   "page_collections": {
@@ -21,7 +28,7 @@
       {
         "type": "paragraph",
         "content": {
-          "text": "Incididunt anim veniam est mollit est officia veniam cillum nostrud enim sint labore officia ea. Nostrud esse incididunt voluptate quis fugiat cupidatat deserunt anim qui officia esse. Sunt ea consequat culpa consequat ad minim nisi."
+          "text": "Dolore do magna irure."
         }
       }
     ]
@@ -30,13 +37,13 @@
     "__TYPE__": "ImageContent",
     "origin": {
       "id": "main",
-      "url": "https://images.unsplash.com/photo-1579931794097-0ad001e51edb",
-      "width": 3958,
-      "height": 3958
+      "url": "https://images.unsplash.com/photo-1593642532973-d31b6557fa68",
+      "width": 8640,
+      "height": 8640
     },
-    "url": "https://images.unsplash.com/photo-1579931794097-0ad001e51edb",
-    "width": 3958,
-    "height": 3958,
+    "url": "https://images.unsplash.com/photo-1593642532973-d31b6557fa68",
+    "width": 8640,
+    "height": 8640,
     "edit": {
       "zoom": 1,
       "crop": {
@@ -49,7 +56,7 @@
   },
   "page_seo_title": {
     "__TYPE__": "FieldContent",
-    "value": "against",
+    "value": "newspaper",
     "type": "Text"
   }
 }

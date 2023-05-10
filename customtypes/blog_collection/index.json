@@ -40,6 +40,16 @@
           "label": "Collection SEO Description",
           "placeholder": ""
         }
+      },
+      "collection": {
+        "type": "Link",
+        "config": {
+          "label": "Parent collection",
+          "select": "document",
+          "customtypes": [
+            "collection"
+          ]
+        }
       }
     }
   }

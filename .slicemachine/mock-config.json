@@ -15,7 +15,8 @@
     },
     "socials": {
       "media_info": {}
-    }
+    },
+    "collection": {}
   },
   "slices": {
     "HomeHero": {
