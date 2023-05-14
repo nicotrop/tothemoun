@@ -15,20 +15,8 @@ const routes = [
     path: "/",
   },
   {
-    type: "blog_post",
-    path: "/blog/article/:uid",
-  },
-  {
     type: "blog_collection",
-    path: "/blog/:uid",
-  },
-  {
-    type: "blog_post",
-    resolvers: {
-      category: "category",
-      collection: "category.collection",
-    },
-    path: "/blog/:collection?/:category?/:uid",
+    path: "/que-faire-en-guadeloupe/:uid",
   },
   {
     type: "blog_post",
@@ -37,27 +25,6 @@ const routes = [
     },
     path: "/que-faire-en-guadeloupe/:category?/:uid",
   },
-  // {
-  //   type: "blog_post",
-  //   resolvers: {
-  //     category: "category",
-  //   },
-  //   path: "/logement-guadeloupe/:category?/:uid",
-  // },
-  // {
-  //   type: "blog_post",
-  //   resolvers: {
-  //     category: "category",
-  //   },
-  //   path: "/food-drinks/:category?/:uid",
-  // },
-  // {
-  //   type: "blog_post",
-  //   resolvers: {
-  //     category: "category",
-  //   },
-  //   path: "/best-of-guadeloupe/:category?/:uid",
-  // },
   {
     type: "page",
     path: "/:uid",

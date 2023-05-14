@@ -77,12 +77,12 @@ export const EcomNav = ({
         </div>
       </div>
       <MenuDrawer navigation={navigation} open={open} setOpen={setOpen} />
-      {/* <StickyHeaderScript /> */}
+      <StickyHeaderScript />
     </header>
   );
 };
 
-const CountrySelector = () => {
+export const CountrySelector = () => {
   const [current, setCurrent] = useState("FR");
 
   const handleSelect = (e: React.MouseEvent<HTMLButtonElement>) => {
@@ -166,7 +166,7 @@ const StickyHeaderScript = () => {
                   headerMenu?.classList.add("text-secondary");
                   headerMenu?.classList.remove("bg-transparent");
                   headerMenu?.classList.remove("absolute");
-                  headerMenu?.classList.remove("text-primary");
+                  headerMenu?.classList.remove("text-white");
     
                   logoAbsolute?.classList.add("hidden");
                   logoFixed?.classList.remove("hidden");
@@ -175,7 +175,7 @@ const StickyHeaderScript = () => {
                   headerMenu?.classList.remove("fixed");
                   headerMenu?.classList.remove("text-secondary");
                   headerMenu?.classList.add("bg-transparent");
-                  headerMenu?.classList.add("text-primary");
+                  headerMenu?.classList.add("text-white");
                   headerMenu?.classList.add("absolute");
     
                   logoAbsolute?.classList.remove("hidden");

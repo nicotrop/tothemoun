@@ -16,7 +16,9 @@
     "socials": {
       "media_info": {}
     },
-    "collection": {}
+    "collection": {},
+    "footer": {},
+    "navbar": {}
   },
   "slices": {
     "HomeHero": {
@@ -54,6 +56,11 @@
       "default": {
         "primary": {},
         "items": {}
+      }
+    },
+    "Navbar": {
+      "default": {
+        "primary": {}
       }
     }
   }

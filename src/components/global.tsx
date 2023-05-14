@@ -1,11 +1,29 @@
 import { Url } from "next/dist/shared/lib/router/router";
 import Link from "next/link";
 import { ReactNode } from "react";
+import { NavBar } from "./navBar";
 
-export const Layout = ({ children }: { children: ReactNode }) => {
+export const Layout = ({
+  children,
+  footer,
+  header,
+}: {
+  children: ReactNode;
+  footer?: any;
+  header?: any;
+}) => {
+  console.log(header);
+
   return (
     <div>
-      <main className="">{children}</main>
+      {header && (
+        <NavBar
+          navigation={header.navigation.data.navigation_item}
+          logo={header.logo}
+        />
+      )}
+      <main>{children}</main>
+      <footer>{footer}</footer>
     </div>
   );
 };

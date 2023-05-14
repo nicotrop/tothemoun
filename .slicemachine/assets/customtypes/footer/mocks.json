@@ -1,53 +1,13 @@
 {
   "uid": {
     "__TYPE__": "UIDContent",
-    "value": "percent"
-  },
-  "categories": {
-    "__TYPE__": "GroupContentType",
-    "value": [
-      {
-        "__TYPE__": "GroupItemContent",
-        "value": [
-          [
-            "category",
-            {
-              "__TYPE__": "LinkContent",
-              "value": {
-                "__TYPE__": "DocumentLink",
-                "id": "mock_document_id"
-              }
-            }
-          ]
-        ]
-      }
-    ]
-  },
-  "other_articles": {
-    "__TYPE__": "GroupContentType",
-    "value": [
-      {
-        "__TYPE__": "GroupItemContent",
-        "value": [
-          [
-            "blog_article",
-            {
-              "__TYPE__": "LinkContent",
-              "value": {
-                "__TYPE__": "DocumentLink",
-                "id": "mock_document_id"
-              }
-            }
-          ]
-        ]
-      }
-    ]
+    "value": "afternoon"
   },
   "slices": {
     "__TYPE__": "SliceContentType",
     "value": [
       {
-        "key": "footer$e22d41bf-f446-47c6-b848-65ff047c0f66",
+        "key": "footer$0ab291e3-4f35-4ea4-a269-11df0c401441",
         "name": "footer",
         "widget": {
           "__TYPE__": "SharedSliceContent",
@@ -55,12 +15,12 @@
           "primary": {
             "background_color": {
               "__TYPE__": "FieldContent",
-              "value": "#3efaca",
+              "value": "#27c671",
               "type": "Color"
             },
             "text_color": {
               "__TYPE__": "FieldContent",
-              "value": "#e2bf28",
+              "value": "#636c1f",
               "type": "Color"
             },
             "menu_about": {
@@ -83,7 +43,7 @@
                 {
                   "type": "paragraph",
                   "content": {
-                    "text": "Et duis dolore amet aliqua cupidatat dolor sit id irure exercitation id non sint officia ea."
+                    "text": "Non occaecat ullamco qui eiusmod labore fugiat adipisicing exercitation proident consectetur. Reprehenderit cillum eiusmod ex occaecat."
                   }
                 }
               ]
@@ -94,7 +54,7 @@
                 {
                   "type": "paragraph",
                   "content": {
-                    "text": "Voluptate nisi nostrud deserunt laborum dolore."
+                    "text": "Voluptate ullamco dolore qui ut sint incididunt eu Lorem. Sit consequat occaecat sint esse nisi esse nostrud anim. Amet enim irure eiusmod fugiat incididunt est occaecat consequat."
                   }
                 }
               ]
@@ -108,17 +68,17 @@
             },
             "input_border_color": {
               "__TYPE__": "FieldContent",
-              "value": "#3ffaf4",
+              "value": "#d149aa",
               "type": "Color"
             },
             "input_btn_bg_color": {
               "__TYPE__": "FieldContent",
-              "value": "#96ef71",
+              "value": "#ee08eb",
               "type": "Color"
             },
             "input_text_input_color": {
               "__TYPE__": "FieldContent",
-              "value": "#91dbdd",
+              "value": "#4989dd",
               "type": "Color"
             }
           },

@@ -9,6 +9,7 @@ import "swiper/css/bundle";
 export type StaticPageProps = InferGetStaticPropsType<typeof getStaticProps>;
 
 export default function Home({ data }: StaticPageProps) {
+  console.log(data.data.slices);
   return (
     <Layout>
       <SliceZone
@@ -210,9 +211,6 @@ export const getStaticProps = async ({
   });
 
   const data = { ...page, articles };
-
-  const blogs = await client.getAllByType("blog_post");
-  console.log(blogs);
 
   return {
     props: {

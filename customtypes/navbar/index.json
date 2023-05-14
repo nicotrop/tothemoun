@@ -1,0 +1,28 @@
+{
+  "id": "navbar",
+  "label": "Navbar",
+  "repeatable": false,
+  "status": true,
+  "json": {
+    "Main": {
+      "uid": {
+        "type": "UID",
+        "config": {
+          "label": "navbar",
+          "placeholder": ""
+        }
+      },
+      "slices": {
+        "type": "Slices",
+        "fieldset": "Slice Zone",
+        "config": {
+          "choices": {
+            "navbar": {
+              "type": "SharedSlice"
+            }
+          }
+        }
+      }
+    }
+  }
+}

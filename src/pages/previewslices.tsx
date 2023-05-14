@@ -8,12 +8,12 @@ import { InterceptImprovedGrid } from "@/components/mixedGridImproved";
 export default function PreviewSlices() {
   return (
     <Layout>
-      <Wrapper>
+      {/* <Wrapper>
         <div>
           Hero Auto Sliders + Ecom Sticky NavBar + Marquee Scrolling Banner
         </div>
       </Wrapper>
-      <HeroSliders />
+      <HeroSliders /> */}
       <Wrapper>
         <div>Hero Video + Ecom Sticky NavBar + Overlay title + Down button</div>
       </Wrapper>

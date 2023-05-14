@@ -104,12 +104,6 @@ const Footer = ({ slice }: SliceComponentProps<FooterSlice> | any) => {
   );
 };
 
-// type NavMenuProps = {
-//   // link: LinkField | null | undefined | any;
-//   link: any;
-//   text: string;
-// };
-
 const MenuSection = ({
   menu,
 }: {

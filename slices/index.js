@@ -5,6 +5,7 @@ import CollectionCarousel from './CollectionCarousel';
 import Footer from './Footer';
 import HomeHero from './HomeHero';
 import MixedGrid from './MixedGrid';
+import Navbar from './Navbar';
 import PromotionBanner from './PromotionBanner';
 import SeoSection from './SeoSection';
 
@@ -14,6 +15,7 @@ export {
 	Footer,
 	HomeHero,
 	MixedGrid,
+	Navbar,
 	PromotionBanner,
 	SeoSection,
 };
@@ -24,6 +26,7 @@ export const components = {
 	footer: Footer,
 	home_hero: HomeHero,
 	mixed_grid: MixedGrid,
+	navbar: Navbar,
 	promotion_banner: PromotionBanner,
 	seo_section: SeoSection,
 };

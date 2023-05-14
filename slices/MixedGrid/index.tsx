@@ -1,6 +1,4 @@
 import React from "react";
-import Image from "next/image";
-import { arrayArticles } from "@/utils/mockData";
 import { Wrapper } from "@/components/global";
 import { PrismicRichText, SliceComponentProps } from "@prismicio/react";
 import { PrismicNextImage } from "@prismicio/next";
@@ -20,6 +18,8 @@ export const MixedGrid = ({ slice }: SliceComponentProps) => {
     title: slice.primary?.main_article.data?.article_title,
     uid: slice.primary?.main_article.uid,
   };
+
+  console.log(mainArticle);
 
   const otherArticles: articleProps[] = slice.items.map((elem: any) => {
     return {

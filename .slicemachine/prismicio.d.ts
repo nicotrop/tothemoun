@@ -353,6 +353,17 @@ interface CollectionDocumentData {
      *
      */
     other_articles: prismicT.GroupField<Simplify<CollectionDocumentDataOtherArticlesItem>>;
+    /**
+     * Slice Zone field in *Collection*
+     *
+     * - **Field Type**: Slice Zone
+     * - **Placeholder**: *None*
+     * - **API ID Path**: collection.slices[]
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/slices
+     *
+     */
+    slices: prismicT.SliceZone<CollectionDocumentDataSlicesSlice>;
 }
 /**
  * Item in Collection → Categories
@@ -387,6 +398,11 @@ export interface CollectionDocumentDataOtherArticlesItem {
     blog_article: prismicT.RelationField;
 }
 /**
+ * Slice for *Collection → Slice Zone*
+ *
+ */
+type CollectionDocumentDataSlicesSlice = FooterSlice;
+/**
  * Collection document from Prismic
  *
  * - **API ID**: `collection`
@@ -396,6 +412,35 @@ export interface CollectionDocumentDataOtherArticlesItem {
  * @typeParam Lang - Language API ID of the document.
  */
 export type CollectionDocument<Lang extends string = string> = prismicT.PrismicDocumentWithUID<Simplify<CollectionDocumentData>, "collection", Lang>;
+/** Content for Footer documents */
+interface FooterDocumentData {
+    /**
+     * Slice Zone field in *Footer*
+     *
+     * - **Field Type**: Slice Zone
+     * - **Placeholder**: *None*
+     * - **API ID Path**: footer.slices[]
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/slices
+     *
+     */
+    slices: prismicT.SliceZone<FooterDocumentDataSlicesSlice>;
+}
+/**
+ * Slice for *Footer → Slice Zone*
+ *
+ */
+type FooterDocumentDataSlicesSlice = FooterSlice;
+/**
+ * Footer document from Prismic
+ *
+ * - **API ID**: `footer`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type FooterDocument<Lang extends string = string> = prismicT.PrismicDocumentWithUID<Simplify<FooterDocumentData>, "footer", Lang>;
 /** Content for Homepage documents */
 interface HomepageDocumentData {
     /**
@@ -480,6 +525,35 @@ type HomepageDocumentDataSlicesSlice = ArticleCarouselSlice | HomeHeroSlice | Ho
  * @typeParam Lang - Language API ID of the document.
  */
 export type HomepageDocument<Lang extends string = string> = prismicT.PrismicDocumentWithUID<Simplify<HomepageDocumentData>, "homepage", Lang>;
+/** Content for Navbar documents */
+interface NavbarDocumentData {
+    /**
+     * Slice Zone field in *Navbar*
+     *
+     * - **Field Type**: Slice Zone
+     * - **Placeholder**: *None*
+     * - **API ID Path**: navbar.slices[]
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/slices
+     *
+     */
+    slices: prismicT.SliceZone<NavbarDocumentDataSlicesSlice>;
+}
+/**
+ * Slice for *Navbar → Slice Zone*
+ *
+ */
+type NavbarDocumentDataSlicesSlice = NavbarSlice;
+/**
+ * Navbar document from Prismic
+ *
+ * - **API ID**: `navbar`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type NavbarDocument<Lang extends string = string> = prismicT.PrismicDocumentWithUID<Simplify<NavbarDocumentData>, "navbar", Lang>;
 /** Content for Menu Navigation documents */
 interface NavigationMenuDocumentData {
     /**
@@ -730,7 +804,7 @@ export interface SocialsDocumentDataMediaInfoItem {
  * @typeParam Lang - Language API ID of the document.
  */
 export type SocialsDocument<Lang extends string = string> = prismicT.PrismicDocumentWithoutUID<Simplify<SocialsDocumentData>, "socials", Lang>;
-export type AllDocumentTypes = ArticleGroupDocument | AuthorDocument | BlogCollectionDocument | BlogPostDocument | CategoryDocument | CollectionDocument | HomepageDocument | NavigationMenuDocument | NavigationDocument | PageDocument | SocialsDocument;
+export type AllDocumentTypes = ArticleGroupDocument | AuthorDocument | BlogCollectionDocument | BlogPostDocument | CategoryDocument | CollectionDocument | FooterDocument | HomepageDocument | NavbarDocument | NavigationMenuDocument | NavigationDocument | PageDocument | SocialsDocument;
 /**
  * Primary content in ArticleCarousel → Primary
  *
@@ -1175,6 +1249,55 @@ type MixedGridSliceVariation = MixedGridSliceDefault;
  */
 export type MixedGridSlice = prismicT.SharedSlice<"mixed_grid", MixedGridSliceVariation>;
 /**
+ * Primary content in Navbar → Primary
+ *
+ */
+interface NavbarSliceDefaultPrimary {
+    /**
+     * Navigation field in *Navbar → Primary*
+     *
+     * - **Field Type**: Content Relationship
+     * - **Placeholder**: *None*
+     * - **API ID Path**: navbar.primary.navigation
+     * - **Documentation**: https://prismic.io/docs/core-concepts/link-content-relationship
+     *
+     */
+    navigation: prismicT.RelationField<"navigation">;
+    /**
+     * Logo field in *Navbar → Primary*
+     *
+     * - **Field Type**: Image
+     * - **Placeholder**: *None*
+     * - **API ID Path**: navbar.primary.logo
+     * - **Documentation**: https://prismic.io/docs/core-concepts/image
+     *
+     */
+    logo: prismicT.ImageField<never>;
+}
+/**
+ * Default variation for Navbar Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: `Navbar`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type NavbarSliceDefault = prismicT.SharedSliceVariation<"default", Simplify<NavbarSliceDefaultPrimary>, never>;
+/**
+ * Slice variation for *Navbar*
+ *
+ */
+type NavbarSliceVariation = NavbarSliceDefault;
+/**
+ * Navbar Shared Slice
+ *
+ * - **API ID**: `navbar`
+ * - **Description**: `Navbar`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type NavbarSlice = prismicT.SharedSlice<"navbar", NavbarSliceVariation>;
+/**
  * Primary content in PromotionBanner → Primary
  *
  */
@@ -1287,6 +1410,6 @@ declare module "@prismicio/client" {
         (repositoryNameOrEndpoint: string, options?: prismic.ClientConfig): prismic.Client<AllDocumentTypes>;
     }
     namespace Content {
-        export type { ArticleGroupDocumentData, ArticleGroupDocumentDataArticlesItem, ArticleGroupDocument, AuthorDocumentData, AuthorDocument, BlogCollectionDocumentData, BlogCollectionDocument, BlogPostDocumentData, BlogPostDocument, CategoryDocumentData, CategoryDocument, CollectionDocumentData, CollectionDocumentDataCategoriesItem, CollectionDocumentDataOtherArticlesItem, CollectionDocument, HomepageDocumentData, HomepageDocumentDataSlicesSlice, HomepageDocument, NavigationMenuDocumentData, NavigationMenuDocumentDataMenuItem, NavigationMenuDocument, NavigationDocumentData, NavigationDocumentDataNavigationItemItem, NavigationDocument, PageDocumentData, PageDocument, SocialsDocumentData, SocialsDocumentDataMediaInfoItem, SocialsDocument, AllDocumentTypes, ArticleCarouselSliceDefaultPrimary, ArticleCarouselSliceDefaultItem, ArticleCarouselSliceDefault, ArticleCarouselSliceVariation, ArticleCarouselSlice, HomeCollectionSliceDefaultPrimary, HomeCollectionSliceDefaultItem, HomeCollectionSliceDefault, HomeCollectionSliceVariation, HomeCollectionSlice, FooterSliceDefaultPrimary, FooterSliceDefault, FooterSliceVariation, FooterSlice, HomeHeroSliceDefaultPrimary, HomeHeroSliceDefault, HomeHeroSliceVariation, HomeHeroSlice, MixedGridSliceDefaultPrimary, MixedGridSliceDefaultItem, MixedGridSliceDefault, MixedGridSliceVariation, MixedGridSlice, PromotionBannerSliceDefaultPrimary, PromotionBannerSliceDefault, PromotionBannerSliceVariation, PromotionBannerSlice, SeoSectionSliceDefaultPrimary, SeoSectionSliceDefault, SeoSectionSliceVariation, SeoSectionSlice };
+        export type { ArticleGroupDocumentData, ArticleGroupDocumentDataArticlesItem, ArticleGroupDocument, AuthorDocumentData, AuthorDocument, BlogCollectionDocumentData, BlogCollectionDocument, BlogPostDocumentData, BlogPostDocument, CategoryDocumentData, CategoryDocument, CollectionDocumentData, CollectionDocumentDataCategoriesItem, CollectionDocumentDataOtherArticlesItem, CollectionDocumentDataSlicesSlice, CollectionDocument, FooterDocumentData, FooterDocumentDataSlicesSlice, FooterDocument, HomepageDocumentData, HomepageDocumentDataSlicesSlice, HomepageDocument, NavbarDocumentData, NavbarDocumentDataSlicesSlice, NavbarDocument, NavigationMenuDocumentData, NavigationMenuDocumentDataMenuItem, NavigationMenuDocument, NavigationDocumentData, NavigationDocumentDataNavigationItemItem, NavigationDocument, PageDocumentData, PageDocument, SocialsDocumentData, SocialsDocumentDataMediaInfoItem, SocialsDocument, AllDocumentTypes, ArticleCarouselSliceDefaultPrimary, ArticleCarouselSliceDefaultItem, ArticleCarouselSliceDefault, ArticleCarouselSliceVariation, ArticleCarouselSlice, HomeCollectionSliceDefaultPrimary, HomeCollectionSliceDefaultItem, HomeCollectionSliceDefault, HomeCollectionSliceVariation, HomeCollectionSlice, FooterSliceDefaultPrimary, FooterSliceDefault, FooterSliceVariation, FooterSlice, HomeHeroSliceDefaultPrimary, HomeHeroSliceDefault, HomeHeroSliceVariation, HomeHeroSlice, MixedGridSliceDefaultPrimary, MixedGridSliceDefaultItem, MixedGridSliceDefault, MixedGridSliceVariation, MixedGridSlice, NavbarSliceDefaultPrimary, NavbarSliceDefault, NavbarSliceVariation, NavbarSlice, PromotionBannerSliceDefaultPrimary, PromotionBannerSliceDefault, PromotionBannerSliceVariation, PromotionBannerSlice, SeoSectionSliceDefaultPrimary, SeoSectionSliceDefault, SeoSectionSliceVariation, SeoSectionSlice };
     }
 }
