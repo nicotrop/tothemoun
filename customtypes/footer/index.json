@@ -12,15 +12,94 @@
           "placeholder": ""
         }
       },
+      "menu_about": {
+        "type": "Link",
+        "config": {
+          "label": "Menu about",
+          "select": "document",
+          "customtypes": [
+            "navigation_menu"
+          ]
+        }
+      },
+      "menu_seo": {
+        "type": "Link",
+        "config": {
+          "label": "Menu SEO",
+          "select": "document",
+          "customtypes": [
+            "navigation_menu"
+          ]
+        }
+      },
+      "newsletter_header": {
+        "type": "StructuredText",
+        "config": {
+          "label": "Newsletter header",
+          "placeholder": "",
+          "allowTargetBlank": true,
+          "single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+        }
+      },
+      "newsletter_description": {
+        "type": "StructuredText",
+        "config": {
+          "label": "Newsletter description",
+          "placeholder": "",
+          "allowTargetBlank": true,
+          "single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+        }
+      },
+      "socials": {
+        "type": "Link",
+        "config": {
+          "label": "Socials",
+          "select": "document",
+          "customtypes": [
+            "socials"
+          ]
+        }
+      },
+      "background_color": {
+        "type": "Color",
+        "config": {
+          "label": "Background color",
+          "placeholder": ""
+        }
+      },
+      "text_color": {
+        "type": "Color",
+        "config": {
+          "label": "Text color",
+          "placeholder": ""
+        }
+      },
+      "input_border": {
+        "type": "Color",
+        "config": {
+          "label": "Input border",
+          "placeholder": ""
+        }
+      },
+      "input_btn_bg": {
+        "type": "Color",
+        "config": {
+          "label": "Input btn bg",
+          "placeholder": ""
+        }
+      },
+      "input_text": {
+        "type": "Color",
+        "config": {
+          "label": "Input text",
+          "placeholder": ""
+        }
+      },
       "slices": {
         "type": "Slices",
         "fieldset": "Slice Zone",
         "config": {
-          "choices": {
-            "footer": {
-              "type": "SharedSlice"
-            }
-          }
+          "choices": {}
         }
       }
     }

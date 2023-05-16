@@ -1,7 +1,7 @@
 {
   "uid": {
     "__TYPE__": "UIDContent",
-    "value": "percent"
+    "value": "ill"
   },
   "categories": {
     "__TYPE__": "GroupContentType",
@@ -45,91 +45,6 @@
   },
   "slices": {
     "__TYPE__": "SliceContentType",
-    "value": [
-      {
-        "key": "footer$e22d41bf-f446-47c6-b848-65ff047c0f66",
-        "name": "footer",
-        "widget": {
-          "__TYPE__": "SharedSliceContent",
-          "variation": "default",
-          "primary": {
-            "background_color": {
-              "__TYPE__": "FieldContent",
-              "value": "#3efaca",
-              "type": "Color"
-            },
-            "text_color": {
-              "__TYPE__": "FieldContent",
-              "value": "#e2bf28",
-              "type": "Color"
-            },
-            "menu_about": {
-              "__TYPE__": "LinkContent",
-              "value": {
-                "__TYPE__": "DocumentLink",
-                "id": "mock_document_id"
-              }
-            },
-            "menu_seo": {
-              "__TYPE__": "LinkContent",
-              "value": {
-                "__TYPE__": "DocumentLink",
-                "id": "mock_document_id"
-              }
-            },
-            "newsletter_header": {
-              "__TYPE__": "StructuredTextContent",
-              "value": [
-                {
-                  "type": "paragraph",
-                  "content": {
-                    "text": "Et duis dolore amet aliqua cupidatat dolor sit id irure exercitation id non sint officia ea."
-                  }
-                }
-              ]
-            },
-            "newsletter_description": {
-              "__TYPE__": "StructuredTextContent",
-              "value": [
-                {
-                  "type": "paragraph",
-                  "content": {
-                    "text": "Voluptate nisi nostrud deserunt laborum dolore."
-                  }
-                }
-              ]
-            },
-            "socials": {
-              "__TYPE__": "LinkContent",
-              "value": {
-                "__TYPE__": "DocumentLink",
-                "id": "mock_document_id"
-              }
-            },
-            "input_border_color": {
-              "__TYPE__": "FieldContent",
-              "value": "#3ffaf4",
-              "type": "Color"
-            },
-            "input_btn_bg_color": {
-              "__TYPE__": "FieldContent",
-              "value": "#96ef71",
-              "type": "Color"
-            },
-            "input_text_input_color": {
-              "__TYPE__": "FieldContent",
-              "value": "#91dbdd",
-              "type": "Color"
-            }
-          },
-          "items": [
-            {
-              "__TYPE__": "GroupItemContent",
-              "value": []
-            }
-          ]
-        }
-      }
-    ]
+    "value": []
   }
 }

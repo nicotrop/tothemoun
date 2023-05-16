@@ -1,7 +1,7 @@
 import React from "react";
 import { PrismicRichText, SliceComponentProps } from "@prismicio/react";
 import { FooterSlice } from "types.generated";
-import { SectionTitle, Wrapper } from "@/components/global";
+import { Wrapper } from "@/components/global";
 import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -16,8 +16,7 @@ const faIn = faInstagram as IconProp;
 const faTik = faTiktok as IconProp;
 const faPint = faPinterest as IconProp;
 
-// const Footer = ({ slice }: SliceComponentProps<FooterSlice> | any) => {
-const Footer = () => {
+const Footer = ({ data }: SliceComponentProps<FooterSlice> | any) => {
   const year = new Date().getFullYear();
 
   const {
@@ -28,12 +27,11 @@ const Footer = () => {
     text_color,
     newsletter_header,
     newsletter_description,
-  } = slice.primary;
-  //   } = slice.primary;
+  } = data;
 
-  const { data: about_menu } = slice?.primary?.menu_about;
-  const { data: seo_menu } = slice?.primary?.menu_seo;
-  const { data: socials } = slice?.primary?.socials;
+  const { data: about_menu } = data?.menu_about;
+  const { data: seo_menu } = data?.menu_seo;
+  const { data: socials } = data?.socials;
 
   return (
     <Wrapper
@@ -106,20 +104,15 @@ const MenuSection = ({
   menu,
 }: {
   menu: {
-    title: string;
-    menu: {
-      link: {
-        slug: string;
-      };
-      text: string;
-    }[];
+    // title: RichTextField | null | undefined;
+    title: any;
+    menu: any[];
   };
 }) => {
   return (
     <div className="w-[fit-content] min-w-[215px] h-ful">
       <div className="h-10 flex items-end mb-6">
-        {/* <PrismicRichText field={menu.title} /> */}
-        <h3>{menu.title}</h3>
+        <PrismicRichText field={menu.title} />
       </div>
       <ul className="flex flex-col gap-2">
         {menu.menu.map((elem: any, index: number) => {
@@ -156,11 +149,10 @@ const NewsleterSection = ({
   return (
     <div className="lg:w-1/2 h-full">
       <span className="h-10 flex customer-flex-center items-end mb-6">
-        {/* <PrismicRichText field={data.newsletter_header} /> */}
-        <SectionTitle title={data.newsletter_header} />
+        <PrismicRichText field={data.newsletter_header} />
       </span>
       <div className="custom-text-center leading-relaxed mb-8">
-        <span>{data.newsletter_description}</span>
+        <PrismicRichText field={data.newsletter_description} />
       </div>
       <form className="w-full flex customer-flex-center">
         <div

@@ -2,18 +2,19 @@ import { Url } from "next/dist/shared/lib/router/router";
 import Link from "next/link";
 import { ReactNode } from "react";
 import { NavBar } from "./navBar";
+import FooterClient from "./footer.client";
+import { ChevronDoubleRightIcon } from "@heroicons/react/24/outline";
+import { LinkField } from "@prismicio/types";
+import { PrismicLink } from "@prismicio/react";
 
 export const Layout = ({
   children,
-  footer,
   header,
 }: {
   children: ReactNode;
   footer?: any;
   header?: any;
 }) => {
-  console.log(header);
-
   return (
     <div>
       {header && (
@@ -23,7 +24,7 @@ export const Layout = ({
         />
       )}
       <main>{children}</main>
-      <footer>{footer}</footer>
+      <FooterClient />
     </div>
   );
 };
@@ -41,7 +42,7 @@ export const Wrapper = ({
 }) => {
   return (
     <section
-      className={`${padding ? `px-5` : "px-0"} ${className} pt-8 pb-2 w-full`}
+      className={`${padding ? `px-7` : "px-0"} ${className} py-8 w-full`}
       style={style}
     >
       {children}
@@ -126,6 +127,40 @@ export const ThemeButton = ({ children }: { children: React.ReactNode }) => {
   );
 };
 
+export const GlobalButton = ({
+  text,
+  link,
+  className = "",
+}: {
+  text: string;
+  link?: LinkField;
+  className?: string;
+}) => {
+  return (
+    <button
+      className={`h-fit w-fit flex cursor-pointer ${className} rounded-sm text-primary sm:text-secondary bg-secondary sm:bg-white whitespace-nowrap border-solid border-secondary sm:border-white border-2 hover:bg-transparent sm:hover:bg-[#FFFFFF26] hover:text-secondary sm:hover:text-white ease-in-out duration-300`}
+    >
+      {link ? (
+        <PrismicLink
+          field={link}
+          className="flex items-center gap-2 justify-center h-11 py-0 px-4 font-semibold text-sm tracking-wider uppercase font-title"
+        >
+          <span>{text}</span>
+          <ChevronDoubleRightIcon className="w-3 h-3" />
+        </PrismicLink>
+      ) : (
+        <Link
+          href={"/"}
+          className="flex items-center gap-2 justify-center h-11 py-0 px-4 font-semibold text-sm tracking-wider uppercase font-title"
+        >
+          <span>{text}</span>
+          <ChevronDoubleRightIcon className="w-3 h-3" />
+        </Link>
+      )}
+    </button>
+  );
+};
+
 export const ArticleTag = ({
   tags,
   className = "",
@@ -133,22 +168,15 @@ export const ArticleTag = ({
 }: {
   tags: string[];
   className?: string;
-  secondaryOnMobile?: boolean;
 }) => {
   return (
-    <div className={`gap-2 ${className}`}>
+    <div className={`gap-4 ${className}`}>
       {tags.map((tag, i) => {
         if (i < 2) {
           return (
             <span
               key={i}
-              className={`text-xs w-fit border-solid border-2 py-2 px-4 rounded-sm font-semibold 
-              ${
-                secondaryOnMobile
-                  ? "border-white tracking-wider uppercase font-title text-secondary bg-white hover:text-white hover:cursor-default hover:bg-transparent ease-in-out duration-300 sm:bg-transparent sm:border-secondary sm:text-secondary sm:hover:text-secondary sm:hover:bg-primary sm:hover:border-primary"
-                  : "border-secondary"
-              }
-              `}
+              className={`text-xs w-fit font-semibold tracking-wider uppercase font-title hover:cursor-default border-b-2 border-secondary border-solid pb-[0.5px]`}
             >
               {tag}
             </span>

@@ -64,14 +64,13 @@ export const InterceptImprovedGrid = () => {
                           className={
                             "pt-2 sm:pt-0 flex flex-wrap bg-transparent text-primary sm:text-black"
                           }
-                          tags={article.tags}
-                          secondaryOnMobile={true}
+                          tags={article?.tags}
                         />
                       )}
                       <h3 className="text-lg w-full font-extrabold font-title leading-tight tracking-tighter">
                         {article.article_title}
                       </h3>
-                      <p className="text-sm w-full">{article.preview}</p>
+                      <p className="text-base w-full">{article.preview}</p>
                     </div>
                   </div>
                 </div>

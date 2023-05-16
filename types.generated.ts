@@ -401,7 +401,7 @@ export interface CollectionDocumentDataOtherArticlesItem {
  * Slice for *Collection → Slice Zone*
  *
  */
-type CollectionDocumentDataSlicesSlice = FooterSlice;
+type CollectionDocumentDataSlicesSlice = never;
 /**
  * Collection document from Prismic
  *
@@ -414,6 +414,116 @@ type CollectionDocumentDataSlicesSlice = FooterSlice;
 export type CollectionDocument<Lang extends string = string> = prismicT.PrismicDocumentWithUID<Simplify<CollectionDocumentData>, "collection", Lang>;
 /** Content for Footer documents */
 interface FooterDocumentData {
+    /**
+     * Menu about field in *Footer*
+     *
+     * - **Field Type**: Content Relationship
+     * - **Placeholder**: *None*
+     * - **API ID Path**: footer.menu_about
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/link-content-relationship
+     *
+     */
+    menu_about: prismicT.RelationField<"navigation_menu">;
+    /**
+     * Menu SEO field in *Footer*
+     *
+     * - **Field Type**: Content Relationship
+     * - **Placeholder**: *None*
+     * - **API ID Path**: footer.menu_seo
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/link-content-relationship
+     *
+     */
+    menu_seo: prismicT.RelationField<"navigation_menu">;
+    /**
+     * Newsletter header field in *Footer*
+     *
+     * - **Field Type**: Rich Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: footer.newsletter_header
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    newsletter_header: prismicT.RichTextField;
+    /**
+     * Newsletter description field in *Footer*
+     *
+     * - **Field Type**: Rich Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: footer.newsletter_description
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    newsletter_description: prismicT.RichTextField;
+    /**
+     * Socials field in *Footer*
+     *
+     * - **Field Type**: Content Relationship
+     * - **Placeholder**: *None*
+     * - **API ID Path**: footer.socials
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/link-content-relationship
+     *
+     */
+    socials: prismicT.RelationField<"socials">;
+    /**
+     * Background color field in *Footer*
+     *
+     * - **Field Type**: Color
+     * - **Placeholder**: *None*
+     * - **API ID Path**: footer.background_color
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/color
+     *
+     */
+    background_color: prismicT.ColorField;
+    /**
+     * Text color field in *Footer*
+     *
+     * - **Field Type**: Color
+     * - **Placeholder**: *None*
+     * - **API ID Path**: footer.text_color
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/color
+     *
+     */
+    text_color: prismicT.ColorField;
+    /**
+     * Input border field in *Footer*
+     *
+     * - **Field Type**: Color
+     * - **Placeholder**: *None*
+     * - **API ID Path**: footer.input_border
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/color
+     *
+     */
+    input_border: prismicT.ColorField;
+    /**
+     * Input btn bg field in *Footer*
+     *
+     * - **Field Type**: Color
+     * - **Placeholder**: *None*
+     * - **API ID Path**: footer.input_btn_bg
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/color
+     *
+     */
+    input_btn_bg: prismicT.ColorField;
+    /**
+     * Input text field in *Footer*
+     *
+     * - **Field Type**: Color
+     * - **Placeholder**: *None*
+     * - **API ID Path**: footer.input_text
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/color
+     *
+     */
+    input_text: prismicT.ColorField;
     /**
      * Slice Zone field in *Footer*
      *
@@ -430,7 +540,7 @@ interface FooterDocumentData {
  * Slice for *Footer → Slice Zone*
  *
  */
-type FooterDocumentDataSlicesSlice = FooterSlice;
+type FooterDocumentDataSlicesSlice = never;
 /**
  * Footer document from Prismic
  *
@@ -514,7 +624,7 @@ interface HomepageDocumentData {
  * Slice for *Homepage → Slice Zone*
  *
  */
-type HomepageDocumentDataSlicesSlice = ArticleCarouselSlice | HomeHeroSlice | HomeCollectionSlice | PromotionBannerSlice | SeoSectionSlice | FooterSlice | MixedGridSlice;
+type HomepageDocumentDataSlicesSlice = ArticleCarouselSlice | HomeHeroSlice | HomeCollectionSlice | PromotionBannerSlice | SeoSectionSlice | MixedGridSlice;
 /**
  * Homepage document from Prismic
  *
@@ -1272,7 +1382,7 @@ interface NavbarSliceDefaultPrimary {
      * - **Documentation**: https://prismic.io/docs/core-concepts/image
      *
      */
-    logo: prismicT.ImageField<"mobile" | "tablet">;
+    logo: prismicT.ImageField<never>;
 }
 /**
  * Default variation for Navbar Slice

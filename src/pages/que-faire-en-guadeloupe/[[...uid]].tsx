@@ -4,17 +4,15 @@ import { GetStaticPropsContext, InferGetStaticPropsType } from "next";
 import { Layout } from "@/components/global";
 import { SliceZone } from "@prismicio/react";
 import { components } from "slices";
-import { navigationItemType } from "@/utils/mockData";
+import { useMemo } from "react";
 
 export type StaticPageProps = InferGetStaticPropsType<typeof getStaticProps>;
 
 export default function Page({ data, navBar }: StaticPageProps) {
-  const navData = navBar?.data?.slices[0]?.primary;
+  const navData = useMemo(() => navBar?.data?.slices[0]?.primary, [navBar]);
 
   return (
     <Layout header={navData}>
-      {/* <div>{JSON.stringify(data)}</div> */}
-      <div>{JSON.stringify(data?.data?.slices)}</div>
       <SliceZone slices={data?.data?.slices} components={{ ...components }} />
     </Layout>
   );
@@ -60,47 +58,7 @@ export async function getStaticProps({
   } else {
     console.log("type collection");
     // Else fetch "que-faire-en-guadeloupe" collection by uid
-    page = await client.getByUID("collection", "que-faire-en-guadeloupe", {
-      graphQuery: `
-        {
-          collection {
-            ...collectionFields
-            slices {
-              ... on footer {
-                variation {
-                  ... on default {
-                    primary {
-                      background_color
-                      text_color
-                      input_border_color
-                      input_btn_bg_color
-                      input_text_input_color
-                      menu_about {
-                        ...on navigation_menu {
-                          ...navigation_menuFields
-                        }
-                      }
-                      menu_seo {
-                        ...on navigation_menu {
-                          ...navigation_menuFields
-                        }
-                      }
-                      newsletter_header
-                      newsletter_description
-                      socials {
-                        ...on socials {
-                          ...socialsFields
-                        }
-                      }
-                    }
-                  }
-                }
-              }
-            }
-          }
-        }
-      `,
-    });
+    page = await client.getByUID("collection", "que-faire-en-guadeloupe");
   }
 
   const header = await client.getByUID("navbar", "navbar", {

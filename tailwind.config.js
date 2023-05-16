@@ -21,9 +21,20 @@ module.exports = {
           "0%": { transform: "translate(0)" },
           "100%": { transform: "translate(-20%)" },
         },
+        "underline-from-left": {
+          "0%": {
+            width: "0%",
+            transform: "translateX(0%)",
+          },
+          "100%": {
+            width: "100%",
+            transform: "translateX(100%)",
+          },
+        },
       },
       animation: {
         marquee: "auto-scroll 30s linear infinite",
+        underlineFromLeft: "underline-from-left 0.5s ease-in-out",
       },
       screens: {
         xs: "420px",

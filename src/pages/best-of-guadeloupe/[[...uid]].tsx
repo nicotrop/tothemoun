@@ -15,12 +15,7 @@ export async function getStaticProps({
   console.log(params?.uid);
 
   const uidPage = (params?.uid && params?.uid[params?.uid.length - 1]) || "";
-  const uidCollection =
-    params?.uid && params?.uid.length > 1 ? params?.uid[0] : null;
-
   const page = await client.getByUID("blog_post", uidPage);
-  const collection =
-    uidCollection && (await client.getByUID("blog_collection", uidCollection));
 
   return {
     props: { page },

@@ -9,7 +9,6 @@ import "swiper/css/bundle";
 export type StaticPageProps = InferGetStaticPropsType<typeof getStaticProps>;
 
 export default function Home({ data }: StaticPageProps) {
-  console.log(data.data.slices);
   return (
     <Layout>
       <SliceZone
@@ -143,36 +142,6 @@ export const getStaticProps = async ({
                           author_avatar
                         }
                       }
-                    }
-                  }
-                }
-              }
-            }
-          }
-          ... on footer {
-            variation {
-              ... on default {
-                primary {
-                  background_color
-                  text_color
-                  input_border_color
-                  input_btn_bg_color
-                  input_text_input_color
-                  menu_about {
-                    ...on navigation_menu {
-                      ...navigation_menuFields
-                    }
-                  }
-                  menu_seo {
-                    ...on navigation_menu {
-                      ...navigation_menuFields
-                    }
-                  }
-                  newsletter_header
-                  newsletter_description
-                  socials {
-                    ...on socials {
-                      ...socialsFields
                     }
                   }
                 }

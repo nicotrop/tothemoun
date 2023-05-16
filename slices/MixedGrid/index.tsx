@@ -19,8 +19,6 @@ export const MixedGrid = ({ slice }: SliceComponentProps) => {
     uid: slice.primary?.main_article.uid,
   };
 
-  console.log(mainArticle);
-
   const otherArticles: articleProps[] = slice.items.map((elem: any) => {
     return {
       author: elem?.article?.data?.article_author?.data,

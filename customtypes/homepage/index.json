@@ -71,9 +71,6 @@
             "seo_section": {
               "type": "SharedSlice"
             },
-            "footer": {
-              "type": "SharedSlice"
-            },
             "mixed_grid": {
               "type": "SharedSlice"
             }
