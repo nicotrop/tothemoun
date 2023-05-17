@@ -14,9 +14,9 @@ export const InterceptImprovedGrid = () => {
     .splice(0, 3);
 
   return (
-    <Wrapper className="border-t-2 border-solid border-black bg-secondary text-primary sm:bg-white sm:text-black">
+    <Wrapper className="bg-secondary text-primary sm:bg-white sm:text-black">
       {/* Title */}
-      <SectionTitleContainer>
+      <SectionTitleContainer containerClassName="border-t-4 border-primary sm:border-black border-solid pt-4">
         <div className="flex flex-col gap-2">
           <SectionTitle title="Environment" />
           <span className="font-title font-normal">
@@ -37,7 +37,15 @@ export const InterceptImprovedGrid = () => {
             className="object-cover w-full h-full"
           />
           <div className="h-fit flex flex-col gap-2 py-3">
-            <h3 className="text-xl lg:text-2xl font-extrabold font-title leading-tight tracking-tighter">
+            {arrayArticles[0].tags && (
+              <ArticleTag
+                className={
+                  "pt-2 sm:pt-0 flex flex-wrap bg-transparent text-primary sm:text-secondary"
+                }
+                tags={arrayArticles[0]?.tags}
+              />
+            )}
+            <h3 className="text-2xl lg:text-3xl font-extrabold font-title leading-tight tracking-tighter">
               {arrayArticles[0].article_title}
             </h3>
             <p className="text-base w-full">{arrayArticles[0].preview}</p>
@@ -56,13 +64,13 @@ export const InterceptImprovedGrid = () => {
                       height={658}
                       width={658}
                       alt="article img"
-                      className="w-full sm:w-1/2 sm:h-full object-cover"
+                      className="w-full sm:w-1/2 sm:h-full object-cover hidden sm:block"
                     />
                     <div className="py-2 sm:p-3 flex flex-col gap-2 w-full">
                       {article.tags && (
                         <ArticleTag
                           className={
-                            "pt-2 sm:pt-0 flex flex-wrap bg-transparent text-primary sm:text-black"
+                            "pt-2 sm:pt-0 flex flex-wrap bg-transparent text-primary sm:text-secondary"
                           }
                           tags={article?.tags}
                         />

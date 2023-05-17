@@ -42,7 +42,7 @@ export const Wrapper = ({
 }) => {
   return (
     <section
-      className={`${padding ? `px-7` : "px-0"} ${className} py-8 w-full`}
+      className={`${padding ? `px-8` : "px-0"} ${className} py-12 w-full`}
       style={style}
     >
       {children}
@@ -103,7 +103,7 @@ export const SectionTitleContainer = ({
   link?: Url;
 }) => {
   return (
-    <div className={`pb-7 ${containerClassName}`}>
+    <div className={`pb-6 ${containerClassName}`}>
       <Link href={link ? link : "#"} className={`${linkClassName}`}>
         {children}
       </Link>
@@ -170,13 +170,13 @@ export const ArticleTag = ({
   className?: string;
 }) => {
   return (
-    <div className={`gap-4 ${className}`}>
+    <div className={`${className}`}>
       {tags.map((tag, i) => {
-        if (i < 2) {
+        if (i < 1) {
           return (
             <span
               key={i}
-              className={`text-xs w-fit font-semibold tracking-wider uppercase font-title hover:cursor-default border-b-2 border-secondary border-solid pb-[0.5px]`}
+              className={`uppercase text-xs font-title tracking-tight font-semibold`}
             >
               {tag}
             </span>

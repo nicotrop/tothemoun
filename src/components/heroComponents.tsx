@@ -125,6 +125,9 @@ export const ScrollDown = () => {
       {`// Select all sections on the page
         const sections = document.querySelectorAll('section');
 
+        //Get navbar height
+        const navHeight = document.getElementById("ecomNav").offsetHeight;
+
         // Add a click event listener to the button
         const btn = document.getElementById("down-btn");
         btn.addEventListener("click", () => {
@@ -137,10 +140,13 @@ export const ScrollDown = () => {
             }
           });
 
-          // Find the next section and scroll to it
+          // Find the next section and scroll to it take into account the navbar height
           const nextSection = currentSection + 1;
           if (nextSection < sections.length) {
-            sections[nextSection].scrollIntoView({ behavior: "smooth" });
+            window.scrollTo({
+              top: sections[nextSection].offsetTop - navHeight,
+              behavior: "smooth",
+            });
           }
         });
       `}
