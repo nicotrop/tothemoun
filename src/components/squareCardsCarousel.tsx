@@ -1,23 +1,30 @@
 import { Article, mockArticleSectionData } from "@/utils/mockData";
-import { SectionTitle, SectionTitleContainer, Wrapper } from "./global";
+import {
+  ArticleTag,
+  SectionTitle,
+  SectionTitleContainer,
+  Wrapper,
+} from "./global";
 import Link from "next/link";
 import Image from "next/image";
 import { SwiperSlide } from "swiper/react";
-import { SwiperCarousel, SwiperImprovedCarousel } from "@/components/sliders";
+import { SwiperImprovedCarousel } from "@/components/sliders";
 
 import "swiper/css";
 
-const MockCarousel2 = () => {
+const SquareCardCarousel = () => {
   const data = mockArticleSectionData.articles;
   return (
-    <Wrapper
-      padding={false}
-      className="overflow-hidden border-t-2 border-solid border-black pl-5 pr-0"
-    >
-      <SwiperImprovedCarousel>
+    <Wrapper className="sm:pb-0 overflow-hidden w-full">
+      <SectionTitleContainer containerClassName="border-t-4 border-black sm:border-black border-solid pt-4">
+        <div className="flex flex-col gap-2">
+          <SectionTitle title="Best of Guadeloupe" />
+        </div>
+      </SectionTitleContainer>
+      <SwiperImprovedCarousel className="h-80" btnPosition="top-pos">
         {data?.map((article: Article, i: number) => {
           return (
-            <SwiperSlide key={i} className="last-of-type:pr-5">
+            <SwiperSlide key={i}>
               <ArticleCard article={article} />
             </SwiperSlide>
           );
@@ -42,27 +49,28 @@ export const ArticleCard = ({
             height={350}
             width={350}
             alt={article.article_title}
-            className="object-cover w-full m-0"
+            className="object-cover w-full m-0 rounded-sm overflow-hidden"
           />
         </Link>
       </div>
-      <div className="flex flex-col items-start pb-4 min-h-[40%]">
+      <div className="flex flex-col items-start min-h-[40%]">
+        {article.tags && (
+          <ArticleTag
+            className="pb-2 pt-2 sm:pt-0 flex flex-wrap bg-transparent text-secondary"
+            tags={article.tags}
+          />
+        )}
         <Link href={"/"} className="text-hover">
           <h5
-            className="md:text-lg text-base font-title font-bold uppercase tracking-tight"
+            className="md:text-lg text-base font-title font-bold uppercase tracking-tight hover:underline"
             style={{ lineHeight: "1.5rem" }}
           >
             {article.article_title}
           </h5>
         </Link>
-        <div className="w-full flex items-center">
-          <Link href={`/`} className="text-hover">
-            <span className="text-xs tracking-tight">{`by ${article.article_author.author_first_name} ${article.article_author.author_last_name} `}</span>
-          </Link>
-        </div>
       </div>
     </div>
   );
 };
 
-export default MockCarousel2;
+export default SquareCardCarousel;

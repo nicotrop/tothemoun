@@ -16,6 +16,23 @@ module.exports = {
   ],
   theme: {
     extend: {
+      width: {
+        card_width: "var(--card_width)",
+      },
+      gridTemplateColumns: {
+        pinterest_col: "repeat(auto-fill, var(--card_width))",
+      },
+      gridAutoRows: {
+        pinterest_auto: "var(--row_increment)",
+      },
+      borderRadius: {
+        card_border_radius: "var(--card_border_radius)",
+      },
+      gridRowEnd: {
+        card_small: "span var(--card_small)",
+        card_med: "span var(--card_med)",
+        card_large: "span var(--card_large)",
+      },
       keyframes: {
         "auto-scroll": {
           "0%": { transform: "translate(0)" },
@@ -34,6 +51,7 @@ module.exports = {
       },
       animation: {
         marquee: "auto-scroll 30s linear infinite",
+        fasterMarquee: "auto-scroll 20s linear infinite",
         underlineFromLeft: "underline-from-left 0.5s ease-in-out",
       },
       screens: {
@@ -49,6 +67,7 @@ module.exports = {
         display: ["DM Serif Display", "serif"],
         title: ["Roboto", "sans-serif"],
         body: ["PT Serif", "serif"],
+        bebas: ["Bebas Neue", "sans-serif"],
       },
       height: {
         "header-height": "65px",

@@ -10,7 +10,7 @@ export const TopStories = () => {
 
   return (
     <div className="pb-10 bg-black">
-      <div className="relative aspect-[9/16] sm:aspect-[6/4] lg:max-h-[calc(100vh-280px)] w-full">
+      <div className="relative aspect-[9/16] sm:aspect-[6/4] max-h-[calc(85vh)] lg:max-h-[calc(100vh-280px)] w-full">
         <Image
           alt="image"
           src={selectedArticle.article_cover}
@@ -44,7 +44,7 @@ const FeaturedArticle = ({ article }: { article: Article }) => {
           src={article.article_cover}
           width={250}
           height={250}
-          className="object-cover"
+          className="object-cover rounded-sm"
         />
       </div>
       <div className="h-fit flex flex-col gap-2 py-3">

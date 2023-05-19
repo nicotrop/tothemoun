@@ -129,27 +129,19 @@ export const SwiperImprovedCarousel = ({
       speed={400}
       breakpoints={{
         250: {
-          slidesPerView: 1.55,
-          spaceBetween: 15,
-        },
-        450: {
-          slidesPerView: 1.75,
+          slidesPerView: 2,
           spaceBetween: 15,
         },
         650: {
-          slidesPerView: 2.75,
-          spaceBetween: 15,
-        },
-        850: {
-          slidesPerView: 3.55,
+          slidesPerView: 3,
           spaceBetween: 15,
         },
         1050: {
-          slidesPerView: 3.75,
+          slidesPerView: 4,
           spaceBetween: 15,
         },
-        1250: {
-          slidesPerView: 4.55,
+        1450: {
+          slidesPerView: 5,
           spaceBetween: 15,
         },
       }}

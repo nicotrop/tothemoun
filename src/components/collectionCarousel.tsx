@@ -10,21 +10,24 @@ import "swiper/css";
 export const CollectionCarousel = () => {
   const data = mockArticleSectionData.articles;
   return (
-    <Wrapper padding={true} className="overflow-hidden w-full">
-      <SectionTitleContainer containerClassName="border-t-4 border-primary sm:border-black border-solid pt-4">
+    <Wrapper padding={false} className="sm:pb-0 overflow-hidden w-full">
+      <SectionTitleContainer containerClassName="mx-8 border-t-4 border-black sm:border-black border-solid pt-4">
         <div className="flex flex-col gap-2">
           <SectionTitle title="Collections" />
         </div>
       </SectionTitleContainer>
-      <hr className="border-solid border-gray-200 border-t-2 pb-5" />
       <SwiperImprovedCarousel className="max-h-[580px]" btnPosition="mid-pos">
-        {data?.map((article: Article, i: number) => {
-          return (
-            <SwiperSlide key={i} className="aspect-[9/16]">
-              <ArticleCard article={article} />
-            </SwiperSlide>
-          );
-        })}
+        <ul>
+          {data?.map((article: Article, i: number) => {
+            return (
+              <SwiperSlide tag="li" key={i} className="aspect-[9/16]">
+                <Link href={"/"}>
+                  <ArticleCard article={article} />
+                </Link>
+              </SwiperSlide>
+            );
+          })}
+        </ul>
       </SwiperImprovedCarousel>
     </Wrapper>
   );
@@ -37,26 +40,24 @@ export const ArticleCard = ({
   type?: string;
 }) => {
   return (
-    <div className="w-full z-50 h-full relative">
-      <Link href={"/"}>
-        <div className="img-hover w-full h-full m-0 p-0">
-          <Image
-            src={article.article_cover}
-            fill
-            alt={article.article_title}
-            className="object-cover w-full m-0 h-full hover:opacity-80 transition-opacity duration-300 ease-in-out"
-          />
-        </div>
-        <div className="absolute top-0 left-0 w-full h-full bg-gray-900 opacity-30"></div>
-        <div className="absolute left-6 top-6 w-[85%]">
-          <h5
-            className="md:text-xl text-base font-display italic font-extrabold uppercase tracking-tight text-white"
-            style={{ lineHeight: "1.5rem" }}
-          >
-            {article.article_title}
-          </h5>
-        </div>
-      </Link>
-    </div>
+    <article className="w-full z-50 h-full relative rounded-sm overflow-hidden">
+      <div className="img-hover w-full h-full m-0 p-0 relative">
+        <Image
+          src={article.article_cover}
+          fill
+          alt={article.article_title}
+          className="object-cover w-full m-0 h-full"
+        />
+      </div>
+      <picture className="absolute top-0 left-0 w-full h-full bg-gray-900 opacity-30"></picture>
+      <div className="absolute left-6 top-6 w-[calc(100%-(2*1.5rem))] sm:w-[85%] m-auto">
+        <h5
+          className="md:text-2xl text-xl font-display italic font-extrabold uppercase text-white"
+          style={{ lineHeight: "1.5rem" }}
+        >
+          {article.article_title}
+        </h5>
+      </div>
+    </article>
   );
 };

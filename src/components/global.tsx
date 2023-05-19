@@ -16,16 +16,16 @@ export const Layout = ({
   header?: any;
 }) => {
   return (
-    <div>
+    <>
       {header && (
         <NavBar
           navigation={header.navigation.data.navigation_item}
           logo={header.logo}
         />
       )}
-      <main>{children}</main>
+      <main className="overflow-hidden">{children}</main>
       <FooterClient />
-    </div>
+    </>
   );
 };
 
@@ -79,15 +79,17 @@ export const Container = ({
 export const SectionTitle = ({
   title,
   className = "font-header",
+  showSymbol = true,
 }: {
   title?: string;
   className?: string;
+  showSymbol?: boolean;
 }) => {
   let defaultTitle = "Edit me";
   return (
     <h2
       className={`text-4xl lg:text-5xl font-black tracking-tighter ${className}`}
-    >{`${title ? title : defaultTitle} >`}</h2>
+    >{`${title ? title : defaultTitle} ${showSymbol === true ? " >" : ""}`}</h2>
   );
 };
 
