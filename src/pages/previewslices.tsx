@@ -84,7 +84,6 @@ export default function PreviewSlices() {
         </MarqueeBanner>
       </div> */}
       <ALaUne />
-      <OneArticleBlock />
       <MockCarousel3 />
       <InterceptImprovedGrid />
       <OneArticleBlock />
