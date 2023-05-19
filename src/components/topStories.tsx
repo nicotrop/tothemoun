@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
-export const ALaUne = () => {
+export const TopStories = () => {
   const selectedArticle = arrayArticles[0];
   const featuredArticles = arrayArticles.slice(0, 4);
 

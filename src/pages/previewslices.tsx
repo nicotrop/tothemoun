@@ -10,7 +10,8 @@ import {
 import { InterceptImprovedGrid } from "@/components/mixedGridImproved";
 import { OneArticleBlock } from "@/components/oneArticle";
 import { SEOsection } from "@/components/seoSection";
-import { ALaUne } from "@/components/laUne";
+import { ALaUne, TopStories } from "@/components/topStories";
+import { CollectionCarousel } from "@/components/collectionCarousel";
 
 export default function PreviewSlices() {
   return (
@@ -83,8 +84,9 @@ export default function PreviewSlices() {
           </div>
         </MarqueeBanner>
       </div> */}
-      <ALaUne />
-      <MockCarousel3 />
+      <TopStories />
+      <CollectionCarousel />
+      {/* <MockCarousel3 /> */}
       <InterceptImprovedGrid />
       <OneArticleBlock />
       <InterceptImprovedGrid />

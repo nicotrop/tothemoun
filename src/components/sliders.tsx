@@ -129,28 +129,28 @@ export const SwiperImprovedCarousel = ({
       speed={400}
       breakpoints={{
         250: {
-          slidesPerView: 1.25,
+          slidesPerView: 1.55,
           spaceBetween: 15,
         },
         450: {
-          slidesPerView: 2,
-          spaceBetween: 20,
+          slidesPerView: 1.75,
+          spaceBetween: 15,
         },
         650: {
-          slidesPerView: 2.25,
+          slidesPerView: 2.75,
           spaceBetween: 15,
         },
         850: {
-          slidesPerView: 3,
-          spaceBetween: 20,
+          slidesPerView: 3.55,
+          spaceBetween: 15,
         },
         1050: {
-          slidesPerView: 3.25,
+          slidesPerView: 3.75,
           spaceBetween: 15,
         },
         1250: {
-          slidesPerView: 4.25,
-          spaceBetween: 20,
+          slidesPerView: 4.55,
+          spaceBetween: 15,
         },
       }}
     >
@@ -167,10 +167,11 @@ export const SwiperImprovedCarousel = ({
       </button>
       <button
         className={`custom-slider-btn customarrow-right ${btnPosition}`}
+        hidden={swiperState.isEnd}
+        disabled={swiperState.isEnd}
         onClick={() => {
           swiperRef.current?.slideNext();
         }}
-        hidden={swiperState.isEnd}
       >
         {"→"}
       </button>
