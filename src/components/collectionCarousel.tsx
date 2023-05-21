@@ -10,7 +10,10 @@ import "swiper/css";
 export const CollectionCarousel = () => {
   const data = mockArticleSectionData.articles;
   return (
-    <Wrapper padding={false} className="sm:pb-0 overflow-hidden w-full">
+    <Wrapper
+      padding={false}
+      className="sm:pb-0 overflow-hidden w-full py-wrapper_y"
+    >
       <SectionTitleContainer containerClassName="mx-8 border-t-4 border-black sm:border-black border-solid pt-4">
         <div className="flex flex-col gap-2">
           <SectionTitle title="Collections" />

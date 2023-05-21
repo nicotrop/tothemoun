@@ -9,12 +9,13 @@ import { InterceptImprovedGrid } from "@/components/mixedGridImproved";
 import { PhotoBanner } from "@/components/photoBanner";
 import { PinterestGrid } from "@/components/pinterestGrid";
 import { MarqueeBannerComp } from "@/components/marqueeBanner";
+import { VanityHero } from "@/components/vanityHero";
 
 export default function PreviewSlices() {
   return (
     <Layout>
       <HeroVideo />
-      <SEOsection />
+      <VanityHero />
       <TopStories />
       <CollectionCarousel />
       <InterceptImprovedGrid />
@@ -25,6 +26,7 @@ export default function PreviewSlices() {
       <PhotoBanner />
       <InterceptImprovedGrid />
       <MarqueeBannerComp />
+      <SEOsection />
       <PinterestGrid />
     </Layout>
   );

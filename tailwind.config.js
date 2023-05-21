@@ -19,6 +19,10 @@ module.exports = {
       width: {
         card_width: "var(--card_width)",
       },
+      padding: {
+        wrapper_x: "var(--wrapper_padding_x)",
+        wrapper_y: "var(--wrapper_padding_y)",
+      },
       gridTemplateColumns: {
         pinterest_col: "repeat(auto-fill, var(--card_width))",
       },
@@ -70,7 +74,7 @@ module.exports = {
         bebas: ["Bebas Neue", "sans-serif"],
       },
       height: {
-        "header-height": "65px",
+        "header-height": "var(--header-height)",
         "announcement-bar": "35px",
         "scrolling-bar": "56px",
       },

@@ -183,6 +183,9 @@
   --card_small: 26;
   --card_med: 33;
   --card_large: 45;
+  --wrapper_padding_x: 2rem;
+  --wrapper_padding_y: 3rem;
+  --header-height: 65px;
 }
 
 .pin_container {
