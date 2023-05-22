@@ -16,7 +16,7 @@ export const Layout = ({
   header?: any;
 }) => {
   return (
-    <>
+    <div>
       {header && (
         <NavBar
           navigation={header.navigation.data.navigation_item}
@@ -25,7 +25,24 @@ export const Layout = ({
       )}
       <main className="overflow-hidden">{children}</main>
       <FooterClient />
-    </>
+      <MobileBottomNav />
+    </div>
+  );
+};
+
+const MobileBottomNav = () => {
+  return (
+    <div className="fixed sm:hidden h-14 z-50 bg-primary bottom-0 w-full border-black border-t-2 grid grid-cols-3 content-center text-center">
+      <Link href={"/"}>
+        <span>Ou manger</span>
+      </Link>
+      <Link href={"/"}>
+        <span>Ou loger</span>
+      </Link>
+      <Link href={"/"}>
+        <span>Que faire</span>
+      </Link>
+    </div>
   );
 };
 

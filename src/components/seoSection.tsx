@@ -3,7 +3,8 @@ import { Wrapper } from "./global";
 export const SEOsection = ({}) => {
   return (
     <Wrapper>
-      <div className="max-w-3xl m-auto py-[calc(72px-32px)] flex flex-col items-center text-center gap-4">
+      {/* <div className="max-w-3xl m-auto py-[calc(72px-32px)] flex flex-col items-center text-center gap-4"> */}
+      <div className="max-w-3xl m-auto flex flex-col items-center text-center gap-4">
         <h2 className="text-4xl lg:text-5xl font-black tracking-tighter font-header">
           About us
         </h2>

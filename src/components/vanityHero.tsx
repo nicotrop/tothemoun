@@ -15,7 +15,7 @@ export const VanityHero = () => {
   return (
     <Wrapper
       padding={false}
-      className="h-auto lg:h-[calc(100vh-(var(--header-height)))] lg:px-wrapper_x m-auto py-0 lg:py-wrapper_y"
+      className="h-auto lg:h-[calc(100vh-(var(--header-height)))] lg:px-wrapper_x m-auto py-0 lg:py-wrapper_y 2xl:h-fit"
     >
       {/* Desktop */}
       <div className="hidden lg:flex gap-10">
@@ -48,7 +48,7 @@ const MainColumn = () => {
     <div className="lg:flex-grow flex flex-col lg:h-fit">
       <Link
         href={"/"}
-        className="aspect-[9/12] sm:aspect-[6/4] relative rounded-sm"
+        className="aspect-[9/13] sm:aspect-[6/4] relative rounded-sm"
       >
         <Image
           src={arrayArticles[0].article_cover}

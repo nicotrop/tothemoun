@@ -223,7 +223,7 @@ export const HeroSliderComp = () => {
 export const HeroVideoComp = () => {
   return (
     <div
-      className="h-full"
+      className="h-[calc(100%-var(--mobile-bottom-nav-height))] sm:h-full"
       style={{
         backgroundColor: "#000000",
       }}

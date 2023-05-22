@@ -117,7 +117,8 @@ export default function FooterClient() {
         color: text_color ?? "#F7F1E7",
       }}
     >
-      <footer className="flex flex-col justify-center gap-10 min-h-[400px]">
+      {/* <footer className="flex flex-col justify-center gap-10 min-h-[400px] pb-16"> */}
+      <footer className="flex flex-col justify-center gap-10 mb-20 sm:mb-0 sm:min-h-[400px] ">
         {/* Desktop Main */}
         <div className="hidden lg:flex justify-between items-start gap-8 h-60">
           {/* Menu section */}
@@ -187,7 +188,7 @@ type MenuSectionProps = {
 
 const MenuSection: React.FC<MenuSectionProps> = ({ data }) => {
   return (
-    <div className="w-[fit-content] min-w-[215px] h-ful">
+    <div className="w-[fit-content] min-w-[215px]">
       <div className="h-10 flex items-end mb-6">
         <PrismicRichText field={data.title} />
       </div>
@@ -210,18 +211,18 @@ const MenuSection: React.FC<MenuSectionProps> = ({ data }) => {
 
 type NewsleterSectionProps = {
   data: {
-    newsletter_header: RichTextField | null | undefined;
-    newsletter_description: RichTextField | null | undefined;
+    newsletter_header?: RichTextField | null | undefined;
+    newsletter_description?: RichTextField | null | undefined;
   };
   cssProps: {
-    input_border: string | undefined | null;
-    input_text: string | undefined | null;
-    input_btn_bg: string | undefined | null;
-    background_color: string | undefined | null;
+    input_border?: string | undefined | null;
+    input_text?: string | undefined | null;
+    input_btn_bg?: string | undefined | null;
+    background_color?: string | undefined | null;
   };
 };
 
-const NewsleterSection: React.FC<NewsleterSectionProps> = ({
+export const NewsleterSection: React.FC<NewsleterSectionProps> = ({
   data,
   cssProps,
 }) => {

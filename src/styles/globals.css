@@ -30,6 +30,9 @@
   --card_small: 26;
   --card_med: 33;
   --card_large: 45;
+  --color-tertiary: #95a595,
+  --color-secondary: #102f10,
+  --color-primary: #F7F1E7,
 }
 
 @media screen and (min-width: 640px) {
@@ -186,6 +189,7 @@
   --wrapper_padding_x: 2rem;
   --wrapper_padding_y: 3rem;
   --header-height: 65px;
+  --mobile-bottom-nav-height: 3.5rem;
 }
 
 .pin_container {

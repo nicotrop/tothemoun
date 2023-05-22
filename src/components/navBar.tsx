@@ -7,7 +7,6 @@ import {
   MagnifyingGlassIcon,
   Bars3Icon,
 } from "@heroicons/react/24/outline";
-import Script from "next/script";
 import { PrismicNextImage } from "@prismicio/next";
 import { CountrySelector, NavMenuComp } from "./ecomNav";
 import { ImageFieldImage } from "@prismicio/types";
@@ -66,7 +65,12 @@ export const NavBar = ({
           <MagnifyingGlassIcon className="w-5 h-5 cursor-pointer" />
         </div>
       </div>
-      <MenuDrawer navigation={navigation} open={open} setOpen={setOpen} />
+      <MenuDrawer
+        navigation={navigation}
+        open={open}
+        setOpen={setOpen}
+        logo={logo}
+      />
       {/* <StickyHeaderScript /> */}
     </header>
   );

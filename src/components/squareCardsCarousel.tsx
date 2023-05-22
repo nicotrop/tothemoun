@@ -15,7 +15,10 @@ import "swiper/css";
 const SquareCardCarousel = () => {
   const data = mockArticleSectionData.articles;
   return (
-    <Wrapper className="sm:pb-0 overflow-hidden w-full">
+    <Wrapper
+      padding={false}
+      className="px-wrapper_x sm:pb-0 overflow-hidden w-full"
+    >
       <SectionTitleContainer containerClassName="border-t-4 border-black sm:border-black border-solid pt-4">
         <div className="flex flex-col gap-2">
           <SectionTitle title="Best of Guadeloupe" />
