@@ -73,6 +73,9 @@
             },
             "mixed_grid": {
               "type": "SharedSlice"
+            },
+            "vanity_hero": {
+              "type": "SharedSlice"
             }
           }
         }

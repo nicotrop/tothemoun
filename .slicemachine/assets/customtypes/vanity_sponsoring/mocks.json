@@ -1,0 +1,44 @@
+{
+  "uid": {
+    "__TYPE__": "UIDContent",
+    "value": "branch"
+  },
+  "promo_text": {
+    "__TYPE__": "FieldContent",
+    "value": "wrote",
+    "type": "Text"
+  },
+  "promo_img": {
+    "__TYPE__": "ImageContent",
+    "origin": {
+      "id": "main",
+      "url": "https://images.unsplash.com/photo-1544731612-de7f96afe55f",
+      "width": 6000,
+      "height": 4000
+    },
+    "url": "https://images.unsplash.com/photo-1544731612-de7f96afe55f",
+    "width": 6000,
+    "height": 4000,
+    "edit": {
+      "zoom": 1,
+      "crop": {
+        "x": 0,
+        "y": 0
+      },
+      "background": "transparent"
+    },
+    "thumbnails": {}
+  },
+  "promo_link": {
+    "__TYPE__": "LinkContent",
+    "value": {
+      "__TYPE__": "ExternalLink",
+      "url": "https://prismic.io"
+    }
+  },
+  "promo_cta_text": {
+    "__TYPE__": "FieldContent",
+    "value": "wet",
+    "type": "Text"
+  }
+}

@@ -7,7 +7,6 @@ import {
 } from "./global";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowUpRightIcon } from "@heroicons/react/24/outline";
 
 export const CollectionGrid = () => {
   return (

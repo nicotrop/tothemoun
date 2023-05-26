@@ -64,6 +64,49 @@ export const getStaticProps = async ({
               }
             }
           }
+          ... on vanity_hero {
+            variation {
+              ... on default {
+                primary {
+                  main_article {
+                    ... on blog_post {
+                      article_cover
+                      article_title
+                      preview
+                    }
+                  }
+                  social_posts {
+                    ... on vanitysocialposts {
+                      ...vanitysocialpostsFields
+                    }
+                  }
+                  socials_accounts {
+                    ... on socials {
+                      ...socialsFields
+                    }
+                  }
+                  promo {
+                    ... on vanity_sponsoring {
+                      ...vanity_sponsoringFields
+                    }
+                  }
+                }
+                items {
+                  trending_articles {
+                    ... on blog_post {
+                      article_title
+                    }
+                  }
+                  other_articles {
+                    ... on blog_post {
+                      article_title
+                      article_cover
+                    }
+                  }
+                }
+              }
+            }
+          }
           ... on article_carousel {
             variation {
               ... on default {

@@ -624,7 +624,7 @@ interface HomepageDocumentData {
  * Slice for *Homepage → Slice Zone*
  *
  */
-type HomepageDocumentDataSlicesSlice = ArticleCarouselSlice | HomeHeroSlice | HomeCollectionSlice | PromotionBannerSlice | SeoSectionSlice | MixedGridSlice;
+type HomepageDocumentDataSlicesSlice = ArticleCarouselSlice | HomeHeroSlice | HomeCollectionSlice | PromotionBannerSlice | SeoSectionSlice | MixedGridSlice | VanityHeroSlice;
 /**
  * Homepage document from Prismic
  *
@@ -914,7 +914,130 @@ export interface SocialsDocumentDataMediaInfoItem {
  * @typeParam Lang - Language API ID of the document.
  */
 export type SocialsDocument<Lang extends string = string> = prismicT.PrismicDocumentWithoutUID<Simplify<SocialsDocumentData>, "socials", Lang>;
-export type AllDocumentTypes = ArticleGroupDocument | AuthorDocument | BlogCollectionDocument | BlogPostDocument | CategoryDocument | CollectionDocument | FooterDocument | HomepageDocument | NavbarDocument | NavigationDocument | NavigationMenuDocument | PageDocument | SocialsDocument;
+/** Content for Vanity Promo documents */
+interface VanitySponsoringDocumentData {
+    /**
+     * Promo text field in *Vanity Promo*
+     *
+     * - **Field Type**: Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: vanity_sponsoring.promo_text
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+     *
+     */
+    promo_text: prismicT.KeyTextField;
+    /**
+     * Promo img field in *Vanity Promo*
+     *
+     * - **Field Type**: Image
+     * - **Placeholder**: *None*
+     * - **API ID Path**: vanity_sponsoring.promo_img
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/image
+     *
+     */
+    promo_img: prismicT.ImageField<never>;
+    /**
+     * Promo link field in *Vanity Promo*
+     *
+     * - **Field Type**: Link
+     * - **Placeholder**: *None*
+     * - **API ID Path**: vanity_sponsoring.promo_link
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/link-content-relationship
+     *
+     */
+    promo_link: prismicT.LinkField;
+    /**
+     * Promo CTA text field in *Vanity Promo*
+     *
+     * - **Field Type**: Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: vanity_sponsoring.promo_cta_text
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+     *
+     */
+    promo_cta_text: prismicT.KeyTextField;
+}
+/**
+ * Vanity Promo document from Prismic
+ *
+ * - **API ID**: `vanity_sponsoring`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type VanitySponsoringDocument<Lang extends string = string> = prismicT.PrismicDocumentWithUID<Simplify<VanitySponsoringDocumentData>, "vanity_sponsoring", Lang>;
+/** Content for Vanity Socials documents */
+interface VanitysocialpostsDocumentData {
+    /**
+     * Post field in *Vanity Socials*
+     *
+     * - **Field Type**: Group
+     * - **Placeholder**: *None*
+     * - **API ID Path**: vanitysocialposts.post[]
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/group
+     *
+     */
+    post: prismicT.GroupField<Simplify<VanitysocialpostsDocumentDataPostItem>>;
+    /**
+     * Slice Zone field in *Vanity Socials*
+     *
+     * - **Field Type**: Slice Zone
+     * - **Placeholder**: *None*
+     * - **API ID Path**: vanitysocialposts.slices[]
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/slices
+     *
+     */
+    slices: prismicT.SliceZone<VanitysocialpostsDocumentDataSlicesSlice>;
+}
+/**
+ * Item in Vanity Socials → Post
+ *
+ */
+export interface VanitysocialpostsDocumentDataPostItem {
+    /**
+     * PostImg field in *Vanity Socials → Post*
+     *
+     * - **Field Type**: Image
+     * - **Placeholder**: *None*
+     * - **API ID Path**: vanitysocialposts.post[].postimg
+     * - **Documentation**: https://prismic.io/docs/core-concepts/image
+     *
+     */
+    postimg: prismicT.ImageField<never>;
+    /**
+     * Postlink field in *Vanity Socials → Post*
+     *
+     * - **Field Type**: Link
+     * - **Placeholder**: *None*
+     * - **API ID Path**: vanitysocialposts.post[].postlink
+     * - **Documentation**: https://prismic.io/docs/core-concepts/link-content-relationship
+     *
+     */
+    postlink: prismicT.LinkField;
+}
+/**
+ * Slice for *Vanity Socials → Slice Zone*
+ *
+ */
+type VanitysocialpostsDocumentDataSlicesSlice = never;
+/**
+ * Vanity Socials document from Prismic
+ *
+ * - **API ID**: `vanitysocialposts`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type VanitysocialpostsDocument<Lang extends string = string> = prismicT.PrismicDocumentWithUID<Simplify<VanitysocialpostsDocumentData>, "vanitysocialposts", Lang>;
+export type AllDocumentTypes = ArticleGroupDocument | AuthorDocument | BlogCollectionDocument | BlogPostDocument | CategoryDocument | CollectionDocument | FooterDocument | HomepageDocument | NavbarDocument | NavigationDocument | NavigationMenuDocument | PageDocument | SocialsDocument | VanitySponsoringDocument | VanitysocialpostsDocument;
 /**
  * Primary content in ArticleCarousel → Primary
  *
@@ -1515,11 +1638,106 @@ type SeoSectionSliceVariation = SeoSectionSliceDefault;
  *
  */
 export type SeoSectionSlice = prismicT.SharedSlice<"seo_section", SeoSectionSliceVariation>;
+/**
+ * Primary content in VanityHero → Primary
+ *
+ */
+interface VanityHeroSliceDefaultPrimary {
+    /**
+     * Main article field in *VanityHero → Primary*
+     *
+     * - **Field Type**: Content Relationship
+     * - **Placeholder**: *None*
+     * - **API ID Path**: vanity_hero.primary.main_article
+     * - **Documentation**: https://prismic.io/docs/core-concepts/link-content-relationship
+     *
+     */
+    main_article: prismicT.RelationField<"blog_post">;
+    /**
+     * Social Posts (4 posts) field in *VanityHero → Primary*
+     *
+     * - **Field Type**: Content Relationship
+     * - **Placeholder**: *None*
+     * - **API ID Path**: vanity_hero.primary.social_posts
+     * - **Documentation**: https://prismic.io/docs/core-concepts/link-content-relationship
+     *
+     */
+    social_posts: prismicT.RelationField<"vanitysocialposts">;
+    /**
+     * Socials Accounts field in *VanityHero → Primary*
+     *
+     * - **Field Type**: Content Relationship
+     * - **Placeholder**: *None*
+     * - **API ID Path**: vanity_hero.primary.socials_accounts
+     * - **Documentation**: https://prismic.io/docs/core-concepts/link-content-relationship
+     *
+     */
+    socials_accounts: prismicT.RelationField<"socials">;
+    /**
+     * Promo field in *VanityHero → Primary*
+     *
+     * - **Field Type**: Content Relationship
+     * - **Placeholder**: *None*
+     * - **API ID Path**: vanity_hero.primary.promo
+     * - **Documentation**: https://prismic.io/docs/core-concepts/link-content-relationship
+     *
+     */
+    promo: prismicT.RelationField<"vanity_sponsoring">;
+}
+/**
+ * Item in VanityHero → Items
+ *
+ */
+export interface VanityHeroSliceDefaultItem {
+    /**
+     * Trending articles (3 articles) field in *VanityHero → Items*
+     *
+     * - **Field Type**: Content Relationship
+     * - **Placeholder**: *None*
+     * - **API ID Path**: vanity_hero.items[].trending_articles
+     * - **Documentation**: https://prismic.io/docs/core-concepts/link-content-relationship
+     *
+     */
+    trending_articles: prismicT.RelationField<"blog_post">;
+    /**
+     * Other articles (2 articles) field in *VanityHero → Items*
+     *
+     * - **Field Type**: Content Relationship
+     * - **Placeholder**: *None*
+     * - **API ID Path**: vanity_hero.items[].other_articles
+     * - **Documentation**: https://prismic.io/docs/core-concepts/link-content-relationship
+     *
+     */
+    other_articles: prismicT.RelationField<"blog_post">;
+}
+/**
+ * Default variation for VanityHero Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: `VanityHero`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type VanityHeroSliceDefault = prismicT.SharedSliceVariation<"default", Simplify<VanityHeroSliceDefaultPrimary>, Simplify<VanityHeroSliceDefaultItem>>;
+/**
+ * Slice variation for *VanityHero*
+ *
+ */
+type VanityHeroSliceVariation = VanityHeroSliceDefault;
+/**
+ * VanityHero Shared Slice
+ *
+ * - **API ID**: `vanity_hero`
+ * - **Description**: `VanityHero`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type VanityHeroSlice = prismicT.SharedSlice<"vanity_hero", VanityHeroSliceVariation>;
 declare module "@prismicio/client" {
     interface CreateClient {
         (repositoryNameOrEndpoint: string, options?: prismic.ClientConfig): prismic.Client<AllDocumentTypes>;
     }
     namespace Content {
-        export type { ArticleGroupDocumentData, ArticleGroupDocumentDataArticlesItem, ArticleGroupDocument, AuthorDocumentData, AuthorDocument, BlogCollectionDocumentData, BlogCollectionDocument, BlogPostDocumentData, BlogPostDocument, CategoryDocumentData, CategoryDocument, CollectionDocumentData, CollectionDocumentDataCategoriesItem, CollectionDocumentDataOtherArticlesItem, CollectionDocumentDataSlicesSlice, CollectionDocument, FooterDocumentData, FooterDocumentDataSlicesSlice, FooterDocument, HomepageDocumentData, HomepageDocumentDataSlicesSlice, HomepageDocument, NavbarDocumentData, NavbarDocumentDataSlicesSlice, NavbarDocument, NavigationDocumentData, NavigationDocumentDataNavigationItemItem, NavigationDocument, NavigationMenuDocumentData, NavigationMenuDocumentDataMenuItem, NavigationMenuDocument, PageDocumentData, PageDocument, SocialsDocumentData, SocialsDocumentDataMediaInfoItem, SocialsDocument, AllDocumentTypes, ArticleCarouselSliceDefaultPrimary, ArticleCarouselSliceDefaultItem, ArticleCarouselSliceDefault, ArticleCarouselSliceVariation, ArticleCarouselSlice, FooterSliceDefaultPrimary, FooterSliceDefault, FooterSliceVariation, FooterSlice, HomeCollectionSliceDefaultPrimary, HomeCollectionSliceDefaultItem, HomeCollectionSliceDefault, HomeCollectionSliceVariation, HomeCollectionSlice, HomeHeroSliceDefaultPrimary, HomeHeroSliceDefault, HomeHeroSliceVariation, HomeHeroSlice, MixedGridSliceDefaultPrimary, MixedGridSliceDefaultItem, MixedGridSliceDefault, MixedGridSliceVariation, MixedGridSlice, NavbarSliceDefaultPrimary, NavbarSliceDefault, NavbarSliceVariation, NavbarSlice, PromotionBannerSliceDefaultPrimary, PromotionBannerSliceDefault, PromotionBannerSliceVariation, PromotionBannerSlice, SeoSectionSliceDefaultPrimary, SeoSectionSliceDefault, SeoSectionSliceVariation, SeoSectionSlice };
+        export type { ArticleGroupDocumentData, ArticleGroupDocumentDataArticlesItem, ArticleGroupDocument, AuthorDocumentData, AuthorDocument, BlogCollectionDocumentData, BlogCollectionDocument, BlogPostDocumentData, BlogPostDocument, CategoryDocumentData, CategoryDocument, CollectionDocumentData, CollectionDocumentDataCategoriesItem, CollectionDocumentDataOtherArticlesItem, CollectionDocumentDataSlicesSlice, CollectionDocument, FooterDocumentData, FooterDocumentDataSlicesSlice, FooterDocument, HomepageDocumentData, HomepageDocumentDataSlicesSlice, HomepageDocument, NavbarDocumentData, NavbarDocumentDataSlicesSlice, NavbarDocument, NavigationDocumentData, NavigationDocumentDataNavigationItemItem, NavigationDocument, NavigationMenuDocumentData, NavigationMenuDocumentDataMenuItem, NavigationMenuDocument, PageDocumentData, PageDocument, SocialsDocumentData, SocialsDocumentDataMediaInfoItem, SocialsDocument, VanitySponsoringDocumentData, VanitySponsoringDocument, VanitysocialpostsDocumentData, VanitysocialpostsDocumentDataPostItem, VanitysocialpostsDocumentDataSlicesSlice, VanitysocialpostsDocument, AllDocumentTypes, ArticleCarouselSliceDefaultPrimary, ArticleCarouselSliceDefaultItem, ArticleCarouselSliceDefault, ArticleCarouselSliceVariation, ArticleCarouselSlice, FooterSliceDefaultPrimary, FooterSliceDefault, FooterSliceVariation, FooterSlice, HomeCollectionSliceDefaultPrimary, HomeCollectionSliceDefaultItem, HomeCollectionSliceDefault, HomeCollectionSliceVariation, HomeCollectionSlice, HomeHeroSliceDefaultPrimary, HomeHeroSliceDefault, HomeHeroSliceVariation, HomeHeroSlice, MixedGridSliceDefaultPrimary, MixedGridSliceDefaultItem, MixedGridSliceDefault, MixedGridSliceVariation, MixedGridSlice, NavbarSliceDefaultPrimary, NavbarSliceDefault, NavbarSliceVariation, NavbarSlice, PromotionBannerSliceDefaultPrimary, PromotionBannerSliceDefault, PromotionBannerSliceVariation, PromotionBannerSlice, SeoSectionSliceDefaultPrimary, SeoSectionSliceDefault, SeoSectionSliceVariation, SeoSectionSlice, VanityHeroSliceDefaultPrimary, VanityHeroSliceDefaultItem, VanityHeroSliceDefault, VanityHeroSliceVariation, VanityHeroSlice };
     }
 }

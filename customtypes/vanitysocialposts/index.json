@@ -1,0 +1,48 @@
+{
+  "id": "vanitysocialposts",
+  "label": "Vanity Socials",
+  "repeatable": false,
+  "status": true,
+  "json": {
+    "Main": {
+      "uid": {
+        "type": "UID",
+        "config": {
+          "label": "id",
+          "placeholder": ""
+        }
+      },
+      "post": {
+        "type": "Group",
+        "config": {
+          "label": "Post",
+          "fields": {
+            "postimg": {
+              "type": "Image",
+              "config": {
+                "label": "PostImg",
+                "constraint": {},
+                "thumbnails": []
+              }
+            },
+            "postlink": {
+              "type": "Link",
+              "config": {
+                "label": "Postlink",
+                "placeholder": "",
+                "select": null
+              }
+            }
+          }
+        }
+      },
+      "slices": {
+        "type": "Slices",
+        "fieldset": "Slice Zone",
+        "config": {
+          "choices": {}
+        }
+      }
+    }
+  }
+}

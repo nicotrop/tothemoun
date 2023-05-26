@@ -183,7 +183,6 @@ export const GlobalButton = ({
 export const ArticleTag = ({
   tags,
   className = "",
-  secondaryOnMobile = false,
 }: {
   tags: string[];
   className?: string;

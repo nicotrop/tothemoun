@@ -1,0 +1,80 @@
+{
+  "id": "vanity_hero",
+  "type": "SharedSlice",
+  "name": "VanityHero",
+  "description": "VanityHero",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "sktwi1xtmkfgx8626",
+      "description": "VanityHero",
+      "primary": {
+        "main_article": {
+          "type": "Link",
+          "config": {
+            "label": "Main article",
+            "select": "document",
+            "customtypes": [
+              "blog_post"
+            ]
+          }
+        },
+        "social_posts": {
+          "type": "Link",
+          "config": {
+            "label": "Social Posts (4 posts)",
+            "select": "document",
+            "customtypes": [
+              "vanitysocialposts"
+            ]
+          }
+        },
+        "socials_accounts": {
+          "type": "Link",
+          "config": {
+            "label": "Socials Accounts",
+            "select": "document",
+            "customtypes": [
+              "socials"
+            ]
+          }
+        },
+        "promo": {
+          "type": "Link",
+          "config": {
+            "label": "Promo",
+            "select": "document",
+            "customtypes": [
+              "vanity_sponsoring"
+            ]
+          }
+        }
+      },
+      "items": {
+        "trending_articles": {
+          "type": "Link",
+          "config": {
+            "label": "Trending articles (3 articles)",
+            "select": "document",
+            "customtypes": [
+              "blog_post"
+            ]
+          }
+        },
+        "other_articles": {
+          "type": "Link",
+          "config": {
+            "label": "Other articles (2 articles)",
+            "select": "document",
+            "customtypes": [
+              "blog_post"
+            ]
+          }
+        }
+      },
+      "imageUrl": "https://images.prismic.io/slice-machine/621a5ec4-0387-4bc5-9860-2dd46cbc07cd_default_ss.png?auto=compress,format"
+    }
+  ]
+}

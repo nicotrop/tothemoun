@@ -18,7 +18,9 @@
     },
     "collection": {},
     "footer": {},
-    "navbar": {}
+    "navbar": {},
+    "vanitysocialposts": {},
+    "vanity_sponsoring": {}
   },
   "slices": {
     "HomeHero": {
@@ -61,6 +63,12 @@
     "Navbar": {
       "default": {
         "primary": {}
+      }
+    },
+    "VanityHero": {
+      "default": {
+        "primary": {},
+        "items": {}
       }
     }
   }

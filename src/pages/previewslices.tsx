@@ -16,7 +16,7 @@ export default function PreviewSlices() {
   return (
     <Layout>
       <HeroVideo />
-      <VanityHero />
+      {/* <VanityHero /> */}
       <CollectionGrid />
       <TopStories />
       <CollectionCarousel />

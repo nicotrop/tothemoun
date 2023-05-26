@@ -1,0 +1,47 @@
+{
+  "id": "vanity_sponsoring",
+  "label": "Vanity Promo",
+  "repeatable": false,
+  "status": true,
+  "json": {
+    "Main": {
+      "uid": {
+        "type": "UID",
+        "config": {
+          "label": "id",
+          "placeholder": ""
+        }
+      },
+      "promo_text": {
+        "type": "Text",
+        "config": {
+          "label": "Promo text",
+          "placeholder": ""
+        }
+      },
+      "promo_img": {
+        "type": "Image",
+        "config": {
+          "label": "Promo img",
+          "constraint": {},
+          "thumbnails": []
+        }
+      },
+      "promo_link": {
+        "type": "Link",
+        "config": {
+          "label": "Promo link",
+          "placeholder": "",
+          "select": null
+        }
+      },
+      "promo_cta_text": {
+        "type": "Text",
+        "config": {
+          "label": "Promo CTA text",
+          "placeholder": ""
+        }
+      }
+    }
+  }
+}

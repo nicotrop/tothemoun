@@ -8,6 +8,7 @@ import MixedGrid from './MixedGrid';
 import Navbar from './Navbar';
 import PromotionBanner from './PromotionBanner';
 import SeoSection from './SeoSection';
+import VanityHero from './VanityHero';
 
 export {
 	ArticleCarousel,
@@ -18,6 +19,7 @@ export {
 	Navbar,
 	PromotionBanner,
 	SeoSection,
+	VanityHero,
 };
 
 export const components = {
@@ -29,4 +31,5 @@ export const components = {
 	navbar: Navbar,
 	promotion_banner: PromotionBanner,
 	seo_section: SeoSection,
+	vanity_hero: VanityHero,
 };

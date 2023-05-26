@@ -10,8 +10,62 @@ import {
   faTiktok,
 } from "@fortawesome/free-brands-svg-icons";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
+import { SliceComponentProps } from "@prismicio/react";
+import {
+  BlogPostDocument,
+  SocialsDocumentDataMediaInfoItem,
+  VanityHeroSlice,
+  VanityHeroSliceDefault,
+  VanitySponsoringDocument,
+  VanitysocialpostsDocument,
+  VanitysocialpostsDocumentDataPostItem,
+} from "types.generated";
+import { ContentRelationshipField } from "@prismicio/types";
 
-export const VanityHero = () => {
+export const VanityComponent = ({ props }: { props: VanityHeroSlice }) => {
+
+  //Fix typing for the extracted content relationship fields
+  type BlogPost = ContentRelationshipField<"blog_post"> & {
+    data: BlogPostDocument;
+  };
+  type Promo = ContentRelationshipField<"vanity_sponsoring"> & {
+    data: VanitySponsoringDocument;
+  };
+  type SocialPosts = ContentRelationshipField<"vanitysocialposts"> & {
+    data: {
+      post: VanitysocialpostsDocumentDataPostItem[];
+    };
+  };
+  type SocialAccts = ContentRelationshipField<"socials"> & {
+    data: {
+      media_info: SocialsDocumentDataMediaInfoItem[];
+    }
+  };
+
+  //Extract the props
+  const { primary, items } = props;
+  const {
+    main_article: raw_main_article,
+    promo: raw_promo,
+    social_posts: raw_social_posts,
+    socials_accounts: raw_social_accounts,
+  } = primary;
+
+  //Updated typing for the extracted content relationship fields
+  const socials_accounts = raw_social_accounts as SocialAccts;
+  const social_posts = raw_social_posts as SocialPosts;
+  const promo = raw_promo as Promo;
+  const main_article = raw_main_article as BlogPost;
+  const trending_articles = items.map(
+    (item) => item.trending_articles
+  ) as BlogPost[];
+  const raw_other_articles = items.map(
+    (item) => item.other_articles
+  ) as BlogPost[];
+
+  //Filter out empty other articles
+  const other_articles = raw_other_articles.filter((item) => item.data);
+
   return (
     <Wrapper
       padding={false}
@@ -23,6 +77,7 @@ export const VanityHero = () => {
         <MainColumn />
         <RightColumn />
       </div>
+
       {/* Mobile */}
       <div className="flex flex-col gap-5 lg:gap-8 h-full lg:hidden">
         <MainColumn />
