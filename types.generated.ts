@@ -877,6 +877,17 @@ interface SocialsDocumentData {
      *
      */
     media_info: prismicT.GroupField<Simplify<SocialsDocumentDataMediaInfoItem>>;
+    /**
+     * CTA field in *Socials*
+     *
+     * - **Field Type**: Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: socials.cta
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+     *
+     */
+    cta: prismicT.KeyTextField;
 }
 /**
  * Item in Socials → Media Info
@@ -984,6 +995,17 @@ interface VanitysocialpostsDocumentData {
      *
      */
     post: prismicT.GroupField<Simplify<VanitysocialpostsDocumentDataPostItem>>;
+    /**
+     * Title field in *Vanity Socials*
+     *
+     * - **Field Type**: Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: vanitysocialposts.title
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+     *
+     */
+    title: prismicT.KeyTextField;
     /**
      * Slice Zone field in *Vanity Socials*
      *

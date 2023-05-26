@@ -189,7 +189,7 @@ const NewsleterSection = ({
 
 type SocialName = "Instagram" | "TikTok" | "Pinterest" | "Email";
 
-const SocialIcon = ({ socialName }: { socialName: SocialName }) => {
+export const SocialIcon = ({ socialName }: { socialName: SocialName }) => {
   switch (socialName) {
     case "Instagram":
       return <FontAwesomeIcon icon={faIn} className="h-[80%]" />;

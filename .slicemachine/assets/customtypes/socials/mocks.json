@@ -19,12 +19,17 @@
               "__TYPE__": "LinkContent",
               "value": {
                 "__TYPE__": "ExternalLink",
-                "url": "http://twitter.com"
+                "url": "https://slicemachine.dev"
               }
             }
           ]
         ]
       }
     ]
+  },
+  "cta": {
+    "__TYPE__": "FieldContent",
+    "value": "cattle",
+    "type": "Text"
   }
 }

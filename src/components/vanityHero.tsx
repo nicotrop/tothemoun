@@ -10,38 +10,19 @@ import {
   faTiktok,
 } from "@fortawesome/free-brands-svg-icons";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
-import { SliceComponentProps } from "@prismicio/react";
+import { PrismicLink } from "@prismicio/react";
+import { PrismicNextImage } from "@prismicio/next";
 import {
-  BlogPostDocument,
-  SocialsDocumentDataMediaInfoItem,
-  VanityHeroSlice,
-  VanityHeroSliceDefault,
-  VanitySponsoringDocument,
-  VanitysocialpostsDocument,
-  VanitysocialpostsDocumentDataPostItem,
-} from "types.generated";
-import { ContentRelationshipField } from "@prismicio/types";
+  MainArticle,
+  OtherArticles,
+  Promo,
+  SocialAccts,
+  SocialPosts,
+  TrendingArticles,
+} from "slices/VanityHero/type";
+import { VanityHeroSlice } from "types.generated";
 
 export const VanityComponent = ({ props }: { props: VanityHeroSlice }) => {
-
-  //Fix typing for the extracted content relationship fields
-  type BlogPost = ContentRelationshipField<"blog_post"> & {
-    data: BlogPostDocument;
-  };
-  type Promo = ContentRelationshipField<"vanity_sponsoring"> & {
-    data: VanitySponsoringDocument;
-  };
-  type SocialPosts = ContentRelationshipField<"vanitysocialposts"> & {
-    data: {
-      post: VanitysocialpostsDocumentDataPostItem[];
-    };
-  };
-  type SocialAccts = ContentRelationshipField<"socials"> & {
-    data: {
-      media_info: SocialsDocumentDataMediaInfoItem[];
-    }
-  };
-
   //Extract the props
   const { primary, items } = props;
   const {
@@ -55,13 +36,13 @@ export const VanityComponent = ({ props }: { props: VanityHeroSlice }) => {
   const socials_accounts = raw_social_accounts as SocialAccts;
   const social_posts = raw_social_posts as SocialPosts;
   const promo = raw_promo as Promo;
-  const main_article = raw_main_article as BlogPost;
+  const main_article = raw_main_article as MainArticle;
   const trending_articles = items.map(
     (item) => item.trending_articles
-  ) as BlogPost[];
+  ) as TrendingArticles[];
   const raw_other_articles = items.map(
     (item) => item.other_articles
-  ) as BlogPost[];
+  ) as OtherArticles[];
 
   //Filter out empty other articles
   const other_articles = raw_other_articles.filter((item) => item.data);
@@ -73,16 +54,24 @@ export const VanityComponent = ({ props }: { props: VanityHeroSlice }) => {
     >
       {/* Desktop */}
       <div className="hidden lg:flex gap-10">
-        <LeftColumn />
-        <MainColumn />
+        <LeftColumn others={other_articles} />
+        <MainColumn
+          article={main_article}
+          posts={social_posts}
+          socials={socials_accounts}
+        />
         <RightColumn />
       </div>
 
       {/* Mobile */}
       <div className="flex flex-col gap-5 lg:gap-8 h-full lg:hidden">
-        <MainColumn />
+        <MainColumn
+          article={main_article}
+          posts={social_posts}
+          socials={socials_accounts}
+        />
         <div className="px-wrapper_x flex flex-col gap-8">
-          <LeftColumn />
+          <LeftColumn others={other_articles} />
           <RightColumn />
         </div>
       </div>
@@ -98,89 +87,118 @@ const SideColumn = ({ children }: { children: ReactNode }) => {
   );
 };
 
-const MainColumn = () => {
+const MainColumn = ({
+  article,
+  socials,
+  posts,
+}: {
+  article: MainArticle;
+  socials?: SocialAccts;
+  posts?: SocialPosts;
+}) => {
   return (
     <div className="lg:flex-grow flex flex-col lg:h-fit">
-      <Link
-        href={"/"}
+      <PrismicLink
+        field={article}
         className="aspect-[9/13] sm:aspect-[6/4] relative rounded-sm"
       >
-        <Image
-          src={arrayArticles[0].article_cover}
-          alt="cover"
+        <PrismicNextImage
+          field={article?.data.article_cover}
           fill
           className="object-cover w-full"
         />
-      </Link>
+      </PrismicLink>
       <div className="flex flex-col lg:h-fit px-wrapper_x lg:px-0">
-        {arrayArticles[0].tags && (
+        {article?.tags && (
           <span className="pt-5 pb-2 text-xs font-semibold font-title uppercase">
-            {arrayArticles[0]?.tags[0]}
+            {article?.tags[0]}
           </span>
         )}
-        <Link href={"/"}>
+        <PrismicLink field={article}>
           <h3 className="pb-2 text-3xl font-extrabold font-title leading-tight tracking-tighter">
-            {arrayArticles[0].article_title}
+            {article?.data.article_title}
           </h3>
-        </Link>
-        <p className="p-0 m-0 text-base">{arrayArticles[0].preview}</p>
+        </PrismicLink>
+        <p className="p-0 m-0 text-base">{article?.data.preview}</p>
         <hr className="mt-8 lg:my-5 border-solid border-t-2 border-gray-200" />
         <span className="hidden lg:block pb-2 text-xs font-semibold font-title uppercase">
-          #TOTHEMOUN
+          {posts?.data.title}
         </span>
-        <SocialImageGrid />
+        <SocialImageGrid socialPost={posts} />
         <div className="hidden lg:inline-flex items-center gap-2 text-sm font-semibold pt-2">
-          <span>Follow us on socials:</span>
-          <SocialIcon socialName="Instagram" />
-          <SocialIcon socialName="TikTok" />
-          <SocialIcon socialName="Pinterest" />
-          <SocialIcon socialName="Email" />
+          <span>{socials?.data.cta}</span>
+          {socials?.data.media_info.map((item, index) => {
+            return (
+              item.social_media && (
+                <PrismicLink
+                  field={item.social_link}
+                  key={index}
+                  target={"_blank"}
+                >
+                  <SocialIcon socialName={item?.social_media} />
+                </PrismicLink>
+              )
+            );
+          })}
         </div>
       </div>
     </div>
   );
 };
 
-const LeftColumn = () => {
+const SocialImageGrid = ({ socialPost }: { socialPost?: SocialPosts }) => {
+  return (
+    <div className="hidden lg:flex flex-wrap gap-2 w-full h-max">
+      {socialPost?.data.post.map((elem, index) => {
+        return (
+          <PrismicLink
+            field={elem.postlink}
+            key={index}
+            className="rounded-sm object-cover w-[calc((100%/4)-((8px*3)/4))] aspect-square relative"
+          >
+            <PrismicNextImage
+              field={elem.postimg}
+              fill
+              className="object-cover w-full"
+            />
+          </PrismicLink>
+        );
+      })}
+    </div>
+  );
+};
+
+const LeftColumn = ({ others }: { others: OtherArticles[] }) => {
   return (
     <SideColumn>
-      <Link href={"/"} className="aspect-[6/4] relative rounded-sm">
-        <Image
-          src={arrayArticles[0].article_cover}
-          alt="cover"
-          fill
-          className="object-cover w-full aspect-[6/4]"
-        />
-      </Link>
-      {arrayArticles[0].tags && (
-        <span className="pt-5 pb-2 text-xs font-semibold font-title uppercase">
-          {arrayArticles[0]?.tags[0]}
-        </span>
-      )}
-      <Link href={"/"}>
-        <h3 className="pb-2 text-xl font-extrabold font-title leading-tight tracking-tighter">
-          {arrayArticles[0].article_title}
-        </h3>
-      </Link>
-      <hr className="my-5 border-solid border-t-2 border-gray-200" />
-      <Link href={"/"} className="aspect-[6/4] relative rounded-sm">
-        <Image
-          src={arrayArticles[0].article_cover}
-          alt="cover"
-          fill
-          className="object-cover w-full aspect-[6/4]"
-        />
-      </Link>
-      {arrayArticles[0].tags && (
-        <span className="pt-5 pb-2 text-xs font-semibold font-title uppercase">
-          {arrayArticles[0]?.tags[0]}
-        </span>
-      )}
-      <Link href={"/"}>
-        <h3 className="pb-2 text-xl font-extrabold font-title leading-tight tracking-tighter">
-          {arrayArticles[0].article_title}
-        </h3>
-      </Link>
+      {others?.map((item, index) => {
+        return (
+          <article key={item.uid}>
+            <div className="aspect-[6/4] w-full relative rounded-sm">
+              <PrismicLink field={item}>
+                <PrismicNextImage
+                  field={item?.data.article_cover}
+                  fill
+                  className="object-cover"
+                />
+              </PrismicLink>
+            </div>
+            {item?.tags && (
+              <span className="pt-5 pb-2 text-xs font-semibold font-title uppercase">
+                {item?.tags[0]}
+              </span>
+            )}
+            <PrismicLink field={item}>
+              <h3 className="pb-2 text-xl font-extrabold font-title leading-tight tracking-tighter">
+                {item?.data.article_title}
+              </h3>
+            </PrismicLink>
+            {index < 1 && (
+              <hr className="my-5 border-solid border-t-2 border-gray-200" />
+            )}
+          </article>
+        );
+      })}
     </SideColumn>
   );
 };
@@ -199,37 +217,6 @@ const RightColumn = () => {
       <ArticleTextElem />
       <SponsoredElem />
     </SideColumn>
-  );
-};
-
-const SocialImageGrid = ({ className }: { className?: string }) => {
-  return (
-    <div className={`hidden lg:flex flex-wrap gap-2 w-full h-max ${className}`}>
-      <Link
-        href={"/"}
-        className="rounded-sm object-cover w-[calc((100%/4)-((8px*3)/4))] aspect-square relative"
-      >
-        <Image src={arrayArticles[0].article_cover} alt="cover article" fill />
-      </Link>
-      <Link
-        href={"/"}
-        className="rounded-sm object-cover w-[calc((100%/4)-((8px*3)/4))] aspect-square relative"
-      >
-        <Image src={arrayArticles[0].article_cover} alt="cover article" fill />
-      </Link>
-      <Link
-        href={"/"}
-        className="rounded-sm object-cover w-[calc((100%/4)-((8px*3)/4))] aspect-square relative"
-      >
-        <Image src={arrayArticles[0].article_cover} alt="cover article" fill />
-      </Link>
-      <Link
-        href={"/"}
-        className="rounded-sm object-cover w-[calc((100%/4)-((8px*3)/4))] aspect-square relative"
-      >
-        <Image src={arrayArticles[0].article_cover} alt="cover article" fill />
-      </Link>
-    </div>
   );
 };
 
@@ -294,6 +281,6 @@ const SocialIcon = ({ socialName }: { socialName: string }) => {
     case "Email":
       return <FontAwesomeIcon icon={faEnvelope} />;
     default:
-      return <div>Icon not found</div>;
+      return null;
   }
 };

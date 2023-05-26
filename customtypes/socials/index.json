@@ -33,6 +33,13 @@
             }
           }
         }
+      },
+      "cta": {
+        "type": "Text",
+        "config": {
+          "label": "CTA",
+          "placeholder": ""
+        }
       }
     }
   }
