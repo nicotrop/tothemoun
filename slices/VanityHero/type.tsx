@@ -22,6 +22,7 @@ interface ElemDetails {
   uid: string;
   url: string;
 }
+
 interface MainArticleContent extends ElemDetails {
   data: {
     article_cover: BlogPostDocument["data"]["article_cover"];
@@ -41,7 +42,16 @@ interface OtherArticlesContent extends ElemDetails {
   };
 }
 interface PromoContent extends ElemDetails {
-  data: VanitySponsoringDocument;
+  data: {
+    promo_img: VanitySponsoringDocument["data"]["promo_img"];
+    promo_cta_text: VanitySponsoringDocument["data"]["promo_cta_text"];
+    promo_link: {
+      link_type: string;
+      url: string;
+    };
+    promo_text: VanitySponsoringDocument["data"]["promo_text"];
+    uid: VanitySponsoringDocument["uid"];
+  };
 }
 interface SocialPostsContent extends ElemDetails {
   data: {

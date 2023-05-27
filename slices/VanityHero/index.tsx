@@ -1,5 +1,4 @@
 import React from "react";
-import { Wrapper } from "@/components/global";
 import { SliceComponentProps } from "@prismicio/react";
 import { VanityHeroSlice } from "types.generated";
 import { VanityComponent } from "@/components/vanityHero";

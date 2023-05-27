@@ -1,8 +1,5 @@
 import { ReactNode } from "react";
 import { Wrapper } from "./global";
-import Image from "next/image";
-import { arrayArticles } from "@/utils/mockData";
-import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faInstagram,
@@ -60,7 +57,7 @@ export const VanityComponent = ({ props }: { props: VanityHeroSlice }) => {
           posts={social_posts}
           socials={socials_accounts}
         />
-        <RightColumn />
+        <RightColumn trending={trending_articles} promo={promo} />
       </div>
 
       {/* Mobile */}
@@ -72,7 +69,7 @@ export const VanityComponent = ({ props }: { props: VanityHeroSlice }) => {
         />
         <div className="px-wrapper_x flex flex-col gap-8">
           <LeftColumn others={other_articles} />
-          <RightColumn />
+          <RightColumn trending={trending_articles} promo={promo} />
         </div>
       </div>
     </Wrapper>
@@ -173,7 +170,7 @@ const LeftColumn = ({ others }: { others: OtherArticles[] }) => {
     <SideColumn>
       {others?.map((item, index) => {
         return (
-          <article key={item.uid}>
+          <article key={index}>
             <div className="aspect-[6/4] w-full relative rounded-sm">
               <PrismicLink field={item}>
                 <PrismicNextImage
@@ -203,7 +200,13 @@ const LeftColumn = ({ others }: { others: OtherArticles[] }) => {
   );
 };
 
-const RightColumn = () => {
+const RightColumn = ({
+  trending,
+  promo,
+}: {
+  trending: TrendingArticles[];
+  promo: Promo;
+}) => {
   return (
     <SideColumn>
       <MobileSeperator />
@@ -212,54 +215,54 @@ const RightColumn = () => {
           trending
         </h3>
       </div>
-      <ArticleTextElem />
-      <ArticleTextElem />
-      <ArticleTextElem />
-      <SponsoredElem />
+      {trending?.map((item, index) => {
+        return <ArticleTextElem key={index} article={item} />;
+      })}
+      <SponsoredElem promo={promo} />
     </SideColumn>
   );
 };
 
-const ArticleTextElem = () => {
+const ArticleTextElem = ({ article }: { article: TrendingArticles }) => {
   return (
-    <Link href={"/"}>
-      {arrayArticles[0].tags && (
+    <PrismicLink href={article.url}>
+      {article.tags && (
         <span className="pt-5 pb-2 text-xs font-semibold font-title uppercase">
-          {arrayArticles[0]?.tags[0]}
+          {article?.tags[0]}
         </span>
       )}
       <h4 className="pb-2 text-xl font-semibold font-title leading-tight tracking-tighter">
-        {arrayArticles[0].article_title}
+        {article?.data?.article_title}
       </h4>
       <hr className="my-5 border-solid border-t-2 border-gray-200" />
-    </Link>
+    </PrismicLink>
   );
 };
 
-const SponsoredElem = () => {
+const SponsoredElem = ({ promo }: { promo: Promo }) => {
   return (
     <div className="h-auto pb-5 flex flex-col items-center text-center">
-      {arrayArticles[0].tags && (
-        <span className="pb-5 lg:pb-2 text-xs font-semibold font-title uppercase">
-          Sponsored
-        </span>
-      )}
+      <span className="pb-5 lg:pb-2 text-xs font-semibold font-title uppercase">
+        Sponsored
+      </span>
       <h5 className="pb-5 m-0 text-base font-medium ">
-        {arrayArticles[0].preview}
+        {promo.data.promo_text}
       </h5>
-      <Link href={"/"} className="aspect-[9/12] w-3/5 relative max-h-[400px]">
-        <Image
-          src={arrayArticles[0].article_cover}
-          alt="cover"
+      <PrismicLink
+        href={promo.data.promo_link.url}
+        className="aspect-[9/12] w-3/5 relative max-h-[400px]"
+      >
+        <PrismicNextImage
+          field={promo.data.promo_img}
           fill
           className="object-cover w-full aspect-[9/16]"
         />
-      </Link>
-      <Link href={"/"} className="pt-2">
+      </PrismicLink>
+      <PrismicLink href={promo.data.promo_link.url} className="pt-2">
         <span className="text-xs font-semibold font-title uppercase underline">
-          Découvrez ici
+          {promo.data.promo_cta_text}
         </span>
-      </Link>
+      </PrismicLink>
     </div>
   );
 };
