@@ -48,7 +48,7 @@ export const ArticleCard = ({
         <Image
           src={article.article_cover}
           fill
-          alt={article.article_title}
+          alt={"hello"}
           className="object-cover w-full m-0 h-full"
         />
       </div>

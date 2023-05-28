@@ -56,19 +56,7 @@
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
-            "article_carousel": {
-              "type": "SharedSlice"
-            },
             "home_hero": {
-              "type": "SharedSlice"
-            },
-            "home_collection": {
-              "type": "SharedSlice"
-            },
-            "promotion_banner": {
-              "type": "SharedSlice"
-            },
-            "seo_section": {
               "type": "SharedSlice"
             },
             "mixed_grid": {
@@ -78,6 +66,9 @@
               "type": "SharedSlice"
             },
             "collection_grid": {
+              "type": "SharedSlice"
+            },
+            "top_story": {
               "type": "SharedSlice"
             }
           }

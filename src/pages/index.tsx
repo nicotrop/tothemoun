@@ -9,13 +9,10 @@ import "swiper/css/bundle";
 export type StaticPageProps = InferGetStaticPropsType<typeof getStaticProps>;
 
 export default function Home({ data }: StaticPageProps) {
+  console.log(data);
   return (
     <Layout>
-      <SliceZone
-        slices={data.data.slices}
-        components={{ ...components }}
-        context={data.articles}
-      />
+      <SliceZone slices={data.data.slices} components={{ ...components }} />
     </Layout>
   );
 }
@@ -31,17 +28,6 @@ export const getStaticProps = async ({
       homepage {
         ...homepageFields
         slices {
-          ... on promotion_banner {
-            variation {
-              ... on default {
-                primary {
-                  banner
-                  button_text
-                  button_link
-                }
-              }
-            }
-          }
           ... on home_hero {
             variation {
               ... on default {
@@ -107,46 +93,6 @@ export const getStaticProps = async ({
               }
             }
           }
-          ... on article_carousel {
-            variation {
-              ... on default {
-                primary {
-                  title
-                  description
-                  type
-                }
-                items {
-                  blogpost {
-                    ...on blog_post {
-                      article_cover
-                      preview
-                      uid
-                      article_title
-                      article_content
-                      article_author {
-                        ... on author {
-                          uid
-                          author_first_name
-                          author_last_name
-                          author_avatar
-                        }
-                      }
-                    }
-                  }
-                }
-              }
-            }
-          }
-          ... on seo_section {
-            variation {
-              ... on default {
-                primary {
-                  title
-                  description
-                }
-              }
-            }
-          }
           ... on collection_grid {
             variation {
               ... on default {
@@ -201,38 +147,32 @@ export const getStaticProps = async ({
               }
             }
           }
+          ... on top_story {
+            variation {
+              ... on default {
+                primary {
+                  main_article {
+                    ... on blog_post {
+                      ...blog_postFields
+                    }
+                  }
+                  section_title
+                }
+                items {
+                  other_articles {
+                    ... on blog_post {
+                      ...blog_postFields
+                    }
+                  }
+                }
+              }
+            }
+          }
         }
       }
     }`,
   });
-
-  const articles = await client.getAllByType("blog_post", {
-    graphQuery: `
-    {
-      blog_post {
-        article_cover
-        preview
-        uid
-        article_title
-        article_content
-        article_author {
-          ... on author {
-            uid
-            author_first_name
-            author_last_name
-            author_avatar
-          }
-        }
-      }
-    }
-    `,
-    orderings: {
-      field: "document.first_publication_date",
-      direction: "desc",
-    },
-  });
-
-  const data = { ...page, articles };
+  const data = { ...page };
 
   return {
     props: {

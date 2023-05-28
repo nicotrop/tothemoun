@@ -28,25 +28,9 @@
         "primary": {}
       }
     },
-    "ArticleCarousel": {
-      "default": {
-        "primary": {},
-        "items": {}
-      }
-    },
     "HomeCollection": {
       "default": {
         "items": {}
-      }
-    },
-    "PromotionBanner": {
-      "default": {
-        "primary": {}
-      }
-    },
-    "SeoSection": {
-      "default": {
-        "primary": {}
       }
     },
     "Footer": {
@@ -74,6 +58,12 @@
     "CollectionGrid": {
       "default": {
         "primary": {}
+      }
+    },
+    "TopStory": {
+      "default": {
+        "primary": {},
+        "items": {}
       }
     }
   }

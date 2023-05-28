@@ -11,7 +11,7 @@ export const CollectionGridComp = ({
   title = "Collection",
   tag,
 }: {
-  articles: BlogPostDocument<string>[];
+  articles: BlogPostDocument<string>[] | null;
   title?: string;
   tag?: string;
 }) => {

@@ -44,18 +44,14 @@ const CollectionGrid = ({
     fetchData();
   }, [tag]);
 
-  if (isLoading) {
-    return <GridLoader />;
-  }
-
-  return (
-    data !== null && (
-      <CollectionGridComp
-        articles={data}
-        title={title || "Collection"}
-        tag={tag}
-      />
-    )
+  return isLoading ? (
+    <GridLoader />
+  ) : (
+    <CollectionGridComp
+      articles={data}
+      title={title || "Collection"}
+      tag={tag}
+    />
   );
 };
 
