@@ -624,7 +624,7 @@ interface HomepageDocumentData {
  * Slice for *Homepage → Slice Zone*
  *
  */
-type HomepageDocumentDataSlicesSlice = ArticleCarouselSlice | HomeHeroSlice | HomeCollectionSlice | PromotionBannerSlice | SeoSectionSlice | MixedGridSlice | VanityHeroSlice;
+type HomepageDocumentDataSlicesSlice = ArticleCarouselSlice | HomeHeroSlice | HomeCollectionSlice | PromotionBannerSlice | SeoSectionSlice | MixedGridSlice | VanityHeroSlice | CollectionGridSlice;
 /**
  * Homepage document from Prismic
  *
@@ -1201,6 +1201,55 @@ type HomeCollectionSliceVariation = HomeCollectionSliceDefault;
  */
 export type HomeCollectionSlice = prismicT.SharedSlice<"home_collection", HomeCollectionSliceVariation>;
 /**
+ * Primary content in CollectionGrid → Primary
+ *
+ */
+interface CollectionGridSliceDefaultPrimary {
+    /**
+     * Collection uid field in *CollectionGrid → Primary*
+     *
+     * - **Field Type**: Select
+     * - **Placeholder**: Select the tag for this collection
+     * - **API ID Path**: collection_grid.primary.collection_uid
+     * - **Documentation**: https://prismic.io/docs/core-concepts/select
+     *
+     */
+    collection_uid: prismicT.SelectField<"que faire?" | "ou manger?" | "ou loger?">;
+    /**
+     * Collection title field in *CollectionGrid → Primary*
+     *
+     * - **Field Type**: Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: collection_grid.primary.title
+     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+     *
+     */
+    title: prismicT.KeyTextField;
+}
+/**
+ * Default variation for CollectionGrid Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: `CollectionGrid`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type CollectionGridSliceDefault = prismicT.SharedSliceVariation<"default", Simplify<CollectionGridSliceDefaultPrimary>, never>;
+/**
+ * Slice variation for *CollectionGrid*
+ *
+ */
+type CollectionGridSliceVariation = CollectionGridSliceDefault;
+/**
+ * CollectionGrid Shared Slice
+ *
+ * - **API ID**: `collection_grid`
+ * - **Description**: `CollectionGrid`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type CollectionGridSlice = prismicT.SharedSlice<"collection_grid", CollectionGridSliceVariation>;
+/**
  * Primary content in Footer → Primary
  *
  */
@@ -1760,6 +1809,6 @@ declare module "@prismicio/client" {
         (repositoryNameOrEndpoint: string, options?: prismic.ClientConfig): prismic.Client<AllDocumentTypes>;
     }
     namespace Content {
-        export type { ArticleGroupDocumentData, ArticleGroupDocumentDataArticlesItem, ArticleGroupDocument, AuthorDocumentData, AuthorDocument, BlogCollectionDocumentData, BlogCollectionDocument, BlogPostDocumentData, BlogPostDocument, CategoryDocumentData, CategoryDocument, CollectionDocumentData, CollectionDocumentDataCategoriesItem, CollectionDocumentDataOtherArticlesItem, CollectionDocumentDataSlicesSlice, CollectionDocument, FooterDocumentData, FooterDocumentDataSlicesSlice, FooterDocument, HomepageDocumentData, HomepageDocumentDataSlicesSlice, HomepageDocument, NavbarDocumentData, NavbarDocumentDataSlicesSlice, NavbarDocument, NavigationMenuDocumentData, NavigationMenuDocumentDataMenuItem, NavigationMenuDocument, NavigationDocumentData, NavigationDocumentDataNavigationItemItem, NavigationDocument, PageDocumentData, PageDocument, SocialsDocumentData, SocialsDocumentDataMediaInfoItem, SocialsDocument, VanitySponsoringDocumentData, VanitySponsoringDocument, VanitysocialpostsDocumentData, VanitysocialpostsDocumentDataPostItem, VanitysocialpostsDocumentDataSlicesSlice, VanitysocialpostsDocument, AllDocumentTypes, ArticleCarouselSliceDefaultPrimary, ArticleCarouselSliceDefaultItem, ArticleCarouselSliceDefault, ArticleCarouselSliceVariation, ArticleCarouselSlice, HomeCollectionSliceDefaultPrimary, HomeCollectionSliceDefaultItem, HomeCollectionSliceDefault, HomeCollectionSliceVariation, HomeCollectionSlice, FooterSliceDefaultPrimary, FooterSliceDefault, FooterSliceVariation, FooterSlice, HomeHeroSliceDefaultPrimary, HomeHeroSliceDefault, HomeHeroSliceVariation, HomeHeroSlice, MixedGridSliceDefaultPrimary, MixedGridSliceDefaultItem, MixedGridSliceDefault, MixedGridSliceVariation, MixedGridSlice, NavbarSliceDefaultPrimary, NavbarSliceDefault, NavbarSliceVariation, NavbarSlice, PromotionBannerSliceDefaultPrimary, PromotionBannerSliceDefault, PromotionBannerSliceVariation, PromotionBannerSlice, SeoSectionSliceDefaultPrimary, SeoSectionSliceDefault, SeoSectionSliceVariation, SeoSectionSlice, VanityHeroSliceDefaultPrimary, VanityHeroSliceDefaultItem, VanityHeroSliceDefault, VanityHeroSliceVariation, VanityHeroSlice };
+        export type { ArticleGroupDocumentData, ArticleGroupDocumentDataArticlesItem, ArticleGroupDocument, AuthorDocumentData, AuthorDocument, BlogCollectionDocumentData, BlogCollectionDocument, BlogPostDocumentData, BlogPostDocument, CategoryDocumentData, CategoryDocument, CollectionDocumentData, CollectionDocumentDataCategoriesItem, CollectionDocumentDataOtherArticlesItem, CollectionDocumentDataSlicesSlice, CollectionDocument, FooterDocumentData, FooterDocumentDataSlicesSlice, FooterDocument, HomepageDocumentData, HomepageDocumentDataSlicesSlice, HomepageDocument, NavbarDocumentData, NavbarDocumentDataSlicesSlice, NavbarDocument, NavigationMenuDocumentData, NavigationMenuDocumentDataMenuItem, NavigationMenuDocument, NavigationDocumentData, NavigationDocumentDataNavigationItemItem, NavigationDocument, PageDocumentData, PageDocument, SocialsDocumentData, SocialsDocumentDataMediaInfoItem, SocialsDocument, VanitySponsoringDocumentData, VanitySponsoringDocument, VanitysocialpostsDocumentData, VanitysocialpostsDocumentDataPostItem, VanitysocialpostsDocumentDataSlicesSlice, VanitysocialpostsDocument, AllDocumentTypes, ArticleCarouselSliceDefaultPrimary, ArticleCarouselSliceDefaultItem, ArticleCarouselSliceDefault, ArticleCarouselSliceVariation, ArticleCarouselSlice, HomeCollectionSliceDefaultPrimary, HomeCollectionSliceDefaultItem, HomeCollectionSliceDefault, HomeCollectionSliceVariation, HomeCollectionSlice, CollectionGridSliceDefaultPrimary, CollectionGridSliceDefault, CollectionGridSliceVariation, CollectionGridSlice, FooterSliceDefaultPrimary, FooterSliceDefault, FooterSliceVariation, FooterSlice, HomeHeroSliceDefaultPrimary, HomeHeroSliceDefault, HomeHeroSliceVariation, HomeHeroSlice, MixedGridSliceDefaultPrimary, MixedGridSliceDefaultItem, MixedGridSliceDefault, MixedGridSliceVariation, MixedGridSlice, NavbarSliceDefaultPrimary, NavbarSliceDefault, NavbarSliceVariation, NavbarSlice, PromotionBannerSliceDefaultPrimary, PromotionBannerSliceDefault, PromotionBannerSliceVariation, PromotionBannerSlice, SeoSectionSliceDefaultPrimary, SeoSectionSliceDefault, SeoSectionSliceVariation, SeoSectionSlice, VanityHeroSliceDefaultPrimary, VanityHeroSliceDefaultItem, VanityHeroSliceDefault, VanityHeroSliceVariation, VanityHeroSlice };
     }
 }

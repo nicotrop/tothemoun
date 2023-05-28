@@ -47,7 +47,7 @@ export const VanityComponent = ({ props }: { props: VanityHeroSlice }) => {
   return (
     <Wrapper
       padding={false}
-      className="h-auto lg:h-[calc(100vh-(var(--header-height)))] lg:px-wrapper_x m-auto py-0 lg:py-wrapper_y 2xl:h-fit"
+      className="h-auto lg:h-fit lg:px-wrapper_x m-auto py-0 lg:py-wrapper_y"
     >
       {/* Desktop */}
       <div className="hidden lg:flex gap-10">

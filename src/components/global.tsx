@@ -104,9 +104,9 @@ export const SectionTitle = ({
 }) => {
   let defaultTitle = "Edit me";
   return (
-    <h2
+    <h3
       className={`text-4xl lg:text-5xl font-black tracking-tighter ${className}`}
-    >{`${title ? title : defaultTitle} ${showSymbol === true ? " >" : ""}`}</h2>
+    >{`${title ? title : defaultTitle} ${showSymbol === true ? " >" : ""}`}</h3>
   );
 };
 

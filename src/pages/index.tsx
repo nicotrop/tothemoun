@@ -147,6 +147,16 @@ export const getStaticProps = async ({
               }
             }
           }
+          ... on collection_grid {
+            variation {
+              ... on default {
+                primary {
+                  collection_uid
+                  title
+                }
+              }
+            }
+          }
           ... on mixed_grid {
             variation {
               ... on default {

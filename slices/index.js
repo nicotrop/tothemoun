@@ -2,6 +2,7 @@
 
 import ArticleCarousel from './ArticleCarousel';
 import CollectionCarousel from './CollectionCarousel';
+import CollectionGrid from './CollectionGrid';
 import Footer from './Footer';
 import HomeHero from './HomeHero';
 import MixedGrid from './MixedGrid';
@@ -13,6 +14,7 @@ import VanityHero from './VanityHero';
 export {
 	ArticleCarousel,
 	CollectionCarousel,
+	CollectionGrid,
 	Footer,
 	HomeHero,
 	MixedGrid,
@@ -25,6 +27,7 @@ export {
 export const components = {
 	article_carousel: ArticleCarousel,
 	home_collection: CollectionCarousel,
+	collection_grid: CollectionGrid,
 	footer: Footer,
 	home_hero: HomeHero,
 	mixed_grid: MixedGrid,

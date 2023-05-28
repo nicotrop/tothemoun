@@ -1,0 +1,24 @@
+[
+  {
+    "__TYPE__": "SharedSliceContent",
+    "variation": "default",
+    "primary": {
+      "collection_uid": {
+        "__TYPE__": "FieldContent",
+        "value": "ou loger?",
+        "type": "Select"
+      },
+      "title": {
+        "__TYPE__": "FieldContent",
+        "value": "being",
+        "type": "Text"
+      }
+    },
+    "items": [
+      {
+        "__TYPE__": "GroupItemContent",
+        "value": []
+      }
+    ]
+  }
+]

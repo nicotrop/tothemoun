@@ -9,15 +9,15 @@ import { InterceptImprovedGrid } from "@/components/mixedGridImproved";
 import { PhotoBanner } from "@/components/photoBanner";
 import { PinterestGrid } from "@/components/pinterestGrid";
 import { MarqueeBannerComp } from "@/components/marqueeBanner";
-import { VanityHero } from "@/components/vanityHero";
-import { CollectionGrid } from "@/components/collectionGrid";
+// import { VanityHero } from "@/components/vanityHero";
+// import { CollectionGrid } from "@/components/collectionGrid";
 
 export default function PreviewSlices() {
   return (
     <Layout>
       <HeroVideo />
       {/* <VanityHero /> */}
-      <CollectionGrid />
+      {/* <CollectionGrid /> */}
       <TopStories />
       <CollectionCarousel />
       <InterceptImprovedGrid />

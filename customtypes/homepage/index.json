@@ -76,6 +76,9 @@
             },
             "vanity_hero": {
               "type": "SharedSlice"
+            },
+            "collection_grid": {
+              "type": "SharedSlice"
             }
           }
         }

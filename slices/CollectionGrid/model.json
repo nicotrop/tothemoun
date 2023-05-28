@@ -1,0 +1,38 @@
+{
+  "id": "collection_grid",
+  "type": "SharedSlice",
+  "name": "CollectionGrid",
+  "description": "CollectionGrid",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "sktwi1xtmkfgx8626",
+      "description": "CollectionGrid",
+      "primary": {
+        "collection_uid": {
+          "type": "Select",
+          "config": {
+            "label": "Collection uid",
+            "placeholder": "Select the tag for this collection",
+            "options": [
+              "que faire?",
+              "ou manger?",
+              "ou loger?"
+            ]
+          }
+        },
+        "title": {
+          "type": "Text",
+          "config": {
+            "label": "Collection title",
+            "placeholder": ""
+          }
+        }
+      },
+      "items": {},
+      "imageUrl": "https://images.prismic.io/slice-machine/621a5ec4-0387-4bc5-9860-2dd46cbc07cd_default_ss.png?auto=compress,format"
+    }
+  ]
+}
