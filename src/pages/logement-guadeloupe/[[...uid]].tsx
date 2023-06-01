@@ -12,7 +12,6 @@ export async function getStaticProps({
   previewData,
 }: GetStaticPropsContext) {
   const client = createClient({ previewData });
-  console.log(params?.uid);
 
   const uidPage = (params?.uid && params?.uid[params?.uid.length - 1]) || "";
   const uidCollection =

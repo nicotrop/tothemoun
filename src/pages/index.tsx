@@ -9,7 +9,6 @@ import "swiper/css/bundle";
 export type StaticPageProps = InferGetStaticPropsType<typeof getStaticProps>;
 
 export default function Home({ data }: StaticPageProps) {
-  console.log(data);
   return (
     <Layout>
       <SliceZone slices={data.data.slices} components={{ ...components }} />
@@ -28,28 +27,6 @@ export const getStaticProps = async ({
       homepage {
         ...homepageFields
         slices {
-          ... on home_hero {
-            variation {
-              ... on default {
-                primary {
-                  header
-                  subheader
-                  hero_video
-                  logo
-                  opacity_color
-                  opacity_percentage
-                  navigation {
-                    ... on navigation {
-                      navigation_item
-                    }
-                  }
-                }
-                items {
-                  ...itemsFields
-                }
-              }
-            }
-          }
           ... on vanity_hero {
             variation {
               ... on default {
@@ -103,50 +80,6 @@ export const getStaticProps = async ({
               }
             }
           }
-          ... on mixed_grid {
-            variation {
-              ... on default {
-                primary {
-                  title
-                  description
-                  main_article {
-                    ...on blog_post {
-                      article_cover
-                      article_title
-                      article_content
-                      preview
-                      article_author {
-                        ... on author {
-                          uid
-                          author_first_name
-                          author_last_name
-                          author_avatar
-                        }
-                      }
-                    }
-                  }
-                }
-                items {
-                  article {
-                    ...on blog_post {
-                      article_cover
-                      article_title
-                      article_content
-                      preview
-                      article_author {
-                        ...on author {
-                          uid
-                          author_first_name
-                          author_last_name
-                          author_avatar
-                        }
-                      }
-                    }
-                  }
-                }
-              }
-            }
-          }
           ... on top_story {
             variation {
               ... on default {
@@ -172,6 +105,8 @@ export const getStaticProps = async ({
       }
     }`,
   });
+
+  console.log(page);
   const data = { ...page };
 
   return {

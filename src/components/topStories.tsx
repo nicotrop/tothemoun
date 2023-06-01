@@ -16,8 +16,6 @@ export const TopStoryComp = ({
 }) => {
   const featuredArticles = sideArticles?.slice(0, 4);
 
-  console.log(featuredArticles);
-
   return (
     <div className="pb-10 bg-black">
       <div className="relative aspect-[9/16] sm:aspect-[6/4] max-h-[calc(85vh)] lg:max-h-[calc(100vh-280px)] w-full">
@@ -45,7 +43,6 @@ export const TopStoryComp = ({
 };
 
 const FeaturedArticle = ({ article }: { article?: BlogPostDocument }) => {
-  console.log(article);
   return (
     <PrismicLink document={article} className="flex h-fit items-center gap-4">
       <div className="h-[50px] aspect-[3/2] relative">
