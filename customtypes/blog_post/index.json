@@ -16,7 +16,7 @@
       "uid": {
         "type": "UID",
         "config": {
-          "label": "Article ID",
+          "label": "uid",
           "placeholder": ""
         }
       },
@@ -51,16 +51,6 @@
         "config": {
           "label": "Preview",
           "placeholder": "Article prieview..."
-        }
-      },
-      "category": {
-        "type": "Link",
-        "config": {
-          "label": "Parent category",
-          "select": "document",
-          "customtypes": [
-            "blog_collection"
-          ]
         }
       }
     }

@@ -1,62 +1,6 @@
 {
-  "category": {
-    "__TYPE__": "LinkContent",
-    "value": {
-      "__TYPE__": "DocumentLink",
-      "id": "mock_document_id"
-    }
-  },
   "uid": {
     "__TYPE__": "UIDContent",
-    "value": "city"
-  },
-  "page_seo_description": {
-    "__TYPE__": "FieldContent",
-    "value": "fine",
-    "type": "Text"
-  },
-  "page_collections": {
-    "__TYPE__": "LinkContent",
-    "value": {
-      "__TYPE__": "DocumentLink",
-      "id": "mock_document_id"
-    }
-  },
-  "page_rich_text_block": {
-    "__TYPE__": "StructuredTextContent",
-    "value": [
-      {
-        "type": "paragraph",
-        "content": {
-          "text": "Dolore do magna irure."
-        }
-      }
-    ]
-  },
-  "page_promo_banner": {
-    "__TYPE__": "ImageContent",
-    "origin": {
-      "id": "main",
-      "url": "https://images.unsplash.com/photo-1593642532973-d31b6557fa68",
-      "width": 8640,
-      "height": 8640
-    },
-    "url": "https://images.unsplash.com/photo-1593642532973-d31b6557fa68",
-    "width": 8640,
-    "height": 8640,
-    "edit": {
-      "zoom": 1,
-      "crop": {
-        "x": 0,
-        "y": 0
-      },
-      "background": "transparent"
-    },
-    "thumbnails": {}
-  },
-  "page_seo_title": {
-    "__TYPE__": "FieldContent",
-    "value": "newspaper",
-    "type": "Text"
+    "value": "that"
   }
 }

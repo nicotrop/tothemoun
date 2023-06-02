@@ -19,7 +19,7 @@ export default function PreviewSlices() {
       {/* <VanityHero /> */}
       {/* <CollectionGrid /> */}
       {/* <TopStories /> */}
-      <CollectionCarousel />
+      {/* <CollectionCarousel /> */}
       <InterceptImprovedGrid />
       <OneArticleBlock />
       <InterceptImprovedGrid />

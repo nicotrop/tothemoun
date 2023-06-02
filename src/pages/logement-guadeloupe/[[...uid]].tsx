@@ -6,25 +6,25 @@ export default function Page({ page }: { page: any }) {
   return <div>hi</div>;
 }
 
-// Fetch content from prismic
-export async function getStaticProps({
-  params,
-  previewData,
-}: GetStaticPropsContext) {
-  const client = createClient({ previewData });
+// // Fetch content from prismic
+// export async function getStaticProps({
+//   params,
+//   previewData,
+// }: GetStaticPropsContext) {
+//   const client = createClient({ previewData });
 
-  const uidPage = (params?.uid && params?.uid[params?.uid.length - 1]) || "";
-  const uidCollection =
-    params?.uid && params?.uid.length > 1 ? params?.uid[0] : null;
+//   const uidPage = (params?.uid && params?.uid[params?.uid.length - 1]) || "";
+//   const uidCollection =
+//     params?.uid && params?.uid.length > 1 ? params?.uid[0] : null;
 
-  const page = await client.getByUID("blog_post", uidPage);
-  const collection =
-    uidCollection && (await client.getByUID("blog_collection", uidCollection));
+//   const page = await client.getByUID("blog_post", uidPage);
+//   const collection =
+//     uidCollection && (await client.getByUID("blog_collection", uidCollection));
 
-  return {
-    props: { page },
-  };
-}
+//   return {
+//     props: { page },
+//   };
+// }
 
 // Define Paths
 export async function getStaticPaths() {

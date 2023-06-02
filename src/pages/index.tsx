@@ -101,12 +101,27 @@ export const getStaticProps = async ({
               }
             }
           }
+          ... on collection_slider {
+            variation {
+              ... on default {
+                primary {
+                  title
+                }
+                items {
+                  collection {
+                    ... on collection {
+                      ...collectionFields
+                    }
+                  }
+                }
+              }
+            }
+          }
         }
       }
     }`,
   });
 
-  console.log(page);
   const data = { ...page };
 
   return {

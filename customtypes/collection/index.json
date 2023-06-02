@@ -9,44 +9,22 @@
         "type": "UID",
         "config": {
           "label": "uid",
+          "placeholder": "Paste corresponding tag"
+        }
+      },
+      "title": {
+        "type": "Text",
+        "config": {
+          "label": "Title",
           "placeholder": ""
         }
       },
-      "categories": {
-        "type": "Group",
+      "image": {
+        "type": "Image",
         "config": {
-          "label": "Categories",
-          "fields": {
-            "category": {
-              "type": "Link",
-              "config": {
-                "label": "Category",
-                "select": "document"
-              }
-            }
-          }
-        }
-      },
-      "other_articles": {
-        "type": "Group",
-        "config": {
-          "label": "Other Articles",
-          "fields": {
-            "blog_article": {
-              "type": "Link",
-              "config": {
-                "label": "Blog article",
-                "select": "document"
-              }
-            }
-          }
-        }
-      },
-      "slices": {
-        "type": "Slices",
-        "fieldset": "Slice Zone",
-        "config": {
-          "choices": {}
+          "label": "Image",
+          "constraint": {},
+          "thumbnails": []
         }
       }
     }

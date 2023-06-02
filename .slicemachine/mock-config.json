@@ -2,25 +2,22 @@
   "_cts": {
     "blog_post": {},
     "author": {},
-    "category": {},
-    "blog_collection": {},
     "navigation": {
       "navigation_item": {}
     },
     "page": {},
     "homepage": {},
-    "article_group": {},
     "navigation_menu": {
       "menu": {}
     },
     "socials": {
       "media_info": {}
     },
-    "collection": {},
     "footer": {},
     "navbar": {},
     "vanitysocialposts": {},
-    "vanity_sponsoring": {}
+    "vanity_sponsoring": {},
+    "collection": {}
   },
   "slices": {
     "HomeHero": {
@@ -61,6 +58,12 @@
       }
     },
     "TopStory": {
+      "default": {
+        "primary": {},
+        "items": {}
+      }
+    },
+    "CollectionSlider": {
       "default": {
         "primary": {},
         "items": {}

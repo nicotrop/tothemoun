@@ -3,13 +3,13 @@
     "__TYPE__": "ImageContent",
     "origin": {
       "id": "main",
-      "url": "https://images.unsplash.com/photo-1600804931749-2da4ce26c869",
-      "width": 3199,
-      "height": 3199
+      "url": "https://images.unsplash.com/photo-1576662712957-9c79ae1280f8",
+      "width": 3456,
+      "height": 3456
     },
-    "url": "https://images.unsplash.com/photo-1600804931749-2da4ce26c869",
-    "width": 3199,
-    "height": 3199,
+    "url": "https://images.unsplash.com/photo-1576662712957-9c79ae1280f8",
+    "width": 3456,
+    "height": 3456,
     "edit": {
       "zoom": 1,
       "crop": {
@@ -22,11 +22,11 @@
   },
   "uid": {
     "__TYPE__": "UIDContent",
-    "value": "tank"
+    "value": "were"
   },
   "article_title": {
     "__TYPE__": "FieldContent",
-    "value": "visitor",
+    "value": "water",
     "type": "Text"
   },
   "article_content": {
@@ -35,7 +35,7 @@
       {
         "type": "paragraph",
         "content": {
-          "text": "Cillum adipisicing pariatur culpa eu ipsum et consequat id quis. Adipisicing ut culpa sint minim ea ex eu et ea magna aute Lorem irure."
+          "text": "Elit reprehenderit eiusmod est. Laboris irure enim quis dolore. Voluptate aute proident esse dolor incididunt."
         }
       }
     ]
@@ -49,14 +49,7 @@
   },
   "preview": {
     "__TYPE__": "FieldContent",
-    "value": "forward",
+    "value": "is",
     "type": "Text"
-  },
-  "category": {
-    "__TYPE__": "LinkContent",
-    "value": {
-      "__TYPE__": "DocumentLink",
-      "id": "mock_document_id"
-    }
   }
 }

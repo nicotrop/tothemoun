@@ -15,15 +15,12 @@ const routes = [
     path: "/",
   },
   {
-    type: "blog_collection",
-    path: "/que-faire-en-guadeloupe/:uid",
+    type: "blog_post",
+    path: "/que-faire-en-guadeloupe//:uid",
   },
   {
-    type: "blog_post",
-    resolvers: {
-      category: "category",
-    },
-    path: "/que-faire-en-guadeloupe/:category?/:uid",
+    type: "collection",
+    path: "/collection/:uid",
   },
   {
     type: "page",

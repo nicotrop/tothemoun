@@ -6,46 +6,6 @@ import type * as prismic from "@prismicio/client";
 type Simplify<T> = {
     [KeyType in keyof T]: T[KeyType];
 };
-/** Content for Article Group documents */
-interface ArticleGroupDocumentData {
-    /**
-     * Articles field in *Article Group*
-     *
-     * - **Field Type**: Group
-     * - **Placeholder**: *None*
-     * - **API ID Path**: article_group.articles[]
-     * - **Tab**: Main
-     * - **Documentation**: https://prismic.io/docs/core-concepts/group
-     *
-     */
-    articles: prismicT.GroupField<Simplify<ArticleGroupDocumentDataArticlesItem>>;
-}
-/**
- * Item in Article Group → Articles
- *
- */
-export interface ArticleGroupDocumentDataArticlesItem {
-    /**
-     * article field in *Article Group → Articles*
-     *
-     * - **Field Type**: Content Relationship
-     * - **Placeholder**: *None*
-     * - **API ID Path**: article_group.articles[].article
-     * - **Documentation**: https://prismic.io/docs/core-concepts/link-content-relationship
-     *
-     */
-    article: prismicT.RelationField;
-}
-/**
- * Article Group document from Prismic
- *
- * - **API ID**: `article_group`
- * - **Repeatable**: `true`
- * - **Documentation**: https://prismic.io/docs/core-concepts/custom-types
- *
- * @typeParam Lang - Language API ID of the document.
- */
-export type ArticleGroupDocument<Lang extends string = string> = prismicT.PrismicDocumentWithoutUID<Simplify<ArticleGroupDocumentData>, "article_group", Lang>;
 /** Content for Author documents */
 interface AuthorDocumentData {
     /**
@@ -114,74 +74,6 @@ interface AuthorDocumentData {
  * @typeParam Lang - Language API ID of the document.
  */
 export type AuthorDocument<Lang extends string = string> = prismicT.PrismicDocumentWithUID<Simplify<AuthorDocumentData>, "author", Lang>;
-/** Content for Blog Collection documents */
-interface BlogCollectionDocumentData {
-    /**
-     * Collection Name field in *Blog Collection*
-     *
-     * - **Field Type**: Text
-     * - **Placeholder**: *None*
-     * - **API ID Path**: blog_collection.collection_name
-     * - **Tab**: Main
-     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
-     *
-     */
-    collection_name: prismicT.KeyTextField;
-    /**
-     * Collection Image field in *Blog Collection*
-     *
-     * - **Field Type**: Image
-     * - **Placeholder**: *None*
-     * - **API ID Path**: blog_collection.collection_image
-     * - **Tab**: Main
-     * - **Documentation**: https://prismic.io/docs/core-concepts/image
-     *
-     */
-    collection_image: prismicT.ImageField<never>;
-    /**
-     * Collection Articles field in *Blog Collection*
-     *
-     * - **Field Type**: Content Relationship
-     * - **Placeholder**: *None*
-     * - **API ID Path**: blog_collection.collection_articles
-     * - **Tab**: Main
-     * - **Documentation**: https://prismic.io/docs/core-concepts/link-content-relationship
-     *
-     */
-    collection_articles: prismicT.RelationField;
-    /**
-     * Collection SEO Description field in *Blog Collection*
-     *
-     * - **Field Type**: Text
-     * - **Placeholder**: *None*
-     * - **API ID Path**: blog_collection.collection_seo_description
-     * - **Tab**: Main
-     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
-     *
-     */
-    collection_seo_description: prismicT.KeyTextField;
-    /**
-     * Parent collection field in *Blog Collection*
-     *
-     * - **Field Type**: Content Relationship
-     * - **Placeholder**: *None*
-     * - **API ID Path**: blog_collection.collection
-     * - **Tab**: Main
-     * - **Documentation**: https://prismic.io/docs/core-concepts/link-content-relationship
-     *
-     */
-    collection: prismicT.RelationField<"collection">;
-}
-/**
- * Blog Collection document from Prismic
- *
- * - **API ID**: `blog_collection`
- * - **Repeatable**: `true`
- * - **Documentation**: https://prismic.io/docs/core-concepts/custom-types
- *
- * @typeParam Lang - Language API ID of the document.
- */
-export type BlogCollectionDocument<Lang extends string = string> = prismicT.PrismicDocumentWithUID<Simplify<BlogCollectionDocumentData>, "blog_collection", Lang>;
 /** Content for Blog Post documents */
 interface BlogPostDocumentData {
     /**
@@ -239,17 +131,6 @@ interface BlogPostDocumentData {
      *
      */
     preview: prismicT.KeyTextField;
-    /**
-     * Parent category field in *Blog Post*
-     *
-     * - **Field Type**: Content Relationship
-     * - **Placeholder**: *None*
-     * - **API ID Path**: blog_post.category
-     * - **Tab**: Main
-     * - **Documentation**: https://prismic.io/docs/core-concepts/link-content-relationship
-     *
-     */
-    category: prismicT.RelationField<"blog_collection">;
 }
 /**
  * Blog Post document from Prismic
@@ -261,147 +142,31 @@ interface BlogPostDocumentData {
  * @typeParam Lang - Language API ID of the document.
  */
 export type BlogPostDocument<Lang extends string = string> = prismicT.PrismicDocumentWithUID<Simplify<BlogPostDocumentData>, "blog_post", Lang>;
-/** Content for Category documents */
-interface CategoryDocumentData {
+/** Content for Collection documents */
+interface CollectionDocumentData {
     /**
-     * Category Image field in *Category*
+     * Title field in *Collection*
+     *
+     * - **Field Type**: Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: collection.title
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+     *
+     */
+    title: prismicT.KeyTextField;
+    /**
+     * Image field in *Collection*
      *
      * - **Field Type**: Image
      * - **Placeholder**: *None*
-     * - **API ID Path**: category.category_image
+     * - **API ID Path**: collection.image
      * - **Tab**: Main
      * - **Documentation**: https://prismic.io/docs/core-concepts/image
      *
      */
-    category_image: prismicT.ImageField<never>;
-    /**
-     * Category articles field in *Category*
-     *
-     * - **Field Type**: Content Relationship
-     * - **Placeholder**: *None*
-     * - **API ID Path**: category.category_articles
-     * - **Tab**: Main
-     * - **Documentation**: https://prismic.io/docs/core-concepts/link-content-relationship
-     *
-     */
-    category_articles: prismicT.RelationField<"blog_post">;
-    /**
-     * Category collections field in *Category*
-     *
-     * - **Field Type**: Content Relationship
-     * - **Placeholder**: *None*
-     * - **API ID Path**: category.category_collections
-     * - **Tab**: Main
-     * - **Documentation**: https://prismic.io/docs/core-concepts/link-content-relationship
-     *
-     */
-    category_collections: prismicT.RelationField<"category">;
-    /**
-     * SEO description field in *Category*
-     *
-     * - **Field Type**: Rich Text
-     * - **Placeholder**: *None*
-     * - **API ID Path**: category.category_seo_description
-     * - **Tab**: Main
-     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
-     *
-     */
-    category_seo_description: prismicT.RichTextField;
-    /**
-     * Category description field in *Category*
-     *
-     * - **Field Type**: Rich Text
-     * - **Placeholder**: *None*
-     * - **API ID Path**: category.category_description
-     * - **Tab**: Main
-     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
-     *
-     */
-    category_description: prismicT.RichTextField;
+    image: prismicT.ImageField<never>;
 }
-/**
- * Category document from Prismic
- *
- * - **API ID**: `category`
- * - **Repeatable**: `true`
- * - **Documentation**: https://prismic.io/docs/core-concepts/custom-types
- *
- * @typeParam Lang - Language API ID of the document.
- */
-export type CategoryDocument<Lang extends string = string> = prismicT.PrismicDocumentWithUID<Simplify<CategoryDocumentData>, "category", Lang>;
-/** Content for Collection documents */
-interface CollectionDocumentData {
-    /**
-     * Categories field in *Collection*
-     *
-     * - **Field Type**: Group
-     * - **Placeholder**: *None*
-     * - **API ID Path**: collection.categories[]
-     * - **Tab**: Main
-     * - **Documentation**: https://prismic.io/docs/core-concepts/group
-     *
-     */
-    categories: prismicT.GroupField<Simplify<CollectionDocumentDataCategoriesItem>>;
-    /**
-     * Other Articles field in *Collection*
-     *
-     * - **Field Type**: Group
-     * - **Placeholder**: *None*
-     * - **API ID Path**: collection.other_articles[]
-     * - **Tab**: Main
-     * - **Documentation**: https://prismic.io/docs/core-concepts/group
-     *
-     */
-    other_articles: prismicT.GroupField<Simplify<CollectionDocumentDataOtherArticlesItem>>;
-    /**
-     * Slice Zone field in *Collection*
-     *
-     * - **Field Type**: Slice Zone
-     * - **Placeholder**: *None*
-     * - **API ID Path**: collection.slices[]
-     * - **Tab**: Main
-     * - **Documentation**: https://prismic.io/docs/core-concepts/slices
-     *
-     */
-    slices: prismicT.SliceZone<CollectionDocumentDataSlicesSlice>;
-}
-/**
- * Item in Collection → Categories
- *
- */
-export interface CollectionDocumentDataCategoriesItem {
-    /**
-     * Category field in *Collection → Categories*
-     *
-     * - **Field Type**: Content Relationship
-     * - **Placeholder**: *None*
-     * - **API ID Path**: collection.categories[].category
-     * - **Documentation**: https://prismic.io/docs/core-concepts/link-content-relationship
-     *
-     */
-    category: prismicT.RelationField;
-}
-/**
- * Item in Collection → Other Articles
- *
- */
-export interface CollectionDocumentDataOtherArticlesItem {
-    /**
-     * Blog article field in *Collection → Other Articles*
-     *
-     * - **Field Type**: Content Relationship
-     * - **Placeholder**: *None*
-     * - **API ID Path**: collection.other_articles[].blog_article
-     * - **Documentation**: https://prismic.io/docs/core-concepts/link-content-relationship
-     *
-     */
-    blog_article: prismicT.RelationField;
-}
-/**
- * Slice for *Collection → Slice Zone*
- *
- */
-type CollectionDocumentDataSlicesSlice = never;
 /**
  * Collection document from Prismic
  *
@@ -554,61 +319,6 @@ export type FooterDocument<Lang extends string = string> = prismicT.PrismicDocum
 /** Content for Homepage documents */
 interface HomepageDocumentData {
     /**
-     * Hero Image field in *Homepage*
-     *
-     * - **Field Type**: Image
-     * - **Placeholder**: *None*
-     * - **API ID Path**: homepage.hero_image
-     * - **Tab**: Main
-     * - **Documentation**: https://prismic.io/docs/core-concepts/image
-     *
-     */
-    hero_image: prismicT.ImageField<never>;
-    /**
-     * Home Collections field in *Homepage*
-     *
-     * - **Field Type**: Content Relationship
-     * - **Placeholder**: *None*
-     * - **API ID Path**: homepage.home_collections
-     * - **Tab**: Main
-     * - **Documentation**: https://prismic.io/docs/core-concepts/link-content-relationship
-     *
-     */
-    home_collections: prismicT.RelationField;
-    /**
-     * Home SEO Description field in *Homepage*
-     *
-     * - **Field Type**: Text
-     * - **Placeholder**: *None*
-     * - **API ID Path**: homepage.home_seo_description
-     * - **Tab**: Main
-     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
-     *
-     */
-    home_seo_description: prismicT.KeyTextField;
-    /**
-     * Home Promo Banner field in *Homepage*
-     *
-     * - **Field Type**: Image
-     * - **Placeholder**: *None*
-     * - **API ID Path**: homepage.home_promo_banner
-     * - **Tab**: Main
-     * - **Documentation**: https://prismic.io/docs/core-concepts/image
-     *
-     */
-    home_promo_banner: prismicT.ImageField<never>;
-    /**
-     * Home SEO Text Block field in *Homepage*
-     *
-     * - **Field Type**: Rich Text
-     * - **Placeholder**: *None*
-     * - **API ID Path**: homepage.home_seo_text_block
-     * - **Tab**: Main
-     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
-     *
-     */
-    home_seo_text_block: prismicT.RichTextField;
-    /**
      * Slice Zone field in *Homepage*
      *
      * - **Field Type**: Slice Zone
@@ -624,7 +334,7 @@ interface HomepageDocumentData {
  * Slice for *Homepage → Slice Zone*
  *
  */
-type HomepageDocumentDataSlicesSlice = HomeHeroSlice | MixedGridSlice | VanityHeroSlice | CollectionGridSlice | TopStorySlice;
+type HomepageDocumentDataSlicesSlice = HomeHeroSlice | MixedGridSlice | VanityHeroSlice | CollectionGridSlice | TopStorySlice | CollectionSliderSlice;
 /**
  * Homepage document from Prismic
  *
@@ -786,74 +496,7 @@ export interface NavigationMenuDocumentDataMenuItem {
  */
 export type NavigationMenuDocument<Lang extends string = string> = prismicT.PrismicDocumentWithoutUID<Simplify<NavigationMenuDocumentData>, "navigation_menu", Lang>;
 /** Content for Page documents */
-interface PageDocumentData {
-    /**
-     * category field in *Page*
-     *
-     * - **Field Type**: Content Relationship
-     * - **Placeholder**: *None*
-     * - **API ID Path**: page.category
-     * - **Tab**: Main
-     * - **Documentation**: https://prismic.io/docs/core-concepts/link-content-relationship
-     *
-     */
-    category: prismicT.RelationField<"blog_collection">;
-    /**
-     * Page SEO Description field in *Page*
-     *
-     * - **Field Type**: Text
-     * - **Placeholder**: *None*
-     * - **API ID Path**: page.page_seo_description
-     * - **Tab**: Main
-     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
-     *
-     */
-    page_seo_description: prismicT.KeyTextField;
-    /**
-     * Page Collections field in *Page*
-     *
-     * - **Field Type**: Content Relationship
-     * - **Placeholder**: *None*
-     * - **API ID Path**: page.page_collections
-     * - **Tab**: Main
-     * - **Documentation**: https://prismic.io/docs/core-concepts/link-content-relationship
-     *
-     */
-    page_collections: prismicT.RelationField;
-    /**
-     * Page Text Block field in *Page*
-     *
-     * - **Field Type**: Rich Text
-     * - **Placeholder**: *None*
-     * - **API ID Path**: page.page_rich_text_block
-     * - **Tab**: Main
-     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
-     *
-     */
-    page_rich_text_block: prismicT.RichTextField;
-    /**
-     * Page Promo Banner field in *Page*
-     *
-     * - **Field Type**: Image
-     * - **Placeholder**: *None*
-     * - **API ID Path**: page.page_promo_banner
-     * - **Tab**: Main
-     * - **Documentation**: https://prismic.io/docs/core-concepts/image
-     *
-     */
-    page_promo_banner: prismicT.ImageField<never>;
-    /**
-     * Page SEO Title field in *Page*
-     *
-     * - **Field Type**: Text
-     * - **Placeholder**: *None*
-     * - **API ID Path**: page.page_seo_title
-     * - **Tab**: Main
-     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
-     *
-     */
-    page_seo_title: prismicT.KeyTextField;
-}
+type PageDocumentData = Record<string, never>;
 /**
  * Page document from Prismic
  *
@@ -1059,7 +702,7 @@ type VanitysocialpostsDocumentDataSlicesSlice = never;
  * @typeParam Lang - Language API ID of the document.
  */
 export type VanitysocialpostsDocument<Lang extends string = string> = prismicT.PrismicDocumentWithUID<Simplify<VanitysocialpostsDocumentData>, "vanitysocialposts", Lang>;
-export type AllDocumentTypes = ArticleGroupDocument | AuthorDocument | BlogCollectionDocument | BlogPostDocument | CategoryDocument | CollectionDocument | FooterDocument | HomepageDocument | NavbarDocument | NavigationDocument | NavigationMenuDocument | PageDocument | SocialsDocument | VanitySponsoringDocument | VanitysocialpostsDocument;
+export type AllDocumentTypes = AuthorDocument | BlogPostDocument | CollectionDocument | FooterDocument | HomepageDocument | NavbarDocument | NavigationDocument | NavigationMenuDocument | PageDocument | SocialsDocument | VanitySponsoringDocument | VanitysocialpostsDocument;
 /**
  * Primary content in CollectionGrid → Primary
  *
@@ -1109,6 +752,61 @@ type CollectionGridSliceVariation = CollectionGridSliceDefault;
  *
  */
 export type CollectionGridSlice = prismicT.SharedSlice<"collection_grid", CollectionGridSliceVariation>;
+/**
+ * Primary content in CollectionSlider → Primary
+ *
+ */
+interface CollectionSliderSliceDefaultPrimary {
+    /**
+     * Title field in *CollectionSlider → Primary*
+     *
+     * - **Field Type**: Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: collection_slider.primary.title
+     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+     *
+     */
+    title: prismicT.KeyTextField;
+}
+/**
+ * Item in CollectionSlider → Items
+ *
+ */
+export interface CollectionSliderSliceDefaultItem {
+    /**
+     * Collection field in *CollectionSlider → Items*
+     *
+     * - **Field Type**: Content Relationship
+     * - **Placeholder**: *None*
+     * - **API ID Path**: collection_slider.items[].collection
+     * - **Documentation**: https://prismic.io/docs/core-concepts/link-content-relationship
+     *
+     */
+    collection: prismicT.RelationField<"collection">;
+}
+/**
+ * Default variation for CollectionSlider Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: `CollectionSlider`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type CollectionSliderSliceDefault = prismicT.SharedSliceVariation<"default", Simplify<CollectionSliderSliceDefaultPrimary>, Simplify<CollectionSliderSliceDefaultItem>>;
+/**
+ * Slice variation for *CollectionSlider*
+ *
+ */
+type CollectionSliderSliceVariation = CollectionSliderSliceDefault;
+/**
+ * CollectionSlider Shared Slice
+ *
+ * - **API ID**: `collection_slider`
+ * - **Description**: `CollectionSlider`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type CollectionSliderSlice = prismicT.SharedSlice<"collection_slider", CollectionSliderSliceVariation>;
 /**
  * Primary content in Footer → Primary
  *
@@ -1626,6 +1324,6 @@ declare module "@prismicio/client" {
         (repositoryNameOrEndpoint: string, options?: prismic.ClientConfig): prismic.Client<AllDocumentTypes>;
     }
     namespace Content {
-        export type { ArticleGroupDocumentData, ArticleGroupDocumentDataArticlesItem, ArticleGroupDocument, AuthorDocumentData, AuthorDocument, BlogCollectionDocumentData, BlogCollectionDocument, BlogPostDocumentData, BlogPostDocument, CategoryDocumentData, CategoryDocument, CollectionDocumentData, CollectionDocumentDataCategoriesItem, CollectionDocumentDataOtherArticlesItem, CollectionDocumentDataSlicesSlice, CollectionDocument, FooterDocumentData, FooterDocumentDataSlicesSlice, FooterDocument, HomepageDocumentData, HomepageDocumentDataSlicesSlice, HomepageDocument, NavbarDocumentData, NavbarDocumentDataSlicesSlice, NavbarDocument, NavigationDocumentData, NavigationDocumentDataNavigationItemItem, NavigationDocument, NavigationMenuDocumentData, NavigationMenuDocumentDataMenuItem, NavigationMenuDocument, PageDocumentData, PageDocument, SocialsDocumentData, SocialsDocumentDataMediaInfoItem, SocialsDocument, VanitySponsoringDocumentData, VanitySponsoringDocument, VanitysocialpostsDocumentData, VanitysocialpostsDocumentDataPostItem, VanitysocialpostsDocumentDataSlicesSlice, VanitysocialpostsDocument, AllDocumentTypes, CollectionGridSliceDefaultPrimary, CollectionGridSliceDefault, CollectionGridSliceVariation, CollectionGridSlice, FooterSliceDefaultPrimary, FooterSliceDefault, FooterSliceVariation, FooterSlice, HomeHeroSliceDefaultPrimary, HomeHeroSliceDefault, HomeHeroSliceVariation, HomeHeroSlice, MixedGridSliceDefaultPrimary, MixedGridSliceDefaultItem, MixedGridSliceDefault, MixedGridSliceVariation, MixedGridSlice, NavbarSliceDefaultPrimary, NavbarSliceDefault, NavbarSliceVariation, NavbarSlice, TopStorySliceDefaultPrimary, TopStorySliceDefaultItem, TopStorySliceDefault, TopStorySliceVariation, TopStorySlice, VanityHeroSliceDefaultPrimary, VanityHeroSliceDefaultItem, VanityHeroSliceDefault, VanityHeroSliceVariation, VanityHeroSlice };
+        export type { AuthorDocumentData, AuthorDocument, BlogPostDocumentData, BlogPostDocument, CollectionDocumentData, CollectionDocument, FooterDocumentData, FooterDocumentDataSlicesSlice, FooterDocument, HomepageDocumentData, HomepageDocumentDataSlicesSlice, HomepageDocument, NavbarDocumentData, NavbarDocumentDataSlicesSlice, NavbarDocument, NavigationDocumentData, NavigationDocumentDataNavigationItemItem, NavigationDocument, NavigationMenuDocumentData, NavigationMenuDocumentDataMenuItem, NavigationMenuDocument, PageDocumentData, PageDocument, SocialsDocumentData, SocialsDocumentDataMediaInfoItem, SocialsDocument, VanitySponsoringDocumentData, VanitySponsoringDocument, VanitysocialpostsDocumentData, VanitysocialpostsDocumentDataPostItem, VanitysocialpostsDocumentDataSlicesSlice, VanitysocialpostsDocument, AllDocumentTypes, CollectionGridSliceDefaultPrimary, CollectionGridSliceDefault, CollectionGridSliceVariation, CollectionGridSlice, CollectionSliderSliceDefaultPrimary, CollectionSliderSliceDefaultItem, CollectionSliderSliceDefault, CollectionSliderSliceVariation, CollectionSliderSlice, FooterSliceDefaultPrimary, FooterSliceDefault, FooterSliceVariation, FooterSlice, HomeHeroSliceDefaultPrimary, HomeHeroSliceDefault, HomeHeroSliceVariation, HomeHeroSlice, MixedGridSliceDefaultPrimary, MixedGridSliceDefaultItem, MixedGridSliceDefault, MixedGridSliceVariation, MixedGridSlice, NavbarSliceDefaultPrimary, NavbarSliceDefault, NavbarSliceVariation, NavbarSlice, TopStorySliceDefaultPrimary, TopStorySliceDefaultItem, TopStorySliceDefault, TopStorySliceVariation, TopStorySlice, VanityHeroSliceDefaultPrimary, VanityHeroSliceDefaultItem, VanityHeroSliceDefault, VanityHeroSliceVariation, VanityHeroSlice };
     }
 }

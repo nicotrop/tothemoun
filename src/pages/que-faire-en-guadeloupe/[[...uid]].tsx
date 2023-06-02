@@ -6,9 +6,9 @@ import { SliceZone } from "@prismicio/react";
 import { components } from "slices";
 import { useMemo } from "react";
 
-export type StaticPageProps = InferGetStaticPropsType<typeof getStaticProps>;
+// export type StaticPageProps = InferGetStaticPropsType<typeof getStaticProps>;
 
-export default function Page({ data, navBar }: StaticPageProps) {
+export default function Page({ data, navBar }: any) {
   const navData = useMemo(() => navBar?.data?.slices[0]?.primary, [navBar]);
 
   return (

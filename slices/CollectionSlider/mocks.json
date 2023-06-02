@@ -1,12 +1,20 @@
-{
-  "articles": {
-    "__TYPE__": "GroupContentType",
-    "value": [
+[
+  {
+    "__TYPE__": "SharedSliceContent",
+    "variation": "default",
+    "primary": {
+      "title": {
+        "__TYPE__": "FieldContent",
+        "value": "eventually",
+        "type": "Text"
+      }
+    },
+    "items": [
       {
         "__TYPE__": "GroupItemContent",
         "value": [
           [
-            "article",
+            "collection",
             {
               "__TYPE__": "LinkContent",
               "value": {
@@ -19,4 +27,4 @@
       }
     ]
   }
-}
+]

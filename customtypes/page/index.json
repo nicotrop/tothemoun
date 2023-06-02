@@ -5,58 +5,10 @@
   "status": true,
   "json": {
     "Main": {
-      "category": {
-        "type": "Link",
-        "config": {
-          "label": "category",
-          "select": "document",
-          "customtypes": [
-            "blog_collection"
-          ]
-        }
-      },
       "uid": {
         "type": "UID",
         "config": {
-          "label": "Page ID",
-          "placeholder": ""
-        }
-      },
-      "page_seo_description": {
-        "type": "Text",
-        "config": {
-          "label": "Page SEO Description",
-          "placeholder": ""
-        }
-      },
-      "page_collections": {
-        "type": "Link",
-        "config": {
-          "label": "Page Collections",
-          "select": "document"
-        }
-      },
-      "page_rich_text_block": {
-        "type": "StructuredText",
-        "config": {
-          "label": "Page Text Block",
-          "placeholder": "",
-          "allowTargetBlank": true,
-          "single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
-        }
-      },
-      "page_promo_banner": {
-        "type": "Image",
-        "config": {
-          "label": "Page Promo Banner",
-          "constraint": {},
-          "thumbnails": []
-        }
-      },
-      "page_seo_title": {
-        "type": "Text",
-        "config": {
-          "label": "Page SEO Title",
+          "label": "uid",
           "placeholder": ""
         }
       }
