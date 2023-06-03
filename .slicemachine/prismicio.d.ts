@@ -1036,32 +1036,12 @@ type HomeHeroSliceVariation = HomeHeroSliceDefault;
  */
 export type HomeHeroSlice = prismicT.SharedSlice<"home_hero", HomeHeroSliceVariation>;
 /**
- * Primary content in MixedGrid → Primary
+ * Primary content in InterceptGrid → Primary
  *
  */
 interface MixedGridSliceDefaultPrimary {
     /**
-     * Title field in *MixedGrid → Primary*
-     *
-     * - **Field Type**: Title
-     * - **Placeholder**: This is where it all begins...
-     * - **API ID Path**: mixed_grid.primary.title
-     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
-     *
-     */
-    title: prismicT.TitleField;
-    /**
-     * Description field in *MixedGrid → Primary*
-     *
-     * - **Field Type**: Rich Text
-     * - **Placeholder**: A nice description of your feature
-     * - **API ID Path**: mixed_grid.primary.description
-     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
-     *
-     */
-    description: prismicT.RichTextField;
-    /**
-     * Main Article field in *MixedGrid → Primary*
+     * Main Article field in *InterceptGrid → Primary*
      *
      * - **Field Type**: Content Relationship
      * - **Placeholder**: *None*
@@ -1070,14 +1050,44 @@ interface MixedGridSliceDefaultPrimary {
      *
      */
     main_article: prismicT.RelationField<"blog_post">;
+    /**
+     * Collection field in *InterceptGrid → Primary*
+     *
+     * - **Field Type**: Content Relationship
+     * - **Placeholder**: *None*
+     * - **API ID Path**: mixed_grid.primary.collection
+     * - **Documentation**: https://prismic.io/docs/core-concepts/link-content-relationship
+     *
+     */
+    collection: prismicT.RelationField<"collection">;
+    /**
+     * Title field in *InterceptGrid → Primary*
+     *
+     * - **Field Type**: Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: mixed_grid.primary.title
+     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+     *
+     */
+    title: prismicT.KeyTextField;
+    /**
+     * Description field in *InterceptGrid → Primary*
+     *
+     * - **Field Type**: Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: mixed_grid.primary.description
+     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+     *
+     */
+    description: prismicT.KeyTextField;
 }
 /**
- * Item in MixedGrid → Items
+ * Item in InterceptGrid → Items
  *
  */
 export interface MixedGridSliceDefaultItem {
     /**
-     * Other Articles field in *MixedGrid → Items*
+     * Other Articles field in *InterceptGrid → Items*
      *
      * - **Field Type**: Content Relationship
      * - **Placeholder**: *None*
@@ -1088,7 +1098,7 @@ export interface MixedGridSliceDefaultItem {
     article: prismicT.RelationField<"blog_post">;
 }
 /**
- * Default variation for MixedGrid Slice
+ * Default variation for InterceptGrid Slice
  *
  * - **API ID**: `default`
  * - **Description**: `MixedGrid`
@@ -1097,12 +1107,12 @@ export interface MixedGridSliceDefaultItem {
  */
 export type MixedGridSliceDefault = prismicT.SharedSliceVariation<"default", Simplify<MixedGridSliceDefaultPrimary>, Simplify<MixedGridSliceDefaultItem>>;
 /**
- * Slice variation for *MixedGrid*
+ * Slice variation for *InterceptGrid*
  *
  */
 type MixedGridSliceVariation = MixedGridSliceDefault;
 /**
- * MixedGrid Shared Slice
+ * InterceptGrid Shared Slice
  *
  * - **API ID**: `mixed_grid`
  * - **Description**: `MixedGrid`

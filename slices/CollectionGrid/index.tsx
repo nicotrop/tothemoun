@@ -5,8 +5,6 @@ import { SliceComponentProps } from "@prismicio/react";
 import { BlogPostDocument, CollectionGridSlice } from "types.generated";
 import { createClient } from "prismicio";
 import { CollectionGridComp } from "@/components/collectionGrid";
-import { Wrapper } from "@/components/global";
-import { SkeletonLoader } from "@/components/skeletonLoader";
 
 /**
  * @typedef {import("@prismicio/client").Content.CollectionGridSlice} CollectionGridSlice
@@ -45,7 +43,8 @@ const CollectionGrid = ({
   }, [tag]);
 
   return isLoading ? (
-    <GridLoader />
+    //TODO: Add loading component
+    <span>loading...</span>
   ) : (
     <CollectionGridComp
       articles={data}
@@ -56,16 +55,3 @@ const CollectionGrid = ({
 };
 
 export default CollectionGrid;
-
-const GridLoader = () => {
-  return (
-    <Wrapper>
-      <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-2 lg:gap-4 h-fit">
-        <SkeletonLoader />
-        <SkeletonLoader />
-        <SkeletonLoader />
-        <SkeletonLoader />
-      </div>
-    </Wrapper>
-  );
-};

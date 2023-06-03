@@ -20,13 +20,13 @@ export default function PreviewSlices() {
       {/* <CollectionGrid /> */}
       {/* <TopStories /> */}
       {/* <CollectionCarousel /> */}
-      <InterceptImprovedGrid />
+      {/* <InterceptImprovedGrid /> */}
       <OneArticleBlock />
-      <InterceptImprovedGrid />
+      {/* <InterceptImprovedGrid /> */}
       <SquareCardCarousel />
-      <InterceptImprovedGrid />
+      {/* <InterceptImprovedGrid /> */}
       <PhotoBanner />
-      <InterceptImprovedGrid />
+      {/* <InterceptImprovedGrid /> */}
       <MarqueeBannerComp />
       <SEOsection />
       <PinterestGrid />

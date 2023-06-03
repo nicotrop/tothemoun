@@ -4,7 +4,7 @@ import CollectionGrid from './CollectionGrid';
 import CollectionSlider from './CollectionSlider';
 import Footer from './Footer';
 import HomeHero from './HomeHero';
-import MixedGrid from './MixedGrid';
+import InterceptGrid from './InterceptGrid';
 import Navbar from './Navbar';
 import TopStory from './TopStory';
 import VanityHero from './VanityHero';
@@ -14,7 +14,7 @@ export {
 	CollectionSlider,
 	Footer,
 	HomeHero,
-	MixedGrid,
+	InterceptGrid,
 	Navbar,
 	TopStory,
 	VanityHero,
@@ -25,7 +25,7 @@ export const components = {
 	collection_slider: CollectionSlider,
 	footer: Footer,
 	home_hero: HomeHero,
-	mixed_grid: MixedGrid,
+	mixed_grid: InterceptGrid,
 	navbar: Navbar,
 	top_story: TopStory,
 	vanity_hero: VanityHero,

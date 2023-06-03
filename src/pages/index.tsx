@@ -117,6 +117,33 @@ export const getStaticProps = async ({
               }
             }
           }
+          ... on mixed_grid {
+            variation {
+              ... on default {
+                primary {
+                  title
+                  description
+                  main_article {
+                    ... on blog_post {
+                      ...blog_postFields
+                    }
+                  }
+                  collection {
+                    ... on collection {
+                      ...collectionFields
+                    }
+                  }
+                }
+                items {
+                  article {
+                    ... on blog_post {
+                      ...blog_postFields
+                    }
+                  }
+                }
+              }
+            }
+          }
         }
       }
     }`,

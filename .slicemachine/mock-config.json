@@ -68,6 +68,12 @@
         "primary": {},
         "items": {}
       }
+    },
+    "InterceptGrid": {
+      "default": {
+        "primary": {},
+        "items": {}
+      }
     }
   }
 }

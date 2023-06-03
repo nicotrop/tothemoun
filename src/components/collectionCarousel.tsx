@@ -31,7 +31,6 @@ export const CollectionCarousel = ({
       <SwiperImprovedCarousel className="max-h-[580px]" btnPosition="mid-pos">
         <ul>
           {data?.map((article: CollectionProps, i: number) => {
-            console.log(article);
             return (
               <SwiperSlide tag="li" key={i} className="aspect-[9/16]">
                 <PrismicLink document={article?.collection}>

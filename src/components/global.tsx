@@ -112,22 +112,14 @@ export const SectionTitle = ({
 
 export const SectionTitleContainer = ({
   children,
-  link,
   containerClassName = "",
-  linkClassName = "",
 }: {
   containerClassName?: string;
   linkClassName?: string;
   children: React.ReactNode;
   link?: Url;
 }) => {
-  return (
-    <div className={`pb-6 ${containerClassName}`}>
-      <Link href={link ? link : "#"} className={`${linkClassName}`}>
-        {children}
-      </Link>
-    </div>
-  );
+  return <div className={`pb-6 ${containerClassName}`}>{children}</div>;
 };
 
 export const FontLogo = () => {
