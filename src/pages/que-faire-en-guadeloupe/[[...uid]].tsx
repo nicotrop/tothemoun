@@ -6,8 +6,6 @@ import { SliceZone } from "@prismicio/react";
 import { components } from "slices";
 import { useMemo } from "react";
 
-// export type StaticPageProps = InferGetStaticPropsType<typeof getStaticProps>;
-
 export default function Page({ data, navBar }: any) {
   const navData = useMemo(() => navBar?.data?.slices[0]?.primary, [navBar]);
 
@@ -28,9 +26,7 @@ export async function getStaticProps({
   // Set page uid - if no uid, set to "que-faire-en-guadeloupe" else set dynamic uid
   const uidPage = params?.uid?.slice(-1)[0] || "que-faire-en-guadeloupe";
 
-  // Initialize category and page
-  // let category;
-  // let categoryArr;
+  // Initialize and page
   let page;
 
   type justCategoryType = boolean | null;
@@ -40,21 +36,10 @@ export async function getStaticProps({
 
   let justCategory: justCategoryType = mightJustCategory;
 
-  // if (mightJustCategory) {
-  //   category = await client.getAllByType("blog_collection");
-  //   categoryArr = category?.map((elem) => elem.uid);
-  //   const isInCategoryArr = categoryArr?.includes(uidPage);
-  //   justCategory = isInCategoryArr;
-  // }
-
   // If page uid is not "que-faire-en-guadeloupe" and justCategory is false, fetch blog_post by uid
   if (uidPage !== "que-faire-en-guadeloupe" && justCategory === false) {
     console.log("type blog post");
     page = await client.getByUID("blog_post", uidPage);
-    //lse if page uid is not "que-faire-en-guadeloupe" and justCategory is true, fetch blog_collection by uid
-    // } else if (uidPage !== "que-faire-en-guadeloupe" && justCategory === true) {
-    //   console.log("type blog collection");
-    //   page = await client.getByUID("blog_collection", uidPage);
   } else {
     console.log("type collection");
     // Else fetch "que-faire-en-guadeloupe" collection by uid
