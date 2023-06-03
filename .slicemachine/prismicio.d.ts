@@ -334,7 +334,7 @@ interface HomepageDocumentData {
  * Slice for *Homepage → Slice Zone*
  *
  */
-type HomepageDocumentDataSlicesSlice = HomeHeroSlice | MixedGridSlice | VanityHeroSlice | CollectionGridSlice | TopStorySlice | CollectionSliderSlice;
+type HomepageDocumentDataSlicesSlice = HomeHeroSlice | MixedGridSlice | VanityHeroSlice | CollectionGridSlice | TopStorySlice | CollectionSliderSlice | FeaturedArticleSlice;
 /**
  * Homepage document from Prismic
  *
@@ -807,6 +807,45 @@ type CollectionSliderSliceVariation = CollectionSliderSliceDefault;
  *
  */
 export type CollectionSliderSlice = prismicT.SharedSlice<"collection_slider", CollectionSliderSliceVariation>;
+/**
+ * Primary content in FeaturedArticle → Primary
+ *
+ */
+interface FeaturedArticleSliceDefaultPrimary {
+    /**
+     * Blog post field in *FeaturedArticle → Primary*
+     *
+     * - **Field Type**: Content Relationship
+     * - **Placeholder**: *None*
+     * - **API ID Path**: featured_article.primary.blog_post
+     * - **Documentation**: https://prismic.io/docs/core-concepts/link-content-relationship
+     *
+     */
+    blog_post: prismicT.RelationField<"blog_post">;
+}
+/**
+ * Default variation for FeaturedArticle Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: `FeaturedArticle`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type FeaturedArticleSliceDefault = prismicT.SharedSliceVariation<"default", Simplify<FeaturedArticleSliceDefaultPrimary>, never>;
+/**
+ * Slice variation for *FeaturedArticle*
+ *
+ */
+type FeaturedArticleSliceVariation = FeaturedArticleSliceDefault;
+/**
+ * FeaturedArticle Shared Slice
+ *
+ * - **API ID**: `featured_article`
+ * - **Description**: `FeaturedArticle`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type FeaturedArticleSlice = prismicT.SharedSlice<"featured_article", FeaturedArticleSliceVariation>;
 /**
  * Primary content in Footer → Primary
  *
@@ -1334,6 +1373,6 @@ declare module "@prismicio/client" {
         (repositoryNameOrEndpoint: string, options?: prismic.ClientConfig): prismic.Client<AllDocumentTypes>;
     }
     namespace Content {
-        export type { AuthorDocumentData, AuthorDocument, BlogPostDocumentData, BlogPostDocument, CollectionDocumentData, CollectionDocument, FooterDocumentData, FooterDocumentDataSlicesSlice, FooterDocument, HomepageDocumentData, HomepageDocumentDataSlicesSlice, HomepageDocument, NavbarDocumentData, NavbarDocumentDataSlicesSlice, NavbarDocument, NavigationMenuDocumentData, NavigationMenuDocumentDataMenuItem, NavigationMenuDocument, NavigationDocumentData, NavigationDocumentDataNavigationItemItem, NavigationDocument, PageDocumentData, PageDocument, SocialsDocumentData, SocialsDocumentDataMediaInfoItem, SocialsDocument, VanitySponsoringDocumentData, VanitySponsoringDocument, VanitysocialpostsDocumentData, VanitysocialpostsDocumentDataPostItem, VanitysocialpostsDocumentDataSlicesSlice, VanitysocialpostsDocument, AllDocumentTypes, CollectionGridSliceDefaultPrimary, CollectionGridSliceDefault, CollectionGridSliceVariation, CollectionGridSlice, CollectionSliderSliceDefaultPrimary, CollectionSliderSliceDefaultItem, CollectionSliderSliceDefault, CollectionSliderSliceVariation, CollectionSliderSlice, FooterSliceDefaultPrimary, FooterSliceDefault, FooterSliceVariation, FooterSlice, HomeHeroSliceDefaultPrimary, HomeHeroSliceDefault, HomeHeroSliceVariation, HomeHeroSlice, MixedGridSliceDefaultPrimary, MixedGridSliceDefaultItem, MixedGridSliceDefault, MixedGridSliceVariation, MixedGridSlice, NavbarSliceDefaultPrimary, NavbarSliceDefault, NavbarSliceVariation, NavbarSlice, TopStorySliceDefaultPrimary, TopStorySliceDefaultItem, TopStorySliceDefault, TopStorySliceVariation, TopStorySlice, VanityHeroSliceDefaultPrimary, VanityHeroSliceDefaultItem, VanityHeroSliceDefault, VanityHeroSliceVariation, VanityHeroSlice };
+        export type { AuthorDocumentData, AuthorDocument, BlogPostDocumentData, BlogPostDocument, CollectionDocumentData, CollectionDocument, FooterDocumentData, FooterDocumentDataSlicesSlice, FooterDocument, HomepageDocumentData, HomepageDocumentDataSlicesSlice, HomepageDocument, NavbarDocumentData, NavbarDocumentDataSlicesSlice, NavbarDocument, NavigationMenuDocumentData, NavigationMenuDocumentDataMenuItem, NavigationMenuDocument, NavigationDocumentData, NavigationDocumentDataNavigationItemItem, NavigationDocument, PageDocumentData, PageDocument, SocialsDocumentData, SocialsDocumentDataMediaInfoItem, SocialsDocument, VanitySponsoringDocumentData, VanitySponsoringDocument, VanitysocialpostsDocumentData, VanitysocialpostsDocumentDataPostItem, VanitysocialpostsDocumentDataSlicesSlice, VanitysocialpostsDocument, AllDocumentTypes, CollectionGridSliceDefaultPrimary, CollectionGridSliceDefault, CollectionGridSliceVariation, CollectionGridSlice, CollectionSliderSliceDefaultPrimary, CollectionSliderSliceDefaultItem, CollectionSliderSliceDefault, CollectionSliderSliceVariation, CollectionSliderSlice, FeaturedArticleSliceDefaultPrimary, FeaturedArticleSliceDefault, FeaturedArticleSliceVariation, FeaturedArticleSlice, FooterSliceDefaultPrimary, FooterSliceDefault, FooterSliceVariation, FooterSlice, HomeHeroSliceDefaultPrimary, HomeHeroSliceDefault, HomeHeroSliceVariation, HomeHeroSlice, MixedGridSliceDefaultPrimary, MixedGridSliceDefaultItem, MixedGridSliceDefault, MixedGridSliceVariation, MixedGridSlice, NavbarSliceDefaultPrimary, NavbarSliceDefault, NavbarSliceVariation, NavbarSlice, TopStorySliceDefaultPrimary, TopStorySliceDefaultItem, TopStorySliceDefault, TopStorySliceVariation, TopStorySlice, VanityHeroSliceDefaultPrimary, VanityHeroSliceDefaultItem, VanityHeroSliceDefault, VanityHeroSliceVariation, VanityHeroSlice };
     }
 }

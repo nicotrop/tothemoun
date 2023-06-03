@@ -1,13 +1,13 @@
 {
   "uid": {
     "__TYPE__": "UIDContent",
-    "value": "design"
+    "value": "sold"
   },
   "slices": {
     "__TYPE__": "SliceContentType",
     "value": [
       {
-        "key": "home_hero$172b876b-bbf7-4413-8c28-88241b7c6cdf",
+        "key": "home_hero$d7f8354c-a270-4d25-8745-d351ff880e30",
         "name": "home_hero",
         "widget": {
           "__TYPE__": "SharedSliceContent",
@@ -19,7 +19,7 @@
                 {
                   "type": "heading1",
                   "content": {
-                    "text": "Fewer"
+                    "text": "Machine"
                   }
                 }
               ]
@@ -30,7 +30,7 @@
                 {
                   "type": "paragraph",
                   "content": {
-                    "text": "Pariatur voluptate reprehenderit reprehenderit ea culpa. Sit laborum dolore veniam eiusmod id proident ex Lorem."
+                    "text": "Fugiat id anim aliqua Lorem aute proident et irure dolor excepteur nostrud."
                   }
                 }
               ]
@@ -57,13 +57,13 @@
               "__TYPE__": "ImageContent",
               "origin": {
                 "id": "main",
-                "url": "https://images.unsplash.com/photo-1593642633279-1796119d5482",
-                "width": 4016,
-                "height": 6016
+                "url": "https://images.unsplash.com/photo-1493119508027-2b584f234d6c",
+                "width": 3424,
+                "height": 3424
               },
-              "url": "https://images.unsplash.com/photo-1593642633279-1796119d5482",
-              "width": 4016,
-              "height": 6016,
+              "url": "https://images.unsplash.com/photo-1493119508027-2b584f234d6c",
+              "width": 3424,
+              "height": 3424,
               "edit": {
                 "zoom": 1,
                 "crop": {
@@ -76,12 +76,12 @@
             },
             "opacity_color": {
               "__TYPE__": "FieldContent",
-              "value": "#b60518",
+              "value": "#963235",
               "type": "Color"
             },
             "opacity_percentage": {
               "__TYPE__": "FieldContent",
-              "value": "41",
+              "value": "15",
               "type": "Number"
             }
           },
@@ -94,40 +94,35 @@
         }
       },
       {
-        "key": "mixed_grid$f7410ef3-19ec-458b-91ad-13ebe5d12e31",
+        "key": "mixed_grid$cbccb564-a9e4-4df2-a13a-56331ec9aade",
         "name": "mixed_grid",
         "widget": {
           "__TYPE__": "SharedSliceContent",
           "variation": "default",
           "primary": {
-            "title": {
-              "__TYPE__": "StructuredTextContent",
-              "value": [
-                {
-                  "type": "heading1",
-                  "content": {
-                    "text": "Satellites"
-                  }
-                }
-              ]
-            },
-            "description": {
-              "__TYPE__": "StructuredTextContent",
-              "value": [
-                {
-                  "type": "paragraph",
-                  "content": {
-                    "text": "Ipsum sunt fugiat aliquip velit in. Commodo consectetur labore velit est veniam mollit ad magna officia tempor nulla minim qui velit sint. Labore est Lorem aliquip consectetur aliqua esse magna."
-                  }
-                }
-              ]
-            },
             "main_article": {
               "__TYPE__": "LinkContent",
               "value": {
                 "__TYPE__": "DocumentLink",
                 "id": "mock_document_id"
               }
+            },
+            "collection": {
+              "__TYPE__": "LinkContent",
+              "value": {
+                "__TYPE__": "DocumentLink",
+                "id": "mock_document_id"
+              }
+            },
+            "title": {
+              "__TYPE__": "FieldContent",
+              "value": "plus",
+              "type": "Text"
+            },
+            "description": {
+              "__TYPE__": "FieldContent",
+              "value": "captain",
+              "type": "Text"
             }
           },
           "items": [
@@ -150,7 +145,7 @@
         }
       },
       {
-        "key": "vanity_hero$45c36f33-fdda-428c-80ff-60990a3119fb",
+        "key": "vanity_hero$1375d9e1-5093-447e-8bc4-9822f9c746ac",
         "name": "vanity_hero",
         "widget": {
           "__TYPE__": "SharedSliceContent",
@@ -215,7 +210,7 @@
         }
       },
       {
-        "key": "collection_grid$f9f34e46-06a3-4958-bc96-01ded12997a5",
+        "key": "collection_grid$e663fb44-8f97-4fec-9e68-53ed5311e221",
         "name": "collection_grid",
         "widget": {
           "__TYPE__": "SharedSliceContent",
@@ -228,7 +223,7 @@
             },
             "title": {
               "__TYPE__": "FieldContent",
-              "value": "farmer",
+              "value": "mile",
               "type": "Text"
             }
           },
@@ -241,7 +236,7 @@
         }
       },
       {
-        "key": "top_story$4d6baf9a-be18-496f-a168-b506565cffbf",
+        "key": "top_story$a6ebfb6d-4529-4b5c-826e-521bf4cf3a72",
         "name": "top_story",
         "widget": {
           "__TYPE__": "SharedSliceContent",
@@ -256,7 +251,7 @@
             },
             "section_title": {
               "__TYPE__": "FieldContent",
-              "value": "central",
+              "value": "real",
               "type": "Text"
             }
           },
@@ -280,12 +275,18 @@
         }
       },
       {
-        "key": "collection_slider$74625559-4bd6-4d0e-9a47-bbe228b809d8",
+        "key": "collection_slider$26e3642d-38a1-4283-a5d7-9a4863fb742a",
         "name": "collection_slider",
         "widget": {
           "__TYPE__": "SharedSliceContent",
           "variation": "default",
-          "primary": {},
+          "primary": {
+            "title": {
+              "__TYPE__": "FieldContent",
+              "value": "army",
+              "type": "Text"
+            }
+          },
           "items": [
             {
               "__TYPE__": "GroupItemContent",
@@ -301,6 +302,29 @@
                   }
                 ]
               ]
+            }
+          ]
+        }
+      },
+      {
+        "key": "featured_article$0a8d613a-7d7d-4304-9dcb-04bc66faa1cc",
+        "name": "featured_article",
+        "widget": {
+          "__TYPE__": "SharedSliceContent",
+          "variation": "default",
+          "primary": {
+            "blog_post": {
+              "__TYPE__": "LinkContent",
+              "value": {
+                "__TYPE__": "DocumentLink",
+                "id": "mock_document_id"
+              }
+            }
+          },
+          "items": [
+            {
+              "__TYPE__": "GroupItemContent",
+              "value": []
             }
           ]
         }

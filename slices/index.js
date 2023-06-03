@@ -2,6 +2,7 @@
 
 import CollectionGrid from './CollectionGrid';
 import CollectionSlider from './CollectionSlider';
+import FeaturedArticle from './FeaturedArticle';
 import Footer from './Footer';
 import HomeHero from './HomeHero';
 import InterceptGrid from './InterceptGrid';
@@ -12,6 +13,7 @@ import VanityHero from './VanityHero';
 export {
 	CollectionGrid,
 	CollectionSlider,
+	FeaturedArticle,
 	Footer,
 	HomeHero,
 	InterceptGrid,
@@ -23,6 +25,7 @@ export {
 export const components = {
 	collection_grid: CollectionGrid,
 	collection_slider: CollectionSlider,
+	featured_article: FeaturedArticle,
 	footer: Footer,
 	home_hero: HomeHero,
 	mixed_grid: InterceptGrid,

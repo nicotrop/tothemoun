@@ -34,6 +34,9 @@
             },
             "collection_slider": {
               "type": "SharedSlice"
+            },
+            "featured_article": {
+              "type": "SharedSlice"
             }
           }
         }

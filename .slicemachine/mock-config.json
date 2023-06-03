@@ -74,6 +74,11 @@
         "primary": {},
         "items": {}
       }
+    },
+    "FeaturedArticle": {
+      "default": {
+        "primary": {}
+      }
     }
   }
 }

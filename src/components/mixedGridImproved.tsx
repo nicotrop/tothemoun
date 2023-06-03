@@ -145,7 +145,7 @@ const OtherArticlesInterceptGrid = ({
 };
 
 const reducePreview = (preview: string | KeyTextField, limit?: number) => {
-  const previewLimit = limit ? limit : 100;
+  const previewLimit = limit ? limit : 50;
   const response = preview
     ?.split(" ")
     .filter((_, i) => i < previewLimit)

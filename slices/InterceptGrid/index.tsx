@@ -1,7 +1,6 @@
 import { InterceptImprovedGrid } from "@/components/mixedGridImproved";
 import { SliceComponentProps } from "@prismicio/react";
-import { createClient } from "prismicio";
-import React, { use, useEffect, useState } from "react";
+import React from "react";
 import {
   BlogPostDocument,
   CollectionDocument,

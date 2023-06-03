@@ -112,7 +112,7 @@ const MainColumn = ({
           </span>
         )}
         <PrismicLink field={article}>
-          <h3 className="pb-2 text-3xl font-extrabold font-title leading-tight tracking-tighter">
+          <h3 className="pb-2 text-3xl font-extrabold font-title leading-tight tracking-tighter hover:underline">
             {article?.data.article_title}
           </h3>
         </PrismicLink>
@@ -158,6 +158,7 @@ const SocialImageGrid = ({ socialPost }: { socialPost?: SocialPosts }) => {
               fill
               className="object-cover w-full"
             />
+            <picture className="absolute top-0 left-0 w-full h-full bg-gray-900 opacity-0 md:opacity-20 md:hover:opacity-5 cursor-pointer hover:ease-in hover:duration-200"></picture>
           </PrismicLink>
         );
       })}
@@ -178,6 +179,7 @@ const LeftColumn = ({ others }: { others: OtherArticles[] }) => {
                   fill
                   className="object-cover"
                 />
+                <picture className="absolute top-0 left-0 w-full h-full bg-gray-900 opacity-0 md:opacity-20 md:hover:opacity-5 cursor-pointer hover:ease-in hover:duration-200"></picture>
               </PrismicLink>
             </div>
             {item?.tags && (
@@ -186,9 +188,9 @@ const LeftColumn = ({ others }: { others: OtherArticles[] }) => {
               </span>
             )}
             <PrismicLink field={item}>
-              <h3 className="pb-2 text-xl font-extrabold font-title leading-tight tracking-tighter">
+              <h4 className="pb-2 text-xl font-extrabold font-title leading-tight tracking-tighter hover:underline">
                 {item?.data.article_title}
-              </h3>
+              </h4>
             </PrismicLink>
             {index < 1 && (
               <hr className="my-5 border-solid border-t-2 border-gray-200" />
@@ -231,7 +233,7 @@ const ArticleTextElem = ({ article }: { article: TrendingArticles }) => {
           {article?.tags[0]}
         </span>
       )}
-      <h4 className="pb-2 text-xl font-semibold font-title leading-tight tracking-tighter">
+      <h4 className="pb-2 text-xl font-semibold font-title leading-tight tracking-tighter hover:underline">
         {article?.data?.article_title}
       </h4>
       <hr className="my-5 border-solid border-t-2 border-gray-200" />
@@ -257,6 +259,7 @@ const SponsoredElem = ({ promo }: { promo: Promo }) => {
           fill
           className="object-cover w-full aspect-[9/16]"
         />
+        <picture className="absolute top-0 left-0 w-full h-full bg-gray-900 opacity-0 md:opacity-20 md:hover:opacity-5 cursor-pointer hover:ease-in hover:duration-200"></picture>
       </PrismicLink>
       <PrismicLink href={promo.data.promo_link.url} className="pt-2">
         <span className="text-xs font-semibold font-title uppercase underline">

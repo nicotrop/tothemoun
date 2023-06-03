@@ -1,6 +1,6 @@
 import * as prismicH from "@prismicio/helpers";
 import { createClient } from "../../../prismicio";
-import { GetStaticPropsContext, InferGetStaticPropsType } from "next";
+import { GetStaticPropsContext } from "next";
 import { Layout } from "@/components/global";
 import { SliceZone } from "@prismicio/react";
 import { components } from "slices";

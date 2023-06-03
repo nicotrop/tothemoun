@@ -144,6 +144,19 @@ export const getStaticProps = async ({
               }
             }
           }
+          ... on featured_article {
+            variation {
+              ... on default {
+                primary {
+                  blog_post {
+                    ... on blog_post {
+                      ...blog_postFields
+                    }
+                  }
+                }
+              }
+            }
+          }
         }
       }
     }`,
