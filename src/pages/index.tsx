@@ -157,10 +157,31 @@ export const getStaticProps = async ({
               }
             }
           }
+          ... on video_hero {
+            variation {
+              ... on default {
+                primary {
+                  video
+                  blog_post {
+                    ... on blog_post {
+                      ...blog_postFields
+                    }
+                  }
+                  title
+                  subtitle
+                  cta
+                  show_down_arrow
+                }
+              }
+            }
+          }
         }
       }
     }`,
   });
+
+  //TODO retrieve nav bar and footer and pass to layout
+  //TODO insert logic to pass navbar to layout only if transparent background is set to true
 
   const data = { ...page };
 

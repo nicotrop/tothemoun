@@ -22,6 +22,7 @@ export const CollectionGridComp = ({
           <SectionTitle title={title} showSymbol={false} />
         </div>
       </SectionTitleContainer>
+      {/* TODO Improve mobile UI */}
       <div className="grid grid-cols-2 lg:grid-cols-4 gap-2 lg:gap-4">
         {articles?.map((article, index) => {
           return <CollectionCard key={index} article={article} tag={tag} />;

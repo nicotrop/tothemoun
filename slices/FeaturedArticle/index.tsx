@@ -11,7 +11,6 @@ import { OneArticleBlock } from "@/components/oneArticle";
 const FeaturedArticle = ({
   slice,
 }: SliceComponentProps<FeaturedArticleSlice>) => {
-  console.log(slice);
   return (
     <OneArticleBlock
       article={slice.primary.blog_post as unknown as BlogPostDocument}

@@ -37,6 +37,9 @@
             },
             "featured_article": {
               "type": "SharedSlice"
+            },
+            "video_hero": {
+              "type": "SharedSlice"
             }
           }
         }

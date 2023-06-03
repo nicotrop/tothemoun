@@ -1,5 +1,4 @@
 import { Layout } from "@/components/global";
-import { HeroVideo } from "@/components/heroComponents";
 import { SEOsection } from "@/components/seoSection";
 import SquareCardCarousel from "@/components/squareCardsCarousel";
 import { PhotoBanner } from "@/components/photoBanner";
@@ -9,7 +8,7 @@ import { MarqueeBannerComp } from "@/components/marqueeBanner";
 export default function PreviewSlices() {
   return (
     <Layout>
-      <HeroVideo />
+      {/* <HeroVideo /> */}
       <SquareCardCarousel />
       <PhotoBanner />
       <MarqueeBannerComp />

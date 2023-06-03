@@ -9,13 +9,7 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/effect-fade";
 import { EcomNav } from "./ecomNav";
-import {
-  ArrowLongDownIcon,
-  ChevronDoubleRightIcon,
-  GlobeAmericasIcon,
-  UserIcon,
-} from "@heroicons/react/24/outline";
-import Script from "next/script";
+import { GlobeAmericasIcon, UserIcon } from "@heroicons/react/24/outline";
 
 export const HeroSliders = () => {
   return (
@@ -78,94 +72,6 @@ export const HeroSliders = () => {
   );
 };
 
-export const HeroVideo = () => {
-  return (
-    <div className="overflow-hidden relative">
-      <EcomNav navigation={mockNavigation?.data?.navigation_item} />
-      <div className="w-screen h-[100vh] relative">
-        <HeroVideoComp />
-        <HeroTitleComp />
-        <NextSectionBtn />
-      </div>
-    </div>
-  );
-};
-
-export const HeroTitleComp = ({
-  title = "Consectetur adipisicing",
-  subtitle = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut, ut!",
-}: {
-  title?: string;
-  subtitle?: string;
-}) => {
-  return (
-    <div className="absolute left-[calc((100vw-(300px))/2)] top-[calc((100vh-(270px))/2)] max-w-[300px] w-full text-white m-0">
-      <h1 className="font-display text-[70px] font-light tracking-tighter leading-[70px] text text-center italic">
-        {title}
-      </h1>
-      <p className="uppercase tracking-wider leading-5 font-semibold text-center pt-6 pb-8">
-        {subtitle}
-      </p>
-      <button className="focus:outline-none outline-none border-none h-fit w-full flex justify-center cursor-pointer">
-        <Link
-          href={"/"}
-          className="flex items-center gap-2 justify-center rounded-sm h-11 py-0 px-4 font-semibold text-sm tracking-wider uppercase font-title text-secondary bg-white whitespace-nowrap border-solid border-white border-2 hover:bg-[#FFFFFF26] hover:text-white ease-in-out duration-300"
-        >
-          <span>{"Découvrir les plages"}</span>
-          <ChevronDoubleRightIcon className="w-3 h-3" />
-        </Link>
-      </button>
-    </div>
-  );
-};
-
-export const ScrollDown = () => {
-  return (
-    <Script id="down-arrow" strategy="lazyOnload">
-      {`// Select all sections on the page
-        const sections = document.querySelectorAll('section');
-
-        //Get navbar height
-        const navHeight = document.getElementById("ecomNav").offsetHeight;
-
-        // Add a click event listener to the button
-        const btn = document.getElementById("down-btn");
-        btn.addEventListener("click", () => {
-          // Find the currently active section
-          let currentSection = 0;
-          sections.forEach((section, index) => {
-            const sectionTop = section.getBoundingClientRect().top;
-            if (sectionTop >= 0 && sectionTop < window.innerHeight) {
-              currentSection = index;
-            }
-          });
-
-          // Find the next section and scroll to it take into account the navbar height
-          const nextSection = currentSection + 1;
-          if (nextSection < sections.length) {
-            window.scrollTo({
-              top: sections[nextSection].offsetTop - navHeight,
-              behavior: "smooth",
-            });
-          }
-        });
-      `}
-    </Script>
-  );
-};
-
-export const NextSectionBtn = () => {
-  return (
-    <button
-      className="m-0 focus:outline-none outline-none py-2 px-4 animate-bounce"
-      id="down-btn"
-    >
-      <ArrowLongDownIcon className="absolute left-[calc((100vw-(40px))/2)] bottom-14 h-10 text-white" />
-      <ScrollDown />
-    </button>
-  );
-};
-
 export const HeroArticleCard = ({ article }: { article: Article }) => {
   return (
     <div className="absolute bottom-4 py-8 px-4 md:px-4 max-w-xl flex flex-col gap-3">
@@ -217,28 +123,5 @@ export const HeroSliderComp = () => {
         );
       })}
     </SwiperHeroArticles>
-  );
-};
-
-export const HeroVideoComp = () => {
-  return (
-    <div
-      className="h-[calc(100%-var(--mobile-bottom-nav-height))] sm:h-full"
-      style={{
-        backgroundColor: "#000000",
-      }}
-    >
-      <video
-        autoPlay
-        muted
-        loop
-        className={`h-full w-full object-cover bg-black opacity-50`}
-      >
-        <source
-          src="https://res.cloudinary.com/dygjptmlc/video/upload/v1682427097/herovideo_dmthx4.mp4"
-          type="video/mp4"
-        />
-      </video>
-    </div>
   );
 };

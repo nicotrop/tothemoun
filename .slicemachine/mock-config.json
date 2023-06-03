@@ -79,6 +79,11 @@
       "default": {
         "primary": {}
       }
+    },
+    "VideoHero": {
+      "default": {
+        "primary": {}
+      }
     }
   }
 }

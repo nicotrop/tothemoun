@@ -9,6 +9,7 @@ import InterceptGrid from './InterceptGrid';
 import Navbar from './Navbar';
 import TopStory from './TopStory';
 import VanityHero from './VanityHero';
+import VideoHero from './VideoHero';
 
 export {
 	CollectionGrid,
@@ -20,6 +21,7 @@ export {
 	Navbar,
 	TopStory,
 	VanityHero,
+	VideoHero,
 };
 
 export const components = {
@@ -32,4 +34,5 @@ export const components = {
 	navbar: Navbar,
 	top_story: TopStory,
 	vanity_hero: VanityHero,
+	video_hero: VideoHero,
 };

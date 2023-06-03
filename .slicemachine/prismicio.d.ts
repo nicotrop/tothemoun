@@ -334,7 +334,7 @@ interface HomepageDocumentData {
  * Slice for *Homepage → Slice Zone*
  *
  */
-type HomepageDocumentDataSlicesSlice = HomeHeroSlice | MixedGridSlice | VanityHeroSlice | CollectionGridSlice | TopStorySlice | CollectionSliderSlice | FeaturedArticleSlice;
+type HomepageDocumentDataSlicesSlice = HomeHeroSlice | MixedGridSlice | VanityHeroSlice | CollectionGridSlice | TopStorySlice | CollectionSliderSlice | FeaturedArticleSlice | VideoHeroSlice;
 /**
  * Homepage document from Prismic
  *
@@ -1368,11 +1368,101 @@ type VanityHeroSliceVariation = VanityHeroSliceDefault;
  *
  */
 export type VanityHeroSlice = prismicT.SharedSlice<"vanity_hero", VanityHeroSliceVariation>;
+/**
+ * Primary content in VideoHero → Primary
+ *
+ */
+interface VideoHeroSliceDefaultPrimary {
+    /**
+     * Video field in *VideoHero → Primary*
+     *
+     * - **Field Type**: Link to Media
+     * - **Placeholder**: *None*
+     * - **API ID Path**: video_hero.primary.video
+     * - **Documentation**: https://prismic.io/docs/core-concepts/link-content-relationship
+     *
+     */
+    video: prismicT.LinkToMediaField;
+    /**
+     * Blog post field in *VideoHero → Primary*
+     *
+     * - **Field Type**: Content Relationship
+     * - **Placeholder**: *None*
+     * - **API ID Path**: video_hero.primary.blog_post
+     * - **Documentation**: https://prismic.io/docs/core-concepts/link-content-relationship
+     *
+     */
+    blog_post: prismicT.RelationField;
+    /**
+     * Title field in *VideoHero → Primary*
+     *
+     * - **Field Type**: Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: video_hero.primary.title
+     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+     *
+     */
+    title: prismicT.KeyTextField;
+    /**
+     * Subtitle field in *VideoHero → Primary*
+     *
+     * - **Field Type**: Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: video_hero.primary.subtitle
+     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+     *
+     */
+    subtitle: prismicT.KeyTextField;
+    /**
+     * CTA field in *VideoHero → Primary*
+     *
+     * - **Field Type**: Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: video_hero.primary.cta
+     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+     *
+     */
+    cta: prismicT.KeyTextField;
+    /**
+     * Show down arrow field in *VideoHero → Primary*
+     *
+     * - **Field Type**: Boolean
+     * - **Placeholder**: *None*
+     * - **Default Value**: false
+     * - **API ID Path**: video_hero.primary.show_down_arrow
+     * - **Documentation**: https://prismic.io/docs/core-concepts/boolean
+     *
+     */
+    show_down_arrow: prismicT.BooleanField;
+}
+/**
+ * Default variation for VideoHero Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: `VideoHero`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type VideoHeroSliceDefault = prismicT.SharedSliceVariation<"default", Simplify<VideoHeroSliceDefaultPrimary>, never>;
+/**
+ * Slice variation for *VideoHero*
+ *
+ */
+type VideoHeroSliceVariation = VideoHeroSliceDefault;
+/**
+ * VideoHero Shared Slice
+ *
+ * - **API ID**: `video_hero`
+ * - **Description**: `VideoHero`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type VideoHeroSlice = prismicT.SharedSlice<"video_hero", VideoHeroSliceVariation>;
 declare module "@prismicio/client" {
     interface CreateClient {
         (repositoryNameOrEndpoint: string, options?: prismic.ClientConfig): prismic.Client<AllDocumentTypes>;
     }
     namespace Content {
-        export type { AuthorDocumentData, AuthorDocument, BlogPostDocumentData, BlogPostDocument, CollectionDocumentData, CollectionDocument, FooterDocumentData, FooterDocumentDataSlicesSlice, FooterDocument, HomepageDocumentData, HomepageDocumentDataSlicesSlice, HomepageDocument, NavbarDocumentData, NavbarDocumentDataSlicesSlice, NavbarDocument, NavigationMenuDocumentData, NavigationMenuDocumentDataMenuItem, NavigationMenuDocument, NavigationDocumentData, NavigationDocumentDataNavigationItemItem, NavigationDocument, PageDocumentData, PageDocument, SocialsDocumentData, SocialsDocumentDataMediaInfoItem, SocialsDocument, VanitySponsoringDocumentData, VanitySponsoringDocument, VanitysocialpostsDocumentData, VanitysocialpostsDocumentDataPostItem, VanitysocialpostsDocumentDataSlicesSlice, VanitysocialpostsDocument, AllDocumentTypes, CollectionGridSliceDefaultPrimary, CollectionGridSliceDefault, CollectionGridSliceVariation, CollectionGridSlice, CollectionSliderSliceDefaultPrimary, CollectionSliderSliceDefaultItem, CollectionSliderSliceDefault, CollectionSliderSliceVariation, CollectionSliderSlice, FeaturedArticleSliceDefaultPrimary, FeaturedArticleSliceDefault, FeaturedArticleSliceVariation, FeaturedArticleSlice, FooterSliceDefaultPrimary, FooterSliceDefault, FooterSliceVariation, FooterSlice, HomeHeroSliceDefaultPrimary, HomeHeroSliceDefault, HomeHeroSliceVariation, HomeHeroSlice, MixedGridSliceDefaultPrimary, MixedGridSliceDefaultItem, MixedGridSliceDefault, MixedGridSliceVariation, MixedGridSlice, NavbarSliceDefaultPrimary, NavbarSliceDefault, NavbarSliceVariation, NavbarSlice, TopStorySliceDefaultPrimary, TopStorySliceDefaultItem, TopStorySliceDefault, TopStorySliceVariation, TopStorySlice, VanityHeroSliceDefaultPrimary, VanityHeroSliceDefaultItem, VanityHeroSliceDefault, VanityHeroSliceVariation, VanityHeroSlice };
+        export type { AuthorDocumentData, AuthorDocument, BlogPostDocumentData, BlogPostDocument, CollectionDocumentData, CollectionDocument, FooterDocumentData, FooterDocumentDataSlicesSlice, FooterDocument, HomepageDocumentData, HomepageDocumentDataSlicesSlice, HomepageDocument, NavbarDocumentData, NavbarDocumentDataSlicesSlice, NavbarDocument, NavigationMenuDocumentData, NavigationMenuDocumentDataMenuItem, NavigationMenuDocument, NavigationDocumentData, NavigationDocumentDataNavigationItemItem, NavigationDocument, PageDocumentData, PageDocument, SocialsDocumentData, SocialsDocumentDataMediaInfoItem, SocialsDocument, VanitySponsoringDocumentData, VanitySponsoringDocument, VanitysocialpostsDocumentData, VanitysocialpostsDocumentDataPostItem, VanitysocialpostsDocumentDataSlicesSlice, VanitysocialpostsDocument, AllDocumentTypes, CollectionGridSliceDefaultPrimary, CollectionGridSliceDefault, CollectionGridSliceVariation, CollectionGridSlice, CollectionSliderSliceDefaultPrimary, CollectionSliderSliceDefaultItem, CollectionSliderSliceDefault, CollectionSliderSliceVariation, CollectionSliderSlice, FeaturedArticleSliceDefaultPrimary, FeaturedArticleSliceDefault, FeaturedArticleSliceVariation, FeaturedArticleSlice, FooterSliceDefaultPrimary, FooterSliceDefault, FooterSliceVariation, FooterSlice, HomeHeroSliceDefaultPrimary, HomeHeroSliceDefault, HomeHeroSliceVariation, HomeHeroSlice, MixedGridSliceDefaultPrimary, MixedGridSliceDefaultItem, MixedGridSliceDefault, MixedGridSliceVariation, MixedGridSlice, NavbarSliceDefaultPrimary, NavbarSliceDefault, NavbarSliceVariation, NavbarSlice, TopStorySliceDefaultPrimary, TopStorySliceDefaultItem, TopStorySliceDefault, TopStorySliceVariation, TopStorySlice, VanityHeroSliceDefaultPrimary, VanityHeroSliceDefaultItem, VanityHeroSliceDefault, VanityHeroSliceVariation, VanityHeroSlice, VideoHeroSliceDefaultPrimary, VideoHeroSliceDefault, VideoHeroSliceVariation, VideoHeroSlice };
     }
 }
