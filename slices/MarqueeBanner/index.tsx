@@ -9,7 +9,6 @@ import { MarqueeBannerSlice } from "types.generated";
  * @param { MarqueeBannerProps }
  */
 const MarqueeBanner = ({ slice }: SliceComponentProps<MarqueeBannerSlice>) => {
-  console.log(slice);
   const { items, primary } = slice;
 
   return <MarqueeBannerComp items={items} primary={primary} />;

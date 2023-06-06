@@ -213,9 +213,20 @@ export const getStaticProps = async ({
                 primary {
                   text_size
                   text_color
+                  background_color
                 }
                 items {
                   text_content
+                }
+              }
+            }
+          }
+          ... on seo_section {
+            variation {
+              ... on default {
+                primary {
+                  title
+                  content
                 }
               }
             }

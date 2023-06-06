@@ -1,5 +1,6 @@
 import { ColorField, KeyTextField } from "@prismicio/types";
 import { MarqueeBannerSlice } from "types.generated";
+import { Wrapper } from "./global";
 
 export const MarqueeBannerComp = ({
   items,
@@ -9,7 +10,15 @@ export const MarqueeBannerComp = ({
   primary: MarqueeBannerSlice["primary"];
 }) => {
   return (
-    <section className="pt-12 sm:pt-0">
+    <Wrapper
+      padding={false}
+      className="lg:pt-3 lg:pb-3 sm:pt-0 h-full"
+      style={{
+        backgroundColor: primary.background_color
+          ? primary.background_color
+          : "white",
+      }}
+    >
       <OtherMarquee size={primary.text_size} color={primary.text_color}>
         {items.map((elem, index) => {
           return (
@@ -19,7 +28,7 @@ export const MarqueeBannerComp = ({
           );
         })}
       </OtherMarquee>
-    </section>
+    </Wrapper>
   );
 };
 
@@ -49,7 +58,9 @@ const OtherMarquee = ({
   return (
     <div
       className={`w-fit flex font-bebas font-extrabold items-center whitespace-nowrap overflow-hidden relative animate-fasterMarquee uppercase tracking-tighter ${sizeClass}`}
-      style={{ color: color ? color : "black" }}
+      style={{
+        color: color ? color : "black",
+      }}
     >
       {children}
     </div>

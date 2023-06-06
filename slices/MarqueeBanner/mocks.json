@@ -12,6 +12,11 @@
         "__TYPE__": "FieldContent",
         "value": "#46d669",
         "type": "Color"
+      },
+      "background_color": {
+        "__TYPE__": "FieldContent",
+        "value": "#91f222",
+        "type": "Color"
       }
     },
     "items": [

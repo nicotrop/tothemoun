@@ -1,13 +1,13 @@
 {
   "uid": {
     "__TYPE__": "UIDContent",
-    "value": "wild"
+    "value": "rule"
   },
   "slices": {
     "__TYPE__": "SliceContentType",
     "value": [
       {
-        "key": "home_hero$0c657d4d-ab49-4371-8703-181a4760b34b",
+        "key": "home_hero$5e62ca08-9676-43f5-899b-af9381fdd2d0",
         "name": "home_hero",
         "widget": {
           "__TYPE__": "SharedSliceContent",
@@ -19,7 +19,7 @@
                 {
                   "type": "heading1",
                   "content": {
-                    "text": "Separate"
+                    "text": "Layers"
                   }
                 }
               ]
@@ -30,7 +30,7 @@
                 {
                   "type": "paragraph",
                   "content": {
-                    "text": "Qui esse amet ad proident cupidatat laboris reprehenderit laboris et. Amet deserunt anim laborum eu ad cillum ex eiusmod nostrud culpa fugiat cupidatat laborum do cillum."
+                    "text": "Sit mollit cillum do ex non deserunt ex enim culpa et nisi mollit sunt. In veniam reprehenderit aliqua et excepteur deserunt cupidatat labore velit irure ex ad do. Laboris sunt anim duis nisi."
                   }
                 }
               ]
@@ -57,13 +57,13 @@
               "__TYPE__": "ImageContent",
               "origin": {
                 "id": "main",
-                "url": "https://images.unsplash.com/photo-1591012911207-0dbac31f37da",
-                "width": 4000,
-                "height": 4000
+                "url": "https://images.unsplash.com/photo-1600861194802-a2b11076bc51",
+                "width": 2545,
+                "height": 2545
               },
-              "url": "https://images.unsplash.com/photo-1591012911207-0dbac31f37da",
-              "width": 4000,
-              "height": 4000,
+              "url": "https://images.unsplash.com/photo-1600861194802-a2b11076bc51",
+              "width": 2545,
+              "height": 2545,
               "edit": {
                 "zoom": 1,
                 "crop": {
@@ -76,12 +76,12 @@
             },
             "opacity_color": {
               "__TYPE__": "FieldContent",
-              "value": "#977479",
+              "value": "#276648",
               "type": "Color"
             },
             "opacity_percentage": {
               "__TYPE__": "FieldContent",
-              "value": "32",
+              "value": "15",
               "type": "Number"
             }
           },
@@ -94,7 +94,7 @@
         }
       },
       {
-        "key": "mixed_grid$c7aa8d40-5fc1-444d-beff-db06f51e7c4d",
+        "key": "mixed_grid$b395b67d-99bf-4c14-b1b9-bedac7c01201",
         "name": "mixed_grid",
         "widget": {
           "__TYPE__": "SharedSliceContent",
@@ -116,12 +116,12 @@
             },
             "title": {
               "__TYPE__": "FieldContent",
-              "value": "burn",
+              "value": "original",
               "type": "Text"
             },
             "description": {
               "__TYPE__": "FieldContent",
-              "value": "smoke",
+              "value": "increase",
               "type": "Text"
             }
           },
@@ -145,7 +145,7 @@
         }
       },
       {
-        "key": "vanity_hero$a1775c45-fddd-4f84-9fde-f0437778babc",
+        "key": "vanity_hero$a89b173a-db80-405b-b994-7c74600eedef",
         "name": "vanity_hero",
         "widget": {
           "__TYPE__": "SharedSliceContent",
@@ -210,7 +210,7 @@
         }
       },
       {
-        "key": "collection_grid$399ab7c1-067f-4d27-9c2f-291629088bf4",
+        "key": "collection_grid$e64857ca-3b1f-4acf-8d3f-90ddca25525c",
         "name": "collection_grid",
         "widget": {
           "__TYPE__": "SharedSliceContent",
@@ -218,12 +218,12 @@
           "primary": {
             "collection_uid": {
               "__TYPE__": "FieldContent",
-              "value": "ou manger?",
+              "value": "ou loger?",
               "type": "Select"
             },
             "title": {
               "__TYPE__": "FieldContent",
-              "value": "atomic",
+              "value": "fish",
               "type": "Text"
             }
           },
@@ -236,7 +236,7 @@
         }
       },
       {
-        "key": "top_story$e9baae0d-c29e-43b3-968b-adcc123853a3",
+        "key": "top_story$6010b911-9cfb-439a-b55f-b38b7b92f76e",
         "name": "top_story",
         "widget": {
           "__TYPE__": "SharedSliceContent",
@@ -251,7 +251,7 @@
             },
             "section_title": {
               "__TYPE__": "FieldContent",
-              "value": "certainly",
+              "value": "know",
               "type": "Text"
             }
           },
@@ -275,7 +275,7 @@
         }
       },
       {
-        "key": "collection_slider$0dd2075b-04b7-42b4-9b5f-2b7a57c169e9",
+        "key": "collection_slider$db046ce0-0207-41cc-a6e6-7586f136ea16",
         "name": "collection_slider",
         "widget": {
           "__TYPE__": "SharedSliceContent",
@@ -283,7 +283,7 @@
           "primary": {
             "title": {
               "__TYPE__": "FieldContent",
-              "value": "silver",
+              "value": "join",
               "type": "Text"
             }
           },
@@ -307,7 +307,7 @@
         }
       },
       {
-        "key": "featured_article$c3e0575a-8217-4eb4-852c-8eaa894ab7ef",
+        "key": "featured_article$f3217b39-ffb3-4f46-ba44-5db0cbd0919f",
         "name": "featured_article",
         "widget": {
           "__TYPE__": "SharedSliceContent",
@@ -330,7 +330,7 @@
         }
       },
       {
-        "key": "video_hero$da5d0467-b552-49b6-a4c5-206f41870f65",
+        "key": "video_hero$a1968639-05bc-420b-9bec-95e2dc42e7d1",
         "name": "video_hero",
         "widget": {
           "__TYPE__": "SharedSliceContent",
@@ -356,17 +356,17 @@
             },
             "title": {
               "__TYPE__": "FieldContent",
-              "value": "clear",
+              "value": "species",
               "type": "Text"
             },
             "subtitle": {
               "__TYPE__": "FieldContent",
-              "value": "national",
+              "value": "attempt",
               "type": "Text"
             },
             "cta": {
               "__TYPE__": "FieldContent",
-              "value": "mean",
+              "value": "canal",
               "type": "Text"
             },
             "show_down_arrow": {
@@ -383,7 +383,7 @@
         }
       },
       {
-        "key": "square_card_carousel$08159847-a20f-4d2b-aa71-1a8e078f6430",
+        "key": "square_card_carousel$d8832460-1b60-47c0-a67d-d6c3df061b10",
         "name": "square_card_carousel",
         "widget": {
           "__TYPE__": "SharedSliceContent",
@@ -398,7 +398,7 @@
             },
             "title": {
               "__TYPE__": "FieldContent",
-              "value": "younger",
+              "value": "disease",
               "type": "Text"
             }
           },
@@ -422,7 +422,7 @@
         }
       },
       {
-        "key": "photo_banner$012b3064-d31d-4114-9726-4986d8721d0b",
+        "key": "photo_banner$b62c19c0-463a-45ea-958e-88f361c3ffa8",
         "name": "photo_banner",
         "widget": {
           "__TYPE__": "SharedSliceContent",
@@ -430,25 +430,25 @@
           "primary": {
             "title": {
               "__TYPE__": "FieldContent",
-              "value": "upward",
+              "value": "both",
               "type": "Text"
             },
             "subtitle": {
               "__TYPE__": "FieldContent",
-              "value": "log",
+              "value": "camera",
               "type": "Text"
             },
             "image": {
               "__TYPE__": "ImageContent",
               "origin": {
                 "id": "main",
-                "url": "https://images.unsplash.com/photo-1471897488648-5eae4ac6686b",
-                "width": 3560,
-                "height": 5340
+                "url": "https://images.unsplash.com/photo-1496181133206-80ce9b88a853",
+                "width": 5243,
+                "height": 3495
               },
-              "url": "https://images.unsplash.com/photo-1471897488648-5eae4ac6686b",
-              "width": 3560,
-              "height": 5340,
+              "url": "https://images.unsplash.com/photo-1496181133206-80ce9b88a853",
+              "width": 5243,
+              "height": 3495,
               "edit": {
                 "zoom": 1,
                 "crop": {
@@ -469,7 +469,7 @@
         }
       },
       {
-        "key": "marquee_banner$56c289b4-87f3-4d11-912a-d456aaa65eec",
+        "key": "marquee_banner$7918e04a-445c-4c02-ae12-833245274404",
         "name": "marquee_banner",
         "widget": {
           "__TYPE__": "SharedSliceContent",
@@ -477,8 +477,13 @@
           "primary": {
             "text_size": {
               "__TYPE__": "FieldContent",
-              "value": "L",
+              "value": "XL",
               "type": "Select"
+            },
+            "text_color": {
+              "__TYPE__": "FieldContent",
+              "value": "#fb2ffc",
+              "type": "Color"
             }
           },
           "items": [
@@ -489,11 +494,43 @@
                   "text_content",
                   {
                     "__TYPE__": "FieldContent",
-                    "value": "promised",
+                    "value": "day",
                     "type": "Text"
                   }
                 ]
               ]
+            }
+          ]
+        }
+      },
+      {
+        "key": "seo_section$b0e5c1c1-c369-4103-8c65-d86a32d84b0f",
+        "name": "seo_section",
+        "widget": {
+          "__TYPE__": "SharedSliceContent",
+          "variation": "default",
+          "primary": {
+            "title": {
+              "__TYPE__": "FieldContent",
+              "value": "egg",
+              "type": "Text"
+            },
+            "content": {
+              "__TYPE__": "StructuredTextContent",
+              "value": [
+                {
+                  "type": "paragraph",
+                  "content": {
+                    "text": "Exercitation in cupidatat reprehenderit."
+                  }
+                }
+              ]
+            }
+          },
+          "items": [
+            {
+              "__TYPE__": "GroupItemContent",
+              "value": []
             }
           ]
         }

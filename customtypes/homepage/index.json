@@ -49,6 +49,9 @@
             },
             "marquee_banner": {
               "type": "SharedSlice"
+            },
+            "seo_section": {
+              "type": "SharedSlice"
             }
           }
         }

@@ -1,0 +1,30 @@
+[
+  {
+    "__TYPE__": "SharedSliceContent",
+    "variation": "default",
+    "primary": {
+      "title": {
+        "__TYPE__": "FieldContent",
+        "value": "position",
+        "type": "Text"
+      },
+      "content": {
+        "__TYPE__": "StructuredTextContent",
+        "value": [
+          {
+            "type": "paragraph",
+            "content": {
+              "text": "Occaecat dolor nulla consectetur ullamco id ea consectetur ut cillum excepteur duis. Eu id consequat esse tempor id dolore consequat exercitation eiusmod reprehenderit laborum aliqua anim minim id. Qui cupidatat ut elit tempor nostrud aliquip irure aute duis deserunt."
+            }
+          }
+        ]
+      }
+    },
+    "items": [
+      {
+        "__TYPE__": "GroupItemContent",
+        "value": []
+      }
+    ]
+  }
+]

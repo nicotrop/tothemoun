@@ -9,6 +9,7 @@ import InterceptGrid from './InterceptGrid';
 import MarqueeBanner from './MarqueeBanner';
 import Navbar from './Navbar';
 import PhotoBanner from './PhotoBanner';
+import SeoSection from './SeoSection';
 import SquareCardCarousel from './SquareCardCarousel';
 import TopStory from './TopStory';
 import VanityHero from './VanityHero';
@@ -24,6 +25,7 @@ export {
 	MarqueeBanner,
 	Navbar,
 	PhotoBanner,
+	SeoSection,
 	SquareCardCarousel,
 	TopStory,
 	VanityHero,
@@ -40,6 +42,7 @@ export const components = {
 	marquee_banner: MarqueeBanner,
 	navbar: Navbar,
 	photo_banner: PhotoBanner,
+	seo_section: SeoSection,
 	square_card_carousel: SquareCardCarousel,
 	top_story: TopStory,
 	vanity_hero: VanityHero,
