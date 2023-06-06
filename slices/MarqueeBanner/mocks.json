@@ -1,0 +1,33 @@
+[
+  {
+    "__TYPE__": "SharedSliceContent",
+    "variation": "default",
+    "primary": {
+      "text_size": {
+        "__TYPE__": "FieldContent",
+        "value": "L",
+        "type": "Select"
+      },
+      "text_color": {
+        "__TYPE__": "FieldContent",
+        "value": "#46d669",
+        "type": "Color"
+      }
+    },
+    "items": [
+      {
+        "__TYPE__": "GroupItemContent",
+        "value": [
+          [
+            "text_content",
+            {
+              "__TYPE__": "FieldContent",
+              "value": "soldier",
+              "type": "Text"
+            }
+          ]
+        ]
+      }
+    ]
+  }
+]

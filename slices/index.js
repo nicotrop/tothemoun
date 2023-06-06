@@ -6,7 +6,9 @@ import FeaturedArticle from './FeaturedArticle';
 import Footer from './Footer';
 import HomeHero from './HomeHero';
 import InterceptGrid from './InterceptGrid';
+import MarqueeBanner from './MarqueeBanner';
 import Navbar from './Navbar';
+import PhotoBanner from './PhotoBanner';
 import SquareCardCarousel from './SquareCardCarousel';
 import TopStory from './TopStory';
 import VanityHero from './VanityHero';
@@ -19,7 +21,9 @@ export {
 	Footer,
 	HomeHero,
 	InterceptGrid,
+	MarqueeBanner,
 	Navbar,
+	PhotoBanner,
 	SquareCardCarousel,
 	TopStory,
 	VanityHero,
@@ -33,7 +37,9 @@ export const components = {
 	footer: Footer,
 	home_hero: HomeHero,
 	mixed_grid: InterceptGrid,
+	marquee_banner: MarqueeBanner,
 	navbar: Navbar,
+	photo_banner: PhotoBanner,
 	square_card_carousel: SquareCardCarousel,
 	top_story: TopStory,
 	vanity_hero: VanityHero,

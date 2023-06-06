@@ -89,6 +89,17 @@
       "default": {
         "primary": {}
       }
+    },
+    "PhotoBanner": {
+      "default": {
+        "primary": {}
+      }
+    },
+    "MarqueeBanner": {
+      "default": {
+        "primary": {},
+        "items": {}
+      }
     }
   }
 }

@@ -1,0 +1,46 @@
+{
+  "id": "marquee_banner",
+  "type": "SharedSlice",
+  "name": "MarqueeBanner",
+  "description": "MarqueeBanner",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "sktwi1xtmkfgx8626",
+      "description": "MarqueeBanner",
+      "primary": {
+        "text_size": {
+          "type": "Select",
+          "config": {
+            "label": "Text size",
+            "placeholder": "Select text size",
+            "options": [
+              "XXL",
+              "XL",
+              "L"
+            ]
+          }
+        },
+        "text_color": {
+          "type": "Color",
+          "config": {
+            "label": "Text color",
+            "placeholder": ""
+          }
+        }
+      },
+      "items": {
+        "text_content": {
+          "type": "Text",
+          "config": {
+            "label": "Text content",
+            "placeholder": "Enter the text content"
+          }
+        }
+      },
+      "imageUrl": "https://images.prismic.io/slice-machine/621a5ec4-0387-4bc5-9860-2dd46cbc07cd_default_ss.png?auto=compress,format"
+    }
+  ]
+}

@@ -34,8 +34,6 @@ export const ClientCollection = ({
               }))
           : (formatted = null);
 
-        console.log(formatted);
-
         setData(formatted);
       } catch (error) {
         console.log(error);

@@ -196,6 +196,30 @@ export const getStaticProps = async ({
               }
             }
           }
+          ... on photo_banner {
+            variation {
+              ... on default {
+                primary {
+                  title
+                  subtitle
+                  image
+                }
+              }
+            }
+          }
+          ... on marquee_banner {
+            variation {
+              ... on default {
+                primary {
+                  text_size
+                  text_color
+                }
+                items {
+                  text_content
+                }
+              }
+            }
+          }
         }
       }
     }`,

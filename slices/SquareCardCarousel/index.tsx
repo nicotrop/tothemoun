@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { SliceComponentProps } from "@prismicio/react";
 import {
   BlogPostDocument,
@@ -6,8 +6,6 @@ import {
   SquareCardCarouselSlice,
 } from "types.generated";
 import { SquareCardCarouselComp } from "@/components/squareCardsCarousel";
-import { createClient } from "prismicio";
-import { checkTag, sortArticles } from "@/utils/helpers";
 import { ClientCollection } from "./component.client";
 
 /**

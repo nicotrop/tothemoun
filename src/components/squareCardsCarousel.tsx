@@ -6,13 +6,13 @@ import {
 } from "./global";
 import { SwiperSlide } from "swiper/react";
 import { SwiperImprovedCarousel } from "@/components/sliders";
-
-import "swiper/css";
 import { KeyTextField } from "@prismicio/types";
 import { Articles, ArticlesTyped } from "slices/SquareCardCarousel";
 import { BlogPostDocument } from "types.generated";
 import { PrismicNextImage } from "@prismicio/next";
 import { PrismicLink } from "@prismicio/react";
+
+import "swiper/css";
 
 export const SquareCardCarouselComp = ({
   title,

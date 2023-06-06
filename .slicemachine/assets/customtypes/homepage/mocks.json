@@ -1,13 +1,13 @@
 {
   "uid": {
     "__TYPE__": "UIDContent",
-    "value": "cap"
+    "value": "wild"
   },
   "slices": {
     "__TYPE__": "SliceContentType",
     "value": [
       {
-        "key": "home_hero$df59e053-eb99-4693-b250-931d5b9c8763",
+        "key": "home_hero$0c657d4d-ab49-4371-8703-181a4760b34b",
         "name": "home_hero",
         "widget": {
           "__TYPE__": "SharedSliceContent",
@@ -19,7 +19,7 @@
                 {
                   "type": "heading1",
                   "content": {
-                    "text": "Range"
+                    "text": "Separate"
                   }
                 }
               ]
@@ -30,7 +30,7 @@
                 {
                   "type": "paragraph",
                   "content": {
-                    "text": "Qui ad dolore labore."
+                    "text": "Qui esse amet ad proident cupidatat laboris reprehenderit laboris et. Amet deserunt anim laborum eu ad cillum ex eiusmod nostrud culpa fugiat cupidatat laborum do cillum."
                   }
                 }
               ]
@@ -57,13 +57,13 @@
               "__TYPE__": "ImageContent",
               "origin": {
                 "id": "main",
-                "url": "https://images.unsplash.com/photo-1496181133206-80ce9b88a853",
-                "width": 5243,
-                "height": 3495
+                "url": "https://images.unsplash.com/photo-1591012911207-0dbac31f37da",
+                "width": 4000,
+                "height": 4000
               },
-              "url": "https://images.unsplash.com/photo-1496181133206-80ce9b88a853",
-              "width": 5243,
-              "height": 3495,
+              "url": "https://images.unsplash.com/photo-1591012911207-0dbac31f37da",
+              "width": 4000,
+              "height": 4000,
               "edit": {
                 "zoom": 1,
                 "crop": {
@@ -76,12 +76,12 @@
             },
             "opacity_color": {
               "__TYPE__": "FieldContent",
-              "value": "#bb4721",
+              "value": "#977479",
               "type": "Color"
             },
             "opacity_percentage": {
               "__TYPE__": "FieldContent",
-              "value": "31",
+              "value": "32",
               "type": "Number"
             }
           },
@@ -94,7 +94,7 @@
         }
       },
       {
-        "key": "mixed_grid$099770cf-8306-42e9-930f-deca95a8bc5e",
+        "key": "mixed_grid$c7aa8d40-5fc1-444d-beff-db06f51e7c4d",
         "name": "mixed_grid",
         "widget": {
           "__TYPE__": "SharedSliceContent",
@@ -116,12 +116,12 @@
             },
             "title": {
               "__TYPE__": "FieldContent",
-              "value": "golden",
+              "value": "burn",
               "type": "Text"
             },
             "description": {
               "__TYPE__": "FieldContent",
-              "value": "dream",
+              "value": "smoke",
               "type": "Text"
             }
           },
@@ -145,7 +145,7 @@
         }
       },
       {
-        "key": "vanity_hero$95a6b712-0b16-4a95-9c57-78f51c986bcb",
+        "key": "vanity_hero$a1775c45-fddd-4f84-9fde-f0437778babc",
         "name": "vanity_hero",
         "widget": {
           "__TYPE__": "SharedSliceContent",
@@ -210,7 +210,7 @@
         }
       },
       {
-        "key": "collection_grid$89da5cd2-46f6-42fb-82a6-d61c6ac2d1d5",
+        "key": "collection_grid$399ab7c1-067f-4d27-9c2f-291629088bf4",
         "name": "collection_grid",
         "widget": {
           "__TYPE__": "SharedSliceContent",
@@ -223,7 +223,7 @@
             },
             "title": {
               "__TYPE__": "FieldContent",
-              "value": "feet",
+              "value": "atomic",
               "type": "Text"
             }
           },
@@ -236,7 +236,7 @@
         }
       },
       {
-        "key": "top_story$df7a00b7-297a-4bf3-862d-b01c5ace752e",
+        "key": "top_story$e9baae0d-c29e-43b3-968b-adcc123853a3",
         "name": "top_story",
         "widget": {
           "__TYPE__": "SharedSliceContent",
@@ -251,7 +251,7 @@
             },
             "section_title": {
               "__TYPE__": "FieldContent",
-              "value": "government",
+              "value": "certainly",
               "type": "Text"
             }
           },
@@ -275,7 +275,7 @@
         }
       },
       {
-        "key": "collection_slider$36e1884a-26c1-4e4b-93fd-85f7c36f24bf",
+        "key": "collection_slider$0dd2075b-04b7-42b4-9b5f-2b7a57c169e9",
         "name": "collection_slider",
         "widget": {
           "__TYPE__": "SharedSliceContent",
@@ -283,7 +283,7 @@
           "primary": {
             "title": {
               "__TYPE__": "FieldContent",
-              "value": "do",
+              "value": "silver",
               "type": "Text"
             }
           },
@@ -307,7 +307,7 @@
         }
       },
       {
-        "key": "featured_article$37c3319a-5e70-4d58-b76e-aed164355f98",
+        "key": "featured_article$c3e0575a-8217-4eb4-852c-8eaa894ab7ef",
         "name": "featured_article",
         "widget": {
           "__TYPE__": "SharedSliceContent",
@@ -330,7 +330,7 @@
         }
       },
       {
-        "key": "video_hero$540f18fa-df2d-473c-9d5b-715cb351620a",
+        "key": "video_hero$da5d0467-b552-49b6-a4c5-206f41870f65",
         "name": "video_hero",
         "widget": {
           "__TYPE__": "SharedSliceContent",
@@ -356,22 +356,22 @@
             },
             "title": {
               "__TYPE__": "FieldContent",
-              "value": "beauty",
+              "value": "clear",
               "type": "Text"
             },
             "subtitle": {
               "__TYPE__": "FieldContent",
-              "value": "island",
+              "value": "national",
               "type": "Text"
             },
             "cta": {
               "__TYPE__": "FieldContent",
-              "value": "throughout",
+              "value": "mean",
               "type": "Text"
             },
             "show_down_arrow": {
               "__TYPE__": "BooleanContent",
-              "value": false
+              "value": true
             }
           },
           "items": [
@@ -383,29 +383,23 @@
         }
       },
       {
-        "key": "square_card_carousel$c620e7ab-5eac-40b8-ae3f-7bea78e6ec84",
+        "key": "square_card_carousel$08159847-a20f-4d2b-aa71-1a8e078f6430",
         "name": "square_card_carousel",
         "widget": {
           "__TYPE__": "SharedSliceContent",
           "variation": "default",
           "primary": {
-            "title": {
-              "__TYPE__": "StructuredTextContent",
-              "value": [
-                {
-                  "type": "heading1",
-                  "content": {
-                    "text": "Numeral"
-                  }
-                }
-              ]
-            },
             "collection": {
               "__TYPE__": "LinkContent",
               "value": {
                 "__TYPE__": "DocumentLink",
                 "id": "mock_document_id"
               }
+            },
+            "title": {
+              "__TYPE__": "FieldContent",
+              "value": "younger",
+              "type": "Text"
             }
           },
           "items": [
@@ -420,6 +414,83 @@
                       "__TYPE__": "DocumentLink",
                       "id": "mock_document_id"
                     }
+                  }
+                ]
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "key": "photo_banner$012b3064-d31d-4114-9726-4986d8721d0b",
+        "name": "photo_banner",
+        "widget": {
+          "__TYPE__": "SharedSliceContent",
+          "variation": "default",
+          "primary": {
+            "title": {
+              "__TYPE__": "FieldContent",
+              "value": "upward",
+              "type": "Text"
+            },
+            "subtitle": {
+              "__TYPE__": "FieldContent",
+              "value": "log",
+              "type": "Text"
+            },
+            "image": {
+              "__TYPE__": "ImageContent",
+              "origin": {
+                "id": "main",
+                "url": "https://images.unsplash.com/photo-1471897488648-5eae4ac6686b",
+                "width": 3560,
+                "height": 5340
+              },
+              "url": "https://images.unsplash.com/photo-1471897488648-5eae4ac6686b",
+              "width": 3560,
+              "height": 5340,
+              "edit": {
+                "zoom": 1,
+                "crop": {
+                  "x": 0,
+                  "y": 0
+                },
+                "background": "transparent"
+              },
+              "thumbnails": {}
+            }
+          },
+          "items": [
+            {
+              "__TYPE__": "GroupItemContent",
+              "value": []
+            }
+          ]
+        }
+      },
+      {
+        "key": "marquee_banner$56c289b4-87f3-4d11-912a-d456aaa65eec",
+        "name": "marquee_banner",
+        "widget": {
+          "__TYPE__": "SharedSliceContent",
+          "variation": "default",
+          "primary": {
+            "text_size": {
+              "__TYPE__": "FieldContent",
+              "value": "L",
+              "type": "Select"
+            }
+          },
+          "items": [
+            {
+              "__TYPE__": "GroupItemContent",
+              "value": [
+                [
+                  "text_content",
+                  {
+                    "__TYPE__": "FieldContent",
+                    "value": "promised",
+                    "type": "Text"
                   }
                 ]
               ]

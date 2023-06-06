@@ -43,6 +43,12 @@
             },
             "square_card_carousel": {
               "type": "SharedSlice"
+            },
+            "photo_banner": {
+              "type": "SharedSlice"
+            },
+            "marquee_banner": {
+              "type": "SharedSlice"
             }
           }
         }
