@@ -6,7 +6,7 @@ import { PrismicLink } from "@prismicio/react";
 export const OneArticleBlock = ({ article }: { article: BlogPostDocument }) => {
   return (
     <Wrapper className="border-t-2 border-solid border-black bg-primary text-secondary sm:text-white sm:bg-black overflow-hidden">
-      <div className="flex flex-wrap sm:flex-nowrap min-h-[350px] h-full w-full gap-3 sm:gap-6 md:gap-8 lg:gap-10 py-4">
+      <div className="flex flex-wrap sm:flex-nowrap min-h-[350px] h-full w-full gap-3 sm:gap-6 md:gap-8 lg:gap-10">
         <div className="w-full sm:w-3/5 h-auto">
           <div className="w-full h-full relative aspect-[6/4] rounded-sm overflow-hidden">
             <PrismicNextImage
