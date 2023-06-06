@@ -1,10 +1,10 @@
 import { Url } from "next/dist/shared/lib/router/router";
 import Link from "next/link";
-import { ReactNode } from "react";
+import { Key, ReactNode } from "react";
 import { NavBar } from "./navBar";
 import FooterClient from "./footer.client";
 import { ChevronDoubleRightIcon } from "@heroicons/react/24/outline";
-import { LinkField } from "@prismicio/types";
+import { KeyTextField, LinkField } from "@prismicio/types";
 import { PrismicLink } from "@prismicio/react";
 
 export const Layout = ({
@@ -98,7 +98,7 @@ export const SectionTitle = ({
   className = "font-header",
   showSymbol = true,
 }: {
-  title?: string;
+  title?: string | KeyTextField;
   className?: string;
   showSymbol?: boolean;
 }) => {

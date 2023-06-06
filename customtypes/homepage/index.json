@@ -40,6 +40,9 @@
             },
             "video_hero": {
               "type": "SharedSlice"
+            },
+            "square_card_carousel": {
+              "type": "SharedSlice"
             }
           }
         }

@@ -7,6 +7,7 @@ import Footer from './Footer';
 import HomeHero from './HomeHero';
 import InterceptGrid from './InterceptGrid';
 import Navbar from './Navbar';
+import SquareCardCarousel from './SquareCardCarousel';
 import TopStory from './TopStory';
 import VanityHero from './VanityHero';
 import VideoHero from './VideoHero';
@@ -19,6 +20,7 @@ export {
 	HomeHero,
 	InterceptGrid,
 	Navbar,
+	SquareCardCarousel,
 	TopStory,
 	VanityHero,
 	VideoHero,
@@ -32,6 +34,7 @@ export const components = {
 	home_hero: HomeHero,
 	mixed_grid: InterceptGrid,
 	navbar: Navbar,
+	square_card_carousel: SquareCardCarousel,
 	top_story: TopStory,
 	vanity_hero: VanityHero,
 	video_hero: VideoHero,

@@ -1,34 +1,41 @@
-import { Article, mockArticleSectionData } from "@/utils/mockData";
 import {
   ArticleTag,
   SectionTitle,
   SectionTitleContainer,
   Wrapper,
 } from "./global";
-import Link from "next/link";
-import Image from "next/image";
 import { SwiperSlide } from "swiper/react";
 import { SwiperImprovedCarousel } from "@/components/sliders";
 
 import "swiper/css";
+import { KeyTextField } from "@prismicio/types";
+import { Articles, ArticlesTyped } from "slices/SquareCardCarousel";
+import { BlogPostDocument } from "types.generated";
+import { PrismicNextImage } from "@prismicio/next";
+import { PrismicLink } from "@prismicio/react";
 
-const SquareCardCarousel = () => {
-  const data = mockArticleSectionData.articles;
+export const SquareCardCarouselComp = ({
+  title,
+  articles,
+}: {
+  title: KeyTextField;
+  articles: Articles | null;
+}) => {
   return (
     <Wrapper
-      padding={false}
+      padding={true}
       className="px-wrapper_x sm:pb-0 overflow-hidden w-full"
     >
       <SectionTitleContainer containerClassName="border-t-4 border-black sm:border-black border-solid pt-4">
         <div className="flex flex-col gap-2">
-          <SectionTitle title="Best of Guadeloupe" />
+          <SectionTitle title={title} />
         </div>
       </SectionTitleContainer>
-      <SwiperImprovedCarousel className="h-80" btnPosition="top-pos">
-        {data?.map((article: Article, i: number) => {
+      <SwiperImprovedCarousel className="h-auto" btnPosition="top-pos">
+        {articles?.map((elem: ArticlesTyped, i: number) => {
           return (
             <SwiperSlide key={i}>
-              <ArticleCard article={article} />
+              <ArticleCard article={elem.article} />
             </SwiperSlide>
           );
         })}
@@ -37,24 +44,19 @@ const SquareCardCarousel = () => {
   );
 };
 
-export const ArticleCard = ({
-  article,
-}: {
-  article: Article;
-  type?: string;
-}) => {
+const ArticleCard = ({ article }: { article: BlogPostDocument }) => {
   return (
     <div className={`flex flex-col items-start gap-2`}>
       <div className="w-full z-50">
-        <Link href={"/"} className="img-hover w-full m-0 p-0">
-          <Image
-            src={article.article_cover}
-            height={350}
-            width={350}
-            alt={article.article_title}
-            className="object-cover w-full m-0 rounded-sm overflow-hidden"
-          />
-        </Link>
+        <PrismicLink document={article} className="img-hover w-full m-0 p-0">
+          <div className="w-full relative aspect-square">
+            <PrismicNextImage
+              field={article.data.article_cover}
+              fill
+              className="object-cover w-full m-0 rounded-sm overflow-hidden"
+            />
+          </div>
+        </PrismicLink>
       </div>
       <div className="flex flex-col items-start min-h-[40%]">
         {article.tags && (
@@ -63,17 +65,15 @@ export const ArticleCard = ({
             tags={article.tags}
           />
         )}
-        <Link href={"/"} className="text-hover">
+        <PrismicLink document={article} className="text-hover">
           <h5
             className="md:text-lg text-base font-title font-bold uppercase tracking-tight hover:underline"
             style={{ lineHeight: "1.5rem" }}
           >
-            {article.article_title}
+            {article.data.article_title}
           </h5>
-        </Link>
+        </PrismicLink>
       </div>
     </div>
   );
 };
-
-export default SquareCardCarousel;

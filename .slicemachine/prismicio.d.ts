@@ -334,7 +334,7 @@ interface HomepageDocumentData {
  * Slice for *Homepage → Slice Zone*
  *
  */
-type HomepageDocumentDataSlicesSlice = HomeHeroSlice | MixedGridSlice | VanityHeroSlice | CollectionGridSlice | TopStorySlice | CollectionSliderSlice | FeaturedArticleSlice | VideoHeroSlice;
+type HomepageDocumentDataSlicesSlice = HomeHeroSlice | MixedGridSlice | VanityHeroSlice | CollectionGridSlice | TopStorySlice | CollectionSliderSlice | FeaturedArticleSlice | VideoHeroSlice | SquareCardCarouselSlice;
 /**
  * Homepage document from Prismic
  *
@@ -1209,6 +1209,71 @@ type NavbarSliceVariation = NavbarSliceDefault;
  */
 export type NavbarSlice = prismicT.SharedSlice<"navbar", NavbarSliceVariation>;
 /**
+ * Primary content in SquareCardCarousel → Primary
+ *
+ */
+interface SquareCardCarouselSliceDefaultPrimary {
+    /**
+     * Collection field in *SquareCardCarousel → Primary*
+     *
+     * - **Field Type**: Content Relationship
+     * - **Placeholder**: *None*
+     * - **API ID Path**: square_card_carousel.primary.collection
+     * - **Documentation**: https://prismic.io/docs/core-concepts/link-content-relationship
+     *
+     */
+    collection: prismicT.RelationField;
+    /**
+     * Title field in *SquareCardCarousel → Primary*
+     *
+     * - **Field Type**: Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: square_card_carousel.primary.title
+     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+     *
+     */
+    title: prismicT.KeyTextField;
+}
+/**
+ * Item in SquareCardCarousel → Items
+ *
+ */
+export interface SquareCardCarouselSliceDefaultItem {
+    /**
+     * Article field in *SquareCardCarousel → Items*
+     *
+     * - **Field Type**: Content Relationship
+     * - **Placeholder**: *None*
+     * - **API ID Path**: square_card_carousel.items[].article
+     * - **Documentation**: https://prismic.io/docs/core-concepts/link-content-relationship
+     *
+     */
+    article: prismicT.RelationField;
+}
+/**
+ * Default variation for SquareCardCarousel Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: `SquareCardCarousel`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type SquareCardCarouselSliceDefault = prismicT.SharedSliceVariation<"default", Simplify<SquareCardCarouselSliceDefaultPrimary>, Simplify<SquareCardCarouselSliceDefaultItem>>;
+/**
+ * Slice variation for *SquareCardCarousel*
+ *
+ */
+type SquareCardCarouselSliceVariation = SquareCardCarouselSliceDefault;
+/**
+ * SquareCardCarousel Shared Slice
+ *
+ * - **API ID**: `square_card_carousel`
+ * - **Description**: `SquareCardCarousel`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type SquareCardCarouselSlice = prismicT.SharedSlice<"square_card_carousel", SquareCardCarouselSliceVariation>;
+/**
  * Primary content in TopStory → Primary
  *
  */
@@ -1463,6 +1528,6 @@ declare module "@prismicio/client" {
         (repositoryNameOrEndpoint: string, options?: prismic.ClientConfig): prismic.Client<AllDocumentTypes>;
     }
     namespace Content {
-        export type { AuthorDocumentData, AuthorDocument, BlogPostDocumentData, BlogPostDocument, CollectionDocumentData, CollectionDocument, FooterDocumentData, FooterDocumentDataSlicesSlice, FooterDocument, HomepageDocumentData, HomepageDocumentDataSlicesSlice, HomepageDocument, NavbarDocumentData, NavbarDocumentDataSlicesSlice, NavbarDocument, NavigationMenuDocumentData, NavigationMenuDocumentDataMenuItem, NavigationMenuDocument, NavigationDocumentData, NavigationDocumentDataNavigationItemItem, NavigationDocument, PageDocumentData, PageDocument, SocialsDocumentData, SocialsDocumentDataMediaInfoItem, SocialsDocument, VanitySponsoringDocumentData, VanitySponsoringDocument, VanitysocialpostsDocumentData, VanitysocialpostsDocumentDataPostItem, VanitysocialpostsDocumentDataSlicesSlice, VanitysocialpostsDocument, AllDocumentTypes, CollectionGridSliceDefaultPrimary, CollectionGridSliceDefault, CollectionGridSliceVariation, CollectionGridSlice, CollectionSliderSliceDefaultPrimary, CollectionSliderSliceDefaultItem, CollectionSliderSliceDefault, CollectionSliderSliceVariation, CollectionSliderSlice, FeaturedArticleSliceDefaultPrimary, FeaturedArticleSliceDefault, FeaturedArticleSliceVariation, FeaturedArticleSlice, FooterSliceDefaultPrimary, FooterSliceDefault, FooterSliceVariation, FooterSlice, HomeHeroSliceDefaultPrimary, HomeHeroSliceDefault, HomeHeroSliceVariation, HomeHeroSlice, MixedGridSliceDefaultPrimary, MixedGridSliceDefaultItem, MixedGridSliceDefault, MixedGridSliceVariation, MixedGridSlice, NavbarSliceDefaultPrimary, NavbarSliceDefault, NavbarSliceVariation, NavbarSlice, TopStorySliceDefaultPrimary, TopStorySliceDefaultItem, TopStorySliceDefault, TopStorySliceVariation, TopStorySlice, VanityHeroSliceDefaultPrimary, VanityHeroSliceDefaultItem, VanityHeroSliceDefault, VanityHeroSliceVariation, VanityHeroSlice, VideoHeroSliceDefaultPrimary, VideoHeroSliceDefault, VideoHeroSliceVariation, VideoHeroSlice };
+        export type { AuthorDocumentData, AuthorDocument, BlogPostDocumentData, BlogPostDocument, CollectionDocumentData, CollectionDocument, FooterDocumentData, FooterDocumentDataSlicesSlice, FooterDocument, HomepageDocumentData, HomepageDocumentDataSlicesSlice, HomepageDocument, NavbarDocumentData, NavbarDocumentDataSlicesSlice, NavbarDocument, NavigationMenuDocumentData, NavigationMenuDocumentDataMenuItem, NavigationMenuDocument, NavigationDocumentData, NavigationDocumentDataNavigationItemItem, NavigationDocument, PageDocumentData, PageDocument, SocialsDocumentData, SocialsDocumentDataMediaInfoItem, SocialsDocument, VanitySponsoringDocumentData, VanitySponsoringDocument, VanitysocialpostsDocumentData, VanitysocialpostsDocumentDataPostItem, VanitysocialpostsDocumentDataSlicesSlice, VanitysocialpostsDocument, AllDocumentTypes, CollectionGridSliceDefaultPrimary, CollectionGridSliceDefault, CollectionGridSliceVariation, CollectionGridSlice, CollectionSliderSliceDefaultPrimary, CollectionSliderSliceDefaultItem, CollectionSliderSliceDefault, CollectionSliderSliceVariation, CollectionSliderSlice, FeaturedArticleSliceDefaultPrimary, FeaturedArticleSliceDefault, FeaturedArticleSliceVariation, FeaturedArticleSlice, FooterSliceDefaultPrimary, FooterSliceDefault, FooterSliceVariation, FooterSlice, HomeHeroSliceDefaultPrimary, HomeHeroSliceDefault, HomeHeroSliceVariation, HomeHeroSlice, MixedGridSliceDefaultPrimary, MixedGridSliceDefaultItem, MixedGridSliceDefault, MixedGridSliceVariation, MixedGridSlice, NavbarSliceDefaultPrimary, NavbarSliceDefault, NavbarSliceVariation, NavbarSlice, SquareCardCarouselSliceDefaultPrimary, SquareCardCarouselSliceDefaultItem, SquareCardCarouselSliceDefault, SquareCardCarouselSliceVariation, SquareCardCarouselSlice, TopStorySliceDefaultPrimary, TopStorySliceDefaultItem, TopStorySliceDefault, TopStorySliceVariation, TopStorySlice, VanityHeroSliceDefaultPrimary, VanityHeroSliceDefaultItem, VanityHeroSliceDefault, VanityHeroSliceVariation, VanityHeroSlice, VideoHeroSliceDefaultPrimary, VideoHeroSliceDefault, VideoHeroSliceVariation, VideoHeroSlice };
     }
 }

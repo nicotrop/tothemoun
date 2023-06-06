@@ -1,0 +1,41 @@
+{
+  "id": "square_card_carousel",
+  "type": "SharedSlice",
+  "name": "SquareCardCarousel",
+  "description": "SquareCardCarousel",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "sktwi1xtmkfgx8626",
+      "description": "SquareCardCarousel",
+      "primary": {
+        "collection": {
+          "type": "Link",
+          "config": {
+            "label": "Collection",
+            "select": "document"
+          }
+        },
+        "title": {
+          "type": "Text",
+          "config": {
+            "label": "Title",
+            "placeholder": ""
+          }
+        }
+      },
+      "items": {
+        "article": {
+          "type": "Link",
+          "config": {
+            "label": "Article",
+            "select": "document"
+          }
+        }
+      },
+      "imageUrl": "https://images.prismic.io/slice-machine/621a5ec4-0387-4bc5-9860-2dd46cbc07cd_default_ss.png?auto=compress,format"
+    }
+  ]
+}

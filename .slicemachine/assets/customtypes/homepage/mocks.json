@@ -1,13 +1,13 @@
 {
   "uid": {
     "__TYPE__": "UIDContent",
-    "value": "completely"
+    "value": "cap"
   },
   "slices": {
     "__TYPE__": "SliceContentType",
     "value": [
       {
-        "key": "home_hero$0933039e-7836-41fe-b2a3-b5cd7cf71c14",
+        "key": "home_hero$df59e053-eb99-4693-b250-931d5b9c8763",
         "name": "home_hero",
         "widget": {
           "__TYPE__": "SharedSliceContent",
@@ -19,7 +19,7 @@
                 {
                   "type": "heading1",
                   "content": {
-                    "text": "Coming"
+                    "text": "Range"
                   }
                 }
               ]
@@ -30,7 +30,7 @@
                 {
                   "type": "paragraph",
                   "content": {
-                    "text": "Reprehenderit ea nostrud velit aliqua laborum anim aliquip nulla culpa cupidatat enim aute nostrud in. Magna est ipsum veniam culpa commodo elit aliquip nisi ut sit velit deserunt in et eu."
+                    "text": "Qui ad dolore labore."
                   }
                 }
               ]
@@ -57,13 +57,13 @@
               "__TYPE__": "ImageContent",
               "origin": {
                 "id": "main",
-                "url": "https://images.unsplash.com/photo-1589652717521-10c0d092dea9",
-                "width": 4752,
-                "height": 3168
+                "url": "https://images.unsplash.com/photo-1496181133206-80ce9b88a853",
+                "width": 5243,
+                "height": 3495
               },
-              "url": "https://images.unsplash.com/photo-1589652717521-10c0d092dea9",
-              "width": 4752,
-              "height": 3168,
+              "url": "https://images.unsplash.com/photo-1496181133206-80ce9b88a853",
+              "width": 5243,
+              "height": 3495,
               "edit": {
                 "zoom": 1,
                 "crop": {
@@ -76,12 +76,12 @@
             },
             "opacity_color": {
               "__TYPE__": "FieldContent",
-              "value": "#aed8a0",
+              "value": "#bb4721",
               "type": "Color"
             },
             "opacity_percentage": {
               "__TYPE__": "FieldContent",
-              "value": "59",
+              "value": "31",
               "type": "Number"
             }
           },
@@ -94,7 +94,7 @@
         }
       },
       {
-        "key": "mixed_grid$abe6df6e-e6fe-451f-89ff-b37c187bbf3f",
+        "key": "mixed_grid$099770cf-8306-42e9-930f-deca95a8bc5e",
         "name": "mixed_grid",
         "widget": {
           "__TYPE__": "SharedSliceContent",
@@ -116,12 +116,12 @@
             },
             "title": {
               "__TYPE__": "FieldContent",
-              "value": "flame",
+              "value": "golden",
               "type": "Text"
             },
             "description": {
               "__TYPE__": "FieldContent",
-              "value": "indeed",
+              "value": "dream",
               "type": "Text"
             }
           },
@@ -145,7 +145,7 @@
         }
       },
       {
-        "key": "vanity_hero$7277dd50-3fd3-4647-a281-fbaa420da82b",
+        "key": "vanity_hero$95a6b712-0b16-4a95-9c57-78f51c986bcb",
         "name": "vanity_hero",
         "widget": {
           "__TYPE__": "SharedSliceContent",
@@ -210,7 +210,7 @@
         }
       },
       {
-        "key": "collection_grid$12aa3b0b-a80a-4aad-8ec1-00b37424ec43",
+        "key": "collection_grid$89da5cd2-46f6-42fb-82a6-d61c6ac2d1d5",
         "name": "collection_grid",
         "widget": {
           "__TYPE__": "SharedSliceContent",
@@ -218,12 +218,12 @@
           "primary": {
             "collection_uid": {
               "__TYPE__": "FieldContent",
-              "value": "ou loger?",
+              "value": "ou manger?",
               "type": "Select"
             },
             "title": {
               "__TYPE__": "FieldContent",
-              "value": "name",
+              "value": "feet",
               "type": "Text"
             }
           },
@@ -236,7 +236,7 @@
         }
       },
       {
-        "key": "top_story$6fcd918e-11b6-41d5-9068-63a06c4fc41f",
+        "key": "top_story$df7a00b7-297a-4bf3-862d-b01c5ace752e",
         "name": "top_story",
         "widget": {
           "__TYPE__": "SharedSliceContent",
@@ -251,7 +251,7 @@
             },
             "section_title": {
               "__TYPE__": "FieldContent",
-              "value": "shore",
+              "value": "government",
               "type": "Text"
             }
           },
@@ -275,7 +275,7 @@
         }
       },
       {
-        "key": "collection_slider$3d761bb7-352a-4fae-8678-cc5be87cfe83",
+        "key": "collection_slider$36e1884a-26c1-4e4b-93fd-85f7c36f24bf",
         "name": "collection_slider",
         "widget": {
           "__TYPE__": "SharedSliceContent",
@@ -283,7 +283,7 @@
           "primary": {
             "title": {
               "__TYPE__": "FieldContent",
-              "value": "follow",
+              "value": "do",
               "type": "Text"
             }
           },
@@ -307,7 +307,7 @@
         }
       },
       {
-        "key": "featured_article$989ad4dd-ae7e-492a-a4f0-ca335c35f07c",
+        "key": "featured_article$37c3319a-5e70-4d58-b76e-aed164355f98",
         "name": "featured_article",
         "widget": {
           "__TYPE__": "SharedSliceContent",
@@ -330,7 +330,7 @@
         }
       },
       {
-        "key": "video_hero$f5a5487f-dd5e-404c-acca-161c707e6839",
+        "key": "video_hero$540f18fa-df2d-473c-9d5b-715cb351620a",
         "name": "video_hero",
         "widget": {
           "__TYPE__": "SharedSliceContent",
@@ -356,17 +356,17 @@
             },
             "title": {
               "__TYPE__": "FieldContent",
-              "value": "value",
+              "value": "beauty",
               "type": "Text"
             },
             "subtitle": {
               "__TYPE__": "FieldContent",
-              "value": "knife",
+              "value": "island",
               "type": "Text"
             },
             "cta": {
               "__TYPE__": "FieldContent",
-              "value": "higher",
+              "value": "throughout",
               "type": "Text"
             },
             "show_down_arrow": {
@@ -378,6 +378,51 @@
             {
               "__TYPE__": "GroupItemContent",
               "value": []
+            }
+          ]
+        }
+      },
+      {
+        "key": "square_card_carousel$c620e7ab-5eac-40b8-ae3f-7bea78e6ec84",
+        "name": "square_card_carousel",
+        "widget": {
+          "__TYPE__": "SharedSliceContent",
+          "variation": "default",
+          "primary": {
+            "title": {
+              "__TYPE__": "StructuredTextContent",
+              "value": [
+                {
+                  "type": "heading1",
+                  "content": {
+                    "text": "Numeral"
+                  }
+                }
+              ]
+            },
+            "collection": {
+              "__TYPE__": "LinkContent",
+              "value": {
+                "__TYPE__": "DocumentLink",
+                "id": "mock_document_id"
+              }
+            }
+          },
+          "items": [
+            {
+              "__TYPE__": "GroupItemContent",
+              "value": [
+                [
+                  "article",
+                  {
+                    "__TYPE__": "LinkContent",
+                    "value": {
+                      "__TYPE__": "DocumentLink",
+                      "id": "mock_document_id"
+                    }
+                  }
+                ]
+              ]
             }
           ]
         }

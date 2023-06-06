@@ -175,6 +175,27 @@ export const getStaticProps = async ({
               }
             }
           }
+          ... on square_card_carousel {
+            variation {
+              ... on default {
+                primary {
+                  title
+                  collection {
+                    ... on collection {
+                      ...collectionFields
+                    }
+                  }
+                }
+                items {
+                  article {
+                    ... on blog_post {
+                      ...blog_postFields
+                    }
+                  }
+                }
+              }
+            }
+          }
         }
       }
     }`,

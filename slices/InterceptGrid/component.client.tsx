@@ -1,3 +1,5 @@
+"use client";
+
 import { InterceptImprovedGrid } from "@/components/mixedGridImproved";
 import { checkTag, sortArticles } from "@/utils/helpers";
 import { KeyTextField } from "@prismicio/types";

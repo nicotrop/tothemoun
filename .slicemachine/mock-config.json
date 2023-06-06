@@ -84,6 +84,11 @@
       "default": {
         "primary": {}
       }
+    },
+    "SquareCardCarousel": {
+      "default": {
+        "primary": {}
+      }
     }
   }
 }

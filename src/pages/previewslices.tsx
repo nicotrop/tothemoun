@@ -9,7 +9,7 @@ export default function PreviewSlices() {
   return (
     <Layout>
       {/* <HeroVideo /> */}
-      <SquareCardCarousel />
+      {/* <SquareCardCarousel /> */}
       <PhotoBanner />
       <MarqueeBannerComp />
       <SEOsection />
