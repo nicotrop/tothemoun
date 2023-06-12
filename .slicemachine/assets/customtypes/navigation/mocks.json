@@ -9,7 +9,7 @@
             "item_name",
             {
               "__TYPE__": "FieldContent",
-              "value": "wear",
+              "value": "if",
               "type": "Text"
             }
           ],
@@ -19,7 +19,7 @@
               "__TYPE__": "LinkContent",
               "value": {
                 "__TYPE__": "ExternalLink",
-                "url": "http://google.com"
+                "url": "https://slicemachine.dev"
               }
             }
           ],
@@ -29,13 +29,13 @@
               "__TYPE__": "ImageContent",
               "origin": {
                 "id": "main",
-                "url": "https://images.unsplash.com/photo-1515378791036-0648a3ef77b2",
-                "width": 5616,
-                "height": 3744
+                "url": "https://images.unsplash.com/photo-1537498425277-c283d32ef9db",
+                "width": 4380,
+                "height": 2895
               },
-              "url": "https://images.unsplash.com/photo-1515378791036-0648a3ef77b2",
-              "width": 5616,
-              "height": 3744,
+              "url": "https://images.unsplash.com/photo-1537498425277-c283d32ef9db",
+              "width": 4380,
+              "height": 2895,
               "edit": {
                 "zoom": 1,
                 "crop": {
@@ -50,5 +50,26 @@
         ]
       }
     ]
+  },
+  "logo": {
+    "__TYPE__": "ImageContent",
+    "origin": {
+      "id": "main",
+      "url": "https://images.unsplash.com/photo-1494173853739-c21f58b16055",
+      "width": 3277,
+      "height": 4092
+    },
+    "url": "https://images.unsplash.com/photo-1494173853739-c21f58b16055?rect=0%2C1253%2C3277%2C1586&w=124&h=60",
+    "width": 124,
+    "height": 60,
+    "edit": {
+      "zoom": 1,
+      "crop": {
+        "x": 0,
+        "y": 1253
+      },
+      "background": "transparent"
+    },
+    "thumbnails": {}
   }
 }

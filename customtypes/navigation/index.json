@@ -36,6 +36,17 @@
             }
           }
         }
+      },
+      "logo": {
+        "type": "Image",
+        "config": {
+          "label": "Logo",
+          "constraint": {
+            "width": 124,
+            "height": 60
+          },
+          "thumbnails": []
+        }
       }
     }
   }

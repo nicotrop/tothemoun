@@ -1,16 +1,26 @@
 import { SliceZone } from "@prismicio/react";
 import { GetStaticPropsContext, InferGetStaticPropsType } from "next";
 import { components } from "../../slices/index";
-import { Layout } from "@/components/global";
 import { createClient } from "../../prismicio";
+import { FooterDocumentType, Layout } from "@/components/layout";
+import { footerQuery, navBarQuery } from "@/utils/helpers";
+import { NavigationDocument } from "types.generated";
 import "swiper/swiper.min.css";
 import "swiper/css/bundle";
 
 export type StaticPageProps = InferGetStaticPropsType<typeof getStaticProps>;
 
-export default function Home({ data }: StaticPageProps) {
+export default function Home({ data, footer, navigation }: StaticPageProps) {
+  //Extract data from props
+  const { data: headerRaw } = navigation;
+  const { data: footerRaw } = footer;
+
+  //Type objects correctly
+  const footerData = footerRaw as unknown as FooterDocumentType;
+  const navigationData = headerRaw as unknown as NavigationDocument["data"];
+
   return (
-    <Layout>
+    <Layout footer={footerData} header={navigationData}>
       <SliceZone slices={data.data.slices} components={{ ...components }} />
     </Layout>
   );
@@ -249,6 +259,14 @@ export const getStaticProps = async ({
     }`,
   });
 
+  const footer = await client.getSingle("footer", {
+    graphQuery: footerQuery,
+  });
+
+  const navigation = await client.getSingle("navigation", {
+    graphQuery: navBarQuery,
+  });
+
   //TODO retrieve nav bar and footer and pass to layout
   //TODO insert logic to pass navbar to layout only if transparent background is set to true
 
@@ -257,6 +275,8 @@ export const getStaticProps = async ({
   return {
     props: {
       data,
+      footer,
+      navigation,
     },
   };
 };

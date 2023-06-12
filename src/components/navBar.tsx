@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { navigationItemType } from "@/utils/mockData";
 import { useState } from "react";
 import { MenuDrawer } from "./menuDrawer";
 import {
@@ -7,22 +6,32 @@ import {
   MagnifyingGlassIcon,
   Bars3Icon,
 } from "@heroicons/react/24/outline";
-import { PrismicNextImage } from "@prismicio/next";
 import { CountrySelector, NavMenuComp } from "./ecomNav";
 import { ImageFieldImage } from "@prismicio/types";
+import { NavigationDocumentDataNavigationItemItem } from "types.generated";
+import Script from "next/script";
+import Image from "next/image";
+import tothemounwhite from "../../public/assets/tothemounwhite.svg";
+import tothemounsecond from "../../public/assets/tothemounsecond.svg";
 
 export const NavBar = ({
   navigation,
   logo,
+  navType = "white",
 }: {
-  navigation: navigationItemType[];
-  logo?: ImageFieldImage;
+  navigation: NavigationDocumentDataNavigationItemItem[];
+  logo: ImageFieldImage;
+  navType?: "transparent" | "white";
 }) => {
   const [open, setOpen] = useState(false);
 
   return (
     <header
-      className="h-header-height px-5 md:px-10 z-50 w-screen font-semibold text-sm uppercase text-secondary bg-white transition-all ease-in-out duration-200"
+      className={`h-header-height px-5 md:px-10 z-50 w-screen font-semibold text-sm uppercase transition-all ease-in-out duration-200 fixed top-0 ${
+        navType === "transparent"
+          ? "text-white bg-transparent"
+          : "text-secondary bg-white"
+      }`}
       id="ecomNav"
     >
       <div className="h-full flex justify-between items-center ease-in-out duration-75">
@@ -42,12 +51,27 @@ export const NavBar = ({
           <NavMenuComp navigation={navigation} />
         </nav>
         {/* Center component - logo with homepage link */}
+        {/* TODO ADD WHITE AND COLORED LOGO */}
         <Link href={"/"} className="flex justify-center w-28 h-fit">
-          <PrismicNextImage
-            field={logo}
+          <Image
+            src={tothemounwhite}
             width={124}
             height={60}
-            className="object-cover w-auto m-0"
+            alt="Name of the website"
+            className={`object-cover w-auto m-0 ${
+              navType === "white" && "hidden"
+            }`}
+            id="logoAbsolute"
+          />
+          <Image
+            src={tothemounsecond}
+            width={124}
+            height={60}
+            alt="Name of the website"
+            className={`object-cover w-auto m-0 ${
+              navType === "transparent" && "hidden"
+            }`}
+            id="logoFixed"
           />
         </Link>
         {/* Mobile Right handside - Favorites + Search icons  */}
@@ -71,36 +95,49 @@ export const NavBar = ({
         setOpen={setOpen}
         logo={logo}
       />
-      {/* <StickyHeaderScript /> */}
+      {navType === "transparent" && <StickyHeaderScript />}
     </header>
   );
 };
 
-// const StickyHeaderScript = () => {
-//   return (
-//     <Script id="sticky-header" strategy="lazyOnload">
-//       {`
-//           const headerMenu = document.querySelector("#ecomNav");
-//           const logoAbsolute = document.querySelector("#logoAbsolute");
-//           const logoFixed = document.querySelector("#logoFixed");
-//           let scrollPosition = window.scrollY;
-//           let menuPosition;
-//           if (scrollPosition > 0) {
-//             menuPosition = headerMenu?.getBoundingClientRect()?.top + headerMenu?.getBoundingClientRect()?.height + scrollPosition;
-//           } else {
-//             menuPosition = headerMenu?.getBoundingClientRect()?.top + headerMenu?.getBoundingClientRect()?.height;
-//           }
-//           window.addEventListener("scroll", () => {
-//               scrollPosition = window.scrollY;
-//               if (scrollPosition > menuPosition ) {
-//                   headerMenu?.classList.add("fixed");
-//                   headerMenu?.classList.add("top-0");
-//               } else {
-//                   headerMenu?.classList.remove("fixed");
-//                   headerMenu?.classList.remove("top-0");
-//               }
-//           })
-//       `}
-//     </Script>
-//   );
-// };
+const StickyHeaderScript = () => {
+  return (
+    <Script id="sticky-header" strategy="lazyOnload">
+      {`
+          const headerMenu = document.querySelector("#ecomNav");
+          const logoAbsolute = document.querySelector("#logoAbsolute");
+          const logoFixed = document.querySelector("#logoFixed");
+          let scrollPosition = window.scrollY;
+          let menuPosition;
+          if (scrollPosition > 0) {
+            menuPosition = headerMenu?.getBoundingClientRect()?.top + headerMenu?.getBoundingClientRect()?.height + scrollPosition;
+          } else {
+            menuPosition = headerMenu?.getBoundingClientRect()?.top + headerMenu?.getBoundingClientRect()?.height;
+          }
+          window.addEventListener("scroll", () => {
+              scrollPosition = window.scrollY;
+              if (scrollPosition > menuPosition ) {
+                  headerMenu?.classList.add("bg-white");
+                  headerMenu?.classList.add("fixed");
+                  headerMenu?.classList.add("text-secondary");
+                  headerMenu?.classList.remove("bg-transparent");
+                  headerMenu?.classList.remove("absolute");
+                  headerMenu?.classList.remove("text-white");
+                  logoAbsolute?.classList.add("hidden");
+                  logoFixed?.classList.remove("hidden");
+              } else {
+                  headerMenu?.classList.remove("bg-white");
+                  headerMenu?.classList.remove("fixed");
+                  headerMenu?.classList.remove("text-secondary");
+                  headerMenu?.classList.add("bg-transparent");
+                  headerMenu?.classList.add("text-white");
+                  headerMenu?.classList.add("absolute");
+                  logoAbsolute?.classList.remove("hidden");
+                  logoFixed?.classList.add("hidden");
+                  
+              }
+          })
+      `}
+    </Script>
+  );
+};

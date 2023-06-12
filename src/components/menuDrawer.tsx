@@ -6,8 +6,8 @@ import { ImageFieldImage } from "@prismicio/types";
 import Image from "next/image";
 import Link from "next/link";
 import { Dispatch, Fragment, SetStateAction } from "react";
-import { NewsleterSection } from "./footer.client";
 import tothemounsecond from "../../public/assets/tothemounsecond.svg";
+import { NavigationDocumentDataNavigationItemItem } from "types.generated";
 
 export const MenuDrawer = ({
   navigation,
@@ -15,7 +15,7 @@ export const MenuDrawer = ({
   setOpen,
   logo,
 }: {
-  navigation: navigationItemType[];
+  navigation: NavigationDocumentDataNavigationItemItem[];
   open: boolean;
   setOpen: Dispatch<SetStateAction<boolean>>;
   logo?: ImageFieldImage;
@@ -180,19 +180,19 @@ export const DrawerMenu = ({
   navigation,
   className = "",
 }: {
-  navigation: navigationItemType[];
+  navigation: NavigationDocumentDataNavigationItemItem[];
   className?: string;
 }) => {
   return (
     <ul
       className={`flex flex-col -gap-0 text-tertiary font-extrabold uppercase font-header tracking-tighter text-3xl ${className}`}
     >
-      {navigation?.map((elem: navigationItemType, i: number) => {
+      {navigation?.map((elem, i) => {
         return (
-          <Link key={i} href={`${elem?.item_link?.slug}`}>
+          <Link key={i} href={`${elem?.item_link}`}>
             <li className={`w-auto ${i === 0 && "text-secondary"}`}>
               <span>
-                {elem.item_name.includes("faire")
+                {elem?.item_name?.includes("faire")
                   ? "que faire?"
                   : elem.item_name}
               </span>

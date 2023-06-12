@@ -202,28 +202,6 @@ interface FooterDocumentData {
      */
     menu_seo: prismicT.RelationField<"navigation_menu">;
     /**
-     * Newsletter header field in *Footer*
-     *
-     * - **Field Type**: Rich Text
-     * - **Placeholder**: *None*
-     * - **API ID Path**: footer.newsletter_header
-     * - **Tab**: Main
-     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
-     *
-     */
-    newsletter_header: prismicT.RichTextField;
-    /**
-     * Newsletter description field in *Footer*
-     *
-     * - **Field Type**: Rich Text
-     * - **Placeholder**: *None*
-     * - **API ID Path**: footer.newsletter_description
-     * - **Tab**: Main
-     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
-     *
-     */
-    newsletter_description: prismicT.RichTextField;
-    /**
      * Socials field in *Footer*
      *
      * - **Field Type**: Content Relationship
@@ -289,6 +267,28 @@ interface FooterDocumentData {
      *
      */
     input_text: prismicT.ColorField;
+    /**
+     * Newsletter header field in *Footer*
+     *
+     * - **Field Type**: Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: footer.newsletter_header
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+     *
+     */
+    newsletter_header: prismicT.KeyTextField;
+    /**
+     * Newsletter description field in *Footer*
+     *
+     * - **Field Type**: Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: footer.newsletter_description
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+     *
+     */
+    newsletter_description: prismicT.KeyTextField;
     /**
      * Slice Zone field in *Footer*
      *
@@ -387,6 +387,17 @@ interface NavigationDocumentData {
      *
      */
     navigation_item: prismicT.GroupField<Simplify<NavigationDocumentDataNavigationItemItem>>;
+    /**
+     * Logo field in *Navigation*
+     *
+     * - **Field Type**: Image
+     * - **Placeholder**: *None*
+     * - **API ID Path**: navigation.logo
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/image
+     *
+     */
+    logo: prismicT.ImageField<"mobile">;
 }
 /**
  * Item in Navigation → Navigation Item
@@ -437,17 +448,6 @@ export type NavigationDocument<Lang extends string = string> = prismicT.PrismicD
 /** Content for Menu Navigation documents */
 interface NavigationMenuDocumentData {
     /**
-     * Menu field in *Menu Navigation*
-     *
-     * - **Field Type**: Group
-     * - **Placeholder**: *None*
-     * - **API ID Path**: navigation_menu.menu[]
-     * - **Tab**: Main
-     * - **Documentation**: https://prismic.io/docs/core-concepts/group
-     *
-     */
-    menu: prismicT.GroupField<Simplify<NavigationMenuDocumentDataMenuItem>>;
-    /**
      * Title field in *Menu Navigation*
      *
      * - **Field Type**: Rich Text
@@ -458,6 +458,17 @@ interface NavigationMenuDocumentData {
      *
      */
     title: prismicT.RichTextField;
+    /**
+     * Menu field in *Menu Navigation*
+     *
+     * - **Field Type**: Group
+     * - **Placeholder**: *None*
+     * - **API ID Path**: navigation_menu.menu[]
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/group
+     *
+     */
+    menu: prismicT.GroupField<Simplify<NavigationMenuDocumentDataMenuItem>>;
 }
 /**
  * Item in Menu Navigation → Menu

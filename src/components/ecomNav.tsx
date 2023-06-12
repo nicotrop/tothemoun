@@ -2,7 +2,6 @@ import Image from "next/image";
 import Link from "next/link";
 import tothemounwhite from "../../public/assets/tothemounwhite.svg";
 import tothemounsecond from "../../public/assets/tothemounsecond.svg";
-import { navigationItemType } from "@/utils/mockData";
 import { useState } from "react";
 import { MenuDrawer } from "./menuDrawer";
 import { Disclosure } from "@headlessui/react";
@@ -13,11 +12,12 @@ import {
   Bars3Icon,
 } from "@heroicons/react/24/outline";
 import Script from "next/script";
+import { NavigationDocumentDataNavigationItemItem } from "types.generated";
 
 export const EcomNav = ({
   navigation,
 }: {
-  navigation: navigationItemType[];
+  navigation: NavigationDocumentDataNavigationItemItem[];
 }) => {
   const [open, setOpen] = useState(false);
 
@@ -77,7 +77,7 @@ export const EcomNav = ({
         </div>
       </div>
       <MenuDrawer navigation={navigation} open={open} setOpen={setOpen} />
-      <StickyHeaderScript />
+      {/* <StickyHeaderScript /> */}
     </header>
   );
 };
@@ -191,14 +191,14 @@ export const NavMenuComp = ({
   navigation,
   flexAlign = "justify-start",
 }: {
-  navigation: navigationItemType[];
+  navigation: NavigationDocumentDataNavigationItemItem[];
   flexAlign?: "justify-start" | "justify-center" | "justify-end";
 }) => {
   return (
     <ul className={`flex ${flexAlign} gap-4 w-full`}>
-      {navigation?.map((elem: navigationItemType, i: number) => {
+      {navigation?.map((elem, i) => {
         let editedName;
-        if (elem.item_name.includes("Que faire")) editedName = "Que faire?";
+        if (elem?.item_name?.includes("Que faire")) editedName = "Que faire?";
         else editedName = elem.item_name;
         return (
           <li key={i}>

@@ -1,10 +1,10 @@
 import * as prismicH from "@prismicio/helpers";
 import { createClient } from "../../../prismicio";
 import { GetStaticPropsContext } from "next";
-import { Layout } from "@/components/global";
 import { SliceZone } from "@prismicio/react";
 import { components } from "slices";
 import { useMemo } from "react";
+import { Layout } from "@/components/layout";
 
 export default function Page({ data, navBar }: any) {
   const navData = useMemo(() => navBar?.data?.slices[0]?.primary, [navBar]);

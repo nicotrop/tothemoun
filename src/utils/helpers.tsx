@@ -33,3 +33,37 @@ export const sortArticles = (articles: BlogPostDocument[], tag: string) => {
   };
   return formattedResponse;
 };
+
+export const footerQuery = `{
+  footer {
+    background_color
+    text_color
+    input_border
+    input_btn_bg
+    input_text
+    uid
+    newsletter_description
+    menu_about {
+      ... on navigation_menu {
+        ...navigation_menuFields
+      }
+    }
+    menu_seo {
+      ... on navigation_menu {
+        ...navigation_menuFields
+      }
+    }
+    socials {
+      ... on socials {
+        ...socialsFields
+      }
+    }
+  }
+}`;
+
+export const navBarQuery = `{
+  navigation {
+    navigation_item
+    logo
+  }
+}`;

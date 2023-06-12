@@ -1,5 +1,3 @@
-import { mockNavigation } from "@/utils/mockData";
-import { EcomNav } from "../../src/components/ecomNav";
 import {
   ArrowLongDownIcon,
   ChevronDoubleRightIcon,
@@ -28,9 +26,7 @@ export const HeroVideo = ({
 
   return (
     <div className="overflow-hidden relative">
-      {/* TODO get navbar conditionally from context - pass it here only if set background transparent */}
-      <EcomNav navigation={mockNavigation?.data?.navigation_item} />
-      <div className="w-screen h-[100vh] relative">
+      <div className="w-screen h-[calc(100vh-var(--mobile-bottom-nav-height))] sm:h-[100vh] relative">
         <HeroVideoComp source={videoTyped.url} />
         <HeroTitleComp
           title={finalTitle}
@@ -47,7 +43,7 @@ export const HeroVideo = ({
 export const HeroVideoComp = ({ source }: { source: string }) => {
   return (
     <div
-      className="h-[calc(100%-var(--mobile-bottom-nav-height))] sm:h-full"
+      className="h-full"
       style={{
         backgroundColor: "#000000",
       }}
@@ -77,7 +73,7 @@ export const HeroTitleComp = ({
   article?: BlogPostDocument;
 }) => {
   return (
-    <div className="absolute left-[calc((100vw-(350px))/2)] top-[calc((100vh-(270px))/2)] max-w-[380px] w-full text-white m-0">
+    <div className="absolute left-[calc((100vw-(380px))/2)] top-[calc((100vh-(270px))/2)] max-w-[380px] w-full text-white m-0">
       <h2 className="font-display text-4xl md:text-4xl lg:text-6xl font-light tracking-tighter md:leading-8 lg:leading-[70px] text text-center italic">
         {title}
       </h2>
