@@ -1,0 +1,46 @@
+{
+  "id": "pinterest_items",
+  "label": "Pinterest items",
+  "repeatable": true,
+  "status": true,
+  "json": {
+    "Main": {
+      "post": {
+        "type": "Group",
+        "config": {
+          "label": "Post",
+          "fields": {
+            "link": {
+              "type": "Link",
+              "config": {
+                "label": "Link",
+                "placeholder": "",
+                "select": null
+              }
+            },
+            "card_type": {
+              "type": "Select",
+              "config": {
+                "label": "Card type",
+                "placeholder": "",
+                "options": [
+                  "medium",
+                  "small",
+                  "large"
+                ]
+              }
+            },
+            "media": {
+              "type": "Image",
+              "config": {
+                "label": "media",
+                "constraint": {},
+                "thumbnails": []
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

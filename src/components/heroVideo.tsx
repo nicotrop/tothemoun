@@ -76,8 +76,8 @@ export const HeroTitleComp = ({
   article?: BlogPostDocument;
 }) => {
   return (
-    <div className="absolute left-[calc((100vw-(350px))/2)] top-[calc((100vh-(270px))/2)] max-w-[350px] w-full text-white m-0">
-      <h2 className="font-display text-[70px] font-light tracking-tighter leading-[70px] text text-center italic">
+    <div className="absolute left-[calc((100vw-(350px))/2)] top-[calc((100vh-(270px))/2)] max-w-[380px] w-full text-white m-0">
+      <h2 className="font-display text-4xl md:text-4xl lg:text-6xl font-light tracking-tighter md:leading-8 lg:leading-[70px] text text-center italic">
         {title}
       </h2>
       {subtitle && (

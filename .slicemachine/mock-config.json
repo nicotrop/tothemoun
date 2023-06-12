@@ -17,14 +17,12 @@
     "navbar": {},
     "vanitysocialposts": {},
     "vanity_sponsoring": {},
-    "collection": {}
+    "collection": {},
+    "pinterest_items": {
+      "post": {}
+    }
   },
   "slices": {
-    "HomeHero": {
-      "default": {
-        "primary": {}
-      }
-    },
     "HomeCollection": {
       "default": {
         "items": {}
@@ -102,6 +100,11 @@
       }
     },
     "SeoSection": {
+      "default": {
+        "primary": {}
+      }
+    },
+    "PinterestGrid": {
       "default": {
         "primary": {}
       }

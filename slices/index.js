@@ -4,11 +4,11 @@ import CollectionGrid from './CollectionGrid';
 import CollectionSlider from './CollectionSlider';
 import FeaturedArticle from './FeaturedArticle';
 import Footer from './Footer';
-import HomeHero from './HomeHero';
 import InterceptGrid from './InterceptGrid';
 import MarqueeBanner from './MarqueeBanner';
 import Navbar from './Navbar';
 import PhotoBanner from './PhotoBanner';
+import PinterestGrid from './PinterestGrid';
 import SeoSection from './SeoSection';
 import SquareCardCarousel from './SquareCardCarousel';
 import TopStory from './TopStory';
@@ -20,11 +20,11 @@ export {
 	CollectionSlider,
 	FeaturedArticle,
 	Footer,
-	HomeHero,
 	InterceptGrid,
 	MarqueeBanner,
 	Navbar,
 	PhotoBanner,
+	PinterestGrid,
 	SeoSection,
 	SquareCardCarousel,
 	TopStory,
@@ -37,11 +37,11 @@ export const components = {
 	collection_slider: CollectionSlider,
 	featured_article: FeaturedArticle,
 	footer: Footer,
-	home_hero: HomeHero,
 	mixed_grid: InterceptGrid,
 	marquee_banner: MarqueeBanner,
 	navbar: Navbar,
 	photo_banner: PhotoBanner,
+	pinterest_grid: PinterestGrid,
 	seo_section: SeoSection,
 	square_card_carousel: SquareCardCarousel,
 	top_story: TopStory,

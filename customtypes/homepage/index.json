@@ -17,9 +17,6 @@
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
-            "home_hero": {
-              "type": "SharedSlice"
-            },
             "mixed_grid": {
               "type": "SharedSlice"
             },
@@ -51,6 +48,9 @@
               "type": "SharedSlice"
             },
             "seo_section": {
+              "type": "SharedSlice"
+            },
+            "pinterest_grid": {
               "type": "SharedSlice"
             }
           }

@@ -12,7 +12,7 @@ export const MarqueeBannerComp = ({
   return (
     <Wrapper
       padding={false}
-      className="lg:pt-3 lg:pb-3 sm:pt-0 h-full"
+      className="py-3 h-full"
       style={{
         backgroundColor: primary.background_color
           ? primary.background_color

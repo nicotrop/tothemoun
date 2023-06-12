@@ -334,7 +334,7 @@ interface HomepageDocumentData {
  * Slice for *Homepage → Slice Zone*
  *
  */
-type HomepageDocumentDataSlicesSlice = HomeHeroSlice | MixedGridSlice | VanityHeroSlice | CollectionGridSlice | TopStorySlice | CollectionSliderSlice | FeaturedArticleSlice | VideoHeroSlice | SquareCardCarouselSlice | PhotoBannerSlice | MarqueeBannerSlice | SeoSectionSlice;
+type HomepageDocumentDataSlicesSlice = MixedGridSlice | VanityHeroSlice | CollectionGridSlice | TopStorySlice | CollectionSliderSlice | FeaturedArticleSlice | VideoHeroSlice | SquareCardCarouselSlice | PhotoBannerSlice | MarqueeBannerSlice | SeoSectionSlice | PinterestGridSlice;
 /**
  * Homepage document from Prismic
  *
@@ -507,6 +507,66 @@ type PageDocumentData = Record<string, never>;
  * @typeParam Lang - Language API ID of the document.
  */
 export type PageDocument<Lang extends string = string> = prismicT.PrismicDocumentWithUID<Simplify<PageDocumentData>, "page", Lang>;
+/** Content for Pinterest items documents */
+interface PinterestItemsDocumentData {
+    /**
+     * Post field in *Pinterest items*
+     *
+     * - **Field Type**: Group
+     * - **Placeholder**: *None*
+     * - **API ID Path**: pinterest_items.post[]
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/group
+     *
+     */
+    post: prismicT.GroupField<Simplify<PinterestItemsDocumentDataPostItem>>;
+}
+/**
+ * Item in Pinterest items → Post
+ *
+ */
+export interface PinterestItemsDocumentDataPostItem {
+    /**
+     * Link field in *Pinterest items → Post*
+     *
+     * - **Field Type**: Link
+     * - **Placeholder**: *None*
+     * - **API ID Path**: pinterest_items.post[].link
+     * - **Documentation**: https://prismic.io/docs/core-concepts/link-content-relationship
+     *
+     */
+    link: prismicT.LinkField;
+    /**
+     * Card type field in *Pinterest items → Post*
+     *
+     * - **Field Type**: Select
+     * - **Placeholder**: *None*
+     * - **API ID Path**: pinterest_items.post[].card_type
+     * - **Documentation**: https://prismic.io/docs/core-concepts/select
+     *
+     */
+    card_type: prismicT.SelectField<"medium" | "small" | "large">;
+    /**
+     * media field in *Pinterest items → Post*
+     *
+     * - **Field Type**: Image
+     * - **Placeholder**: *None*
+     * - **API ID Path**: pinterest_items.post[].media
+     * - **Documentation**: https://prismic.io/docs/core-concepts/image
+     *
+     */
+    media: prismicT.ImageField<never>;
+}
+/**
+ * Pinterest items document from Prismic
+ *
+ * - **API ID**: `pinterest_items`
+ * - **Repeatable**: `true`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type PinterestItemsDocument<Lang extends string = string> = prismicT.PrismicDocumentWithoutUID<Simplify<PinterestItemsDocumentData>, "pinterest_items", Lang>;
 /** Content for Socials documents */
 interface SocialsDocumentData {
     /**
@@ -702,7 +762,7 @@ type VanitysocialpostsDocumentDataSlicesSlice = never;
  * @typeParam Lang - Language API ID of the document.
  */
 export type VanitysocialpostsDocument<Lang extends string = string> = prismicT.PrismicDocumentWithUID<Simplify<VanitysocialpostsDocumentData>, "vanitysocialposts", Lang>;
-export type AllDocumentTypes = AuthorDocument | BlogPostDocument | CollectionDocument | FooterDocument | HomepageDocument | NavbarDocument | NavigationMenuDocument | NavigationDocument | PageDocument | SocialsDocument | VanitySponsoringDocument | VanitysocialpostsDocument;
+export type AllDocumentTypes = AuthorDocument | BlogPostDocument | CollectionDocument | FooterDocument | HomepageDocument | NavbarDocument | NavigationMenuDocument | NavigationDocument | PageDocument | PinterestItemsDocument | SocialsDocument | VanitySponsoringDocument | VanitysocialpostsDocument;
 /**
  * Primary content in CollectionGrid → Primary
  *
@@ -976,105 +1036,6 @@ type FooterSliceVariation = FooterSliceDefault;
  */
 export type FooterSlice = prismicT.SharedSlice<"footer", FooterSliceVariation>;
 /**
- * Primary content in HomeHero → Primary
- *
- */
-interface HomeHeroSliceDefaultPrimary {
-    /**
-     * Header field in *HomeHero → Primary*
-     *
-     * - **Field Type**: Title
-     * - **Placeholder**: A nice header for your hero
-     * - **API ID Path**: home_hero.primary.header
-     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
-     *
-     */
-    header: prismicT.TitleField;
-    /**
-     * Subtitle field in *HomeHero → Primary*
-     *
-     * - **Field Type**: Rich Text
-     * - **Placeholder**: A nice subtitle for the homepage
-     * - **API ID Path**: home_hero.primary.subheader
-     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
-     *
-     */
-    subheader: prismicT.RichTextField;
-    /**
-     * Video field in *HomeHero → Primary*
-     *
-     * - **Field Type**: Link to Media
-     * - **Placeholder**: Paste link to video here...
-     * - **API ID Path**: home_hero.primary.hero_video
-     * - **Documentation**: https://prismic.io/docs/core-concepts/link-content-relationship
-     *
-     */
-    hero_video: prismicT.LinkToMediaField;
-    /**
-     * navigation field in *HomeHero → Primary*
-     *
-     * - **Field Type**: Content Relationship
-     * - **Placeholder**: *None*
-     * - **API ID Path**: home_hero.primary.navigation
-     * - **Documentation**: https://prismic.io/docs/core-concepts/link-content-relationship
-     *
-     */
-    navigation: prismicT.RelationField<"navigation">;
-    /**
-     * Logo field in *HomeHero → Primary*
-     *
-     * - **Field Type**: Image
-     * - **Placeholder**: *None*
-     * - **API ID Path**: home_hero.primary.logo
-     * - **Documentation**: https://prismic.io/docs/core-concepts/image
-     *
-     */
-    logo: prismicT.ImageField<never>;
-    /**
-     * Opacity Color field in *HomeHero → Primary*
-     *
-     * - **Field Type**: Color
-     * - **Placeholder**: *None*
-     * - **API ID Path**: home_hero.primary.opacity_color
-     * - **Documentation**: https://prismic.io/docs/core-concepts/color
-     *
-     */
-    opacity_color: prismicT.ColorField;
-    /**
-     * Opacity Percentage field in *HomeHero → Primary*
-     *
-     * - **Field Type**: Number
-     * - **Placeholder**: *None*
-     * - **API ID Path**: home_hero.primary.opacity_percentage
-     * - **Documentation**: https://prismic.io/docs/core-concepts/number
-     *
-     */
-    opacity_percentage: prismicT.NumberField;
-}
-/**
- * Default variation for HomeHero Slice
- *
- * - **API ID**: `default`
- * - **Description**: `HomeHero`
- * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
- *
- */
-export type HomeHeroSliceDefault = prismicT.SharedSliceVariation<"default", Simplify<HomeHeroSliceDefaultPrimary>, never>;
-/**
- * Slice variation for *HomeHero*
- *
- */
-type HomeHeroSliceVariation = HomeHeroSliceDefault;
-/**
- * HomeHero Shared Slice
- *
- * - **API ID**: `home_hero`
- * - **Description**: `HomeHero`
- * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
- *
- */
-export type HomeHeroSlice = prismicT.SharedSlice<"home_hero", HomeHeroSliceVariation>;
-/**
  * Primary content in InterceptGrid → Primary
  *
  */
@@ -1342,6 +1303,45 @@ type PhotoBannerSliceVariation = PhotoBannerSliceDefault;
  *
  */
 export type PhotoBannerSlice = prismicT.SharedSlice<"photo_banner", PhotoBannerSliceVariation>;
+/**
+ * Primary content in PinterestGrid → Primary
+ *
+ */
+interface PinterestGridSliceDefaultPrimary {
+    /**
+     * Data field in *PinterestGrid → Primary*
+     *
+     * - **Field Type**: Content Relationship
+     * - **Placeholder**: *None*
+     * - **API ID Path**: pinterest_grid.primary.data
+     * - **Documentation**: https://prismic.io/docs/core-concepts/link-content-relationship
+     *
+     */
+    data: prismicT.RelationField<"pinterest_items">;
+}
+/**
+ * Default variation for PinterestGrid Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: `PinterestGrid`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type PinterestGridSliceDefault = prismicT.SharedSliceVariation<"default", Simplify<PinterestGridSliceDefaultPrimary>, never>;
+/**
+ * Slice variation for *PinterestGrid*
+ *
+ */
+type PinterestGridSliceVariation = PinterestGridSliceDefault;
+/**
+ * PinterestGrid Shared Slice
+ *
+ * - **API ID**: `pinterest_grid`
+ * - **Description**: `PinterestGrid`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type PinterestGridSlice = prismicT.SharedSlice<"pinterest_grid", PinterestGridSliceVariation>;
 /**
  * Primary content in SeoSection → Primary
  *
@@ -1711,6 +1711,6 @@ declare module "@prismicio/client" {
         (repositoryNameOrEndpoint: string, options?: prismic.ClientConfig): prismic.Client<AllDocumentTypes>;
     }
     namespace Content {
-        export type { AuthorDocumentData, AuthorDocument, BlogPostDocumentData, BlogPostDocument, CollectionDocumentData, CollectionDocument, FooterDocumentData, FooterDocumentDataSlicesSlice, FooterDocument, HomepageDocumentData, HomepageDocumentDataSlicesSlice, HomepageDocument, NavbarDocumentData, NavbarDocumentDataSlicesSlice, NavbarDocument, NavigationMenuDocumentData, NavigationMenuDocumentDataMenuItem, NavigationMenuDocument, NavigationDocumentData, NavigationDocumentDataNavigationItemItem, NavigationDocument, PageDocumentData, PageDocument, SocialsDocumentData, SocialsDocumentDataMediaInfoItem, SocialsDocument, VanitySponsoringDocumentData, VanitySponsoringDocument, VanitysocialpostsDocumentData, VanitysocialpostsDocumentDataPostItem, VanitysocialpostsDocumentDataSlicesSlice, VanitysocialpostsDocument, AllDocumentTypes, CollectionGridSliceDefaultPrimary, CollectionGridSliceDefault, CollectionGridSliceVariation, CollectionGridSlice, CollectionSliderSliceDefaultPrimary, CollectionSliderSliceDefaultItem, CollectionSliderSliceDefault, CollectionSliderSliceVariation, CollectionSliderSlice, FeaturedArticleSliceDefaultPrimary, FeaturedArticleSliceDefault, FeaturedArticleSliceVariation, FeaturedArticleSlice, FooterSliceDefaultPrimary, FooterSliceDefault, FooterSliceVariation, FooterSlice, HomeHeroSliceDefaultPrimary, HomeHeroSliceDefault, HomeHeroSliceVariation, HomeHeroSlice, MixedGridSliceDefaultPrimary, MixedGridSliceDefaultItem, MixedGridSliceDefault, MixedGridSliceVariation, MixedGridSlice, MarqueeBannerSliceDefaultPrimary, MarqueeBannerSliceDefaultItem, MarqueeBannerSliceDefault, MarqueeBannerSliceVariation, MarqueeBannerSlice, NavbarSliceDefaultPrimary, NavbarSliceDefault, NavbarSliceVariation, NavbarSlice, PhotoBannerSliceDefaultPrimary, PhotoBannerSliceDefault, PhotoBannerSliceVariation, PhotoBannerSlice, SeoSectionSliceDefaultPrimary, SeoSectionSliceDefault, SeoSectionSliceVariation, SeoSectionSlice, SquareCardCarouselSliceDefaultPrimary, SquareCardCarouselSliceDefaultItem, SquareCardCarouselSliceDefault, SquareCardCarouselSliceVariation, SquareCardCarouselSlice, TopStorySliceDefaultPrimary, TopStorySliceDefaultItem, TopStorySliceDefault, TopStorySliceVariation, TopStorySlice, VanityHeroSliceDefaultPrimary, VanityHeroSliceDefaultItem, VanityHeroSliceDefault, VanityHeroSliceVariation, VanityHeroSlice, VideoHeroSliceDefaultPrimary, VideoHeroSliceDefault, VideoHeroSliceVariation, VideoHeroSlice };
+        export type { AuthorDocumentData, AuthorDocument, BlogPostDocumentData, BlogPostDocument, CollectionDocumentData, CollectionDocument, FooterDocumentData, FooterDocumentDataSlicesSlice, FooterDocument, HomepageDocumentData, HomepageDocumentDataSlicesSlice, HomepageDocument, NavbarDocumentData, NavbarDocumentDataSlicesSlice, NavbarDocument, NavigationMenuDocumentData, NavigationMenuDocumentDataMenuItem, NavigationMenuDocument, NavigationDocumentData, NavigationDocumentDataNavigationItemItem, NavigationDocument, PageDocumentData, PageDocument, PinterestItemsDocumentData, PinterestItemsDocumentDataPostItem, PinterestItemsDocument, SocialsDocumentData, SocialsDocumentDataMediaInfoItem, SocialsDocument, VanitySponsoringDocumentData, VanitySponsoringDocument, VanitysocialpostsDocumentData, VanitysocialpostsDocumentDataPostItem, VanitysocialpostsDocumentDataSlicesSlice, VanitysocialpostsDocument, AllDocumentTypes, CollectionGridSliceDefaultPrimary, CollectionGridSliceDefault, CollectionGridSliceVariation, CollectionGridSlice, CollectionSliderSliceDefaultPrimary, CollectionSliderSliceDefaultItem, CollectionSliderSliceDefault, CollectionSliderSliceVariation, CollectionSliderSlice, FeaturedArticleSliceDefaultPrimary, FeaturedArticleSliceDefault, FeaturedArticleSliceVariation, FeaturedArticleSlice, FooterSliceDefaultPrimary, FooterSliceDefault, FooterSliceVariation, FooterSlice, MixedGridSliceDefaultPrimary, MixedGridSliceDefaultItem, MixedGridSliceDefault, MixedGridSliceVariation, MixedGridSlice, MarqueeBannerSliceDefaultPrimary, MarqueeBannerSliceDefaultItem, MarqueeBannerSliceDefault, MarqueeBannerSliceVariation, MarqueeBannerSlice, NavbarSliceDefaultPrimary, NavbarSliceDefault, NavbarSliceVariation, NavbarSlice, PhotoBannerSliceDefaultPrimary, PhotoBannerSliceDefault, PhotoBannerSliceVariation, PhotoBannerSlice, PinterestGridSliceDefaultPrimary, PinterestGridSliceDefault, PinterestGridSliceVariation, PinterestGridSlice, SeoSectionSliceDefaultPrimary, SeoSectionSliceDefault, SeoSectionSliceVariation, SeoSectionSlice, SquareCardCarouselSliceDefaultPrimary, SquareCardCarouselSliceDefaultItem, SquareCardCarouselSliceDefault, SquareCardCarouselSliceVariation, SquareCardCarouselSlice, TopStorySliceDefaultPrimary, TopStorySliceDefaultItem, TopStorySliceDefault, TopStorySliceVariation, TopStorySlice, VanityHeroSliceDefaultPrimary, VanityHeroSliceDefaultItem, VanityHeroSliceDefault, VanityHeroSliceVariation, VanityHeroSlice, VideoHeroSliceDefaultPrimary, VideoHeroSliceDefault, VideoHeroSliceVariation, VideoHeroSlice };
     }
 }

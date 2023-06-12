@@ -231,6 +231,19 @@ export const getStaticProps = async ({
               }
             }
           }
+          ... on pinterest_grid {
+            variation {
+              ... on default {
+                primary {
+                  data {
+                    ... on pinterest_items {
+                      ...pinterest_itemsFields
+                    }
+                  }
+                }
+              }
+            }
+          }
         }
       }
     }`,
