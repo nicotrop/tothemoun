@@ -1,5 +1,5 @@
 import { PrismicNextImage } from "@prismicio/next";
-import { GlobalButton, Wrapper } from "./global";
+import { GlobalButton, Wrapper } from "../../src/components/global";
 import { BlogPostDocument } from "types.generated";
 import { PrismicLink } from "@prismicio/react";
 

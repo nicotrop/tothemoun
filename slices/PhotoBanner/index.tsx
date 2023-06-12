@@ -1,7 +1,7 @@
 import React from "react";
 import { SliceComponentProps } from "@prismicio/react";
 import { PhotoBannerSlice } from "types.generated";
-import { PhotoBannerComp } from "@/components/photoBanner";
+import { PhotoBannerComp } from "slices/PhotoBanner/photoBanner";
 
 /**
  * @typedef {import("@prismicio/client").Content.PhotoBannerSlice} PhotoBannerSlice

@@ -1,4 +1,4 @@
-import { InterceptImprovedGrid } from "@/components/mixedGridImproved";
+import { InterceptImprovedGrid } from "slices/InterceptGrid/mixedGridImproved";
 import { SliceComponentProps } from "@prismicio/react";
 import React from "react";
 import {

@@ -4,7 +4,7 @@ import React, { useEffect, useState } from "react";
 import { SliceComponentProps } from "@prismicio/react";
 import { BlogPostDocument, CollectionGridSlice } from "types.generated";
 import { createClient } from "prismicio";
-import { CollectionGridComp } from "@/components/collectionGrid";
+import { CollectionGridComp } from "slices/CollectionGrid/collectionGrid";
 
 /**
  * @typedef {import("@prismicio/client").Content.CollectionGridSlice} CollectionGridSlice

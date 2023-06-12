@@ -1,7 +1,8 @@
-// import { arrayArticles } from "@/utils/mockData";
-import { SectionTitle, SectionTitleContainer, Wrapper } from "./global";
-// import Image from "next/image";
-// import Link from "next/link";
+import {
+  SectionTitle,
+  SectionTitleContainer,
+  Wrapper,
+} from "../../src/components/global";
 import { BlogPostDocument } from "types.generated";
 import { PrismicLink } from "@prismicio/react";
 import { PrismicNextImage } from "@prismicio/next";

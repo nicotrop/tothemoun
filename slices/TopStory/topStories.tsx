@@ -1,5 +1,5 @@
 import { PrismicNextImage } from "@prismicio/next";
-import { ArticleTag } from "./global";
+import { ArticleTag } from "../../src/components/global";
 import React from "react";
 import { BlogPostDocument } from "types.generated";
 import { PrismicLink } from "@prismicio/react";

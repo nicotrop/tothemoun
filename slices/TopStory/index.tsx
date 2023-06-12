@@ -1,7 +1,7 @@
 import React from "react";
 import { SliceComponentProps } from "@prismicio/react";
 import { BlogPostDocument, TopStorySlice } from "types.generated";
-import { TopStoryComp } from "@/components/topStories";
+import { TopStoryComp } from "slices/TopStory/topStories";
 
 /**
  * @typedef {import("@prismicio/client").Content.TopStorySlice} TopStorySlice

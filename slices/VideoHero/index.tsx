@@ -1,7 +1,7 @@
 import React from "react";
 import { SliceComponentProps } from "@prismicio/react";
 import { VideoHeroSlice } from "types.generated";
-import { HeroVideo } from "@/components/heroVideo";
+import { HeroVideo } from "slices/VideoHero/heroVideo";
 
 /**
  * @typedef {import("@prismicio/client").Content.VideoHeroSlice} VideoHeroSlice

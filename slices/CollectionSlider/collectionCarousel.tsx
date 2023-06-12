@@ -1,4 +1,8 @@
-import { SectionTitle, SectionTitleContainer, Wrapper } from "./global";
+import {
+  SectionTitle,
+  SectionTitleContainer,
+  Wrapper,
+} from "../../src/components/global";
 import { SwiperSlide } from "swiper/react";
 import { SwiperImprovedCarousel } from "@/components/sliders";
 

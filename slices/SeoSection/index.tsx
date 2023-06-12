@@ -1,7 +1,7 @@
 import React from "react";
 import { SliceComponentProps } from "@prismicio/react";
 import { SeoSectionSlice } from "types.generated";
-import { SEOsectionComp } from "@/components/seoSection";
+import { SEOsectionComp } from "slices/SeoSection/seoSection";
 
 /**
  * @typedef {import("@prismicio/client").Content.SeoSectionSlice} SeoSectionSlice

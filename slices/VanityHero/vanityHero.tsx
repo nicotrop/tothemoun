@@ -1,5 +1,5 @@
 import { ReactNode } from "react";
-import { Wrapper } from "./global";
+import { Wrapper } from "../../src/components/global";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faInstagram,

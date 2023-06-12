@@ -1,6 +1,6 @@
 import { ColorField, KeyTextField } from "@prismicio/types";
 import { MarqueeBannerSlice } from "types.generated";
-import { Wrapper } from "./global";
+import { Wrapper } from "../../src/components/global";
 
 export const MarqueeBannerComp = ({
   items,

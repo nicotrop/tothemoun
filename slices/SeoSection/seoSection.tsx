@@ -1,5 +1,5 @@
 import { KeyTextField, RichTextField } from "@prismicio/types";
-import { Wrapper } from "./global";
+import { Wrapper } from "../../src/components/global";
 import { PrismicRichText } from "@prismicio/react";
 
 export const SEOsectionComp = ({

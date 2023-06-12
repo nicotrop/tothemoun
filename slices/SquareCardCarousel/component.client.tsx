@@ -5,7 +5,7 @@ import { CollectionDocument } from "types.generated";
 import { Articles } from ".";
 import { createClient } from "prismicio";
 import { checkTag } from "@/utils/helpers";
-import { SquareCardCarouselComp } from "@/components/squareCardsCarousel";
+import { SquareCardCarouselComp } from "slices/SquareCardCarousel/squareCardsCarousel";
 
 export const ClientCollection = ({
   collection,

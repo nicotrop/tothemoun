@@ -1,7 +1,7 @@
 import React from "react";
 import { SliceComponentProps } from "@prismicio/react";
 import { BlogPostDocument, FeaturedArticleSlice } from "types.generated";
-import { OneArticleBlock } from "@/components/oneArticle";
+import { OneArticleBlock } from "slices/FeaturedArticle/oneArticle";
 
 /**
  * @typedef {import("@prismicio/client").Content.FeaturedArticleSlice} FeaturedArticleSlice

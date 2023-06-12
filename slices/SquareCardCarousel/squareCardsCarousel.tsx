@@ -3,7 +3,7 @@ import {
   SectionTitle,
   SectionTitleContainer,
   Wrapper,
-} from "./global";
+} from "../../src/components/global";
 import { SwiperSlide } from "swiper/react";
 import { SwiperImprovedCarousel } from "@/components/sliders";
 import { KeyTextField } from "@prismicio/types";

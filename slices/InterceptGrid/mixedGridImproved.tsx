@@ -3,7 +3,7 @@ import {
   SectionTitle,
   SectionTitleContainer,
   Wrapper,
-} from "./global";
+} from "../../src/components/global";
 import { KeyTextField } from "@prismicio/types";
 import { BlogPostDocument, CollectionDocument } from "types.generated";
 import { PrismicLink } from "@prismicio/react";

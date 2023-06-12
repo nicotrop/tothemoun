@@ -1,4 +1,4 @@
-import { MarqueeBannerComp } from "@/components/marqueeBanner";
+import { MarqueeBannerComp } from "slices/MarqueeBanner/marqueeBanner";
 import { SliceComponentProps } from "@prismicio/react";
 import React from "react";
 import { MarqueeBannerSlice } from "types.generated";

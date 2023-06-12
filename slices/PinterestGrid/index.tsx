@@ -1,7 +1,7 @@
 import React from "react";
 import { SliceComponentProps } from "@prismicio/react";
 import { PinterestGridSlice, PinterestItemsDocument } from "types.generated";
-import { PinterestGridComp } from "@/components/pinterestGrid";
+import { PinterestGridComp } from "slices/PinterestGrid/pinterestGrid";
 
 /**
  * @typedef {import("@prismicio/client").Content.PinterestGridSlice} PinterestGridSlice

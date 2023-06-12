@@ -1,5 +1,5 @@
 import { mockNavigation } from "@/utils/mockData";
-import { EcomNav } from "./ecomNav";
+import { EcomNav } from "../../src/components/ecomNav";
 import {
   ArrowLongDownIcon,
   ChevronDoubleRightIcon,
@@ -54,6 +54,7 @@ export const HeroVideoComp = ({ source }: { source: string }) => {
     >
       <video
         autoPlay
+        playsInline
         muted
         loop
         className={`h-full w-full object-cover bg-black opacity-50`}

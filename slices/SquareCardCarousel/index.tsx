@@ -5,7 +5,7 @@ import {
   CollectionDocument,
   SquareCardCarouselSlice,
 } from "types.generated";
-import { SquareCardCarouselComp } from "@/components/squareCardsCarousel";
+import { SquareCardCarouselComp } from "slices/SquareCardCarousel/squareCardsCarousel";
 import { ClientCollection } from "./component.client";
 
 /**

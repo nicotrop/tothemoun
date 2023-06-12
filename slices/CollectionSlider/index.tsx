@@ -1,7 +1,7 @@
 import React from "react";
 import { SliceComponentProps } from "@prismicio/react";
 import { CollectionSliderSlice } from "types.generated";
-import { CollectionCarousel } from "@/components/collectionCarousel";
+import { CollectionCarousel } from "slices/CollectionSlider/collectionCarousel";
 import { CollectionSlider } from "./type";
 
 /**
